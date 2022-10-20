@@ -1,5 +1,5 @@
-//
-// Created by megan on 2022/10/18.
-//
-
 #include "Infiltrate.h"
+
+void Infiltrate::execute()
+{
+}

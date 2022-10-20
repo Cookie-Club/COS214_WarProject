@@ -3,7 +3,7 @@
 
 #include "Bombardment.h"
 
-class InfantryDamage : public Bombardment {
+class InfantryDamage : public Bombardment{
 
 public:
     int damage;

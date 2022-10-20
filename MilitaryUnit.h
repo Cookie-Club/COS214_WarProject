@@ -6,8 +6,6 @@ class MilitaryUnit {
 		virtual MilitaryUnit* clone() = 0;
 		virtual ~MilitaryUnit();
 		virtual bool isLeaf() = 0;
-	protected:
-		Order* orders;
 };
 
 #endif

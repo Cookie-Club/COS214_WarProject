@@ -5,8 +5,8 @@
 
 class Flatlands : public Cell {
 public:
-    void setState(cellState* state);
     void getState();
+    void setState(CellState* state);
 };
 
 

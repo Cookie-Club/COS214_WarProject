@@ -1,12 +1,12 @@
 #ifndef FEATUREFACTORY_H
 #define FEATUREFACTORY_H
 
-#include "Cell.h"
+#include "CellFeatures.h"
 
 class FeatureFactory {
 
 public:
-    Cell* createFeature(Cell* component);
+    CellFeatures* createFeature(CellFeatures* component);
 };
 
 #endif

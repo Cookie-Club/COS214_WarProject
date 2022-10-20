@@ -9,7 +9,7 @@ class Bog : public Cell {
 public:
     double resourceUseMultiplier;
     void getState();
-    void setState(cellState* state);
+    void setState(CellState* state);
 };
 
 

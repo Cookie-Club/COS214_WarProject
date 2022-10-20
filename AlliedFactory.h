@@ -2,11 +2,13 @@
 #define ALLIEDFACTORY_H
 
 #include "Factory.h"
+#include "AlliedInfantry.h"
+#include "AlliedTank.h"
 
 class AlliedFactory : public Factory {
-public:
-    void createInfantry();
-    void createMedic();
+    public:
+        MilitaryUnit* createInfantry();
+        MilitaryUnit* createTank();
 };
 
 
