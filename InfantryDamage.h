@@ -1,7 +1,7 @@
 #ifndef INFANTRYDAMAGE_H
 #define INFANTRYDAMAGE_H
 
-#include "Bombardment.h.h"
+#include "Bombardment.h"
 
 class InfantryDamage : public Bombardment {
 
