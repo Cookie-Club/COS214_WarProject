@@ -3,3 +3,7 @@
 //
 
 #include "Bombardment.h"
+
+void Bombardment::dispense(){
+    
+}
