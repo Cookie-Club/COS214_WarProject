@@ -1,8 +1,9 @@
-    //
-// Created by megan on 2022/10/18.
-//
-
 #include "Squad.h"
+
+Squad::Squad(){
+    type = "squad";
+}
+
 void Squad::moveSquad()
 {
 

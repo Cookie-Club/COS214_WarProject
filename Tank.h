@@ -7,6 +7,7 @@
 class Tank : public TeamMembers {
     public:
         MilitaryUnit* clone();
+        Tank();
 
 };
 

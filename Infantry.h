@@ -7,6 +7,7 @@
 class Infantry : public TeamMembers {
     public:
         MilitaryUnit* clone();
+        Infantry();
 
 };
 

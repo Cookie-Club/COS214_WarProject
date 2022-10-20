@@ -3,17 +3,23 @@
 
 #include "Order.h"
 #include "Cell.h"
+#include "InfantryDamage.h"
+#include "TankDamage.h"
 
 class Bombardment : public Order {
 
     public:
+        Bombardment();
         Bombardment(Cell* targetedCell);
-        void add();
-        void dispense();
+        void add(Bombardment * a);
         void execute();
-    private:
+        virtual void damageMember(MilitaryUnit * currentUnit);
+    protected:
         Bombardment * next;
         Cell * targetedCell;
+        Bombardment * IDAttack;
+        Bombardment * TDAttack;
+
 };
 
 

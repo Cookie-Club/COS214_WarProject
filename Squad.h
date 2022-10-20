@@ -14,6 +14,7 @@ class Squad : public MilitaryUnit {
         int Ammo;
 
     public:
+        Squad();
         void moveSquad();
         void setOccupyingCell(Cell* c);
         MilitaryUnit* clone();
