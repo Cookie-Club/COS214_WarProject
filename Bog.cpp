@@ -1,5 +1,9 @@
-//
-// Created by megan on 2022/10/18.
-//
-
 #include "Bog.h"
+
+void Bog::getState()
+{
+}
+
+void Bog::setState(CellState *state)
+{
+}

@@ -2,11 +2,12 @@
 #define AXISFACTORY_H
 
 #include "Factory.h"
-
+#include "AxisInfantry.h"
+#include "AxisTank.h"
 class AxisFactory : public Factory {
     public:
-        void createInfantry();
-        void createMedic();
+        MilitaryUnit* createInfantry();
+        MilitaryUnit* createTank();
 };
 
 

@@ -5,15 +5,16 @@
 
 class TeamMembers : public MilitaryUnit {
 
-private:
-    int damage;
-    int healthpoints;
-
-public:
-    virtual MilitaryUnit* clone() = 0;
-    void setHealthpoints();
+    public:
+        virtual MilitaryUnit* clone() = 0;
+        void setHealthpoints(int hp);
+        virtual bool isLeaf(){return true;};
+    protected:
+        int damage;
+        int healthpoints;
 
 };
+
 
 
 #endif //TEAMMEMBERS_H

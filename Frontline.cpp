@@ -1,5 +1,5 @@
-//
-// Created by megan on 2022/10/18.
-//
-
 #include "Frontline.h"
+
+void Frontline::execute()
+{
+}

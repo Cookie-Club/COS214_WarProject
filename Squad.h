@@ -1,3 +1,4 @@
+
 #ifndef SQUAD_H
 #define SQUAD_H
 
@@ -16,7 +17,8 @@ class Squad : public MilitaryUnit {
         void moveSquad();
         void setOccupyingCell(Cell* c);
         MilitaryUnit* clone();
-        bool isLeaf(){return false;};
+        bool isLeaf();
+        void addMember(MilitaryUnit* m);
 };
 
 

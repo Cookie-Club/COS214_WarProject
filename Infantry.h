@@ -5,8 +5,9 @@
 #include "MilitaryUnit.h"
 
 class Infantry : public TeamMembers {
-public:
-    MilitaryUnit* clone();
+    public:
+        MilitaryUnit* clone();
+
 };
 
 

@@ -1,11 +1,20 @@
 #include "Cell.h"
 
-void Cell::removeOccupyingForce() {
+void Cell::removeOccupyingForce(MilitaryUnit* m) {
 	// TODO - implement Cell::removeOccupyingForce
 	throw "Not yet implemented";
 }
 
-void Cell::setOccupyingForce() {
+void Cell::setOccupyingForce(MilitaryUnit* m) {
 	// TODO - implement Cell::setOccupyingForce
 	throw "Not yet implemented";
+}
+
+std::vector<MilitaryUnit*> Cell::getOccupyingForce(){
+	return occupyingForce;
+}
+
+void Cell::recieveAttack(Order* attack)
+{
+
 }

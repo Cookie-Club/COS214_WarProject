@@ -1,9 +1,17 @@
-//
-// Created by megan on 2022/10/18.
-//
-
 #include "Bombardment.h"
+
+Bombardment::Bombardment(Cell * targetedCell){
+
+}
 
 void Bombardment::dispense(){
     
+}
+
+void Bombardment::add(){
+
+}
+
+void Bombardment::execute(){
+    targetedCell->recieveAttack(this);
 }
