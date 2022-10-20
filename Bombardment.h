@@ -6,7 +6,7 @@
 class Bombardment : public Order {
 
 public:
-    Order::Bombardment* next;
+    Bombardment * next;
     Bombardment();
     void add();
     void dispense();
