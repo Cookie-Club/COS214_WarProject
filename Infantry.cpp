@@ -1,5 +1,10 @@
 #include "Infantry.h"
 
 Infantry::Infantry(){
-    type = "infantry";
+    type = infantry;
+}
+
+int Infantry::getRationConsumption()
+{
+    return this->rationConsumption;
 }

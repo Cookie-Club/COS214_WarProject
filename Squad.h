@@ -2,16 +2,11 @@
 #ifndef SQUAD_H
 #define SQUAD_H
 
-#include "MilitaryUnit.h"
+#include "TeamMembers.h"
 #include "Cell.h"
 #include <vector>
 
 class Squad : public MilitaryUnit {
-
-    private:
-        Cell* occupyingCell;
-        std::vector<MilitaryUnit*> members;
-        int Ammo;
 
     public:
         Squad();
@@ -20,7 +15,14 @@ class Squad : public MilitaryUnit {
         MilitaryUnit* clone();
         bool isLeaf();
         void addMember(MilitaryUnit* m);
-        std::vector<MilitaryUnit*> getMembers();
+        virtual std::vector<MilitaryUnit*> getMembers();
+        virtual bool receiveDamage(int damage);
+    protected:
+        Cell* occupyingCell;
+        std::vector<MilitaryUnit*> members;
+        int Ammo;
+        int rations;
+        float fuel;
 };
 
 

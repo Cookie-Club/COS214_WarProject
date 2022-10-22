@@ -8,8 +8,11 @@ class Infantry : public TeamMembers {
     public:
         MilitaryUnit* clone();
         Infantry();
+        int getRationConsumption();
 
+    protected:
+        int rationConsumption;
 };
 
 
-#endif //INFANTRY_H
+#endif

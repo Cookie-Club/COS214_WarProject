@@ -7,7 +7,9 @@
 class Tank : public TeamMembers {
     public:
         MilitaryUnit* clone();
-        Tank();
+        float getFuelConsumption();
+    protected:
+        float fuelConsumption;
 
 };
 

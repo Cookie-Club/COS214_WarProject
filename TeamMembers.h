@@ -4,17 +4,19 @@
 #include <iostream>
 
 #include "MilitaryUnit.h"
-
-using namespace std;
-
 class TeamMembers : public MilitaryUnit {
 
     public:
         virtual MilitaryUnit* clone() = 0;
         void setHealthpoints(int hp);
-        virtual bool isLeaf(){return true;};
-        void receiveDamage(int damage);
-        string getType();
+        virtual bool isLeaf();
+
+        bool receiveDamage(int damage);
+
+        UnitType getType();
+
+        virtual std::vector<MilitaryUnit*> getMembers();
+        
     protected:
         int damage;
         int healthpoints;

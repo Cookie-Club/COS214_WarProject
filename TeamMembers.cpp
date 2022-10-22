@@ -1,9 +1,53 @@
+
+
 #include "TeamMembers.h"
 
-void TeamMembers::receiveDamage(int damage){
+bool TeamMembers::receiveDamage(int damage){
     int newHealth = healthpoints - damage;
+    setHealthpoints(newHealth);
+
+    if(healthpoints <= 0){
+        return false;
+    }
+
+    return true;
 }
 
-string TeamMembers::getType(){
+UnitType TeamMembers::getType(){
     return type;
+}
+
+void TeamMembers::setHealthpoints(int hp)
+{
+    this->healthpoints = hp;
+}
+
+bool TeamMembers::isLeaf()
+{
+    return true;
+}
+
+UnitType TeamMembers::getType()
+{
+    return this->type;
+}
+
+std::vector<MilitaryUnit*> TeamMembers::getMembers()
+{
+    return NULL;
+}
+
+void TeamMembers::setHealthpoints(int hp)
+{
+    this->healthpoints = hp;
+}
+
+bool TeamMembers::isLeaf()
+{
+    return true;
+}
+
+UnitType TeamMembers::getType()
+{
+    return this->type;
 }
