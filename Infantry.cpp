@@ -3,3 +3,8 @@
 //
 
 #include "Infantry.h"
+
+int Infantry::getRationConsumption()
+{
+    return this->rationConsumption;
+}

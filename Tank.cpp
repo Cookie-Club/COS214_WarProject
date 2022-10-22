@@ -3,3 +3,8 @@
 //
 
 #include "Tank.h"
+
+float Tank::getFuelConsumption()
+{
+    return this->fuelConsumption;
+}

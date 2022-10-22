@@ -7,6 +7,10 @@
 class Infantry : public TeamMembers {
     public:
         MilitaryUnit* clone();
+        int getRationConsumption();
+
+    protected:
+        int rationConsumption;
 
 };
 
