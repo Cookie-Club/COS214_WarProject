@@ -33,3 +33,7 @@ void Squad::addMember(MilitaryUnit* m)
 {
     members.push_back(m);
 }
+
+std::vector<MilitaryUnit*> Squad::getMembers(){
+    return members;
+}

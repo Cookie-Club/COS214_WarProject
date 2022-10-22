@@ -20,6 +20,7 @@ class Squad : public MilitaryUnit {
         MilitaryUnit* clone();
         bool isLeaf();
         void addMember(MilitaryUnit* m);
+        std::vector<MilitaryUnit*> getMembers();
 };
 
 

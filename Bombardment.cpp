@@ -3,9 +3,11 @@
 Bombardment::Bombardment(){}
 
 Bombardment::Bombardment(Cell * targetedCell){
-    IDAttack = new InfantryDamage(targetedCell);
-    TDAttack = new TankDamage(targetedCell);
+    SquadAttack = new SquadDamage();
+    IDAttack = new InfantryDamage();
+    TDAttack = new TankDamage();
 
+    add(SquadAttack);
     add(IDAttack);
     add(TDAttack);
 
@@ -23,7 +25,7 @@ void Bombardment::add(Bombardment * a){
 void Bombardment::execute(){
     if(!targetedCell->getOccupyingForce().empty()){
         for(int i = 0; i < targetedCell->getOccupyingForce().capacity(); i++){
-            IDAttack->damageMember(targetedCell->getOccupyingForce().at(i));
+            next->damageMember(targetedCell->getOccupyingForce().at(i));
         }
     }
 }

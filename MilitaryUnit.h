@@ -14,6 +14,7 @@ class MilitaryUnit {
 		virtual bool isLeaf() = 0;
 		virtual void receiveDamage(int damagae) = 0;
 		virtual string getType() = 0;
+		virtual std::vector<MilitaryUnit*> getMembers() = 0;
 	protected:
 		string type;
 };

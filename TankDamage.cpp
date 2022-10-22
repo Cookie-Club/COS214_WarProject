@@ -1,8 +1,6 @@
 #include "TankDamage.h"
 
-TankDamage::TankDamage(Cell * targetedCell){
-
-};
+TankDamage::TankDamage(){};
 
 void TankDamage::damageMember(MilitaryUnit * currentUnit){
     currentUnit->receiveDamage(damage);

@@ -3,6 +3,7 @@
 
 #include "Order.h"
 #include "Cell.h"
+#include "SquadDamage.h"
 #include "InfantryDamage.h"
 #include "TankDamage.h"
 
@@ -19,6 +20,7 @@ class Bombardment : public Order {
         Cell * targetedCell;
         Bombardment * IDAttack;
         Bombardment * TDAttack;
+        Bombardment * SquadAttack;
 
 };
 
