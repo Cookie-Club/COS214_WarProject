@@ -4,6 +4,8 @@
 #include "Tank.h"
 
 class AlliedTank : public Tank {
+public:
+    AlliedTank();
 };
 
 
