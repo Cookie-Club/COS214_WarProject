@@ -4,10 +4,11 @@
 #include "Factory.h"
 #include "AxisInfantry.h"
 #include "AxisTank.h"
+
 class AxisFactory : public Factory {
-    public:
-        MilitaryUnit* createInfantry();
-        MilitaryUnit* createTank();
+public:
+    Infantry* createInfantry();
+    Tank* createTank();
 };
 
 

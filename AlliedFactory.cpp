@@ -1,5 +1,10 @@
-//
-// Created by megan on 2022/10/18.
-//
 
 #include "AlliedFactory.h"
+
+Infantry *AlliedFactory::createInfantry() {
+    return new AlliedInfantry();
+}
+
+Tank *AlliedFactory::createTank() {
+    return new AlliedTank();
+}
