@@ -19,6 +19,7 @@ private:
 public:
 	void armyMove();
 	virtual void retreat() = 0;
+    void setState(Action* state);
 };
 
 #endif

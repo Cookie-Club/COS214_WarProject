@@ -1,5 +1,9 @@
-//
-// Created by megan on 2022/10/18.
-//
 
 #include "Defensive.h"
+Defensive::Defensive() {
+    state="Defensive";
+}
+
+void Defensive::handleChange(Participants *p) {
+    p->setState(new Aggressive());
+}

@@ -6,9 +6,9 @@
 #include "AlliedTank.h"
 
 class AlliedFactory : public Factory {
-    public:
-        MilitaryUnit* createInfantry();
-        MilitaryUnit* createTank();
+public:
+    Infantry* createInfantry();
+    Tank* createTank();
 };
 
 

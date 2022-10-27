@@ -10,13 +10,11 @@ class TeamMembers : public MilitaryUnit {
         virtual MilitaryUnit* clone() = 0;
         void setHealthpoints(int hp);
         virtual bool isLeaf();
-
         bool receiveDamage(int damage);
-
         UnitType getType();
 
         virtual std::vector<MilitaryUnit*> getMembers();
-        
+
     protected:
         int damage;
         int healthpoints;

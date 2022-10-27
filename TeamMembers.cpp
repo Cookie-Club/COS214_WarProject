@@ -1,5 +1,3 @@
-
-
 #include "TeamMembers.h"
 
 bool TeamMembers::receiveDamage(int damage){
@@ -34,7 +32,7 @@ UnitType TeamMembers::getType()
 
 std::vector<MilitaryUnit*> TeamMembers::getMembers()
 {
-    return NULL;
+    return std::vector<MilitaryUnit *>();
 }
 
 void TeamMembers::setHealthpoints(int hp)

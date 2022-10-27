@@ -4,7 +4,8 @@
 #include "Infantry.h"
 
 class AlliedInfantry : public Infantry {
-
+public:
+    AlliedInfantry();
 };
 
 

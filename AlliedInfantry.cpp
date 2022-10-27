@@ -1,5 +1,5 @@
-//
-// Created by megan on 2022/10/18.
-//
 
 #include "AlliedInfantry.h"
+AlliedInfantry::AlliedInfantry() {
+    cout<<"AlliedInfantry created";
+}

@@ -4,19 +4,19 @@
 #include <string>
 
 #include "Order.h"
-
-using namespace std;
+#include <vector>
+enum UnitType { infantry, tank, squad };
 
 class MilitaryUnit {
 	public:
 		virtual MilitaryUnit* clone() = 0;
 		virtual ~MilitaryUnit();
 		virtual bool isLeaf() = 0;
-		virtual void receiveDamage(int damagae) = 0;
-		virtual string getType() = 0;
+		virtual bool receiveDamage(int damage) = 0;
+		virtual UnitType getType(){return this->type;};
 		virtual std::vector<MilitaryUnit*> getMembers() = 0;
 	protected:
-		string type;
+		UnitType type;
 };
 
 #endif

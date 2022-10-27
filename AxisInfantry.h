@@ -4,6 +4,8 @@
 #include "Infantry.h"
 
 class AxisInfantry : public Infantry {
+public:
+    AxisInfantry();
 };
 
 

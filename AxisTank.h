@@ -4,6 +4,8 @@
 #include "Tank.h"
 
 class AxisTank : public Tank {
+public:
+    AxisTank();
 };
 
 
