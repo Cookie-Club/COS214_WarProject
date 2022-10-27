@@ -1,6 +1,6 @@
 #include "War.h"
 
-War::War(WorldMap* world, vector<Participants*> participants) {
+War::War(WorldMap* world, std::vector<Participants*> participants) {
 	// TODO - implement War::War
 	throw "Not yet implemented";
 }
@@ -15,7 +15,7 @@ WorldMap* War::getWorld() {
 	throw "Not yet implemented";
 }
 
-vector<Participants*> War::getParticipants() {
+std::vector<Participants*> War::getParticipants() {
 	// TODO - implement War::getParticipants
 	throw "Not yet implemented";
 }

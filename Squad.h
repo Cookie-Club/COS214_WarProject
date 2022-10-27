@@ -9,13 +9,15 @@
 class Squad : public MilitaryUnit {
 
     public:
+        Squad();
         void moveSquad();
         void setOccupyingCell(Cell* c);
         MilitaryUnit* clone();
         bool isLeaf();
         void addMember(MilitaryUnit* m);
-
-    private:
+        virtual std::vector<MilitaryUnit*> getMembers();
+        virtual bool receiveDamage(int damage);
+    protected:
         Cell* occupyingCell;
         std::vector<MilitaryUnit*> members;
         int Ammo;

@@ -13,8 +13,3 @@ void Cell::setOccupyingForce(MilitaryUnit* m) {
 std::vector<MilitaryUnit*> Cell::getOccupyingForce(){
 	return occupyingForce;
 }
-
-void Cell::recieveAttack(Order* attack)
-{
-
-}

@@ -1,10 +1,11 @@
-    //
-// Created by megan on 2022/10/18.
-//
-
 #include "Squad.h"
 #include "Infantry.h"
 #include "Tank.h"
+
+Squad::Squad(){
+    this->type = squad;
+}
+
 void Squad::moveSquad()
 {
 
@@ -61,4 +62,13 @@ bool Squad::isLeaf()
 void Squad::addMember(MilitaryUnit* m)
 {
     members.push_back(m);
+}
+
+std::vector<MilitaryUnit*> Squad::getMembers(){
+    return members;
+}
+
+bool Squad::receiveDamage(int damage)
+{
+    return false;
 }

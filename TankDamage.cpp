@@ -1,9 +1,7 @@
 #include "TankDamage.h"
 
-TankDamage::TankDamage():Bombardment(){
+TankDamage::TankDamage(){};
 
-};
-
-void TankDamage::dispense(){
-
+void TankDamage::damageMember(MilitaryUnit * currentUnit){
+    currentUnit->receiveDamage(damage);
 };

@@ -17,7 +17,6 @@ public:
 	void removeOccupyingForce(MilitaryUnit* m);
 	void setOccupyingForce(MilitaryUnit* m);
 	std::vector<MilitaryUnit*> getOccupyingForce();
-	void Cell::recieveAttack(Order* attack);
 };
 
 #endif

@@ -2,14 +2,18 @@
 #define INFANTRYDAMAGE_H
 
 #include "Bombardment.h"
+#include "MilitaryUnit.h"
+
+using namespace std;
 
 class InfantryDamage : public Bombardment{
 
-public:
-    int damage;
-    InfantryDamage();
-    void dispense();
+    public:
+        InfantryDamage(Cell * targetedCell);
+        void damageMember(MilitaryUnit * currentUnit);
+    private:
+        int damage;
 };
 
 
-#endif //INFANTRYDAMAGE_H
+#endif
