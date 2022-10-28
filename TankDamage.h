@@ -8,7 +8,7 @@ using namespace std;
 
 class TankDamage : public Bombardment{
     public:
-        TankDamage(Cell * targetedCell);
+        TankDamage();
         void damageMember(MilitaryUnit * currentUnit);
     protected:
         int damage;

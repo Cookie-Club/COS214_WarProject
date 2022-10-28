@@ -1,3 +1,10 @@
+/**
+	\class MilitaryUnit
+	\brief Abstract interface for all military unit objects
+	\details Composite pattern: Component
+	\author Wian K
+*/
+
 #ifndef MILITARYUNIT_H
 #define MILITARYUNIT_H
 
@@ -13,7 +20,7 @@ class MilitaryUnit {
 		virtual ~MilitaryUnit();
 		virtual bool isLeaf() = 0;
 		virtual bool receiveDamage(int damage) = 0;
-		virtual UnitType getType(){return this->type;};
+		UnitType getType(){return this->type;};
 		virtual std::vector<MilitaryUnit*> getMembers() = 0;
 	protected:
 		UnitType type;

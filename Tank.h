@@ -1,3 +1,10 @@
+/**
+	\class Tank
+	\brief Abstract interface for tank objects
+    \details Prototype pattern: AbstractProduct
+	\author Wian K
+*/
+
 #ifndef TANK_H
 #define TANK_H
 
@@ -6,8 +13,9 @@
 
 class Tank : public TeamMembers {
     public:
-        MilitaryUnit* clone();
+        virtual MilitaryUnit* clone() = 0;
         float getFuelConsumption();
+        void setFuelConsumption(float);
     protected:
         float fuelConsumption;
 

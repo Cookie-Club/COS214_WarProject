@@ -1,3 +1,11 @@
+/**
+    \file Bombardment.h
+    \brief Parent handler for Chain of Responsibilty Pattern
+    \details The Bombardment class is in charge of receiving the intial request and then determining. The parent of this class is the Order class.
+    \author Robert Officer
+    \class Bombardment
+*/
+
 #ifndef BOMBARDMENT_H
 #define BOMBARDMENT_H
 
