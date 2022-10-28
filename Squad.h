@@ -1,3 +1,10 @@
+/**
+	\class Squad
+	\brief Composite satructure of military units
+	\details Stores TeamMember objects, stores occupying cell, implements movement
+    Composite pattern: Composite participant
+	\author Wian Koekemoer
+*/
 
 #ifndef SQUAD_H
 #define SQUAD_H

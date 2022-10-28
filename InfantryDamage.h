@@ -9,7 +9,7 @@ using namespace std;
 class InfantryDamage : public Bombardment{
 
     public:
-        InfantryDamage(Cell * targetedCell);
+        InfantryDamage();
         void damageMember(MilitaryUnit * currentUnit);
     private:
         int damage;

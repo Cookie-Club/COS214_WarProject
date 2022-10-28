@@ -5,7 +5,7 @@
 
 class AmmoDeposit : public CellFeatures {
 public:
-    void AmmoDesposit();
+    AmmoDesposit();
     ~AmmoDeposit();
 };
 

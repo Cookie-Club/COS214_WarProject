@@ -8,6 +8,8 @@ class CellFeatures : public Cell {
 
 public:
     CellFeatures();
+    void setState(CellState *state);
+    void getState();
     void add(Cell* feature);
     ~CellFeatures();
 

@@ -1,5 +1,9 @@
-//
-// Created by megan on 2022/10/18.
-//
 
 #include "AmmoDepoFactory.h"
+#include "AmmoDeposit.h"
+
+AmmoDepoFactory::AmmoDepoFactory(){};
+
+CellFeatures* AmmoDepoFactory::createFeature(CellFeatures* component){
+    return new AmmoDeposit();
+}
