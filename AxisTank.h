@@ -1,6 +1,6 @@
 /**
 	\class AxisTank
-	\brief Concrete military unit class
+	\brief Concrete Tank military unit of Axis
 	\details Prototype pattern: ConcretePrototype
     Implements clone method of Prototype pattern
 	\author Wian K
@@ -11,10 +11,19 @@
 
 #include "Tank.h"
 
-class AxisTank : public Tank {
-public:
-    AxisTank();
-    MilitaryUnit* clone();
+class AxisTank : public Tank 
+{
+	public:
+		/**
+			\fn AxisTank::AxisTank
+			\brief Constructor
+		*/
+		AxisTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption);
+		/**
+			\fn AxisTank::clone
+			\brief Return copy of the object
+		*/
+		MilitaryUnit* clone();
 };
 
 

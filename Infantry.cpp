@@ -1,11 +1,7 @@
 #include "Infantry.h"
 
 Infantry::Infantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption)
-:TeamMembers(damage, healthpoints, belongsTo, UnitType::infantry), rationConsumption(rationConsumption){}
-
-Infantry::Infantry(){
-    type = infantry;
-}
+:TeamMembers(damage, healthpoints, UnitType::infantry, belongsTo), rationConsumption(rationConsumption){}
 
 int Infantry::getRationConsumption()
 {

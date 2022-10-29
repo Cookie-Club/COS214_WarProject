@@ -18,13 +18,11 @@ class Infantry : public TeamMembers {
             \brief Constructor
         */
         Infantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
-        virtual MilitaryUnit* clone() = 0;
         /**
-            \fn Infantry::Infantry
-            \brief Default constructor
-            \details Sets type to Infantry
+            \fn Infantry::clone
+            \brief Pure virtual function inherited from MilitaryUnit
         */
-        Infantry();
+        virtual MilitaryUnit* clone() = 0;
         /**
             \fn Tank::getRationConsumption
             \brief Getter for rationConsumption

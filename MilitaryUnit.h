@@ -6,8 +6,6 @@
 	\defgroup MilitaryUnit
 	\authors Robert Officer, Wian Koekemoer
 	\class MilitaryUnit
-	\enum UntiType
-	Used to identify the type of the MilitaryUnit object. It is used in Chain of Responsibility to check if a ConcreteHandler is meant to deal with that specific object. 
 */
 
 #ifndef MILITARYUNIT_H
@@ -23,16 +21,15 @@ class Participants
 	public:
 		std::vector<MilitaryUnit*> getArmy();
 };
-
+/**
+   \enum UnitType
+   \brief Used to identify the type of the MilitaryUnit object. 
+   \details It is used in Chain of Responsibility to check if a ConcreteHandler is meant to deal with that specific object. 
+*/
 enum UnitType { infantry, tank, squad };
 
 class MilitaryUnit {
 	public:
-		/**
-            \fn MilitaryUnit:MilitaryUnit
-            \brief Default constructor
-        */
-		MilitaryUnit(){};
 		/**
             \fn MilitaryUnit:MilitaryUnit
             \brief Constructor

@@ -16,12 +16,7 @@
 class Squad : public MilitaryUnit {
 
     public:
-        /** 
-            \fn Squad::Squad
-            \brief Default constructor
-            \details Sets type to Squad
-        */
-        Squad();
+        
         /**
             \fn Squad::Squad
             \brief Constructor

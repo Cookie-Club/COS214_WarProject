@@ -1,23 +1,13 @@
 #include "AlliedTank.h"
 
-/**
-    \fn AlliedTank::AlliedTank
-    \brief Default Constructor
-*/
-AlliedTank::AlliedTank() {
+AlliedTank::AlliedTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption) 
+:Tank(damage, healthpoints, belongsTo, fuelConsumption){
     std::cout << "AlliedTank created";
 }
 
-/**
-    \fn AlliedTank::clone
-    \brief Return copy of the object
-*/
 MilitaryUnit* AlliedTank::clone()
 {
-    MilitaryUnit* temp = new AlliedTank();
-    ((AlliedTank*)temp)->setHealthpoints(this->healthpoints);
-    ((AlliedTank*)temp)->setDamage(this->damage);
-    ((AlliedTank*)temp)->setFuelConsumption(this->fuelConsumption);
+    MilitaryUnit* temp = new AlliedTank(this->damage, this->healthpoints, this->belongsTo, this->fuelConsumption);
 
     return temp;
 }
