@@ -19,12 +19,6 @@ class TeamMembers : public MilitaryUnit {
     public:
         /**
             \fn TeamMembers:TeamMembers
-            \brief Default constructor
-        */
-        
-        TeamMembers(){};
-        /**
-            \fn TeamMembers:TeamMembers
             \brief Constructor
             \details Sets damage and healthpoints
         */
