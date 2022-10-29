@@ -1,6 +1,6 @@
 /**
 	\class AxisInfantry
-	\brief Concrete military unit class
+	\brief Concrete Infantry military unit of Axis
 	\details Prototype pattern: ConcretePrototype
     Implements clone method of Prototype pattern
 	\author Wian K
@@ -11,10 +11,19 @@
 
 #include "Infantry.h"
 
-class AxisInfantry : public Infantry {
-public:
-    AxisInfantry();
-    MilitaryUnit* clone();
+class AxisInfantry : public Infantry 
+{
+	public:
+		/**
+			\fn AxisInfantry::AxisInfantry
+			\brief Constructor
+		*/
+		AxisInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
+		/**
+			\fn AxisInfantry::clone
+			\brief Return copy of the object
+		*/
+		MilitaryUnit* clone();
 };
 
 

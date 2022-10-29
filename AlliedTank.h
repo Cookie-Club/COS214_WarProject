@@ -1,6 +1,6 @@
 /**
 	\class AlliedTank
-	\brief Concrete military unit class
+	\brief Concrete Tank military unit of Allies
 	\details Prototype pattern: ConcretePrototype 
     Implements clone method of Prototype pattern
 	\author Wian K
@@ -11,10 +11,19 @@
 
 #include "Tank.h"
 
-class AlliedTank : public Tank {
-public:
-    AlliedTank();
-    MilitaryUnit* clone();
+class AlliedTank : public Tank 
+{
+	public:
+		/**
+			\fn AlliedTank::AlliedTank
+			\brief Constructor
+		*/
+		AlliedTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption);
+		/**
+			\fn AlliedTank::clone
+			\brief Return copy of the object
+		*/
+		MilitaryUnit* clone();
 };
 
 
