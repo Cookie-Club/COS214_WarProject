@@ -4,22 +4,23 @@
 #include "MilitaryUnit.h"
 #include "Cell.h"
 #include "Action.h"
-
+#include "attackStrategy.h"
 
 class Participants {
 
-private:
-	MilitaryUnit attribute;
-	vector<MilitaryUnit*> army;
-	vector<Cell> ownedTerritories;
+protected:
+	std::vector<MilitaryUnit*> army;
+	std::vector<Cell> ownedTerritories;
 	Action* state;
 	double resources;
-	vector<attackStrategy*> moveStrategies;
+	std::vector<attackStrategy*> moveStrategies;
 
 public:
 	void armyMove();
 	virtual void retreat() = 0;
     void setState(Action* state);
+	void templateMethod();
+	std::vector<MilitaryUnit*> getArmy();
 };
 
 #endif

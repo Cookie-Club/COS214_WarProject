@@ -1,7 +1,7 @@
 /**
 	\class AlliedInfantry
 	\brief Concrete military unit class
-	\details Prototype pattern: ConcretePrototype
+	\details Prototype pattern: ConcretePrototype 
     Implements clone method of Prototype pattern
 	\author Wian K
 */

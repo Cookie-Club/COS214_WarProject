@@ -11,6 +11,11 @@
 
 class Order {
 public:
+/**
+	\fn Order::execute
+	\brief Pure virtual function
+	\details Defined in the children of the Order class
+*/
 	virtual void execute() = 0;
 };
 

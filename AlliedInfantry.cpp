@@ -1,6 +1,10 @@
 
 #include "AlliedInfantry.h"
 
+/**
+    \fn AlliedInfantry::AlliedInfantry
+    \brief Defaulkt Constructor
+*/
 AlliedInfantry::AlliedInfantry() {
     std::cout << "AlliedInfantry created";
 }

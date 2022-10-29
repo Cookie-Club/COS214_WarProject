@@ -1,5 +1,9 @@
-
 #include "AlliedTank.h"
+
+/**
+    \fn AlliedTank::AlliedTank
+    \brief Default Constructor
+*/
 AlliedTank::AlliedTank() {
     std::cout << "AlliedTank created";
 }

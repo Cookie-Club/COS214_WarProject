@@ -4,8 +4,11 @@ SquadDamage::SquadDamage(){}
 
 void SquadDamage::iterateThroughSquad(MilitaryUnit * currentUnit){
     if(currentUnit->getType() == squad){
-        for(int i = 0; i < currentUnit->getMembers().capacity(); i++){
-            next->damageMember(currentUnit->getMembers().at(i));
+        for(int i = 0; i < ((Squad*)currentUnit)->getMembers().capacity(); i++){
+            next->damageMember(((Squad*)currentUnit)->getMembers().at(i));
         }
+    }
+    else if (next){
+        next->damageMember(((Squad*)currentUnit)->getMembers().at(i));
     }
 }

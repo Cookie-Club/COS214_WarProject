@@ -8,7 +8,7 @@ class Bog : public Cell {
 
 public:
     double resourceUseMultiplier;
-    void getState();
+    CellState* getState();
     void setState(CellState* state);
 };
 
