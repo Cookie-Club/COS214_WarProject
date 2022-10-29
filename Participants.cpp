@@ -10,3 +10,9 @@ void Participants::setState(Action *state) {
     this->state=state;
 
 }
+
+void Participants::templateMethod(){
+    //If not at the back of the board then retreat
+    // how to know if it is at the back -> function for each side?
+    retreat();
+}

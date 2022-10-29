@@ -1,5 +1,10 @@
 
 #include "AxisTank.h"
+
+/**
+    \fn AxisTank::AxisTank
+    \brief Default Constructor
+*/
 AxisTank::AxisTank() {
     std::cout << "AxisTank created";
 }

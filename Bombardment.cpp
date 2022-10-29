@@ -22,6 +22,8 @@ void Bombardment::add(Bombardment * a){
     }
 }
 
+void Bombardment::damageMember(MilitaryUnit * currentUnit){}
+
 void Bombardment::execute(){
     if(!targetedCell->getOccupyingForce().empty()){
         for(int i = 0; i < targetedCell->getOccupyingForce().capacity(); i++){
