@@ -20,6 +20,8 @@ protected:
 	Action* state;
 	double resources;
 	std::vector<attackStrategy*> moveStrategies;
+    int totalHealthPoints;
+    int totalDamage;
 
 public:
 	void armyMove();
@@ -28,6 +30,10 @@ public:
 	void templateMethod();
 	std::vector<MilitaryUnit*> getArmy();
 	Action * getState();
+    int getTotalHealthPoints();
+    void setTotalHealthPoints();
+    int getTotalDamage();
+    void setTotalDamage();
 };
 
 #endif
