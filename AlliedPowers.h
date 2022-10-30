@@ -6,6 +6,7 @@
 class AlliedPowers : public Participants {
 public:
     void retreat();
+    bool atBack();
 };
 
 
