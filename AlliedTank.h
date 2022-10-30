@@ -17,6 +17,10 @@ class AlliedTank : public Tank
 		/**
 			\fn AlliedTank::AlliedTank
 			\brief Constructor
+            \param[in] damage 			The total damage the AlliedTank object should deal to other units
+            \param[in] healthpoints		The number of healthpoints the AlliedTank object should have
+            \param[in] belongsTo		Pointer to Participants object that owns the AlliedTank object
+            \param[in] fuelConsumption	An float value denoting the total fuel consumed when traveling
 		*/
 		AlliedTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption);
 		/**

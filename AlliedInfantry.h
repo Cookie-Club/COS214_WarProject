@@ -17,6 +17,10 @@ class AlliedInfantry : public Infantry
 		/**
 			\fn AlliedInfantry::AlliedInfantry
 			\brief Constructor
+            \param[in] damage               The total damage the AlliedInfantry object should deal to other units
+            \param[in] healthpoints         The number of healthpoints the AlliedInfantry object should have
+            \param[in] belongsTo            Pointer to Participants object that owns the AlliedInfantry object
+            \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
 		*/
 		AlliedInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
 		/**

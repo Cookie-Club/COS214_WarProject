@@ -33,7 +33,9 @@ class MilitaryUnit {
 		/**
             \fn MilitaryUnit:MilitaryUnit
             \brief Constructor
-			\details sets belongsTo and type
+			\details Sets belongsTo and type
+            \param[in] belongsTo    A pointer to the Participants object that owns the MilitaryUnit object
+            \param[in] type         A UnitType value that describes which kind of unit the MilitaryUnit object is
         */
         MilitaryUnit(Participants* belongsTo, UnitType type)
 		{
@@ -41,42 +43,42 @@ class MilitaryUnit {
 			this->type = type;
 		}
 		/**
-            \fn MilitaryUnit:clone
+            \fn MilitaryUnit::clone
             \brief Pure virtual clone method of Prototype pattern
         */
         virtual MilitaryUnit* clone() = 0;
 		/**
-            \fn MilitaryUnit:~MilitaryUnit
+            \fn MilitaryUnit::~MilitaryUnit
             \brief Virtual Destructor
         */
         virtual ~MilitaryUnit();
 		/**
-            \fn MilitaryUnit:isLeaf
+            \fn MilitaryUnit::isLeaf
             \brief Definition for children's implementation
 			\details Returns true or false to communicate whether object is 
 			\details leaf participant of Composite pattern
         */
         virtual bool isLeaf() = 0;
 		/**
-            \fn MilitaryUnit:receiveDamage
-            \brief Definition for children's implementation
-			\details Reduces healthpoints of TeamMembers, or delegated to members of Squad
+            \fn MilitaryUnit::receiveDamage
+            \brief Definition of abstract operation; to be implemented in children
+            \param[in] damage   Integer number that represents the total damage the unit can dealz
         */
         virtual bool receiveDamage(int damage) = 0;
 		/**
-            \fn MilitaryUnit:getType
-            \brief Getter for type
-			\details Used to determine which class to cast to
+            \fn MilitaryUnit::getType
+            \brief Getter for type variable
+			\details Called by other objects to determine which class to cast the object to
         */
         UnitType getType(){return this->type;};
 		/**
-            \fn MilitaryUnit:getOwner
-            \brief Getter for belongsTo
-			\details Used to determine which Participant to object belongs to
+            \fn MilitaryUnit::getOwner
+            \brief Getter for belongsTo variable
+			\details called to determine which Participant the object belongs to
         */
         Participants* getOwner(){return belongsTo;};
 	protected:
-		UnitType type;
+        UnitType type;
 		Participants* belongsTo;
 };
 
