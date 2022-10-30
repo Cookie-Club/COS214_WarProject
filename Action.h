@@ -11,7 +11,7 @@ class Action {
         ActionType type;
     public:
         Action(ActionType);
-        virtual void handleChange(Participants* p) = 0;
+        virtual int handleChange() = 0;
         ActionType getType();
 };
 

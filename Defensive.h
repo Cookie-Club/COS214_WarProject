@@ -9,7 +9,7 @@
 class Defensive : public Action {
 public:
     Defensive();
-    void handleChange(Participants* p);
+    int handleChange(int dam);
 };
 
 
