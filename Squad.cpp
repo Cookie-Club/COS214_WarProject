@@ -107,3 +107,9 @@ void Squad::removeSquadMember(MilitaryUnit* member){
         }
     }
 }
+
+void Squad::callInBombardment(Cell * targetedCell)
+{
+    Order * bomb = new Bombardment(targetedCell);
+    bomb->execute();
+}

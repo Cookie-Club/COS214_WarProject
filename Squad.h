@@ -3,7 +3,7 @@
 	\brief Composite satructure of military units
 	\details Stores TeamMember objects, stores occupying cell, implements movement
     Composite pattern: Composite participant
-	\author Wian Koekemoer
+	\authors Wian Koekemoer, Robert Officer
 */
 
 #ifndef SQUAD_H
@@ -11,7 +11,15 @@
 #include "TeamMembers.h"
 #include "MilitaryUnit.h"
 #include "Cell.h"
+#include "Order.h"
 #include <vector>
+
+//Forward declaration for callInBombardment usage of the constructor and execute methods
+class Bombardment : public Order{
+    public:
+        Bombardment(Cell * targetedCell);
+        void execute(){};
+};
 
 class Squad : public MilitaryUnit {
 
@@ -70,6 +78,13 @@ class Squad : public MilitaryUnit {
             \details returning bool value that represents whether squad died
         */
         virtual bool receiveDamage(int damage);
+
+        /**
+            \fn Squad::callInBombardment
+            \brief Executes the Command and Chain of Responsibility
+            \details Creates a new bombardment order and executes the new order on the passed in cell.
+        */
+        void callInBombardment(Cell * targetedCell);
 
     protected:
         Cell* occupyingCell;
