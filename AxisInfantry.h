@@ -17,6 +17,10 @@ class AxisInfantry : public Infantry
 		/**
 			\fn AxisInfantry::AxisInfantry
 			\brief Constructor
+            \param[in] damage               The total damage the AxisInfantry object should deal to other units
+            \param[in] healthpoints         The number of healthpoints the AxisInfantry object should have
+            \param[in] belongsTo            Pointer to Participants object that owns the AxisInfantry object
+            \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
 		*/
 		AxisInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
 		/**

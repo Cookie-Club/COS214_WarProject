@@ -16,6 +16,10 @@ class Infantry : public TeamMembers {
         /**
             \fn Infantry::Infantry
             \brief Constructor
+            \param[in] damage               The total damage the Infantry object should deal to other units
+            \param[in] healthpoints         The number of healthpoints the Infantry object should have
+            \param[in] belongsTo            Pointer to Participants object that owns the Infantry object
+            \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
         */
         Infantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
         /**
@@ -31,8 +35,9 @@ class Infantry : public TeamMembers {
         /**
             \fn Tank::setRationConsumption
             \brief Setter for rationConsumption
+            \param[in] rationConsumption    Sets the total rations consumed when traveling
         */
-        void setRationConsumption(int);
+        void setRationConsumption(int rationConsumption);
     protected:
         int rationConsumption;
 };
