@@ -1,3 +1,9 @@
+/**
+    \file Infantry.cpp
+    \brief Implements Infantry class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "Infantry.h"
 
 Infantry::Infantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption)

@@ -1,4 +1,9 @@
-
+/**
+    \file AxisTank.cpp
+    \brief Implements AxisTank class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "AxisTank.h"
 
 AxisTank::AxisTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption) 

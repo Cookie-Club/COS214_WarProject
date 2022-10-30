@@ -1,8 +1,14 @@
 /**
+    \file Infantry.h
+    \brief Defines Infantry class
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
+/**
 	\class Infantry
 	\brief Abstract interface for infantry objects
     \details Prototype pattern: AbstractProduct
-	\author Wian K
+	\author Wian Koekemoer
 */
 
 #ifndef INFANTRY_H
@@ -22,6 +28,7 @@ class Infantry : public TeamMembers {
             \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
         */
         Infantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
+        virtual ~Infantry();
         /**
             \fn Infantry::clone
             \brief Pure virtual function inherited from MilitaryUnit

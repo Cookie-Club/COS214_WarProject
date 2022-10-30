@@ -1,4 +1,10 @@
 /**
+    \file Squad.h
+    \brief Defines Squad class
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
+/**
 	\class Squad
 	\brief Composite satructure of military units
 	\details Stores TeamMember objects, stores occupying cell, implements movement
@@ -31,6 +37,12 @@ class Squad : public MilitaryUnit {
             \param[in] belongsTo    Pointer to Participants object that owns the Squad object
         */
         Squad(Participants* belongsTo);
+        /**
+            \fn Squad::~Squad
+            \brief Destructor
+            \details Deletes members
+        */
+        ~Squad();
         /**
             \fn Squad::moveSquad
             \brief Select cell to move to

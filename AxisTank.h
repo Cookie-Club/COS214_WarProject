@@ -20,9 +20,10 @@ class AxisTank : public Tank
             \param[in] damage 			The total damage the AxisTank object should deal to other units
             \param[in] healthpoints		The number of healthpoints the AxisTank object should have
             \param[in] belongsTo		Pointer to Participants object that owns the AxisTank object
-            \param[in] fuelConsumption	An float value denoting the total fuel consumed when traveling
+            \param[in] fuelConsumption	A float value denoting the total fuel consumed when traveling
 		*/
 		AxisTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption);
+        virtual ~AxisTank();
 		/**
 			\fn AxisTank::clone
 			\brief Return copy of the object

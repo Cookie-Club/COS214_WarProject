@@ -1,4 +1,9 @@
-
+/**
+    \file AlliedInfantry.cpp
+    \brief Implements AlliedInfantry class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "AlliedInfantry.h"
 
 AlliedInfantry::AlliedInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption) 

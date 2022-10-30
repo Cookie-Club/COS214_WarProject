@@ -4,6 +4,10 @@
 
 #include "Action.h"
 
-const string &Action::getBattleState() const {
-    return this->state;
+Action::Action(ActionType aT){
+    type = aT;
+}
+
+ActionType Action::getType(){
+    return type;
 }

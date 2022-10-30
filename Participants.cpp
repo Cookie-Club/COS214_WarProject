@@ -16,3 +16,7 @@ void Participants::templateMethod(){
     // how to know if it is at the back -> function for each side?
     retreat();
 }
+
+Action * Participants::getState(){
+    return state;
+}

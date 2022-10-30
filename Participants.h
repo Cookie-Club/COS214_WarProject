@@ -1,3 +1,9 @@
+/**
+    \file Participants.h
+    \brief Defines Participants class and ActionType enum
+    \authors Wian Koekemoer, Robert Officer
+    \date 30/10/22
+*/
 #ifndef PARTICIPANTS_H
 #define PARTICIPANTS_H
 
@@ -21,6 +27,7 @@ public:
     void setState(Action* state);
 	void templateMethod();
 	std::vector<MilitaryUnit*> getArmy();
+	Action * getState();
 };
 
 #endif
