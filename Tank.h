@@ -1,4 +1,10 @@
 /**
+    \file Tank.h
+    \brief Defines Tank class
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
+/**
 	\class Tank
 	\brief Abstract interface for tank objects
     \details Prototype pattern: AbstractProduct
@@ -16,8 +22,13 @@ class Tank : public TeamMembers {
         /**
             \fn Tank::Tank
             \brief Constructor
+            \param[in] damage           The total damage the Infantry object should deal to other units
+            \param[in] healthpoints     The number of healthpoints the Infantry object should have
+            \param[in] belongsTo        Pointer to Participants object that owns the Infantry object
+            \param[in] fuelConsumption  A float value denoting the total fuel consumed when traveling
         */
         Tank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption);
+        virtual ~Tank();
         /**
             \fn Tank::clone
             \brief Pure virtual function inherited from MilitaryUnit

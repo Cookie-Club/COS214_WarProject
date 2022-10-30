@@ -1,4 +1,10 @@
 /**
+    \file MilitaryUnit.h
+    \brief Defines MilitaryUnit class and UnitType enum
+    \authors Wian Koekemoer, Robert Officer
+    \date 30/10/22
+*/
+/**
 	\class MilitaryUnit
 	\brief Abstract interface for all military unit objects
 	\details An abstract interface
@@ -10,8 +16,9 @@
 #ifndef MILITARYUNIT_H
 #define MILITARYUNIT_H
 
-#include <string>
+#include "Action.h"
 
+#include <string>
 #include <vector>
 #include <cstdlib>
 //Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
@@ -19,6 +26,7 @@ class Participants
 {
 	public:
 		std::vector<MilitaryUnit*> getArmy();
+        Action * getState();
 };
 /**
    \enum UnitType

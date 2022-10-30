@@ -1,4 +1,10 @@
 /**
+    \file AxisInfantry.h
+    \brief Defines AxisInfantry class
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
+/**
 	\class AxisInfantry
 	\brief Concrete Infantry military unit of Axis
 	\details Prototype pattern: ConcretePrototype
@@ -23,6 +29,7 @@ class AxisInfantry : public Infantry
             \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
 		*/
 		AxisInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
+        virtual ~AxisInfantry();
 		/**
 			\fn AxisInfantry::clone
 			\brief Return copy of the object

@@ -1,9 +1,11 @@
+
 /**
 	\file Order.h
+	\class Order
    	\brief Order forms the Command Participant
    	\details An abstract interface that forms part of the Command pattern used for delivering requests to certain classes and objects 
    	\author Robert Officer
-	\class Order
+	\date 30/10/22
 */
 
 #ifndef ORDER_H

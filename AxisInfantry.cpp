@@ -1,4 +1,9 @@
-
+/**
+    \file AxisInfantry.cpp
+    \brief Implements AxisInfantry class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "AxisInfantry.h"
 
 AxisInfantry::AxisInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption) 

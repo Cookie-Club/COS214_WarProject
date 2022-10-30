@@ -32,3 +32,9 @@ void Bombardment::execute(){
         }
     }
 }
+
+Bombardment::~Bombardment(){
+    delete SquadAttack;
+    delete IDAttack;
+    delete TDAttack;
+}

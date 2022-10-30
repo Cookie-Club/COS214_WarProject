@@ -1,5 +1,6 @@
 /**
     \file Bombardment.h
+    \class Bombardment
     \brief Parent handler for Chain of Responsibilty Pattern
     \details The Bombardment class is in charge of receiving the intial request and then determining. The parent of this class is the Order class.
     If the targeted cell has multiple squads on it, the Bombardment class is used to handle this responsibility.
@@ -32,6 +33,7 @@ class Bombardment : public Order {
             \fn Bombardment::Bombardment
             \brief Constructor Overloader
             \details Has a parameter pointer that knows which cell to bombard
+            \param[in] targetedCell The cell on which bombardment is being called on
         */
         Bombardment(Cell* targetedCell);
         /**
@@ -40,6 +42,7 @@ class Bombardment : public Order {
             \details Checks if the next attribute has been added. If next has not been set then it
             sets next to the parameter passed in. If yes then continues down the next chain until the 
             next attribute is not set and then sets the current classes next to the parameter passed in.
+            \param[in] x Adds additional links to the end of the chain of the Chain of Responsibility Pattern 
         */
         void add(Bombardment * x);
         /**
@@ -55,8 +58,11 @@ class Bombardment : public Order {
             \brief A virtual function to deal damage to military units.
             \details Function that deals damage on individual military units by calling receive damage of the current unit 
             parameter that is passed in. Overriden in the children class.
+            \param[in] currentUnit The unit that is to have damage dealt to them
         */
         virtual void damageMember(MilitaryUnit * currentUnit);
+
+        ~Bombardment();
     protected:
         Bombardment * next;
         Cell * targetedCell;

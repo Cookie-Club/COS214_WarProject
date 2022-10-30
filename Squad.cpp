@@ -1,3 +1,9 @@
+/**
+    \file Squad.cpp
+    \brief Implements Squad class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "Squad.h"
 #include "Infantry.h"
 #include "Tank.h"
@@ -7,6 +13,19 @@ Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
     belongsTo->getArmy().push_back(this);
 }
+
+Squad::~Squad()
+{
+    MilitaryUnit* temp = nullptr;
+    std::vector<MilitaryUnit*>:: iterator it;
+    for (it = this->members.begin(); it != this->members.end(); ++it)
+    {
+        temp = *it;
+        this->members.erase(it);
+        delete temp;
+    }
+}
+
 void Squad::moveSquad()
 {
 
@@ -15,6 +34,17 @@ void Squad::moveSquad()
         Algorithm to select cell goes here
 
     */
+
+    if(belongsTo->getState()->getType() == Aggressive){
+        if(Ammo > 50){
+            //callInBombardment();
+        }
+        
+
+    }
+    else if(belongsTo->getState()->getType() == Defensive){
+        
+    }
 
     // Calculate total resource consumption
     int rationsConsumed = 0;
@@ -112,4 +142,4 @@ void Squad::callInBombardment(Cell * targetedCell)
 {
     Order * bomb = new Bombardment(targetedCell);
     bomb->execute();
-}
+    delete bomb;

@@ -1,4 +1,10 @@
 /**
+    \file TeamMembers.h
+    \brief Defines TeamMembers class
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
+/**
 	\class TeamMembers
 	\brief Abstract interface for basic military units
 	\details Defines damage and healthpoitns variables and their getters/setters
@@ -27,6 +33,7 @@ class TeamMembers : public MilitaryUnit {
             \param[in] belongsTo    Pointer to Participants object that owns the Squad object
         */
         TeamMembers(int damage, int healthpoints, UnitType type, Participants* belongsTo);
+        virtual ~TeamMembers();
         /**
             \fn TeamMembers:clone
             \brief Inherited from MilitaryUnit, not implemented

@@ -1,3 +1,9 @@
+/**
+    \file TeamMembers.cpp
+    \brief Implements TeamMembers class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "TeamMembers.h"
 
 TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participants* belongsTo)
