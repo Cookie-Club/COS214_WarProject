@@ -11,6 +11,7 @@ Bombardment::Bombardment(Cell * targetedCell){
     add(IDAttack);
     add(TDAttack);
 
+    this->targetedCell = targetedCell;
 }
 
 void Bombardment::add(Bombardment * a){

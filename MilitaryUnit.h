@@ -1,11 +1,10 @@
 /**
-	\file MilitaryUnit.h
+	\class MilitaryUnit
 	\brief Abstract interface for all military unit objects
 	\details An abstract interface
 	Composite pattern: Component
 	\defgroup MilitaryUnit
 	\authors Robert Officer, Wian Koekemoer
-	\class MilitaryUnit
 */
 
 #ifndef MILITARYUNIT_H
