@@ -1,9 +1,5 @@
 #include "Bog.h"
 
-void Bog::getState()
-{
-}
-
-void Bog::setState(CellState *state)
-{
+Bog::Bog () {
+    resourceUseMultiplier = 1.5;
 }
