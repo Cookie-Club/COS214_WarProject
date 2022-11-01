@@ -1,7 +1,13 @@
 /**
+    \file AlliedInfantry.h
+    \brief Defines AlliedInfantry class
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
+/**
 	\class AlliedInfantry
-	\brief Concrete military unit class
-	\details Prototype pattern: ConcretePrototype
+	\brief Concrete Infantry military unit of Allies
+	\details Prototype pattern: ConcretePrototype 
     Implements clone method of Prototype pattern
 	\author Wian K
 */
@@ -11,10 +17,24 @@
 
 #include "Infantry.h"
 
-class AlliedInfantry : public Infantry {
-public:
-    AlliedInfantry();
-    MilitaryUnit* clone();
+class AlliedInfantry : public Infantry 
+{
+	public:
+		/**
+			\fn AlliedInfantry::AlliedInfantry
+			\brief Constructor
+            \param[in] damage               The total damage the AlliedInfantry object should deal to other units
+            \param[in] healthpoints         The number of healthpoints the AlliedInfantry object should have
+            \param[in] belongsTo            Pointer to Participants object that owns the AlliedInfantry object
+            \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
+		*/
+		AlliedInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
+        virtual ~AlliedInfantry();
+		/**
+			\fn AlliedInfantry::clone
+			\brief Return copy of the object
+		*/
+		MilitaryUnit* clone();
 };
 
 

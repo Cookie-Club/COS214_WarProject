@@ -4,6 +4,6 @@ Aggressive::Aggressive() {
     state="Aggressive";
 }
 
-void Aggressive::handleChange(Participants *p) {
-    p->setState(new Defensive());
+int Aggressive::handleChange( int dam) {
+     return dam*2;
 }

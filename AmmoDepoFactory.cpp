@@ -1,4 +1,3 @@
-
 #include "AmmoDepoFactory.h"
 #include "AmmoDeposit.h"
 

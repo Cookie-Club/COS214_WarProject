@@ -1,19 +1,19 @@
-
+/**
+    \file AxisTank.cpp
+    \brief Implements AxisTank class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "AxisTank.h"
-AxisTank::AxisTank() {
+
+AxisTank::AxisTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption) 
+:Tank(damage, healthpoints, belongsTo, fuelConsumption){
     std::cout << "AxisTank created";
 }
 
-/**
-    \fn AxisTank::clone
-    \brief Return copy of the object
-*/
 MilitaryUnit* AxisTank::clone()
 {
-    MilitaryUnit* temp = new AxisTank();
-    ((AxisTank*)temp)->setHealthpoints(this->healthpoints);
-    ((AxisTank*)temp)->setDamage(this->damage);
-    ((AxisTank*)temp)->setFuelConsumption(this->fuelConsumption);
+    MilitaryUnit* temp = new AxisTank(this->damage, this->healthpoints, this->belongsTo, this->fuelConsumption);
 
     return temp;
 }

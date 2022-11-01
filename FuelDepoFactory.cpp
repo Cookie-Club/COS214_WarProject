@@ -2,8 +2,7 @@
 #include "FuelDeposit.h"
 
 CellFeatures* FuelDepoFactory::createFeature(CellFeatures* component){
-    CellFeatures* FD = new FuelDeposit();
-    FD->setState(component->getState());
-
-    return FD;
+    CellFeatures* fd = new FuelDeposit();
+    fd->setState(component->getState());
+    return fd;
 }

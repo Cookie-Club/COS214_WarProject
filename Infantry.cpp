@@ -1,27 +1,19 @@
+/**
+    \file Infantry.cpp
+    \brief Implements Infantry class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "Infantry.h"
 
-/**
-    \fn Infantry::Infantry
-    \brief Default constructor
-    \details Sets type to Infantry
-*/
-Infantry::Infantry(){
-    type = infantry;
-}
+Infantry::Infantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption)
+:TeamMembers(damage, healthpoints, UnitType::infantry, belongsTo), rationConsumption(rationConsumption){}
 
-/**
-    \fn Tank::getRationConsumption
-    \brief Getter for rationConsumption
-*/
 int Infantry::getRationConsumption()
 {
     return this->rationConsumption;
 }
 
-/**
-    \fn Tank::setRationConsumption
-    \brief Setter for rationConsumption
-*/
 void Infantry::setRationConsumption(int rationConsumption)
 {
     this->rationConsumption = rationConsumption;

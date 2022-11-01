@@ -1,19 +1,19 @@
-
+/**
+    \file AxisInfantry.cpp
+    \brief Implements AxisInfantry class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "AxisInfantry.h"
-AxisInfantry::AxisInfantry() {
+
+AxisInfantry::AxisInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption) 
+: Infantry(damage, healthpoints, belongsTo, rationConsumption){
     std::cout << "AxisInfantry created";
 }
 
-/**
-    \fn AxisInfantry::clone
-    \brief Return copy of the object
-*/
 MilitaryUnit* AxisInfantry::clone()
 {
-    MilitaryUnit* temp = new AxisInfantry();
-    ((AxisInfantry*)temp)->setHealthpoints(this->healthpoints);
-    ((AxisInfantry*)temp)->setDamage(this->damage);
-    ((AxisInfantry*)temp)->setRationConsumption(this->rationConsumption
+    MilitaryUnit* temp = new AxisInfantry(this->damage, this->healthpoints, this->belongsTo, this->rationConsumption);
 
     return temp;
 }

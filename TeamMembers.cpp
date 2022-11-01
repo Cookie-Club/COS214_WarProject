@@ -1,45 +1,51 @@
+/**
+    \file TeamMembers.cpp
+    \brief Implements TeamMembers class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "TeamMembers.h"
 
-/**
-    \fn Squad::receiveDamage
-    \brief Reduces unit healthpoints
-    \details Receives damage as a parameter and subtracts it from the unit's healthpoints.
-    Returns true if the unit died, and false if otherwise
-*/
-bool TeamMembers::receiveDamage(int damage){
-    int newHealth = healthpoints - damage;
-    setHealthpoints(newHealth);
+TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participants* belongsTo)
+: MilitaryUnit(belongsTo, type)
+{
+    this->damage = damage;
+    this->healthpoints = healthpoints;
+}
 
-    if(healthpoints > 0){
+bool TeamMembers::receiveDamage(int damage)
+{
+    int newHealth = healthpoints - damage;
+
+    if(newHealth < 0) 
         return false;
-    }
+
+    setHealthpoints(newHealth);
 
     return true;
 }
 
-/**
-    \fn TeamMembers:setHealthpoints
-    \brief Setter for healthpoints variable
-*/
-void TeamMembers::setHealthpoints(int hp)
+void TeamMembers::setHealthpoints(int healthpoints)
 {
-    this->healthpoints = hp;
+    this->healthpoints = healthpoints;
 }
 
-/**
-    \fn TeamMembers::isLeaf
-    \brief Returns true to communicate object is leaf in Composite structure
-*/
 bool TeamMembers::isLeaf()
 {
     return true;
 }
 
-/**
-    \fn TeamMembers::setDamage
-    \brief Setter for damage
-*/
 void TeamMembers::setDamage(int damage)
 {
     this->damage = damage;
+}
+
+std::vector<MilitaryUnit*> getMembers()
+{
+    return std::vector<MilitaryUnit*>();
+}
+
+void TeamMembers::setSquad(Squad* squad)
+{
+    this->squad = squad;
 }

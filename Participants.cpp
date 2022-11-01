@@ -21,3 +21,19 @@ void Participants::templateMethod(){
 Action * Participants::getState(){
     return state;
 }
+
+
+int Participants::getTotalHealthPoints() const {
+    return totalHealthPoints;
+}
+
+void Participants::setTotalHealthPoints() {
+
+}
+
+int Participants::getTotalDamage() const {
+    return totalDamage;
+}
+
+void Participants::setTotalDamage() {
+}
