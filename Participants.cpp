@@ -14,7 +14,8 @@ void Participants::setState(Action *state) {
 void Participants::templateMethod(){
     //If not at the back of the board then retreat
     // how to know if it is at the back -> function for each side?
-    retreat();
+    if (atBack() != true)
+        retreat();
 }
 
 Action * Participants::getState(){
@@ -35,5 +36,4 @@ int Participants::getTotalDamage() const {
 }
 
 void Participants::setTotalDamage() {
-
 }

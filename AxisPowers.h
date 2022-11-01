@@ -6,6 +6,7 @@
 class AxisPowers : public Participants {
 public:
     void retreat();
+    bool atBack();
 };
 
 
