@@ -1,3 +1,4 @@
+
 #include "SquadDamage.h"
 
 SquadDamage::SquadDamage(){}

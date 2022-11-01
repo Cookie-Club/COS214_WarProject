@@ -60,7 +60,7 @@ class MilitaryUnit {
             \fn MilitaryUnit::~MilitaryUnit
             \brief Virtual Destructor
         */
-        virtual ~MilitaryUnit();
+        virtual ~MilitaryUnit(){};
 		/**
             \fn MilitaryUnit::isLeaf
             \brief Definition for children's implementation
@@ -92,3 +92,5 @@ class MilitaryUnit {
 };
 
 #endif
+
+#include "Participants.h"

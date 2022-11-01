@@ -28,7 +28,7 @@ class Infantry : public TeamMembers {
             \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
         */
         Infantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
-        virtual ~Infantry();
+        virtual ~Infantry(){};
         /**
             \fn Infantry::clone
             \brief Pure virtual function inherited from MilitaryUnit

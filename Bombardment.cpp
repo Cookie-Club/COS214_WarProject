@@ -1,11 +1,11 @@
 #include "Bombardment.h"
-
 Bombardment::Bombardment(){}
 
-Bombardment::Bombardment(Cell * targetedCell):SquadAttack(new SquadDamage()), 
-    IDAttack(new InfantryDamage()), 
-    TDAttack(new TankDamage()), 
-    targetedCell(targetedCell){
+Bombardment::Bombardment(Cell * targetedCell){
+    SquadAttack = new SquadDamage();
+    IDAttack = new InfantryDamage();
+    TDAttack = new TankDamage();
+    this->targetedCell = targetedCell;
 
     add(SquadAttack);
     add(IDAttack);

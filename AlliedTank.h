@@ -29,7 +29,7 @@ class AlliedTank : public Tank
             \param[in] fuelConsumption	A float value denoting the total fuel consumed when traveling
 		*/
 		AlliedTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption);
-        virtual ~AlliedTank();
+        virtual ~AlliedTank(){};
 		/**
 			\fn AlliedTank::clone
 			\brief Return copy of the object

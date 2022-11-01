@@ -16,3 +16,8 @@ WorldMap::WorldMap(int worldSize) {
 
     // need to add cell features
 }
+
+Cell *** WorldMap::getGrid()
+{
+    return grid;
+}

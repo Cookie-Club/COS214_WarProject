@@ -16,9 +16,11 @@
 #define SQUAD_H
 #include <vector>
 #include "MilitaryUnit.h"
+#include "Bombardment.h"
 
 //Forward declaration for callInBombardment usage of the constructor and execute methods
 class Bombardment;
+class Cell;
 class Squad : public MilitaryUnit {
 
     public:      
@@ -64,7 +66,8 @@ class Squad : public MilitaryUnit {
             \fn Squad::addMember
             \brief Expands members variable
             \details Adds parameter to members vector
-            \param[in] m    Pointer to MilitaryUnit object which should be added to members vector
+            \param[in] m    
+#include "Bombardment.h"Pointer to MilitaryUnit object which should be added to members vector
         */
         void addMember(MilitaryUnit* m);
         /**

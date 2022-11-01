@@ -29,7 +29,7 @@ class AlliedInfantry : public Infantry
             \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
 		*/
 		AlliedInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
-        virtual ~AlliedInfantry();
+        virtual ~AlliedInfantry(){};
 		/**
 			\fn AlliedInfantry::clone
 			\brief Return copy of the object

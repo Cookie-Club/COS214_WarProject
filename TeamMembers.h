@@ -33,7 +33,7 @@ class TeamMembers : public MilitaryUnit {
             \param[in] belongsTo    Pointer to Participants object that owns the Squad object
         */
         TeamMembers(int damage, int healthpoints, UnitType type, Participants* belongsTo);
-        virtual ~TeamMembers();
+        virtual ~TeamMembers(){};
         /**
             \fn TeamMembers:clone
             \brief Inherited from MilitaryUnit, not implemented
