@@ -2,15 +2,15 @@
 
 WorldMap::WorldMap(int worldSize) {
 
-    this.mapSize = worldSize;
-    this.grid = new Cell **[worldSize];
+    this->mapSize = worldSize;
+    this->grid = new Cell **[worldSize];
 
     for (int i = 0; i < worldSize; i++)
     {
-        this.grid[i] = new Cell *[worldSize];
+        this->grid[i] = new Cell *[worldSize];
         for (int j = 0; j < worldSize; j++)
         {
-            this.grid[i][j] = new Cell();
+            this->grid[i][j] = new Cell();
         }
     }
 

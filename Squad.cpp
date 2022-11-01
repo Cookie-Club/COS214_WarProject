@@ -35,7 +35,7 @@ void Squad::moveSquad()
 
     */
 
-    if(belongsTo->getState()->getType() == ActionType::Agg){
+    if(belongsTo->getState()->getType() == Agg){
         if(Ammo > 50){
             //callInBombardment();
         }
