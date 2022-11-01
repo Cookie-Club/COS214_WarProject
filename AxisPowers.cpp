@@ -1,5 +1,9 @@
-//
-// Created by megan on 2022/10/18.
-//
-
 #include "AxisPowers.h"
+
+void AxisPowers::retreat() {
+
+}
+
+bool AxisPowers::atBack() {
+    return false; //need to still implement this
+}

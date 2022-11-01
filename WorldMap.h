@@ -7,7 +7,8 @@
 class WorldMap {
 
 private:
-	Cell grid[][];
+	Cell ***grid;
+    int mapSize;
 	FeatureFactory* factories;
 
 public:

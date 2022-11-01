@@ -1,7 +1,7 @@
 /**
     \file Participants.h
     \brief Defines Participants class and ActionType enum
-    \authors Wian Koekemoer, Robert Officer
+    \authors Wian Koekemoer, Robert Officer, Megan Hugo
     \date 30/10/22
 */
 #ifndef PARTICIPANTS_H
@@ -26,6 +26,7 @@ protected:
 public:
 	void armyMove();
 	virtual void retreat() = 0;
+    virtual bool atBack() = 0;
     void setState(Action* state);
 	void templateMethod();
 	std::vector<MilitaryUnit*> getArmy();
