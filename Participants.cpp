@@ -9,8 +9,6 @@ void Participants::setState(Action *state) {
     delete this->state;
     this->state=state;
 
-<<<<<<< Updated upstream
-=======
 }
 
 void Participants::templateMethod(){
@@ -22,5 +20,4 @@ void Participants::templateMethod(){
 
 Action * Participants::getState(){
     return state;
->>>>>>> Stashed changes
 }
