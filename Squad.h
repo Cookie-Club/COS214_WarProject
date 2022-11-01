@@ -29,8 +29,7 @@ class Bombardment : public Order{
 
 class Squad : public MilitaryUnit {
 
-    public:
-        
+    public:      
         /**
             \fn Squad::Squad
             \brief Constructor

@@ -4,15 +4,16 @@
 #include <iostream>
 using namespace std;
 
-enum ActionType {Aggressive, Defensive};
+enum ActionType {Agg, Def};
 
 class Action {
     protected:
         ActionType type;
     public:
-        Action(ActionType);
+        Action();
         virtual int handleChange() = 0;
         ActionType getType();
+        void setType(ActionType aT);
 };
 
 #endif

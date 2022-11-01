@@ -1,7 +1,7 @@
 #include "Aggressive.h"
 
-Aggressive::Aggressive() {
-    state="Aggressive";
+Aggressive::Aggressive(){
+    type = Agg;
 }
 
 int Aggressive::handleChange( int dam) {

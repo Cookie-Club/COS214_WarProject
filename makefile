@@ -2,23 +2,23 @@ CC = g++
 CFLAGS = -g -Wall -Werror
 LFLAGS = -static
 TARGET = main.out
-OBJECTS = Aggressive.o AlliedFactory.o AlliedInfantry.o\
+OBJECTS = Action.o Aggressive.o AlliedFactory.o AlliedInfantry.o\
 AlliedOwned.o AlliedPowers.o AlliedTank.o AmmoDepoFactory.o\
 AmmoDeposit.o AxisFactory.o AxisInfantry.o AxisOwned.o\
 AxisPowers.o AxisTank.o Bog.o Bombardment.o Caretaker.o Cell.o\
 CellFeatures.o Context.o Defensive.o Empty.o FeatureFactory.o\
 Flatlands.o Frontline.o FuelDepoFactory.o FuelDeposit.o Infantry.o\
-InfantryDamage.o Infiltrate.o main.o Participants.o SaveState.o\
+InfantryDamage.o Infiltrate.o main.o MilitaryUnit.o SaveState.o\
 Squad.o Tank.o TankDamage.o TeamMembers.o War.o WarScene.o WorldMap.o
 # Linking all the object code:
 all: $(OBJECTS)
 	$(CC) $(LFLAGS) $(OBJECTS) -o $(TARGET)
 
 # Dependencies:
-Aggressive.o: Aggressive.h Aggressive.cpp Action.h
-AlliedFactory.o: AlliedFactory.h AlliedFactory.cpp Factory.h
-AlliedInfantry.o: AlliedInfantry.h AlliedInfantry.cpp Infantry.h TeamMembers.h MilitaryUnit.h
-AlliedOwned.o: AlliedOwned.h AlliedOwned.cpp CellState.h
+Action.o: Action.h Action.cpp
+Aggressive.o: Aggressive.h Aggressive.cpp Action.h Action.cpp
+AlliedFactory.o: AlliedFactory.h AlliedFactory.cpp Factory.h AlliedInfantry.h AlliedInfantry.cpp AlliedTank.h AlliedTank.cpp
+AlliedInfantry.o: AlliedInfantry.h AlliedInfantry.cpp Infantry.h Infantry.cpp
 AlliedPowers.o: AlliedPowers.h AlliedPowers.cpp Participant.h
 AlliedTank.o: AlliedTank.h AlliedTank.cpp Tank.h TeamMembers.h MilitaryUnit.h
 AmmoDepoFactory.o: AmmoDepoFactory.h AmmoDepoFactory.cpp FeatureFactory.h
@@ -45,6 +45,7 @@ Infantry.o: Infantry.h Infantry.cpp TeamMembers.h MilitaryUnit.h
 InfantryDamage.o: InfantryDamage.h InfantryDamage.cpp Bombardment.h Order.h
 Infiltrate.o: Infiltrate.h Infiltrate.cpp attackStrategy.h
 main.o: main.cpp
+MilitaryUnit.o: MilitaryUnit.h MilitaryUnit.cpp
 Participants.o: Participants.h Participants.cpp
 SaveState.o: SaveState.h SaveState.cpp
 Squad.o: Squad.h Squad.cpp MilitaryUnit.h
