@@ -4,12 +4,13 @@
 
 #include "Action.h"
 //#include "Participants.h"
-#include "Aggressive.h"
+//#include "Aggressive.h"
+#include "Frontline.h"
 
 class Defensive : public Action {
 public:
     Defensive();
-    int handleChange(int dam);
+    int handleChange(Squad* s);
 };
 
 

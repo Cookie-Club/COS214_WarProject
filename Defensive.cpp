@@ -4,6 +4,7 @@ Defensive::Defensive() {
     state="Defensive";
 }
 
-int Defensive::handleChange(int dam) {
-    return dam/2;
+int Defensive::handleChange(Squad* s) {
+    attackStrategy* strat=new Frontline();
+    s->setStrategy(strat);
 }

@@ -1,6 +1,6 @@
 #ifndef ACTION_H
 #define ACTION_H
-#include "Participants.h"
+#include "Squad.h"
 #include <iostream>
 using namespace std;
 
@@ -11,7 +11,7 @@ class Action {
         ActionType type;
     public:
         Action(ActionType);
-        virtual int handleChange() = 0;
+        virtual int handleChange(Squad* s) = 0;
         ActionType getType();
 };
 

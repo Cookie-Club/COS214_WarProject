@@ -18,6 +18,8 @@
 #include "MilitaryUnit.h"
 #include "Cell.h"
 #include "Order.h"
+#include "attackStrategy.h"
+#include "Action.h"
 #include <vector>
 
 //Forward declaration for callInBombardment usage of the constructor and execute methods
@@ -103,12 +105,24 @@ class Squad : public MilitaryUnit {
         */
         void callInBombardment(Cell * targetedCell);
 
+    Action *getState() const;
+
+    void setState(Action *state);
+
+    const attackStrategy* getStrategy() const;
+
+    void setStrategy(const attackStrategy* strategy);
+
+    void attack();
+
     protected:
         Cell* occupyingCell;
         std::vector<MilitaryUnit*> members;
         int Ammo;
         int rations;
         float fuel;
+        Action* state;
+        attackStrategy* strategy;
 };
 
 
