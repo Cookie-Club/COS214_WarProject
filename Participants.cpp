@@ -23,17 +23,19 @@ Action * Participants::getState(){
 }
 
 
-int Participants::getTotalHealthPoints() const {
+int Participants::getTotalHealthPoints(){
     return totalHealthPoints;
 }
 
 void Participants::setTotalHealthPoints() {
-
 }
 
-int Participants::getTotalDamage() const {
+int Participants::getTotalDamage(){
     return totalDamage;
 }
 
-void Participants::setTotalDamage() {
+void Participants::setTotalDamage() {}
+
+string Participants::getName(){
+    return name;
 }

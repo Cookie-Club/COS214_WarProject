@@ -35,14 +35,14 @@ void Squad::moveSquad()
 
     */
 
-    if(belongsTo->getState()->getType() == Aggressive){
+    if(belongsTo->getState()->getType() == Agg){
         if(Ammo > 50){
             //callInBombardment();
         }
         
 
     }
-    else if(belongsTo->getState()->getType() == Defensive){
+    else if(belongsTo->getState()->getType() == Def){
         
     }
 

@@ -4,9 +4,10 @@
 #include "Participants.h"
 
 class AlliedPowers : public Participants {
-public:
-    void retreat();
-    bool atBack();
+    public:
+        void retreat();
+        bool atBack();
+        AlliedPowers();
 };
 
 
