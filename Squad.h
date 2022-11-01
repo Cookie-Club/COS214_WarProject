@@ -9,7 +9,7 @@
 	\brief Composite satructure of military units
 	\details Stores TeamMember objects, stores occupying cell, implements movement
     Composite pattern: Composite participant
-	\authors Wian Koekemoer, Robert Officer
+	\authors Wian Koekemoer, Robert Officer, Kaitlyn Sookdhew
 */
 
 #ifndef SQUAD_H
