@@ -17,8 +17,6 @@ class CellFeatures : public Cell {
 
 public:
     CellFeatures();
-    void setState(CellState *state);
-    CellState* getState();
     void add(Cell* feature);
     ~CellFeatures();
 };

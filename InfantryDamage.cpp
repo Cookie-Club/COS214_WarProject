@@ -19,5 +19,3 @@ void InfantryDamage::damageMember(MilitaryUnit * currentUnit){
         next->damageMember(currentUnit);
     }   
 }
-
-

@@ -7,11 +7,12 @@
 #ifndef PARTICIPANTS_H
 #define PARTICIPANTS_H
 
-#include "MilitaryUnit.h"
 #include "Cell.h"
 #include "Action.h"
 #include "attackStrategy.h"
-
+#include <string>
+#include "MilitaryUnit.h"
+class MilitaryUnit;
 class Participants {
 
 protected:
@@ -22,7 +23,7 @@ protected:
 	std::vector<attackStrategy*> moveStrategies;
     int totalHealthPoints;
     int totalDamage;
-    string name;
+    std::string name;
 
 public:
 	void armyMove();
@@ -36,7 +37,7 @@ public:
     void setTotalHealthPoints();
     int getTotalDamage();
     void setTotalDamage();
-    string getName();
+    std::string getName();
 };
 
 #endif

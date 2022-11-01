@@ -2,9 +2,9 @@
 #define ACTION_H
 #include "Participants.h"
 #include <iostream>
+#include "Enumerations.h"
 using namespace std;
 
-enum ActionType {Agg, Def};
 
 class Action {
     protected:

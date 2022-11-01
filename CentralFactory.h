@@ -2,10 +2,10 @@
 #define AXISFACTORY_H
 
 #include "Factory.h"
-#include "AxisInfantry.h"
-#include "AxisTank.h"
+#include "CentralInfantry.h"
+#include "CentralTank.h"
 
-class AxisFactory : public Factory {
+class CentralFactory : public Factory {
 public:
     Infantry* createInfantry();
     Tank* createTank();

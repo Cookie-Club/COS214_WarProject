@@ -2,7 +2,8 @@
 
 void Participants::armyMove() {
 	// TODO - implement Participants::armyMove
-	throw "Not yet implemented";
+	// throw "Not yet implemented";
+    std::cout << "Army has moved\n";
 }
 
 void Participants::setState(Action *state) {
@@ -38,4 +39,10 @@ void Participants::setTotalDamage() {}
 
 string Participants::getName(){
     return name;
+}
+
+
+std::vector<MilitaryUnit*> Participants::getArmy()
+{
+    return army;
 }

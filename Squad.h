@@ -1,7 +1,7 @@
 /**
     \file Squad.h
     \brief Defines Squad class
-    \authors Wian Koekemoer
+    \authors Wian Koekemoer, Robert Officer
     \date 30/10/22
 */
 /**
@@ -14,19 +14,13 @@
 
 #ifndef SQUAD_H
 #define SQUAD_H
-#include "TeamMembers.h"
-#include "MilitaryUnit.h"
-#include "Cell.h"
-#include "Order.h"
 #include <vector>
+#include "MilitaryUnit.h"
+#include "Bombardment.h"
 
 //Forward declaration for callInBombardment usage of the constructor and execute methods
-class Bombardment : public Order{
-    public:
-        Bombardment(Cell * targetedCell);
-        void execute(){};
-};
-
+class Bombardment;
+class Cell;
 class Squad : public MilitaryUnit {
 
     public:      
@@ -72,7 +66,8 @@ class Squad : public MilitaryUnit {
             \fn Squad::addMember
             \brief Expands members variable
             \details Adds parameter to members vector
-            \param[in] m    Pointer to MilitaryUnit object which should be added to members vector
+            \param[in] m    
+#include "Bombardment.h"Pointer to MilitaryUnit object which should be added to members vector
         */
         void addMember(MilitaryUnit* m);
         /**
@@ -112,3 +107,5 @@ class Squad : public MilitaryUnit {
 
 
 #endif //SQUAD_H
+#include "TeamMembers.h"
+#include "Order.h"

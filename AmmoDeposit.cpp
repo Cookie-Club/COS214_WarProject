@@ -1,6 +1,3 @@
-
 #include "AmmoDeposit.h"
 
-AmmoDeposit::AmmoDeposit(){
-
-}
+AmmoDeposit::AmmoDeposit(){}

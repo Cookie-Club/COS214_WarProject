@@ -6,13 +6,14 @@
 
 class WorldMap {
 
-private:
+protected:
 	Cell ***grid;
     int mapSize;
 	FeatureFactory* factories;
 
 public:
 	WorldMap(int worldSize);
+	Cell *** getGrid();
 };
 
 #endif

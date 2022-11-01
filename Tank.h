@@ -15,7 +15,6 @@
 #define TANK_H
 
 #include "TeamMembers.h"
-#include "MilitaryUnit.h"
 
 class Tank : public TeamMembers {
     public:
@@ -28,7 +27,7 @@ class Tank : public TeamMembers {
             \param[in] fuelConsumption  A float value denoting the total fuel consumed when traveling
         */
         Tank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption);
-        virtual ~Tank();
+        virtual ~Tank(){};
         /**
             \fn Tank::clone
             \brief Pure virtual function inherited from MilitaryUnit

@@ -7,7 +7,7 @@
 #include "Squad.h"
 #include "Infantry.h"
 #include "Tank.h"
-
+#include "Enumerations.h"
 
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
@@ -61,7 +61,8 @@ void Squad::moveSquad()
                 fuelConsumed += ((Tank*)(*it))->getFuelConsumption();
                 break;
             default:
-        };
+                break;
+        }
     }
 
     
@@ -112,10 +113,6 @@ bool Squad::receiveDamage(int damage)
     return false;
 }
 
-std::vector<MilitaryUnit*> Squad::getMembers(){
-    return members;
-}
-
 void Squad::removeSquadMember(MilitaryUnit* member){
     std::vector<MilitaryUnit*>::iterator it = members.begin();
     for (; it != members.end(); ++it) 
@@ -143,3 +140,4 @@ void Squad::callInBombardment(Cell * targetedCell)
     Order * bomb = new Bombardment(targetedCell);
     bomb->execute();
     delete bomb;
+}

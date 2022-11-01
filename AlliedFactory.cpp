@@ -2,9 +2,11 @@
 #include "AlliedFactory.h"
 
 Infantry *AlliedFactory::createInfantry() {
-    return new AlliedInfantry();
+    /// @todo Decide one default values. Current parameters are temporary
+    return new AlliedInfantry(10, 100, nullptr, 10);
 }
 
 Tank *AlliedFactory::createTank() {
-    return new AlliedTank();
+    /// @todo Decide one default values. Current parameters are temporary
+    return new AlliedTank(10, 100, nullptr, 10);
 }
