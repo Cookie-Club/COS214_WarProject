@@ -22,6 +22,7 @@ protected:
 	std::vector<attackStrategy*> moveStrategies;
     int totalHealthPoints;
     int totalDamage;
+    string name;
 
 public:
 	void armyMove();
@@ -35,6 +36,7 @@ public:
     void setTotalHealthPoints();
     int getTotalDamage();
     void setTotalDamage();
+    string getName();
 };
 
 #endif
