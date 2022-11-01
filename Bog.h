@@ -2,11 +2,11 @@
 #define BOG_H
 
 #include "Cell.h"
-#include "CellState.h"
 
 class Bog : public Cell {
 
 public:
+    Bog();
     double resourceUseMultiplier;
 };
 

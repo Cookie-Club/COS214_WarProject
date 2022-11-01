@@ -16,24 +16,26 @@
 #ifndef MILITARYUNIT_H
 #define MILITARYUNIT_H
 
-#include "Action.h"
 
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include "Enumerations.h"
+class Action;//Required for the return type of the forward  declared Participant::getState()
+class MilitaryUnit;//Required for the return type of the forward  declared Participant::getArmy()
 //Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
-class Participants
-{
+class Participants;
+// std::vector<MilitaryUnit*> Participants::getArmy();
+/*{
 	public:
 		std::vector<MilitaryUnit*> getArmy();
         Action * getState();
-};
+}*/
 /**
    \enum UnitType
    \brief Used to identify the type of the MilitaryUnit object. 
    \details It is used in Chain of Responsibility to check if a ConcreteHandler is meant to deal with that specific object. 
 */
-enum UnitType { infantry, tank, squad };
 
 class MilitaryUnit {
 	public:

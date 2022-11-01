@@ -3,12 +3,12 @@ CFLAGS = -g -Wall -Werror
 LFLAGS = -static
 TARGET = main.out
 OBJECTS = Action.o Aggressive.o AlliedFactory.o AlliedInfantry.o\
-AlliedOwned.o AlliedPowers.o AlliedTank.o AmmoDepoFactory.o\
-AmmoDeposit.o AxisFactory.o AxisInfantry.o AxisOwned.o\
+AlliedPowers.o AlliedTank.o AmmoDepoFactory.o\
+AmmoDeposit.o AxisFactory.o AxisInfantry.o\
 AxisPowers.o AxisTank.o Bog.o Bombardment.o Caretaker.o Cell.o\
-CellFeatures.o Context.o Defensive.o Empty.o FeatureFactory.o\
+CellFeatures.o Context.o Defensive.o FeatureFactory.o\
 Flatlands.o Frontline.o FuelDepoFactory.o FuelDeposit.o Infantry.o\
-InfantryDamage.o Infiltrate.o main.o MilitaryUnit.o SaveState.o\
+InfantryDamage.o Mining.o main.o MilitaryUnit.o SaveState.o\
 Squad.o Tank.o TankDamage.o TeamMembers.o War.o WarScene.o WorldMap.o
 # Linking all the object code:
 all: $(OBJECTS)
@@ -19,13 +19,12 @@ Action.o: Action.h Action.cpp
 Aggressive.o: Aggressive.h Aggressive.cpp Action.h Action.cpp
 AlliedFactory.o: AlliedFactory.h AlliedFactory.cpp Factory.h AlliedInfantry.h AlliedInfantry.cpp AlliedTank.h AlliedTank.cpp
 AlliedInfantry.o: AlliedInfantry.h AlliedInfantry.cpp Infantry.h Infantry.cpp
-AlliedPowers.o: AlliedPowers.h AlliedPowers.cpp Participant.h
+AlliedPowers.o: AlliedPowers.h AlliedPowers.cpp Participants.h
 AlliedTank.o: AlliedTank.h AlliedTank.cpp Tank.h TeamMembers.h MilitaryUnit.h
 AmmoDepoFactory.o: AmmoDepoFactory.h AmmoDepoFactory.cpp FeatureFactory.h
 AmmoDeposit.o: AmmoDeposit.h AmmoDeposit.cpp CellFeatures.h
 AxisFactory.o: AxisFactory.h AxisFactory.cpp Factory.h
 AxisInfantry.o: AxisInfantry.h AxisInfantry.cpp Infantry.h TeamMembers.h MilitaryUnit.h
-AxisOwned.o: AxisOwned.h AxisOwned.cpp CellState.h
 AxisPowers.o: AxisPowers.h AxisPowers.cpp Participants.h
 AxisTank.o: AxisTank.h AxisTank.cpp Tank.h TeamMembers.h MilitaryUnit.h
 Bog.o: Bog.h Bog.cpp Cell.h
@@ -35,7 +34,6 @@ Cell.o: Cell.h Cell.cpp
 CellFeatures.o: CellFeatures.h CellFeatures.cpp 
 Context.o: Context.h Context.cpp
 Defensive.o: Defensive.h Defensive.cpp Action.h
-Empty.o: Empty.h Empty.cpp CellState.h
 FeatureFactory.o: FeatureFactory.h FeatureFactory.cpp
 Flatlands.o: Flatlands.h Flatlands.cpp Cell.h
 Frontline.o: Frontline.h Frontline.cpp attackStrategy.h
@@ -43,7 +41,7 @@ FuelDepoFactory.o: FuelDepoFactory.h FuelDepoFactory.cpp FeatureFactory.h
 FuelDeposit.o: FuelDeposit.h FuelDeposit.cpp CellFeatures.h
 Infantry.o: Infantry.h Infantry.cpp TeamMembers.h MilitaryUnit.h
 InfantryDamage.o: InfantryDamage.h InfantryDamage.cpp Bombardment.h Order.h
-Infiltrate.o: Infiltrate.h Infiltrate.cpp attackStrategy.h
+Mining.o: Mining.h Mining.cpp attackStrategy.h
 main.o: main.cpp
 MilitaryUnit.o: MilitaryUnit.h MilitaryUnit.cpp
 Participants.o: Participants.h Participants.cpp

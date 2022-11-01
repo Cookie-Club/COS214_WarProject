@@ -15,7 +15,6 @@
 #define TANK_H
 
 #include "TeamMembers.h"
-#include "MilitaryUnit.h"
 
 class Tank : public TeamMembers {
     public:

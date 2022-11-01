@@ -7,7 +7,7 @@
 #include "Squad.h"
 #include "Infantry.h"
 #include "Tank.h"
-
+#include "Enumerations.h"
 
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
@@ -35,14 +35,14 @@ void Squad::moveSquad()
 
     */
 
-    if(belongsTo->getState()->getType() == Aggressive){
+    if(belongsTo->getState()->getType() == ActionType::Agg){
         if(Ammo > 50){
             //callInBombardment();
         }
         
 
     }
-    else if(belongsTo->getState()->getType() == Defensive){
+    else if(belongsTo->getState()->getType() == Def){
         
     }
 

@@ -12,7 +12,7 @@
 */
 
 #ifndef INFANTRY_H
-#define PROJECT_INFANTRY_H
+#define INFANTRY_H
 
 #include "TeamMembers.h"
 #include "MilitaryUnit.h"

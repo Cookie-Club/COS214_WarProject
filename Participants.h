@@ -7,11 +7,10 @@
 #ifndef PARTICIPANTS_H
 #define PARTICIPANTS_H
 
-#include "MilitaryUnit.h"
 #include "Cell.h"
 #include "Action.h"
 #include "attackStrategy.h"
-
+class MilitaryUnit;
 class Participants {
 
 protected:
@@ -38,3 +37,5 @@ public:
 };
 
 #endif
+
+#include "MilitaryUnit.h"
