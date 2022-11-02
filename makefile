@@ -52,7 +52,7 @@ Tank.o: Tank.h Tank.cpp TeamMembers.h MilitaryUnit.h
 TankDamage.o: TankDamage.h TankDamage.cpp Bombardment.h
 TeamMembers.o: TeamMembers.h TeamMembers.cpp MilitaryUnit.h
 War.o: War.h War.cpp
-WorldMap.o: WorldMap.h WorldMap.cpp
+WorldMap.o: WorldMap.h WorldMap.cpp AmmoDepoFactory.h FuelDepoFactory.h Bog.h Flatlands.h
 
 # Compilation rule:
 \%.o: \%.cpp

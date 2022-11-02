@@ -16,6 +16,7 @@ public:
     void setCoordinates(int _x, int _y);
     int getX();
     int getY();
+    virtual void add(Cell * addition) = 0;
 };
 
 #endif

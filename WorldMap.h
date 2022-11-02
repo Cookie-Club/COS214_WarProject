@@ -7,9 +7,11 @@
 #ifndef WORLDMAP_H
 #define WORLDMAP_H
 
-#include "Cell.h"
-#include "FeatureFactory.h"
-//#include "AmmoDepoFactory.h"
+#include "AmmoDepoFactory.h"
+#include "FuelDepoFactory.h"
+#include "Bog.h"
+#include "Flatlands.h"
+
 class WorldMap {
 
 protected:

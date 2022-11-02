@@ -7,7 +7,6 @@ void Cell::removeOccupyingForce(MilitaryUnit* m) {
             i--;
         }
     }
-	// throw "Not yet implemented";
 }
 
 void Cell::setOccupyingForce(MilitaryUnit* m) {
