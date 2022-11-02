@@ -5,6 +5,7 @@
 
 class Mining : public attackStrategy {
 public:
+    Mining();
     void execute();
 };
 

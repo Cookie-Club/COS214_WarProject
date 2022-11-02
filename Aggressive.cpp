@@ -4,6 +4,6 @@ Aggressive::Aggressive() {
     state="Aggressive";
 }
 
-int Aggressive::handleChange(Squad* s) {
-
+int Aggressive::handle(Squad* s) {
+    s->setStrategy(new Mining());
 }
