@@ -8,7 +8,7 @@
 class Defensive : public Action {
 public:
     Defensive();
-    int handle(Squad* s);
+    void handle(Squad* s);
 };
 
 

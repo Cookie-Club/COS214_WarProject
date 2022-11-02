@@ -20,9 +20,8 @@ protected:
     ActionType type;
 public:
     Action();
-    virtual int handle(Squad* s) = 0;
+    virtual void handle(Squad* s) = 0;
     ActionType getType();
-    void setType(ActionType aT);
 };
 
 #endif

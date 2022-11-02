@@ -9,7 +9,3 @@ Action::Action(){}
 ActionType Action::getType(){
     return type;
 }
-
-void Action::setType(ActionType aT){
-    type = aT;
-}
