@@ -6,7 +6,7 @@
 class Frontline : public attackStrategy {
 
 public:
-    void execute();
+    void execute(Squad* s);
 };
 
 #endif //FRONTLINE_H

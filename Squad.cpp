@@ -25,51 +25,6 @@ Squad::~Squad()
         delete temp;
     }
 }
-
-void Squad::moveSquad()
-{
-
-    /*
-    
-        Algorithm to select cell goes here
-
-    */
-
-    if(belongsTo->getState()->getType() == Agg){
-        if(Ammo > 50){
-            //callInBombardment();
-        }
-        
-
-    }
-    else if(belongsTo->getState()->getType() == Def){
-        
-    }
-
-    // Calculate total resource consumption
-    int rationsConsumed = 0;
-    float fuelConsumed = 0;
-    std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it) 
-    {
-        switch(((TeamMembers*)(*it))->getType())
-        {
-            case infantry: // Can change ration consuption based on cell type
-                rationsConsumed += ((Infantry*)(*it))->getRationConsumption();
-                break;
-            case tank: // Can change fuel consuption based on cell type
-                fuelConsumed += ((Tank*)(*it))->getFuelConsumption();
-                break;
-            default:
-                break;
-        }
-    }
-
-    
-    // Consume resources
-    fuel -= fuelConsumed;
-    rations -= rationsConsumed;
-}
 void Squad::setOccupyingCell(Cell* c)
 {
     this->occupyingCell->removeOccupyingForce(this);
@@ -145,8 +100,9 @@ void Squad::callInBombardment(Cell * targetedCell)
 Action *Squad::getState() const {
     return state;
 }
-void Squad::setState(Action *state) {
-    Squad::state = state;
+void Squad::setState() {
+    //Squad::state = state;
+
 }
 const attackStrategy* Squad::getStrategy() const {
     return strategy;
@@ -156,5 +112,32 @@ void Squad::setStrategy(const attackStrategy* strategy) {
 }
 
 void Squad::attack() {
+    state->handle(this);
     strategy->execute();
+    strategy->execute();
+    if(Ammo > 50){
+        //callInBombardment();
+
+    }
+    // Calculate total resource consumption
+    int rationsConsumed = 0;
+    float fuelConsumed = 0;
+    std::vector<MilitaryUnit*>::iterator it = members.begin();
+    for (; it != members.end(); ++it)
+    {
+        switch(((TeamMembers*)(*it))->getType())
+        {
+            case infantry: // Can change ration consuption based on cell type
+                rationsConsumed += ((Infantry*)(*it))->getRationConsumption();
+                break;
+            case tank: // Can change fuel consuption based on cell type
+                fuelConsumed += ((Tank*)(*it))->getFuelConsumption();
+                break;
+            default:
+                break;
+        }
+    }
+    // Consume resources
+    fuel -= fuelConsumed;
+    rations -= rationsConsumed;
 }

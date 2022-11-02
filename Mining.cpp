@@ -1,5 +1,6 @@
 #include "Mining.h"
 
-void Mining::execute()
+void Mining::execute(Squad* s)
 {
+
 }

@@ -25,7 +25,14 @@ class Bombardment;
 class Cell;
 
 class Squad : public MilitaryUnit {
-
+protected:
+    Cell *occupyingCell;
+    std::vector<MilitaryUnit *> members;
+    int Ammo;
+    int rations;
+    float fuel;
+    Action *state;
+    attackStrategy *strategy;
 public:
     /**
         \fn Squad::Squad
@@ -120,14 +127,7 @@ public:
 
     void attack();
 
-protected:
-    Cell *occupyingCell;
-    std::vector<MilitaryUnit *> members;
-    int Ammo;
-    int rations;
-    float fuel;
-    Action *state;
-    attackStrategy *strategy;
+
 };
 
 

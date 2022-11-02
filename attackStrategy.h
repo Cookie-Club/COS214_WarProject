@@ -3,7 +3,7 @@
 
 class attackStrategy {
 public:
-	virtual void execute() = 0;
+	virtual void execute(Squad* s) = 0;
 };
 
 #endif

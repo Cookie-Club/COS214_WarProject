@@ -6,7 +6,7 @@
 class Mining : public attackStrategy {
 public:
     Mining();
-    void execute();
+    void execute(Squad* s);
 };
 
 #endif //INFILTRATE_H
