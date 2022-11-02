@@ -17,7 +17,7 @@ class Participants {
 
 protected:
 	std::vector<MilitaryUnit*> army;
-	std::vector<Cell> ownedTerritories;
+	std::vector<Cell*> ownedTerritories;
 	Action* state;
 	double resources;
 	std::vector<attackStrategy*> moveStrategies;
@@ -28,7 +28,7 @@ protected:
 public:
 	void armyMove();
 	virtual void retreat() = 0;
-    virtual bool atBack() = 0;
+    virtual std::vector<Cell*> atBack() = 0;
     void setState(Action* state);
 	void templateMethod();
 	std::vector<MilitaryUnit*> getArmy();
