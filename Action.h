@@ -13,7 +13,6 @@
 #include <iostream>
 using namespace std;
 
-enum ActionType {Aggressive, Defensive};
 
 class Action {
 protected:

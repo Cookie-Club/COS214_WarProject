@@ -1,7 +1,7 @@
 
 #include "Defensive.h"
 Defensive::Defensive() {
-    state="Defensive";
+    type=Def;
 }
 
 int Defensive::handle(Squad* s) {
