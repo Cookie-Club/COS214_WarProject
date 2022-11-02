@@ -11,6 +11,7 @@
 #ifndef ACTION_H
 #define ACTION_H
 #include "Squad.h"
+#include "Enumerations.h"
 #include <iostream>
 using namespace std;
 

@@ -1,7 +1,7 @@
 /**
     \file Squad.h
     \brief Defines Squad class
-    \authors Wian Koekemoer, Robert Officer
+    \authors Wian Koekemoer, Robert Officer,Kaitlyn Sookdhew
     \date 30/10/22
 */
 /**
@@ -18,6 +18,8 @@
 #include <vector>
 #include "MilitaryUnit.h"
 #include "Bombardment.h"
+#include "Aggressive.h"
+#include "Defensive.h"
 
 //Forward declaration for callInBombardment usage of the constructor and execute methods
 class Bombardment;
@@ -64,7 +66,7 @@ public:
         \param[in] c    Pointer to Cell object on which the Squad object is located
     */
     void setOccupyingCell(Cell *c);
-
+    Cell* getOccupyingCell(){return occupyingCell};
     /**
         \fn Squad::clone
         \brief Clone operation of Prototype pattern
@@ -119,7 +121,7 @@ public:
 
     Action *getState() const;
 
-    void setState(Action *state);
+    void setState();
 
     const attackStrategy* getStrategy() const;
 
@@ -127,6 +129,7 @@ public:
 
     void attack();
 
+    int getTotalHp();
 
 };
 

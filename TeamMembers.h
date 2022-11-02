@@ -46,6 +46,11 @@ class TeamMembers : public MilitaryUnit {
         */
         void setHealthpoints(int healthpoints);
         /**
+            \fn TeamMembers::getHealthpoints
+            \brief Getter for healthpoints
+        */
+        int getHealthpoints(){return healthpoints};
+        /**
             \fn TeamMembers::setDamage
             \brief Setter for damage
             \param[in] damage   The total damage the TeamMembers object should deal to other units
