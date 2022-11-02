@@ -15,7 +15,7 @@ private:
 
 public:
 	War(WorldMap* world, std::vector<Participants *> participants);
-	SaveState* createSave();
+	SaveState* createSave(int id);
 	WorldMap* getWorld();
 	std::vector<Participants *> getParticipants();
 	void setParticipants();
