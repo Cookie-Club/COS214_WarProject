@@ -15,7 +15,7 @@
 class Aggressive : public Action {
 public:
     Aggressive();
-    int handle(Squad* s);
+    void handle(Squad* s);
 };
 
 

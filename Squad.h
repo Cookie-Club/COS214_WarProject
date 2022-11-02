@@ -121,7 +121,7 @@ public:
 
     Action * getState();
 
-    void setState(Action* state);
+    void setState();
 
     attackStrategy* getStrategy();
 

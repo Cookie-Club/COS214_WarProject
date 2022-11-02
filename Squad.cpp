@@ -58,11 +58,11 @@ std::vector<MilitaryUnit*> Squad::getMembers(){
 bool Squad::receiveDamage(int damage)
 {
     std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it) 
+    for (; it != members.end(); ++it)
     {
         if ((*it)->receiveDamage(damage))
             members.erase(it);
-        
+
     }
     if (members.size() <= 0) return true;
     return false;
@@ -70,7 +70,7 @@ bool Squad::receiveDamage(int damage)
 
 void Squad::removeSquadMember(MilitaryUnit* member){
     std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it) 
+    for (; it != members.end(); ++it)
     {
         if (member == *it){
             members.erase(it);
@@ -80,7 +80,7 @@ void Squad::removeSquadMember(MilitaryUnit* member){
 
     if(members.size() == 0){
         std::vector<MilitaryUnit*>::iterator it = members.begin();
-        for (; it != this->getOwner()->getArmy().end(); ++it) 
+        for (; it != this->getOwner()->getArmy().end(); ++it)
         {
             if (this == *it){
                 belongsTo->getArmy().erase(it);
@@ -97,19 +97,17 @@ void Squad::callInBombardment(Cell * targetedCell)
     delete bomb;
 }
 
-Action* Squad::getState(){
+Action *Squad::getState() {
     return state;
 }
-void Squad::setState(Action* state) {
+void Squad::setState() {
     //Squad::state = state;
 
 }
-attackStrategy* Squad::getStrategy(){
+attackStrategy* Squad::getStrategy()  {
     return strategy;
 }
-void Squad::setStrategy(attackStrategy* strategy){
-    this->strategy = strategy;
-}
+
 
 void Squad::attack() {
     state->handle(this);
