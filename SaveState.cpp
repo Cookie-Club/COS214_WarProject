@@ -1,12 +1,13 @@
 #include "SaveState.h"
 
 SaveState::SaveState(WorldMap world, vector<Participants*> participants, int id) {
-	// TODO - implement SaveState::SaveState
-	//throw "Not yet implemented";
+	this-> world = world;
+	this-> participants=participants;
+	this-> id =id;
 }
 
 WorldMap* SaveState::getWorld() {
-	retrun World;
+	retrun world;
 }
 
 vector<Participants*> SaveState::getParticipants() {
@@ -15,7 +16,5 @@ vector<Participants*> SaveState::getParticipants() {
 }
 
 int SaveState::getID() {
-	// TODO - implement SaveState::getID
-	//throw "Not yet implemented";
-	return 0;
+	return id;
 }
