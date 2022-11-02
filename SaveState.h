@@ -6,6 +6,7 @@
 class SaveState {
 
 private:
+friend class War;
 	WorldMap* World;
 	vector<Participants*> participants;
 	int id;

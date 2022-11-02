@@ -5,17 +5,17 @@ War::War(WorldMap* world, std::vector<Participants*> participants) {
 	//throw "Not yet implemented";
 }
 
-SaveState* War::createSave() {
-	// TODO - implement War::createSave
-	//throw "Not yet implemented";
-	return nullptr;
+SaveState* War::createSave() { // create m
+	SaveState* save = new SaveState();
+	save->setState(state);
+	return save;
 }
 
-WorldMap* War::getWorld() {
+WorldMap* War::getWorld() { // get img
 	return World;
 }
 
-std::vector<Participants*> War::getParticipants() {
+std::vector<Participants*> War::getParticipants() {// get real
 	return Participants;
 }
 
@@ -25,10 +25,9 @@ void War::createWorld(int worldSize) {
 	return ;
 }
 
-void War::setParticipants() {
-	// TODO - implement War::setParticipants
-	//throw "Not yet implemented";
-	return ;
+void War::setWar(SaveState state) { // reinstate mem
+	 World=save.getWorld;
+	 Participants = save.getParticipants
 }
 
 void War::startMenu() {
