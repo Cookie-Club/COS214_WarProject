@@ -1,10 +1,9 @@
 
 #include "Defensive.h"
 Defensive::Defensive() {
-    state="Defensive";
+    type=Def;
 }
 
-int Defensive::handleChange(Squad* s) {
-    attackStrategy* strat=new Frontline();
-    s->setStrategy(strat);
+int Defensive::handle(Squad* s) {
+    s->setStrategy(new Frontline());
 }

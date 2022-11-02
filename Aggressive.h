@@ -10,10 +10,12 @@
 #define AGGRESSIVE_H
 
 #include "Action.h"
+#include "Mining.h"
+
 class Aggressive : public Action {
 public:
     Aggressive();
-    int handleChange(Squad* s);
+    int handle(Squad* s);
 };
 
 

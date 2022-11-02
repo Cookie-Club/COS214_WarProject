@@ -1,9 +1,9 @@
 #include "Aggressive.h"
 
 Aggressive::Aggressive() {
-    state="Aggressive";
+    type=Agg;
 }
 
-int Aggressive::handleChange(Squad* s) {
-
+int Aggressive::handle(Squad* s) {
+    s->setStrategy(new Mining());
 }

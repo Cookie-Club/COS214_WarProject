@@ -1,5 +1,6 @@
 #include "Frontline.h"
 
-void Frontline::execute()
+void Frontline::execute(Squad* s)
 {
+
 }
