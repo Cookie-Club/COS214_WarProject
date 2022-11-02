@@ -79,7 +79,7 @@ void Squad::removeSquadMember(MilitaryUnit* member){
     }
 
     if(members.size() == 0){
-       std::vector<MilitaryUnit*>::iterator it = members.begin();
+        std::vector<MilitaryUnit*>::iterator it = members.begin();
         for (; it != this->getOwner()->getArmy().end(); ++it) 
         {
             if (this == *it){

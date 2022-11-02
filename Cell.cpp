@@ -11,7 +11,6 @@ void Cell::removeOccupyingForce(MilitaryUnit* m) {
 
 void Cell::setOccupyingForce(MilitaryUnit* m) {
 	occupyingForce.push_back(m);
-	// throw "Not yet implemented";
 }
 
 std::vector<MilitaryUnit*> Cell::getOccupyingForce(){
@@ -30,3 +29,5 @@ void Cell::setCoordinates(int _x, int _y) {
     this.x = _x;
     this.y = _y;
 }
+
+void execute(MilitaryUnit * m){}

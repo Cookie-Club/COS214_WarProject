@@ -30,7 +30,7 @@ protected:
     std::vector<MilitaryUnit *> members;
     int Ammo;
     int rations;
-    float fuel;
+    int fuel;
     Action *state;
     attackStrategy *strategy;
 public:
@@ -127,7 +127,17 @@ public:
 
     void attack();
 
+    int getAmmo(){return Ammo};
 
+    void setAmmo(int ammo){this->Ammo = ammo};
+
+    int getFuel(){return fuel};
+
+    void setAmmo(int fuel){this->fuel = fuel};
+
+    int getRations(){return rations};
+
+    void setRations(int rations){this->rations = rations};
 };
 
 

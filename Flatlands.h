@@ -5,7 +5,8 @@
 
 class Flatlands : public Cell {
     public:
-        void add(Cell * addition){ std::cout << "Cannot add anymore additional resources to this Flatland"};
+        void add(Cell * addition){ std::cout << "Cannot add anymore additional resources to this Flatland cell" << endl};
+        void execute(MilitaryUnit * m);
 };
 
 
