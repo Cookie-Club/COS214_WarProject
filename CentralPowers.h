@@ -1,3 +1,11 @@
+/**
+    \file CentralPowers.h
+    \brief Creates the specific Central Powers Participant
+    \details Implements primitive operations atBack() and Retreat() defined by Participants
+    Template: ConcreteClass
+    \ingroup Participants
+    \author Megan Hugo
+*/
 #ifndef CENTRALPOWERS_H
 #define CENTRALPOWERS_H
 
@@ -6,7 +14,7 @@
 class CentralPowers : public Participants {
     public:
         void retreat();
-        bool atBack();
+    std::vector<Cell> atBack();
         CentralPowers();
 };
 
