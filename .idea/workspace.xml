@@ -3,22 +3,19 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57bc87a4-8d83-46a7-b7df-e3378c2aafce" name="Changes" comment="">
+    <list default="true" id="57bc87a4-8d83-46a7-b7df-e3378c2aafce" name="Changes" comment="Fixes to state pattern components">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedPowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedPowers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedPowers.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedPowers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CentralPowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CentralPowers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CentralPowers.h" beforeDir="false" afterPath="$PROJECT_DIR$/CentralPowers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Participants.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Participants.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Participants.h" beforeDir="false" afterPath="$PROJECT_DIR$/Participants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Action.h" beforeDir="false" afterPath="$PROJECT_DIR$/Action.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aggressive.h" beforeDir="false" afterPath="$PROJECT_DIR$/Aggressive.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -78,6 +81,8 @@
       <workItem from="1667337365134" duration="7641000" />
       <workItem from="1667374331964" duration="6229000" />
       <workItem from="1667383630695" duration="1350000" />
+      <workItem from="1667386025586" duration="15000" />
+      <workItem from="1667386188686" duration="997000" />
     </task>
     <task id="LOCAL-00001" summary="Added SetState method to Participants">
       <created>1666525285564</created>
@@ -207,7 +212,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added SetState method to Participants" />
