@@ -1,4 +1,4 @@
-/**
+    /**
     \file SquadDamage.h
     \class SquadDamage
     \brief Child of Bombardment. Deals with entire Squad.

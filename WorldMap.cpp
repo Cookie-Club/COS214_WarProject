@@ -13,6 +13,7 @@ WorldMap::WorldMap(int worldSize) {
         for (int j = 0; j < worldSize; j++)
         {
             this.grid[i][j] = new Cell();
+            grid[i][j]->setCoordinates(i,j);
         }
     }
 
