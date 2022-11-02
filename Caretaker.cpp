@@ -10,8 +10,6 @@ SaveState* Caretaker::getMemento(int index) {
 }
 
 void Caretaker::addMemento(SaveState* newState) {
-	// TODO - implement Caretaker::addMemento
-	//throw "Not yet implemented";
 	vector::iterator p = mementos.end();
 	mementos.insert(p, mementos);
 }
