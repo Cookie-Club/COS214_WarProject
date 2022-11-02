@@ -14,8 +14,8 @@
 
 class FeatureFactory {
 
-public:
-   virtual CellFeatures* createFeature(CellFeatures* component) = 0;
+   public:
+      virtual CellFeatures* createFeature() = 0;
 };
 
 #endif

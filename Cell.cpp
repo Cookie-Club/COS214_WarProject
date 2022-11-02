@@ -18,16 +18,16 @@ std::vector<MilitaryUnit*> Cell::getOccupyingForce(){
 }
 
 int Cell::getX() {
-    return this.x;
+    return this->x;
 }
 
 int Cell::getY() {
-    return this.y;
+    return this->y;
 }
 
 void Cell::setCoordinates(int _x, int _y) {
-    this.x = _x;
-    this.y = _y;
+    this->x = _x;
+    this->y = _y;
 }
 
 void execute(MilitaryUnit * m){}

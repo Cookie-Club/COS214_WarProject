@@ -9,18 +9,22 @@
 */
 #ifndef ACTION_H
 #define ACTION_H
-#include "Squad.h"
+#include "Enumerations.h"
 #include <iostream>
 using namespace std;
 
+class Squad;
 
 class Action {
 protected:
     ActionType type;
 public:
-    Action(ActionType);
+    Action();
     virtual int handle(Squad* s) = 0;
     ActionType getType();
+    void setType(ActionType aT);
 };
 
 #endif
+
+#include "Squad.h"

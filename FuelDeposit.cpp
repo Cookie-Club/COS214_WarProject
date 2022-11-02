@@ -2,7 +2,7 @@
 
 FuelDeposit::FuelDeposit(){}
 
-FuelDeposit::setOccupyingForce(MilitaryUnit * m){
+void FuelDeposit::setOccupyingForce(MilitaryUnit * m){
     occupyingForce.push_back(m);
     ((Squad*)m)->setFuel(100);
 

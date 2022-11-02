@@ -6,10 +6,9 @@ Caretaker::Caretaker() {
 }
 
 SaveState* Caretaker::getMemento(int index) {
-	return mementos[index];
+	return mementos.at(index);
 }
 
 void Caretaker::addMemento(SaveState* newState) {
-	vector::iterator p = mementos.end();
-	mementos.insert(p, mementos);
+	mementos.push_back(newState);
 }

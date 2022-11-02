@@ -10,12 +10,13 @@
 #define ALLIEDPOWERS_H
 
 #include "Participants.h"
+#include <vector>
 
 class AlliedPowers : public Participants {
     public:
         void retreat();
         AlliedPowers();
-    std::vector<Cell> atBack();
+        std::vector<Cell *> atBack();
 };
 
 

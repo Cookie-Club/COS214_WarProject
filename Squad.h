@@ -119,13 +119,13 @@ public:
     void callInBombardment(Cell *targetedCell);
 
 
-    Action *getState() const;
+    Action * getState();
 
-    void setState(Action *state);
+    void setState(Action* state);
 
-    const attackStrategy* getStrategy() const;
+    attackStrategy* getStrategy();
 
-    void setStrategy(const attackStrategy* strategy);
+    void setStrategy(attackStrategy* strategy);
 
     void attack();
 

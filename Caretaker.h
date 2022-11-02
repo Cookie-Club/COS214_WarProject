@@ -2,6 +2,7 @@
 #define CARETAKER_H
 
 #include "SaveState.h"
+#include <vector>
 
 class Caretaker {
 

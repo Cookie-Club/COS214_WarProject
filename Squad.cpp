@@ -97,24 +97,23 @@ void Squad::callInBombardment(Cell * targetedCell)
     delete bomb;
 }
 
-Action *Squad::getState(){
+Action* Squad::getState(){
     return state;
 }
-void Squad::setState() {
+void Squad::setState(Action* state) {
     //Squad::state = state;
 
 }
 attackStrategy* Squad::getStrategy(){
     return strategy;
 }
-void Squad::setStrategy(const attackStrategy* strategy) {
-    Squad::strategy = strategy;
+void Squad::setStrategy(attackStrategy* strategy){
+    this->strategy = strategy;
 }
 
 void Squad::attack() {
     state->handle(this);
-    strategy->execute();
-    strategy->execute();
+    strategy->execute(this);
     if(Ammo > 50){
         //callInBombardment();
 

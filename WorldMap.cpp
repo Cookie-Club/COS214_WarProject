@@ -28,7 +28,7 @@ WorldMap::WorldMap(int worldSize) {
                 this->grid[i][j]->add(new Bog());
             }
             else{
-                this->grid[i][j]->:add(new Flatlands());
+                this->grid[i][j]->add(new Flatlands());
             }
             grid[i][j]->setCoordinates(i,j);
         }

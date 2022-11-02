@@ -16,7 +16,9 @@ WorldMap* War::getWorld() {
 }
 
 std::vector<Participants*> War::getParticipants() {
-	return Participants;
+	//needs to change
+	vector<Participants*> p;
+	return p;
 }
 
 void War::createWorld(int worldSize) {

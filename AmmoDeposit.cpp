@@ -2,7 +2,7 @@
 
 AmmoDeposit::AmmoDeposit(){}
 
-AmmoDeposit::setOccupyingForce(MilitaryUnit * m){
+void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){
     occupyingForce.push_back(m);
     ((Squad*)m)->setAmmo(100);
     ((Squad*)m)->setRations(100);
