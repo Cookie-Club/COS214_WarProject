@@ -23,7 +23,7 @@ AlliedPowers.o: AlliedPowers.h AlliedPowers.cpp Participants.h
 AlliedTank.o: AlliedTank.h AlliedTank.cpp Tank.h TeamMembers.h MilitaryUnit.h
 AmmoDepoFactory.o: AmmoDepoFactory.h AmmoDepoFactory.cpp FeatureFactory.h AmmoDeposit.h
 AmmoDeposit.o: AmmoDeposit.h AmmoDeposit.cpp CellFeatures.h
-attackStrategy.o: attackStrategy.h Squad.h
+attackStrategy.o: attackStrategy.h attackStrategy.cpp Squad.h
 CentralFactory.o: CentralFactory.h CentralFactory.cpp Factory.h
 CentralInfantry.o: CentralInfantry.h CentralInfantry.cpp Infantry.h TeamMembers.h MilitaryUnit.h
 CentralPowers.o: CentralPowers.h CentralPowers.cpp Participants.h
