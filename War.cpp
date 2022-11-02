@@ -12,15 +12,11 @@ SaveState* War::createSave() {
 }
 
 WorldMap* War::getWorld() {
-	// TODO - implement War::getWorld
-	//throw "Not yet implemented";
-	return nullptr;
+	return World;
 }
 
 std::vector<Participants*> War::getParticipants() {
-	// TODO - implement War::getParticipants
-	//throw "Not yet implemented";
-	return std::vector<Participants*>();
+	return Participants;
 }
 
 void War::createWorld(int worldSize) {
