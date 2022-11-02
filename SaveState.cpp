@@ -6,9 +6,7 @@ SaveState::SaveState(WorldMap world, vector<Participants*> participants, int id)
 }
 
 WorldMap* SaveState::getWorld() {
-	// TODO - implement SaveState::getWorld
-	//throw "Not yet implemented";
-	return nullptr;
+	retrun World;
 }
 
 vector<Participants*> SaveState::getParticipants() {
