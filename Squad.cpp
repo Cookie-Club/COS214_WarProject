@@ -79,7 +79,7 @@ void Squad::removeSquadMember(MilitaryUnit* member){
     }
 
     if(members.size() == 0){
-       std::vector<MilitaryUnit*>::iterator it = members.begin();
+        std::vector<MilitaryUnit*>::iterator it = members.begin();
         for (; it != this->getOwner()->getArmy().end(); ++it) 
         {
             if (this == *it){
@@ -97,24 +97,23 @@ void Squad::callInBombardment(Cell * targetedCell)
     delete bomb;
 }
 
-Action *Squad::getState() const {
+Action* Squad::getState(){
     return state;
 }
-void Squad::setState() {
+void Squad::setState(Action* state) {
     //Squad::state = state;
 
 }
-const attackStrategy* Squad::getStrategy() const {
+attackStrategy* Squad::getStrategy(){
     return strategy;
 }
-void Squad::setStrategy(const attackStrategy* strategy) {
-    Squad::strategy = strategy;
+void Squad::setStrategy(attackStrategy* strategy){
+    this->strategy = strategy;
 }
 
 void Squad::attack() {
     state->handle(this);
-    strategy->execute();
-    strategy->execute();
+    strategy->execute(this);
     if(Ammo > 50){
         //callInBombardment();
 

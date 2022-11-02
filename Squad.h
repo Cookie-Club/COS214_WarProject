@@ -18,6 +18,8 @@
 #include <vector>
 #include "MilitaryUnit.h"
 #include "Bombardment.h"
+#include "attackStrategy.h"
+#include "Action.h"
 
 //Forward declaration for callInBombardment usage of the constructor and execute methods
 class Bombardment;
@@ -30,7 +32,7 @@ protected:
     std::vector<MilitaryUnit *> members;
     int Ammo;
     int rations;
-    float fuel;
+    int fuel;
     Action *state;
     attackStrategy *strategy;
 public:
@@ -117,17 +119,27 @@ public:
     void callInBombardment(Cell *targetedCell);
 
 
-    Action *getState() const;
+    Action * getState();
 
-    void setState(Action *state);
+    void setState(Action* state);
 
-    const attackStrategy* getStrategy() const;
+    attackStrategy* getStrategy();
 
-    void setStrategy(const attackStrategy* strategy);
+    void setStrategy(attackStrategy* strategy);
 
     void attack();
 
+    int getAmmo(){return Ammo;};
 
+    void setAmmo(int ammo){this->Ammo = ammo;};
+
+    int getFuel(){return fuel;};
+
+    void setFuel(int fuel){this->fuel = fuel;};
+
+    int getRations(){return rations;};
+
+    void setRations(int rations){this->rations = rations;};
 };
 
 

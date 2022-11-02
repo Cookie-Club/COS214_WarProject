@@ -13,8 +13,9 @@
 #include "FeatureFactory.h"
 
 class AmmoDepoFactory : public FeatureFactory {
-    AmmoDepoFactory();  
-    CellFeatures* createFeature(CellFeatures* component);          
+    public:
+        AmmoDepoFactory();  
+        CellFeatures* createFeature();          
 };
 
 

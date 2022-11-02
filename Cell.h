@@ -4,18 +4,20 @@
 class MilitaryUnit;
 class Cell {
 
-private:
+protected:
     int x;
     int y;
 	std::vector<MilitaryUnit*> occupyingForce;
 
 public:
 	void removeOccupyingForce(MilitaryUnit* m);
-	void setOccupyingForce(MilitaryUnit* m);
+	virtual void setOccupyingForce(MilitaryUnit* m);
 	std::vector<MilitaryUnit*> getOccupyingForce();
     void setCoordinates(int _x, int _y);
     int getX();
     int getY();
+    virtual void add(Cell * addition) = 0;
+    virtual void execute(MilitaryUnit * m);
 };
 
 #endif

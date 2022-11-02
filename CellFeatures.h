@@ -13,12 +13,13 @@
 #include "Cell.h"
 
 class CellFeatures : public Cell {
-
-
-public:
-    CellFeatures();
-    void add(Cell* feature);
-    ~CellFeatures();
+    public:
+        CellFeatures();
+        void add(Cell* feature);
+        ~CellFeatures();
+        virtual void setOccupyingForce(MilitaryUnit * m) = 0;
+    protected:
+        Cell * feature;
 };
 
 #endif //CELLFEATURES_H

@@ -10,11 +10,12 @@
 #define CENTRALPOWERS_H
 
 #include "Participants.h"
+#include <vector>
 
 class CentralPowers : public Participants {
     public:
         void retreat();
-    std::vector<Cell> atBack();
+        std::vector<Cell*> atBack();
         CentralPowers();
 };
 

@@ -1,13 +1,13 @@
 #include "SaveState.h"
 
-SaveState::SaveState(WorldMap world, vector<Participants*> participants, int id) {
-	this-> world = world;
-	this-> participants=participants;
-	this-> id =id;
+SaveState::SaveState(WorldMap * world, vector<Participants*> participants, int id) {
+	this->World = world;
+	this->participants=participants;
+	this->id =id;
 }
 
 WorldMap* SaveState::getWorld() {
-	retrun world;
+	return World;
 }
 
 vector<Participants*> SaveState::getParticipants() {

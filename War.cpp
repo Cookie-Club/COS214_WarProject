@@ -15,8 +15,10 @@ WorldMap* War::getWorld() { // get img
 	return World;
 }
 
-std::vector<Participants*> War::getParticipants() {// get real
-	return Participants;
+std::vector<Participants*> War::getParticipants() {
+	//needs to change
+	vector<Participants*> p;
+	return p;
 }
 
 void War::createWorld(int worldSize) {

@@ -7,6 +7,7 @@ class FuelDeposit : public CellFeatures {
 
 public:
     FuelDeposit();
+    void setOccupyingForce(MilitaryUnit * m);
     ~FuelDeposit();
 };
 

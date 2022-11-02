@@ -4,7 +4,9 @@
 #include "Cell.h"
 
 class Flatlands : public Cell {
-public:
+    public:
+        void add(Cell * addition){ std::cout << "Cannot add anymore additional resources to this Flatland cell" << endl;};
+        void execute(MilitaryUnit * m);
 };
 
 

@@ -13,8 +13,9 @@
 #include "FeatureFactory.h"
 
 class FuelDepoFactory : public FeatureFactory {
-    FuelDepoFactory();
-    CellFeatures* createFeature(CellFeatures* component); 
+    public:
+        FuelDepoFactory();
+        CellFeatures* createFeature(); 
 };
 
 #endif //FUELDEPOFACTORY_H
