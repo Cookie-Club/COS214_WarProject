@@ -141,3 +141,20 @@ void Squad::callInBombardment(Cell * targetedCell)
     bomb->execute();
     delete bomb;
 }
+
+Action *Squad::getState() const {
+    return state;
+}
+void Squad::setState(Action *state) {
+    Squad::state = state;
+}
+const attackStrategy* Squad::getStrategy() const {
+    return strategy;
+}
+void Squad::setStrategy(const attackStrategy* strategy) {
+    Squad::strategy = strategy;
+}
+
+void Squad::attack() {
+    strategy->execute();
+}

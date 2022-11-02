@@ -1,9 +1,9 @@
 #include "Aggressive.h"
 
-Aggressive::Aggressive(){
-    type = Agg;
+Aggressive::Aggressive() {
+    state="Aggressive";
 }
 
-int Aggressive::handleChange( int dam) {
-     return dam*2;
+int Aggressive::handleChange(Squad* s) {
+
 }
