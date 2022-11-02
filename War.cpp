@@ -5,8 +5,8 @@ War::War(WorldMap* world, std::vector<Participants*> participants) {
 	//throw "Not yet implemented";
 }
 
-SaveState* War::createSave() { // create m
-	SaveState* save = new SaveState();
+SaveState* War::createSave(int id) { // create m
+	SaveState* save = new SaveState(World,Participants, id);
 	save->setState(state);
 	return save;
 }
@@ -26,8 +26,8 @@ void War::createWorld(int worldSize) {
 }
 
 void War::setWar(SaveState state) { // reinstate mem
-	 World=save.getWorld;
-	 Participants = save.getParticipants
+	 World=state.getWorld;
+	 Participants = state.getParticipants;
 }
 
 void War::startMenu() {
