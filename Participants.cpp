@@ -15,7 +15,7 @@ void Participants::setState(Action *state) {
 void Participants::templateMethod(){
     //If not at the back of the board then retreat
     // how to know if it is at the back -> function for each side?
-    std::vector<Cell> vector = atBack();
+    std::vector<Cell *> vector = atBack();
     for (int i; i < vector.size(); i++){
         retreat(vector.at(i));
     }

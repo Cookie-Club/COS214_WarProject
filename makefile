@@ -46,7 +46,7 @@ main.o: main.cpp War.h AlliedPowers.h CentralPowers.h
 MilitaryUnit.o: MilitaryUnit.h MilitaryUnit.cpp
 Participants.o: Participants.h Participants.cpp
 SaveState.o: SaveState.h SaveState.cpp
-Squad.o: Squad.h Squad.cpp MilitaryUnit.h Participants.h
+Squad.o: Squad.h Squad.cpp MilitaryUnit.h Participants.h attackStrategy.h Action.h
 SquadDamage.o: Bombardment.h SquadDamage.h SquadDamage.cpp
 Tank.o: Tank.h Tank.cpp TeamMembers.h MilitaryUnit.h
 TankDamage.o: TankDamage.h TankDamage.cpp Bombardment.h
