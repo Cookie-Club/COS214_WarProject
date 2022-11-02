@@ -15,7 +15,5 @@ vector<Participants*> SaveState::getParticipants() {
 }
 
 int SaveState::getID() {
-	// TODO - implement SaveState::getID
-	//throw "Not yet implemented";
-	return 0;
+	return id;
 }
