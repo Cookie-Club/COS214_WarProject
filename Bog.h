@@ -6,7 +6,7 @@
 class Bog : public Cell {
     public:
         Bog();
-        void add(Cell * addition){ std::cout << "Cannot add anymore additional resources to this Bog cell" << endl;};
+        void add(Cell * addition);
         void execute(MilitaryUnit * m);
     private:
         double resourceUseMultiplier;

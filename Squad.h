@@ -87,8 +87,7 @@ public:
         \fn Squad::addMember
         \brief Expands members variable
         \details Adds parameter to members vector
-        \param[in] m
-#include "Bombardment.h"Pointer to MilitaryUnit object which should be added to members vector
+        \param[in] m Pointer to MilitaryUnit object which should be added to members vector
     */
     void addMember(MilitaryUnit *m);
 
@@ -124,11 +123,9 @@ public:
 
     Action * getState();
 
-    Participant getParticipant()  {
-        return participant;
-    }
+    Participant getParticipant();
 
-    void setState();
+    void setState(Action* state);
 
     attackStrategy* getStrategy();
 
@@ -136,25 +133,21 @@ public:
 
     void attack();
 
-    bool isAlive()  {
-        return alive;
-    }
+    bool isAlive();
 
-    int getAmmo(){return Ammo;};
+    int getAmmo();
 
-    void setAmmo(int ammo){this->Ammo = ammo;};
+    void setAmmo(int ammo);
 
-    int getFuel(){return fuel;};
+    int getFuel();
 
-    void setFuel(int fuel){this->fuel = fuel;};
+    void setFuel(int fuel);
 
-    int getRations(){return rations;};
+    int getRations();
 
-    void setRations(int rations){this->rations = rations;};
+    void setRations(int rations);
 
-    Cell *getOccupyingCell()  {
-        return occupyingCell;
-    }
+    Cell *getOccupyingCell();
 };
 
 

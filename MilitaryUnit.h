@@ -80,13 +80,13 @@ class MilitaryUnit {
             \brief Getter for type variable
 			\details Called by other objects to determine which class to cast the object to
         */
-        UnitType getType(){return this->type;};
+        UnitType getType();
 		/**
             \fn MilitaryUnit::getOwner
             \brief Getter for belongsTo variable
 			\details called to determine which Participant the object belongs to
         */
-        Participants* getOwner(){return belongsTo;};
+        Participants* getOwner();
 	protected:
         UnitType type;
 		Participants* belongsTo;

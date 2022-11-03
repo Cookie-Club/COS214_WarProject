@@ -104,11 +104,18 @@ void Squad::callInBombardment(Cell * targetedCell)
 Action *Squad::getState() {
     return state;
 }
-void Squad::setState() {
-    //Squad::state = state;
+
+void Squad::setState(Action* state) {
+    this->state = state;
 }
 
-attackStrategy* Squad::getStrategy()  {
+Participant Squad::getParticipant()  
+{
+    return participant;
+}
+
+attackStrategy* Squad::getStrategy()  
+{
     return strategy;
 }
 
@@ -120,7 +127,7 @@ void Squad::attack() {
     state->handle(this);
     strategy->execute(this);
     if(Ammo > 50){
-        //callInBombardment();
+        ///\todo callInBombardment();
 
     }
     // Calculate total resource consumption
@@ -144,4 +151,44 @@ void Squad::attack() {
     // Consume resources
     fuel -= fuelConsumed;
     rations -= rationsConsumed;
+}
+
+bool Squad::isAlive()  
+{
+    return alive;
+}
+
+int Squad::getAmmo()
+{
+    return Ammo;
+}
+
+void Squad::setAmmo(int ammo)
+{
+    this->Ammo = ammo;
+}
+
+int Squad::getFuel()
+{
+    return fuel;
+}
+
+void Squad::setFuel(int fuel)
+{
+    this->fuel = fuel;
+}
+
+int Squad::getRations()
+{
+    return rations;
+}
+
+void Squad::setRations(int rations)
+{
+    this->rations = rations;
+}
+
+Cell* Squad::getOccupyingCell()  
+{
+    return occupyingCell;
 }
