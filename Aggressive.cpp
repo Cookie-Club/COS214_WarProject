@@ -1,9 +1,9 @@
 #include "Aggressive.h"
 
-Aggressive::Aggressive(){
+Aggressive::Aggressive() {
     type = Agg;
 }
 
-int Aggressive::handleChange( int dam) {
-     return dam*2;
+void Aggressive::handle(Squad* s) {
+    s->setStrategy(new Mining());
 }

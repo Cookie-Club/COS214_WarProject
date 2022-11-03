@@ -16,28 +16,35 @@ class MilitaryUnit;
 class Participants {
 
 protected:
-	std::vector<MilitaryUnit*> army;
-	std::vector<Cell> ownedTerritories;
-	Action* state;
-	double resources;
-	std::vector<attackStrategy*> moveStrategies;
+    vector<MilitaryUnit*> army;
+    vector<Cell*> ownedTerritories;
+    //Action* state;
+    double resources;
+    //vector<attackStrategy*> moveStrategies;
     int totalHealthPoints;
     int totalDamage;
     std::string name;
+    static WorldMap* map;
+    Participant participant;
 
 public:
-	void armyMove();
-	virtual void retreat() = 0;
-    virtual bool atBack() = 0;
-    void setState(Action* state);
-	void templateMethod();
-	std::vector<MilitaryUnit*> getArmy();
-	Action * getState();
+    void armyMove();
+    virtual void retreat() = 0;
+    virtual std::vector<Cell*> atBack() = 0;
+    void templateMethod();
+    std::vector<MilitaryUnit*> getArmy();
     int getTotalHealthPoints();
     void setTotalHealthPoints();
     int getTotalDamage();
     void setTotalDamage();
     std::string getName();
+    void sendMap();
+    Participant getParticipant() ;
+
+    static WorldMap *getMap();
+
+    static void setMap(WorldMap *map);
+
 };
 
 #endif

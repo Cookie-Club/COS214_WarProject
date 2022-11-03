@@ -3,11 +3,12 @@
 #define DEFENSIVE_H
 
 #include "Action.h"
+#include "Frontline.h"
 
 class Defensive : public Action {
 public:
     Defensive();
-    int handleChange(int dam);
+    void handle(Squad* s);
 };
 
 

@@ -5,20 +5,26 @@
     Factory: Product
     Decorator: Decorator 
     \ingroup FeatureFactory
-    \author Megan Hugo
+    \authors Megan Hugo, Robert Officer
 */
 #ifndef CELLFEATURES_H
 #define CELLFEATURES_H
 
 #include "Cell.h"
+#include "Enumerations.h"
 
 class CellFeatures : public Cell {
+    public:
+        CellFeatures();
+        void add(Cell* feature);
+        ~CellFeatures();
+        virtual void setOccupyingForce(MilitaryUnit * m) = 0;
+        void execute(){};
+        CellAttribute getAttribute(){return attribute;};
+    protected:
+        Cell * feature;
+        CellAttribute attribute;
 
-
-public:
-    CellFeatures();
-    void add(Cell* feature);
-    ~CellFeatures();
 };
 
 #endif //CELLFEATURES_H

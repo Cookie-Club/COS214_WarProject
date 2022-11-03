@@ -1,9 +1,10 @@
 
 #include "Defensive.h"
 Defensive::Defensive() {
-    type = Def;
+    type=Def;
 }
 
-int Defensive::handleChange(int dam) {
-    return dam/2;
+void Defensive::handle(Squad* s) {
+    s->setStrategy(new Frontline());
+
 }

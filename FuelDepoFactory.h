@@ -11,10 +11,12 @@
 #define FUELDEPOFACTORY_H
 
 #include "FeatureFactory.h"
+#include "FuelDeposit.h"
 
 class FuelDepoFactory : public FeatureFactory {
-    FuelDepoFactory();
-    CellFeatures* createFeature(CellFeatures* component); 
+    public:
+        FuelDepoFactory();
+        FuelDeposit* createFeature(); 
 };
 
 #endif //FUELDEPOFACTORY_H

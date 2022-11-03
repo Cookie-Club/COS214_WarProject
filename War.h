@@ -8,18 +8,19 @@
 class War {
 
 private:
-	WorldMap* World;
-	vector<Participants*> participants;
+    WorldMap* world;
+    vector<Participants*> participants;
     void createWorld(int worldSize);
     void startMenu();
 
 public:
-	War(WorldMap* world, std::vector<Participants *> participants);
-	SaveState* createSave();
-	WorldMap* getWorld();
-	std::vector<Participants *> getParticipants();
-	void setParticipants();
-
+    War(WorldMap* world, std::vector<Participants *> participants);
+    SaveState* createSave(int id);
+    WorldMap* getWorld();
+    std::vector<Participants *> getParticipants();
+    //void setParticipants();
+    void setWar(SaveState * ss);
+    void sendMap();
 };
 
 #endif

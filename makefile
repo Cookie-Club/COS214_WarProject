@@ -4,9 +4,9 @@ LFLAGS = -static
 TARGET = main.out
 OBJECTS = Participants.o Action.o Aggressive.o AlliedFactory.o AlliedInfantry.o\
 AlliedPowers.o AlliedTank.o AmmoDepoFactory.o\
-AmmoDeposit.o CentralFactory.o CentralInfantry.o\
+AmmoDeposit.o attackStrategy.o CentralFactory.o CentralInfantry.o\
 CentralPowers.o CentralTank.o Bog.o Bombardment.o Caretaker.o Cell.o\
-CellFeatures.o Context.o Defensive.o FeatureFactory.o\
+CellFeatures.o Defensive.o FeatureFactory.o\
 Flatlands.o Frontline.o FuelDepoFactory.o FuelDeposit.o Infantry.o\
 InfantryDamage.o Mining.o main.o MilitaryUnit.o SaveState.o\
 Squad.o SquadDamage.o Tank.o TankDamage.o TeamMembers.o War.o WorldMap.o
@@ -15,7 +15,7 @@ all: $(OBJECTS)
 	$(CC) $(LFLAGS) $(OBJECTS) -o $(TARGET)
 
 # Dependencies:
-Action.o: Action.h Action.cpp
+Action.o: Action.h Action.cpp Squad.h
 Aggressive.o: Aggressive.h Aggressive.cpp Action.h Action.cpp
 AlliedFactory.o: AlliedFactory.h AlliedFactory.cpp Factory.h AlliedInfantry.h AlliedInfantry.cpp AlliedTank.h AlliedTank.cpp
 AlliedInfantry.o: AlliedInfantry.h AlliedInfantry.cpp Infantry.h Infantry.cpp
@@ -23,6 +23,7 @@ AlliedPowers.o: AlliedPowers.h AlliedPowers.cpp Participants.h
 AlliedTank.o: AlliedTank.h AlliedTank.cpp Tank.h TeamMembers.h MilitaryUnit.h
 AmmoDepoFactory.o: AmmoDepoFactory.h AmmoDepoFactory.cpp FeatureFactory.h AmmoDeposit.h
 AmmoDeposit.o: AmmoDeposit.h AmmoDeposit.cpp CellFeatures.h
+attackStrategy.o: attackStrategy.h attackStrategy.cpp Squad.h
 CentralFactory.o: CentralFactory.h CentralFactory.cpp Factory.h
 CentralInfantry.o: CentralInfantry.h CentralInfantry.cpp Infantry.h TeamMembers.h MilitaryUnit.h
 CentralPowers.o: CentralPowers.h CentralPowers.cpp Participants.h
@@ -32,7 +33,6 @@ Bombardment.o: Bombardment.h Bombardment.cpp SquadDamage.h InfantryDamage.h Tank
 Caretaker.o: Caretaker.h Caretaker.cpp
 Cell.o: Cell.h Cell.cpp
 CellFeatures.o: CellFeatures.h CellFeatures.cpp 
-Context.o: Context.h Context.cpp
 Defensive.o: Defensive.h Defensive.cpp Action.h
 FeatureFactory.o: FeatureFactory.h FeatureFactory.cpp
 Flatlands.o: Flatlands.h Flatlands.cpp Cell.h
@@ -46,13 +46,13 @@ main.o: main.cpp War.h AlliedPowers.h CentralPowers.h
 MilitaryUnit.o: MilitaryUnit.h MilitaryUnit.cpp
 Participants.o: Participants.h Participants.cpp
 SaveState.o: SaveState.h SaveState.cpp
-Squad.o: Squad.h Squad.cpp MilitaryUnit.h Participants.h
+Squad.o: Squad.h Squad.cpp MilitaryUnit.h Participants.h attackStrategy.h Action.h
 SquadDamage.o: Bombardment.h SquadDamage.h SquadDamage.cpp
 Tank.o: Tank.h Tank.cpp TeamMembers.h MilitaryUnit.h
 TankDamage.o: TankDamage.h TankDamage.cpp Bombardment.h
 TeamMembers.o: TeamMembers.h TeamMembers.cpp MilitaryUnit.h
 War.o: War.h War.cpp
-WorldMap.o: WorldMap.h WorldMap.cpp
+WorldMap.o: WorldMap.h WorldMap.cpp AmmoDepoFactory.h FuelDepoFactory.h Bog.h Flatlands.h
 
 # Compilation rule:
 \%.o: \%.cpp

@@ -6,12 +6,9 @@ Caretaker::Caretaker() {
 }
 
 SaveState* Caretaker::getMemento(int index) {
-	// TODO - implement Caretaker::getMemento
-	//throw "Not yet implemented";
-	return nullptr;
+	return mementos.at(index);
 }
 
 void Caretaker::addMemento(SaveState* newState) {
-	// TODO - implement Caretaker::addMemento
-	//throw "Not yet implemented";
+	mementos.push_back(newState);
 }

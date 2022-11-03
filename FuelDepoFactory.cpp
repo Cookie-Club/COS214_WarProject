@@ -1,7 +1,9 @@
 #include "FuelDepoFactory.h"
 #include "FuelDeposit.h"
 
-CellFeatures* FuelDepoFactory::createFeature(CellFeatures* component){
-    CellFeatures* fd = new FuelDeposit();
+FuelDepoFactory::FuelDepoFactory(){}
+
+FuelDeposit* FuelDepoFactory::createFeature(){
+    FuelDeposit * fd = new FuelDeposit();
     return fd;
 }

@@ -4,10 +4,12 @@
 #include "Cell.h"
 
 class Bog : public Cell {
-
-public:
-    Bog();
-    double resourceUseMultiplier;
+    public:
+        Bog();
+        void add(Cell * addition){ std::cout << "Cannot add anymore additional resources to this Bog cell" << endl;};
+        void execute(MilitaryUnit * m);
+    private:
+        double resourceUseMultiplier;
 };
 
 

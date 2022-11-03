@@ -12,6 +12,7 @@
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
     belongsTo->getArmy().push_back(this);
+    participant=belongsTo->getParticipant();
 }
 
 Squad::~Squad()
@@ -24,51 +25,6 @@ Squad::~Squad()
         this->members.erase(it);
         delete temp;
     }
-}
-
-void Squad::moveSquad()
-{
-
-    /*
-    
-        Algorithm to select cell goes here
-
-    */
-
-    if(belongsTo->getState()->getType() == Agg){
-        if(Ammo > 50){
-            //callInBombardment();
-        }
-        
-
-    }
-    else if(belongsTo->getState()->getType() == Def){
-        
-    }
-
-    // Calculate total resource consumption
-    int rationsConsumed = 0;
-    float fuelConsumed = 0;
-    std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it) 
-    {
-        switch(((TeamMembers*)(*it))->getType())
-        {
-            case infantry: // Can change ration consuption based on cell type
-                rationsConsumed += ((Infantry*)(*it))->getRationConsumption();
-                break;
-            case tank: // Can change fuel consuption based on cell type
-                fuelConsumed += ((Tank*)(*it))->getFuelConsumption();
-                break;
-            default:
-                break;
-        }
-    }
-
-    
-    // Consume resources
-    fuel -= fuelConsumed;
-    rations -= rationsConsumed;
 }
 void Squad::setOccupyingCell(Cell* c)
 {
@@ -100,22 +56,25 @@ std::vector<MilitaryUnit*> Squad::getMembers(){
     return members;
 }
 
-bool Squad::receiveDamage(int damage)
+bool Squad::receiveDamage(int damage) // @kaitlyn fix this
 {
     std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it) 
+    for (; it != members.end(); ++it)
     {
         if ((*it)->receiveDamage(damage))
             members.erase(it);
-        
+
     }
-    if (members.size() <= 0) return true;
+    if (members.size() <= 0) {
+        alive=false;
+        return true;
+    }
     return false;
 }
 
 void Squad::removeSquadMember(MilitaryUnit* member){
     std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it) 
+    for (; it != members.end(); ++it)
     {
         if (member == *it){
             members.erase(it);
@@ -124,8 +83,8 @@ void Squad::removeSquadMember(MilitaryUnit* member){
     }
 
     if(members.size() == 0){
-       std::vector<MilitaryUnit*>::iterator it = members.begin();
-        for (; it != this->getOwner()->getArmy().end(); ++it) 
+        std::vector<MilitaryUnit*>::iterator it = members.begin();
+        for (; it != this->getOwner()->getArmy().end(); ++it)
         {
             if (this == *it){
                 belongsTo->getArmy().erase(it);
@@ -140,4 +99,49 @@ void Squad::callInBombardment(Cell * targetedCell)
     Order * bomb = new Bombardment(targetedCell);
     bomb->execute();
     delete bomb;
+}
+
+Action *Squad::getState() {
+    return state;
+}
+void Squad::setState() {
+    //Squad::state = state;
+}
+
+attackStrategy* Squad::getStrategy()  {
+    return strategy;
+}
+
+void Squad::setStrategy(attackStrategy * aStrat){
+    this->strategy = aStrat;
+}
+
+void Squad::attack() {
+    state->handle(this);
+    strategy->execute(this);
+    if(Ammo > 50){
+        //callInBombardment();
+
+    }
+    // Calculate total resource consumption
+    int rationsConsumed = 0;
+    float fuelConsumed = 0;
+    std::vector<MilitaryUnit*>::iterator it = members.begin();
+    for (; it != members.end(); ++it)
+    {
+        switch(((TeamMembers*)(*it))->getType())
+        {
+            case infantry: // Can change ration consuption based on cell type
+                rationsConsumed += ((Infantry*)(*it))->getRationConsumption();
+                break;
+            case tank: // Can change fuel consuption based on cell type
+                fuelConsumed += ((Tank*)(*it))->getFuelConsumption();
+                break;
+            default:
+                break;
+        }
+    }
+    // Consume resources
+    fuel -= fuelConsumed;
+    rations -= rationsConsumed;
 }

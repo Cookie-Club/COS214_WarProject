@@ -1,5 +1,8 @@
 #include "Mining.h"
 
-void Mining::execute()
+Mining::Mining(){}
+
+void Mining::execute(Squad* s)
 {
+
 }

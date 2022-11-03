@@ -6,6 +6,7 @@
 class AmmoDeposit : public CellFeatures {
 public:
     AmmoDeposit();
+    void setOccupyingForce(MilitaryUnit * m);
     ~AmmoDeposit();
 };
 

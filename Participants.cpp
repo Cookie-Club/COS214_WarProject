@@ -6,22 +6,17 @@ void Participants::armyMove() {
     std::cout << "Army has moved\n";
 }
 
-void Participants::setState(Action *state) {
-    delete this->state;
-    this->state=state;
-
-}
 
 void Participants::templateMethod(){
-    //If not at the back of the board then retreat
-    // how to know if it is at the back -> function for each side?
-    if (atBack() != true)
-        retreat();
+    // //If not at the back of the board then retreat
+    // // how to know if it is at the back -> function for each side?
+    // std::vector<Cell *> vector = atBack();
+    // for (int i; i < vector.size(); i++){
+    //     retreat(vector.at(i));
+    // }
 }
 
-Action * Participants::getState(){
-    return state;
-}
+
 
 
 int Participants::getTotalHealthPoints(){
@@ -45,4 +40,19 @@ string Participants::getName(){
 std::vector<MilitaryUnit*> Participants::getArmy()
 {
     return army;
+}
+
+WorldMap *Participants::getMap() {
+    return map;
+}
+
+void Participants::setMap(WorldMap *map) {
+    Participants::map = map;
+}
+void Participants::sendMap() {
+    army.at(0)->setMap(map);
+}
+
+Participant Participants::getParticipant()  {
+    return participant;
 }
