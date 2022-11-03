@@ -1,4 +1,5 @@
 #include "Cell.h"
+
 Cell::Cell(){}
 
 void Cell::removeOccupyingForce(MilitaryUnit* m) {

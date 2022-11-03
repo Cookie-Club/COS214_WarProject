@@ -19,6 +19,7 @@ protected:
 public:
 	WorldMap(int worldSize);
 	Cell *** getGrid();
+    int getSize();
 };
 
 #endif

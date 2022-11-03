@@ -52,3 +52,7 @@ Cell *** WorldMap::getGrid()
 {
     return grid;
 }
+
+int WorldMap::getSize() {
+    return this->mapSize;
+}
