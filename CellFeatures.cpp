@@ -11,3 +11,7 @@ void CellFeatures::add(Cell* feature){
     }
 }
 
+CellAttribute CellFeatures::getAttribute()
+{
+    return attribute;
+}
