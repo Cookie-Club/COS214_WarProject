@@ -90,6 +90,15 @@ class MilitaryUnit {
 	protected:
         UnitType type;
 		Participants* belongsTo;
+    static WorldMap* map;
+public:
+    static WorldMap *getMap() {
+        return map;
+    }
+
+    static void setMap(WorldMap *map) {
+        virtual MilitaryUnit::map = map;
+    }
 };
 
 #endif
