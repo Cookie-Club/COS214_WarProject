@@ -14,7 +14,17 @@
 
 class AmmoDepoFactory : public FeatureFactory {
     public:
-        AmmoDepoFactory();  
+    /**
+     * \fn AmmoDepoFactory::AmmoDepoFactory
+     * \brief default constructor
+     */
+        AmmoDepoFactory();
+
+        /**
+         * \fnAmmoDepoFactory::createFeature
+         * \return CellFeatures*
+         * \brief produces AmmoDeposit product
+         */
         CellFeatures* createFeature();          
 };
 

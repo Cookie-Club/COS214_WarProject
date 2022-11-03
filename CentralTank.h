@@ -1,11 +1,15 @@
-/**
-	\class CentralTank
-	\brief Concrete Tank military unit of Central
-	\details Prototype pattern: ConcretePrototype
-    Implements clone method of Prototype pattern
-	\author Wian K
-*/
 
+/**
+    \file CentralTank.h
+    \class CentralTank
+    \brief Concrete Product in the Abstract factory pattern. Concrete Tank military unit of Central
+    \details implements the abstract operations that produce product objects that are created
+    by the corresponding ConcreteFactories
+    Prototype pattern: ConcretePrototype
+    Implements clone method of Prototype pattern
+    \ingroup MilitaryUnit
+    \author Kaitlyn Sookdhew, Wian Koekemoer
+*/
 #ifndef AXISTANK_H
 #define AXISTANK_H
 

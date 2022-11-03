@@ -1,7 +1,7 @@
 /**
     \file Participants.h
     \brief Defines Participants class and ActionType enum
-    \authors Wian Koekemoer, Robert Officer, Megan Hugo
+    \authors Wian Koekemoer, Robert Officer, Megan Hugo,Kaitlyn Sookdhew
     \date 30/10/22
 */
 #ifndef PARTICIPANTS_H

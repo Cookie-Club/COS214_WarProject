@@ -27,8 +27,8 @@ void AlliedPowers::retreat(std::vector<Cell*> cells) {
 std::vector<Cell*> AlliedPowers::atBack() {
     std::vector<Cell*> notAtBack;
     for(unsigned int i = 0; i < this->ownedTerritories.size(); i++){
-        if (this->ownedTerritories.at(i)->getX() > 0){
-            notAtBack.push_back(this->ownedTerritories.at(i));
+        if (this->ownedTerritories.at(i)->getX() > 0){  //Checks if the cell is not on the edge of the map
+            notAtBack.push_back(this->ownedTerritories.at(i)); //pushes cell onto vector if not on edge
         }
     }
     return notAtBack;
