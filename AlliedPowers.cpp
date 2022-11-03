@@ -13,8 +13,8 @@ void AlliedPowers::retreat(std::vector<Cell*> cells) {
 
         WorldMap *map = getMap();
 
-        map[x+1][y].setOccupyingForce(cells.at(i).getOccupyingForce());
-        cells.at(i).getOccupyingForce().setOccupyingCell(map[x+1][y]);
+        map[x-1][y].setOccupyingForce(cells.at(i).getOccupyingForce());
+        cells.at(i).getOccupyingForce().setOccupyingCell(map[x-1][y]);
         cells.at(i).removeOccupyingForce();
     }
 }
@@ -22,8 +22,8 @@ void AlliedPowers::retreat(std::vector<Cell*> cells) {
 std::vector<Cell> AlliedPowers::atBack() {
     std::vector <Cell> notAtBack;
     for(unsigned int i = 0; i < this->ownedTerritories.size(); i++){
-        if (this->ownedTerritories.at(i).getX() > 0){// how would we get the coordinates of the cell?
-            std::notAtBack.push_back(this.ownedTerritories.at(i));
+        if (this->ownedTerritories.at(i).getX() > 0){
+            std::notAtBack.push_back(this->ownedTerritories.at(i));
         }
     }
     return notAtBack;
