@@ -36,7 +36,6 @@ string Participants::getName(){
     return name;
 }
 
-
 std::vector<MilitaryUnit*> Participants::getArmy()
 {
     return army;
@@ -49,6 +48,7 @@ WorldMap *Participants::getMap() {
 void Participants::setMap(WorldMap *map) {
     Participants::map = map;
 }
+
 void Participants::sendMap() {
     army.at(0)->setMap(map);
 }

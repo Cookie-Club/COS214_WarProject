@@ -15,7 +15,7 @@ void Frontline::execute(Squad* s)
     if(newCell->getOccupyingForce()==NULL){
         s->setOccupyingCell(newCell);
     }else {
-        Squad *enemy = newCell->getOccupyingForce();
+        vector<MilitaryUnit*> enemy = newCell->getOccupyingForce();
         while (s->isAlive() && enemy->isAlive()) {
             if (enemy->receiveDamage(s->getAmmo())) {
                 s->setOccupyingCell(newCell);

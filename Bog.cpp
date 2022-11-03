@@ -1,7 +1,8 @@
 #include "Bog.h"
 
 Bog::Bog () {
-    resourceUseMultiplier = 1.5;
+    resourceUseMultiplier = 1.5;\
+    std::cout << "Bog created";
 }
 
 void Bog::execute(MilitaryUnit * m){
