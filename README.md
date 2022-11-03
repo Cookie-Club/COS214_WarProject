@@ -14,11 +14,12 @@
 This project is a war simulation. It is written in c++ using vscode. The simulation is done in terminal.
 
 # Documentation
-Our project has been documented in the pdf that can be accessed here (add link). 
-Diagrams can be found in the visual paradigm project inked here (add link) or the individual diagrams can be found in the google drive folder here (add link).
+Our project has been documented in the pdf that can be accessed here (add link).\
+Diagrams can be found in the visual paradigm project linked here (add link) or the individual diagrams can be found in the google drive folder here (add link).
 
 # Class Diagram
-A pdf version of the final class diagram can be accessed here (add link), A colour coded diagram is linked here (add link) and the original diagram is linked here (add link).
+A pdf version of the final class diagram can be accessed here (add link).\
+A colour coded diagram is linked here (add link) and the original diagram is linked here (add link).
 
 # Video Demonstration
 A brief introduction video for our war simulation can be accessed here (add link).
