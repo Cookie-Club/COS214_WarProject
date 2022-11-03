@@ -11,6 +11,8 @@
 #ifndef ORDER_H
 #define ORDER_H
 
+#include <vector>
+
 class Order {
 public:
 /**

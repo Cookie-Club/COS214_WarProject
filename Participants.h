@@ -24,7 +24,7 @@ protected:
     int totalHealthPoints;
     int totalDamage;
     std::string name;
-    static WorldMap* map;
+    WorldMap* map;
     Participant participant;
 
 public:
@@ -40,10 +40,9 @@ public:
     std::string getName();
     void sendMap();
     Participant getParticipant() ;
-
-    static WorldMap *getMap();
-
-    static void setMap(WorldMap *map);
+    WorldMap *getMap();
+    void setMap(WorldMap *map);
+    void removeMilitaryUnit(MilitaryUnit* m);
 
 };
 

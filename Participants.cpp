@@ -1,8 +1,8 @@
 #include "Participants.h"
 
 void Participants::armyMove() {
-    // TODO - implement Participants::armyMove
-    // throw "Not yet implemented";
+	/// @todo - implement Participants::armyMove
+	// throw "Not yet implemented";
     std::cout << "Army has moved\n";
 }
 
@@ -31,7 +31,6 @@ string Participants::getName(){
     return name;
 }
 
-
 std::vector<MilitaryUnit*> Participants::getArmy()
 {
     return army;
@@ -44,10 +43,15 @@ WorldMap *Participants::getMap() {
 void Participants::setMap(WorldMap *map) {
     Participants::map = map;
 }
+
 void Participants::sendMap() {
     army.at(0)->setMap(map);
 }
 
 Participant Participants::getParticipant()  {
     return participant;
+}
+void Participants::removeMilitaryUnit(MilitaryUnit* m)
+{
+
 }

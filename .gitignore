@@ -1,3 +1,11 @@
 **/*.o
-**/graph.png
+**/dependency_graph
 **/*.out
+**/*_Build/*
+**/Doxyfile
+**/html/*
+**/latex/*
+**/.idea/*
+**/.vscode/*
+**/build/*
+**/dependency_graph/*

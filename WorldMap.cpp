@@ -1,5 +1,9 @@
 #include "WorldMap.h"
-#include <typeinfo>
+
+#include "AmmoDepoFactory.h"
+#include "FuelDepoFactory.h"
+#include "Bog.h"
+#include "Flatlands.h"
 
 WorldMap::WorldMap(int worldSize) {
     this->mapSize = worldSize;

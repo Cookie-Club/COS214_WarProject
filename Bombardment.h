@@ -13,15 +13,11 @@
 #ifndef BOMBARDMENT_H
 #define BOMBARDMENT_H
 
-//Scuffed, please ignore
 #include "Order.h"
+//Forward Declarations
 class Cell;
 class MilitaryUnit;
-// class Bombardment;
-//Forward Declarations 
-// class SquadDamage : public Bombardment{};
-// class InfantryDamage : public Bombardment{};
-// class TankDamage : public Bombardment{};
+
 class Bombardment : public Order {
     public:
         /**

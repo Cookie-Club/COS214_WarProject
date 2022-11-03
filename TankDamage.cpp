@@ -19,6 +19,6 @@ void TankDamage::damageMember(MilitaryUnit * currentUnit){
     }
     else if (next)
     {
-        
+        next->damageMember(currentUnit);
     }
 };

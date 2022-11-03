@@ -1,4 +1,3 @@
-
 #include "AlliedFactory.h"
 
 Infantry *AlliedFactory::createInfantry() {

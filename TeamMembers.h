@@ -68,7 +68,7 @@ class TeamMembers : public MilitaryUnit {
             \fn TeamMembers::getSquad
             \brief Getter for squad
         */
-        Squad* getSquad(){return squad;};
+        Squad* getSquad();
         /**
             \fn TeamMembers::getSquad
             \brief Getter for squad

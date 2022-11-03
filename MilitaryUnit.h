@@ -47,11 +47,7 @@ class MilitaryUnit {
             \param[in] belongsTo    A pointer to the Participants object that owns the MilitaryUnit object
             \param[in] type         A UnitType value that describes which kind of unit the MilitaryUnit object is
         */
-        MilitaryUnit(Participants* belongsTo, UnitType type)
-		{
-			this->belongsTo = belongsTo;
-			this->type = type;
-		}
+        MilitaryUnit(Participants* belongsTo, UnitType type);
 		/**
             \fn MilitaryUnit::clone
             \brief Pure virtual clone method of Prototype pattern
@@ -80,18 +76,24 @@ class MilitaryUnit {
             \brief Getter for type variable
 			\details Called by other objects to determine which class to cast the object to
         */
-        UnitType getType(){return this->type;};
+        UnitType getType();
 		/**
             \fn MilitaryUnit::getOwner
             \brief Getter for belongsTo variable
 			\details called to determine which Participant the object belongs to
         */
-        Participants* getOwner(){return belongsTo;};
+        Participants* getOwner();
 	protected:
         UnitType type;
 		Participants* belongsTo;
+        WorldMap* map;
+public:
+    WorldMap *getMap();
+
+    void setMap(WorldMap *map);
 };
 
 #endif
 
 #include "Participants.h"
+#include "WorldMap.h"
