@@ -3,6 +3,7 @@
 AmmoDepoFactory::AmmoDepoFactory(){};
 
 CellFeatures* AmmoDepoFactory::createFeature(){
-    CellFeatures * ad = new AmmoDeposit();
+    CellFeatures* ad;
+    ad = new AmmoDeposit();
     return ad;
 }

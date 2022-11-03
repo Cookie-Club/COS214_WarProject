@@ -31,18 +31,22 @@ int main(){
     std::cout << "2\n";
 
     sides.push_back(allied);
+    std::cout << "Allied added\n";
     sides.push_back(central);
+    std::cout << "Central added\n";
     std::cout << "3\n";
 
     //Creating the world map
-    int size = 10;
-    WorldMap * map = new WorldMap(size);
-    War * war = new War(map, sides);
     std::cout << "4\n";
+    int size = 10;
+    std::cout << "5\n";
+    WorldMap * map = new WorldMap(size);
+    std::cout << "6\n";
+    //Creating War
+    War * war = new War(map, sides);
 
     int turn = 0;
     Participants * loser;
-    std::cout << "5\n";
     while(!(loser == findLoser(sides))){
         sides.at(turn % sides.size())->armyMove();
         for(int i = 0; i < size; i++){
