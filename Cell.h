@@ -74,6 +74,7 @@ class Cell {
         virtual void add(Cell * addition){};
         virtual void execute(MilitaryUnit * m){};
 
+    void removeOccupyingForce();
 };
 
 #endif
