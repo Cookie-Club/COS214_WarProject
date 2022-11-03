@@ -8,7 +8,7 @@
 	\class Bog
 	\brief Class definition of a Bog cell type
     Decorator: ConcreteComponent
-	\authors Robert Officer
+	\author Robert Officer
 */
 
 #ifndef BOG_H
