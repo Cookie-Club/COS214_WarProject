@@ -1,4 +1,7 @@
 **/*.o
 **/dependency_graph
 **/*.out
-**/Composite_Testing
+**/*_Build/*
+**/Doxyfile
+**/html/*
+**/latex/*
