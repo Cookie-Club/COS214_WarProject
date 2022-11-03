@@ -16,6 +16,7 @@ public:
     void removeOccupyingForce(MilitaryUnit* m);
     virtual void setOccupyingForce(MilitaryUnit* m);
     std::vector<MilitaryUnit*> getOccupyingForce();
+
     void setCoordinates(int _x, int _y);
     int getX();
     int getY();
