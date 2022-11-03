@@ -1,6 +1,8 @@
 #include "FuelDeposit.h"
 
-FuelDeposit::FuelDeposit(){}
+FuelDeposit::FuelDeposit(){
+    attribute = FuelDepo;
+}
 
 void FuelDeposit::setOccupyingForce(MilitaryUnit * m){
     occupyingForce.push_back(m);

@@ -1,5 +1,7 @@
 #include "Cell.h"
 
+Cell::Cell(){}
+
 void Cell::removeOccupyingForce(MilitaryUnit* m) {
  for (auto i = occupyingForce.begin(); i != occupyingForce.end(); ++i) {
         if (*i == m) {

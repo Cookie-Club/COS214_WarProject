@@ -2,8 +2,8 @@
 
 AmmoDepoFactory::AmmoDepoFactory(){};
 
-CellFeatures* AmmoDepoFactory::createFeature(){
-    CellFeatures* ad;
+AmmoDeposit* AmmoDepoFactory::createFeature(){
+    AmmoDeposit* ad;
     ad = new AmmoDeposit();
     return ad;
 }
