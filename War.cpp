@@ -6,13 +6,13 @@ War::War(WorldMap* world, std::vector<Participants*> participants) {
 }
 
 SaveState* War::createSave(int id) { // create m
-    SaveState* save = new SaveState(World,participants, id);
+    SaveState* save = new SaveState(world, participants, id);
     // save->setState(state);
     return save;
 }
 
 WorldMap* War::getWorld() { // get img
-    return World;
+    return world;
 }
 
 std::vector<Participants*> War::getParticipants() {
@@ -28,12 +28,12 @@ void War::createWorld(int worldSize) {
 }
 
 void War::setWar(SaveState * state) { // reinstate mem
-    World = state->getWorld();
+    world = state->getWorld();
     participants = state->getParticipants();
 }
 
 void War::startMenu() {
-	/// @todo - implement War::startMenu
+	/// @todo implement War::startMenu
 	// throw "Not yet implemented";
 	return;
 }

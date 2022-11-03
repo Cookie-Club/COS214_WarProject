@@ -47,11 +47,7 @@ class MilitaryUnit {
             \param[in] belongsTo    A pointer to the Participants object that owns the MilitaryUnit object
             \param[in] type         A UnitType value that describes which kind of unit the MilitaryUnit object is
         */
-        MilitaryUnit(Participants* belongsTo, UnitType type)
-		{
-			this->belongsTo = belongsTo;
-			this->type = type;
-		}
+        MilitaryUnit(Participants* belongsTo, UnitType type);
 		/**
             \fn MilitaryUnit::clone
             \brief Pure virtual clone method of Prototype pattern
@@ -92,15 +88,12 @@ class MilitaryUnit {
 		Participants* belongsTo;
         WorldMap* map;
 public:
-    WorldMap *getMap() {
-        return map;
-    }
+    WorldMap *getMap();
 
-    void setMap(WorldMap *map) {
-        this->map = map;
-    }
+    void setMap(WorldMap *map);
 };
 
 #endif
 
 #include "Participants.h"
+#include "WorldMap.h"

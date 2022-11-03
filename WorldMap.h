@@ -7,13 +7,10 @@
 #ifndef WORLDMAP_H
 #define WORLDMAP_H
 
-#include "AmmoDepoFactory.h"
-#include "FuelDepoFactory.h"
-#include "Bog.h"
-#include "Flatlands.h"
+class FeatureFactory;
 
+class Cell;
 class WorldMap {
-
 protected:
 	Cell ***grid;
     int mapSize;
@@ -25,3 +22,4 @@ public:
 };
 
 #endif
+

@@ -5,3 +5,5 @@
 **/Doxyfile
 **/html/*
 **/latex/*
+**/.idea/*
+**/.vscode/*

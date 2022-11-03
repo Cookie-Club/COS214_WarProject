@@ -9,8 +9,7 @@
 
 #ifndef FEATUREFACTORY_H
 #define FEATUREFACTORY_H
-
-#include "CellFeatures.h"
+class CellFeatures;
 
 class FeatureFactory {
 
@@ -19,3 +18,5 @@ class FeatureFactory {
 };
 
 #endif
+
+#include "CellFeatures.h"

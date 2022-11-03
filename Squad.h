@@ -36,8 +36,6 @@ protected:
     int fuel;
     Action *state;
     attackStrategy *strategy;
-    bool alive=true;
-    Participant participant;
 public:
     /**
         \fn Squad::Squad

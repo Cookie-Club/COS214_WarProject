@@ -56,3 +56,7 @@ void Participants::sendMap() {
 Participant Participants::getParticipant()  {
     return participant;
 }
+void Participants::removeMilitaryUnit(MilitaryUnit* m)
+{
+
+}

@@ -17,7 +17,7 @@
         ASSERT_*: This confusingly named method halts the test entirely if it fails.
 
         EXPECT_* is usually preffered, unless the failure of a certain assertion would mean that any further 
-        testing is pointless such as testing whether an object is not null; ASSERT_NE(obj, nullptr)
+        testing is pointless such as testing whether an object is not nullptr; ASSERT_NE(obj, nullptrptr)
 
     Documentation on the kinds of assertions: http://google.github.io/googletest/reference/assertions.html
     GoogleTest's user Guide: http://google.github.io/googletest/

@@ -18,7 +18,6 @@ class CellFeatures : public Cell {
         CellFeatures();
         void add(Cell* feature);
         ~CellFeatures();
-        virtual void setOccupyingForce(MilitaryUnit * m) = 0;
         void execute(){};
         CellAttribute getAttribute();
     protected:
