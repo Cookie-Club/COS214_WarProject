@@ -12,6 +12,7 @@
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
     belongsTo->getArmy().push_back(this);
+    participant=belongsTo->getParticipant();
 }
 
 Squad::~Squad()
@@ -55,7 +56,7 @@ std::vector<MilitaryUnit*> Squad::getMembers(){
     return members;
 }
 
-bool Squad::receiveDamage(int damage)
+bool Squad::receiveDamage(int damage) // @kaitlyn fix this
 {
     std::vector<MilitaryUnit*>::iterator it = members.begin();
     for (; it != members.end(); ++it)
@@ -64,7 +65,10 @@ bool Squad::receiveDamage(int damage)
             members.erase(it);
 
     }
-    if (members.size() <= 0) return true;
+    if (members.size() <= 0) {
+        alive=false;
+        return true;
+    }
     return false;
 }
 

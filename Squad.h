@@ -21,6 +21,7 @@
 #include "attackStrategy.h"
 #include "Action.h"
 
+
 //Forward declaration for callInBombardment usage of the constructor and execute methods
 class Bombardment;
 
@@ -35,6 +36,8 @@ protected:
     int fuel;
     Action *state;
     attackStrategy *strategy;
+    bool alive=true;
+    Participant participant;
 public:
     /**
         \fn Squad::Squad
@@ -121,6 +124,10 @@ public:
 
     Action * getState();
 
+    Participant getParticipant()  {
+        return participant;
+    }
+
     void setState();
 
     attackStrategy* getStrategy();
@@ -128,6 +135,10 @@ public:
     void setStrategy(attackStrategy* strategy);
 
     void attack();
+
+    bool isAlive()  {
+        return alive;
+    }
 
     int getAmmo(){return Ammo;};
 
@@ -140,6 +151,10 @@ public:
     int getRations(){return rations;};
 
     void setRations(int rations){this->rations = rations;};
+
+    Cell *getOccupyingCell()  {
+        return occupyingCell;
+    }
 };
 
 

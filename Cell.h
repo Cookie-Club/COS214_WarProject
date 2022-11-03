@@ -1,24 +1,24 @@
 #ifndef CELL_H
 #define CELL_H
 #include <vector>
-class MilitaryUnit;
+class Squad;
 class Cell {
 
 protected:
     int x;
     int y;
-	std::vector<MilitaryUnit*> occupyingForce;
+    Squad* occupyingForce;
 
 public:
     Cell();
-	void removeOccupyingForce(MilitaryUnit* m);
-	virtual void setOccupyingForce(MilitaryUnit* m);
-	std::vector<MilitaryUnit*> getOccupyingForce();
+    void removeOccupyingForce(Squad* m);
+    virtual void setOccupyingForce(Squad* m);
+    Squad* getOccupyingForce();
     void setCoordinates(int _x, int _y);
     int getX();
     int getY();
     virtual void add(Cell * addition){};
-    virtual void execute(MilitaryUnit * m){};
+    virtual void execute(Squad * m){};
 };
 
 #endif
