@@ -1,22 +1,17 @@
 #include "Cell.h"
-
-Cell::Cell(){}
-
-void Cell::removeOccupyingForce(MilitaryUnit* m) {
- for (auto i = occupyingForce.begin(); i != occupyingForce.end(); ++i) {
-        if (*i == m) {
-            occupyingForce.erase(i);
-            i--;
-        }
-    }
+Cell::Cell(){
+    occupyingForce=NULL;
+}
+void Cell::removeOccupyingForce(Squad* m) {
+    occupyingForce=NULL;
 }
 
-void Cell::setOccupyingForce(MilitaryUnit* m) {
-	occupyingForce.push_back(m);
+void Cell::setOccupyingForce(Squad* m) {
+    occupyingForce=m;
 }
 
-std::vector<MilitaryUnit*> Cell::getOccupyingForce(){
-	return occupyingForce;
+Squad* Cell::getOccupyingForce(){
+    return occupyingForce;
 }
 
 int Cell::getX() {

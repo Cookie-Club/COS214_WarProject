@@ -1,16 +1,11 @@
 #include "Participants.h"
 
 void Participants::armyMove() {
-	// TODO - implement Participants::armyMove
-	// throw "Not yet implemented";
+    // TODO - implement Participants::armyMove
+    // throw "Not yet implemented";
     std::cout << "Army has moved\n";
 }
 
-void Participants::setState(Action *state) {
-    delete this->state;
-    this->state=state;
-
-}
 
 void Participants::templateMethod(){
     // //If not at the back of the board then retreat
@@ -21,9 +16,7 @@ void Participants::templateMethod(){
     // }
 }
 
-Action * Participants::getState(){
-    return state;
-}
+
 
 
 int Participants::getTotalHealthPoints(){
@@ -47,4 +40,19 @@ string Participants::getName(){
 std::vector<MilitaryUnit*> Participants::getArmy()
 {
     return army;
+}
+
+WorldMap *Participants::getMap() {
+    return map;
+}
+
+void Participants::setMap(WorldMap *map) {
+    Participants::map = map;
+}
+void Participants::sendMap() {
+    army.at(0)->setMap(map);
+}
+
+Participant Participants::getParticipant()  {
+    return participant;
 }
