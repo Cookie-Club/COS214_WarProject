@@ -1,3 +1,6 @@
+/**
+    \todo Finish the last else statement
+*/
 #include "Frontline.h"
 
 void Frontline::execute(Squad* s)
@@ -12,16 +15,23 @@ void Frontline::execute(Squad* s)
     WorldMap* m=s->getMap();
     Cell*** grid=m->getGrid();
     Cell* newCell=grid[newX][y];
-    if(newCell->getOccupyingForce()==NULL){
+    if(newCell->getOccupyingForce().empty()){
         s->setOccupyingCell(newCell);
     }else {
-        Squad *enemy = newCell->getOccupyingForce();
-        while (s->isAlive() && enemy->isAlive()) {
-            if (enemy->receiveDamage(s->getAmmo())) {
-                s->setOccupyingCell(newCell);
-            } else if (s->receiveDamage(enemy->getAmmo())) {
-                enemy->setOccupyingCell(newCell);
+        vector<MilitaryUnit*> enemy = newCell->getOccupyingForce();
+        std::vector<MilitaryUnit*>::iterator it;
+        for(it = enemy.begin(); it < enemy.end(); ++it){
+            while(s->isAlive() && !enemy.empty())
+            {
+
             }
         }
+        // while (s->isAlive() && !enemy.empty()) {
+        //     if (!enemy->receiveDamage(s->getAmmo())) {
+        //         s->setOccupyingCell(newCell);
+        //     } else if (s->receiveDamage(enemy->getAmmo())) {
+        //         enemy->setOccupyingCell(newCell);
+        //     }
+        // }
     }
 }

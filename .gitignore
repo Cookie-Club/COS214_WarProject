@@ -5,3 +5,7 @@
 **/Doxyfile
 **/html/*
 **/latex/*
+**/.idea/*
+**/.vscode/*
+**/build/*
+**/dependency_graph/*

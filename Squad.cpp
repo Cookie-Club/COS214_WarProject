@@ -3,6 +3,7 @@
     \brief Implements Squad class methods
     \authors Wian Koekemoer
     \date 30/10/22
+    \todo figure out which cell to call bombardment on in attack() method
 */
 #include "Squad.h"
 #include "Infantry.h"
@@ -12,7 +13,6 @@
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
     belongsTo->getArmy().push_back(this);
-    participant=belongsTo->getParticipant();
 }
 
 Squad::~Squad()
@@ -25,6 +25,8 @@ Squad::~Squad()
         this->members.erase(it);
         delete temp;
     }
+    if (belongsTo) belongsTo->removeMilitaryUnit(this);
+    if (occupyingCell) occupyingCell->removeOccupyingForce(this);
 }
 void Squad::setOccupyingCell(Cell* c)
 {
@@ -66,7 +68,6 @@ bool Squad::receiveDamage(int damage) // @kaitlyn fix this
 
     }
     if (members.size() <= 0) {
-        alive=false;
         return true;
     }
     return false;
@@ -111,7 +112,7 @@ void Squad::setState(Action* state) {
 
 Participant Squad::getParticipant()  
 {
-    return participant;
+    return belongsTo->getParticipant();
 }
 
 attackStrategy* Squad::getStrategy()  
@@ -127,35 +128,13 @@ void Squad::attack() {
     state->handle(this);
     strategy->execute(this);
     if(Ammo > 50){
-        ///\todo callInBombardment();
-
+        //callInBombardment();
     }
-    // Calculate total resource consumption
-    int rationsConsumed = 0;
-    float fuelConsumed = 0;
-    std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it)
-    {
-        switch(((TeamMembers*)(*it))->getType())
-        {
-            case infantry: // Can change ration consuption based on cell type
-                rationsConsumed += ((Infantry*)(*it))->getRationConsumption();
-                break;
-            case tank: // Can change fuel consuption based on cell type
-                fuelConsumed += ((Tank*)(*it))->getFuelConsumption();
-                break;
-            default:
-                break;
-        }
-    }
-    // Consume resources
-    fuel -= fuelConsumed;
-    rations -= rationsConsumed;
 }
 
 bool Squad::isAlive()  
 {
-    return alive;
+    return (members.size() > 0);
 }
 
 int Squad::getAmmo()

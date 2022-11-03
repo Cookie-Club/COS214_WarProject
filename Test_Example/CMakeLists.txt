@@ -1,7 +1,7 @@
 #[[
 How to create unit testing project:
 
-1. Check that you have cmake version 3.14 or higher installed
+1. Check that you have cmake version 3.20 or higher installed
 
 2. In the project root directory; create a directory named <Test_Name> and second <Test_Name>_Build directory inside your <Test_Name> one
   **The name of the second directory must end in "_Build" in order for the .gitignore file to ignore the files inside,
@@ -17,7 +17,7 @@ How to create unit testing project:
     ctest
 ]]
 
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.20)
 #Project name, change when you copy the file
 project(test_Example)
 #Minimum release version for googletest
@@ -41,7 +41,7 @@ set(curr_path "${CMAKE_CURRENT_SOURCE_DIR}")
 cmake_path(GET curr_path PARENT_PATH p_path)
 include_directories(${p_path})
 
-#Add to list of source files to form dependenices in constructed makefile
+#Add to list of source files to form dependenices in constructed makefile printf "s%\n" *
 #Please remember to add newly created files
 set(SOURCES ${p_path}/Action.cpp ${p_path}/Action.h
             ${p_path}/Aggressive.cpp ${p_path}/Aggressive.h
@@ -61,7 +61,6 @@ set(SOURCES ${p_path}/Action.cpp ${p_path}/Action.h
             ${p_path}/CentralInfantry.cpp ${p_path}/CentralInfantry.h
             ${p_path}/CentralPowers.cpp ${p_path}/CentralPowers.h
             ${p_path}/CentralTank.cpp ${p_path}/CentralTank.h
-            ${p_path}/Context.cpp ${p_path}/Context.h
             ${p_path}/Defensive.cpp ${p_path}/Defensive.h
             ${p_path}/Enumerations.h
             ${p_path}/Factory.h

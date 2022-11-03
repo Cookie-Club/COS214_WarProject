@@ -11,13 +11,14 @@
 #define AMMODEPOFACTORY_H
 
 #include "FeatureFactory.h"
-#include "AmmoDeposit.h"
 
 class AmmoDepoFactory : public FeatureFactory {
     public:
         AmmoDepoFactory();  
-        AmmoDeposit* createFeature();          
+        CellFeatures* createFeature();          
 };
 
 
 #endif //AMMODEPOFACTORY_H
+
+#include "AmmoDeposit.h"
