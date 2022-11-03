@@ -1,5 +1,6 @@
 #include "Participants.h"
 
+Participants::Participants(){}
 void Participants::armyMove() {
 	/// @todo - implement Participants::armyMove
 	// throw "Not yet implemented";

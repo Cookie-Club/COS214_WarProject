@@ -52,6 +52,20 @@ class TeamMembers : public MilitaryUnit {
         */
         void setDamage(int damage);
         /**
+            \fn TeamMembers:getHealthpoints
+            \brief Getter for healthpoints variable
+            \details Mainly for use in testing
+            \return Returns the current value of the unit's healthpoints
+        */
+        int getHealthpoints();
+        /**
+            \fn TeamMembers::getDamage
+            \brief Getter for damage
+            \details Mainly for use in testing
+            \return Returns the current value of the unit's damage
+        */
+        int getDamage();
+        /**
             \fn TeamMembers::isLeaf
             \brief Returns true to communicate object is leaf in Composite structure
         */
@@ -75,6 +89,7 @@ class TeamMembers : public MilitaryUnit {
             \param[in] squad    The Squad object to which the TeamMembers object belongs
         */
         void setSquad(Squad* squad);
+
 
     protected:
         Squad* squad;

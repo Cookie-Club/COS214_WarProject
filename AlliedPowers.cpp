@@ -2,6 +2,7 @@
 
 AlliedPowers::AlliedPowers(){
     this->name = "Allied";
+    participant = Allied;
 }
 
 void AlliedPowers::retreat() {

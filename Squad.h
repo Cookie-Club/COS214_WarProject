@@ -121,7 +121,6 @@ public:
 
     Action * getState();
 
-    Participant getParticipant();
 
     void setState(Action* state);
 

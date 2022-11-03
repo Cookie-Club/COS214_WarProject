@@ -2,6 +2,7 @@
 
 CentralPowers::CentralPowers(){
     this->name = "Central";
+    participant = Central;
 }
 
 void CentralPowers::retreat() {
