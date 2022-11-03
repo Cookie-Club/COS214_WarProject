@@ -17,7 +17,7 @@ public:
     int getX();
     int getY();
     virtual void add(Cell * addition) = 0;
-    virtual void execute(MilitaryUnit * m);
+    virtual void execute(MilitaryUnit * m) = 0;
 };
 
 #endif

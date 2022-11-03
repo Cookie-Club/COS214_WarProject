@@ -5,7 +5,7 @@
     Factory: Product
     Decorator: Decorator 
     \ingroup FeatureFactory
-    \author Megan Hugo
+    \authors Megan Hugo, Robert Officer
 */
 #ifndef CELLFEATURES_H
 #define CELLFEATURES_H
@@ -18,6 +18,7 @@ class CellFeatures : public Cell {
         void add(Cell* feature);
         ~CellFeatures();
         virtual void setOccupyingForce(MilitaryUnit * m) = 0;
+        void execute(){};
     protected:
         Cell * feature;
 };
