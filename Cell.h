@@ -8,6 +8,7 @@
 	\class Flatlands
 	\brief Class definition of a flatlands cell type
     Decorator: ConcreteComponent
+    \defgroup Cell
 	\authors Robert Officer, Kaitlyn Sookdhew
 */
 #ifndef CELL_H
@@ -15,6 +16,7 @@
 
 #include <vector>
 
+//Forward declaration of MilitaryUnit
 class MilitaryUnit;
 class Cell {
 
@@ -58,7 +60,15 @@ class Cell {
             \param[in] _y The y coordinate of the cell
         */
         void setCoordinates(int _x, int _y);
+        /**
+            \fn Cell::getX
+            \brief returns the X coordinate of the cell
+        */
         int getX();
+        /**
+            \fn Cell::getY
+            \brief returns the Y coordinate of the cell
+        */
         int getY();
         virtual void add(Cell * addition){};
         virtual void execute(MilitaryUnit * m){};

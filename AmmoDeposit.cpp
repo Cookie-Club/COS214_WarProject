@@ -14,3 +14,15 @@ void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){
         feature->execute(m);
     }
 }
+
+void AmmoDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
+    std::vector<MilitaryUnit*>::iterator it;
+    for(it = m.begin(); it < m.end(); it++){
+        occupyingForce.push_back(*it);
+        ((Squad*)*it)->setAmmo(100);
+        ((Squad*)*it)->setRations(100);
+        if(feature != 0){
+            feature->execute(*it);
+        }
+    }
+}
