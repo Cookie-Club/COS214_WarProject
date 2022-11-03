@@ -26,6 +26,7 @@ void CentralPowers::retreat(std::vector<Cell*> cells) {
 std::vector<Cell*> CentralPowers::atBack() {
     std::vector<Cell*> notAtBack;
     for(unsigned int i = 0; i < this->ownedTerritories.size(); i++){
+
         if (this->ownedTerritories.at(i)->getX() < (getMap()->getSize()-1)){
             notAtBack.push_back(this->ownedTerritories.at(i));
         }

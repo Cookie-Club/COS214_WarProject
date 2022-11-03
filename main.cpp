@@ -25,7 +25,7 @@ Participants* findLoser(vector<Participants *> sides){
 int main(){
     std::cout << "1\n";
     //Creating the participants for the War
-    vector<Participants *> sides;
+  vector<Participants *> sides;
     Participants * allied = new AlliedPowers();
     Participants * central = new CentralPowers();
     std::cout << "2\n";
@@ -75,5 +75,7 @@ int main(){
         }
     }
     std::cout << loser->getName() << " has lost the war\n";
+
+
     return 0;
 }

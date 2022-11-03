@@ -25,6 +25,7 @@ class Cell {
         int y;
         std::vector<MilitaryUnit*> occupyingForce;
 
+
     public:
         /**
             \fn Cell::Cell
@@ -72,6 +73,7 @@ class Cell {
         int getY();
         virtual void add(Cell * addition){};
         virtual void execute(MilitaryUnit * m){};
+
 };
 
 #endif

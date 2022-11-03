@@ -12,6 +12,7 @@ void AlliedPowers::retreat(std::vector<Cell*> cells) {
         int x = cells.at(i)->getX();
         int y = cells.at(i)->getY();
 
+
         Cell *** grid = getMap()->getGrid();
 
         grid[x-1][y]->setOccupyingForce(cells.at(i)->getOccupyingForce());
@@ -32,3 +33,4 @@ std::vector<Cell*> AlliedPowers::atBack() {
     }
     return notAtBack;
 }
+
