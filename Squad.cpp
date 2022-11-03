@@ -26,11 +26,11 @@ Squad::~Squad()
         delete temp;
     }
     if (belongsTo) belongsTo->removeMilitaryUnit(this);
-    if (occupyingCell) occupyingCell->removeOccupyingForce();
+    if (occupyingCell) occupyingCell->removeOccupyingForce(this->members);
 }
 void Squad::setOccupyingCell(Cell* c)
 {
-    this->occupyingCell->removeOccupyingForce();
+    this->occupyingCell->removeOccupyingForce(this->members);
     this->occupyingCell = c;
     c->setOccupyingForce(this->members);
 }

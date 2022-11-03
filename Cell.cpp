@@ -2,12 +2,6 @@
 
 Cell::Cell(){}
 
-void Cell::removeOccupyingForce() {
-    std::vector<MilitaryUnit*>::iterator it;
-    for(it = occupyingForce.begin(); it != occupyingForce.end(); it++){
-            occupyingForce.erase(it);
-    }
-}
 
 void Cell::removeOccupyingForce(std::vector<MilitaryUnit*> m) {
     occupyingForce.clear();
