@@ -26,16 +26,16 @@ Squad::~Squad()
         delete temp;
     }
     if (belongsTo) belongsTo->removeMilitaryUnit(this);
-    if (occupyingCell) occupyingCell->removeOccupyingForce(this);
+    if (occupyingCell) occupyingCell->removeOccupyingForce();
 }
 void Squad::setOccupyingCell(Cell* c)
 {
-    this->occupyingCell->removeOccupyingForce(this);
+    this->occupyingCell->removeOccupyingForce();
     this->occupyingCell = c;
-    c->setOccupyingForce(this);
+    c->setOccupyingForce(this->members);
 }
 
-MilitaryUnit* Squad::clone()
+Squad* Squad::clone()
 {
     Squad* newSquad = new Squad(this->getOwner());
     std::vector<MilitaryUnit*>::iterator it = members.begin();
@@ -171,3 +171,14 @@ Cell* Squad::getOccupyingCell()
 {
     return occupyingCell;
 }
+
+bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
+    std::vector<MilitaryUnit *>::iterator it;
+    for (it = enemyMembers.begin(); it < enemyMembers.end(); ++it) {
+        while (isAlive() && !enemyMembers.empty()) {
+
+        }
+    }
+    return true;
+}
+

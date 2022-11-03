@@ -14,7 +14,8 @@ protected:
 public:
     Cell();
     void removeOccupyingForce(MilitaryUnit* m);
-    virtual void setOccupyingForce(MilitaryUnit* m);
+    void removeOccupyingForce();
+    void setOccupyingForce(std::vector<MilitaryUnit*> m);
     std::vector<MilitaryUnit*> getOccupyingForce();
 
     void setCoordinates(int _x, int _y);

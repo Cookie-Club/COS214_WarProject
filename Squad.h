@@ -71,9 +71,9 @@ public:
     /**
         \fn Squad::clone
         \brief Clone operation of Prototype pattern
-        \details Creates and returns a copy of the Squad composite structure and its TeamMembers
+        \details Creates and returns a copy of the Squad's TeamMembers
     */
-    MilitaryUnit *clone();
+    Squad* clone();
 
     /**
         \fn Squad::isLeaf
@@ -146,6 +146,8 @@ public:
     void setRations(int rations);
 
     Cell *getOccupyingCell();
+
+    bool battle(std::vector<MilitaryUnit*> enemyMembers);
 };
 
 
