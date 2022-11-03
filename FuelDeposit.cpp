@@ -12,3 +12,14 @@ void FuelDeposit::setOccupyingForce(MilitaryUnit * m){
         feature->execute(m);
     }
 }
+
+void FuelDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
+    std::vector<MilitaryUnit*>::iterator it;
+    for(it = m.begin(); it < m.end(); it++){
+        occupyingForce.push_back(*it);
+        ((Squad*)*it)->setFuel(100);
+        if(feature != 0){
+            feature->execute(*it);
+        }
+    }
+}

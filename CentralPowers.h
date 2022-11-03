@@ -14,7 +14,7 @@
 
 class CentralPowers : public Participants {
     public:
-        void retreat();
+        void retreat(std::vector<Cell*> cells);
         std::vector<Cell*> atBack();
         CentralPowers();
 

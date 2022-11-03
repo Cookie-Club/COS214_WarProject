@@ -110,11 +110,6 @@ void Squad::setState(Action* state) {
     this->state = state;
 }
 
-Participant Squad::getParticipant()  
-{
-    return belongsTo->getParticipant();
-}
-
 attackStrategy* Squad::getStrategy()  
 {
     return strategy;

@@ -1,5 +1,6 @@
 #include "Participants.h"
 
+Participants::Participants(){}
 void Participants::armyMove() {
 	/// @todo - implement Participants::armyMove
 	// throw "Not yet implemented";
@@ -10,8 +11,6 @@ void Participants::armyMove() {
 void Participants::retreatParticipants(){
      retreat(atBack());
 }
-
-
 
 
 int Participants::getTotalHealthPoints(){

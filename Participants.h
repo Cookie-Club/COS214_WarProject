@@ -28,6 +28,7 @@ protected:
     Participant participant;
 
 public:
+    Participants();
     void armyMove();
     virtual void retreat(std::vector<Cell*> cells)=0;
     virtual std::vector<Cell*> atBack() = 0;
