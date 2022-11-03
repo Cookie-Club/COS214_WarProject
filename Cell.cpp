@@ -2,7 +2,7 @@
 Cell::Cell(){
     occupyingForce=NULL;
 }
-void Cell::removeOccupyingForce(Squad* m) {
+void Cell::removeOccupyingForce() {
     occupyingForce=NULL;
 }
 

@@ -14,7 +14,7 @@
 
 class AlliedPowers : public Participants {
     public:
-        void retreat();
+    void retreat(Cell* cell);
         AlliedPowers();
         std::vector<Cell *> atBack();
 };

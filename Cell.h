@@ -11,7 +11,7 @@ protected:
 
 public:
     Cell();
-    void removeOccupyingForce(Squad* m);
+    void removeOccupyingForce();
     virtual void setOccupyingForce(Squad* m);
     Squad* getOccupyingForce();
     void setCoordinates(int _x, int _y);
