@@ -1,15 +1,13 @@
 /**
-    \file CentralInfantry.h
-    \brief Defines CentralInfantry class
-    \authors Wian Koekemoer
-    \date 30/10/22
-*/
-/**
-	\class CentralInfantry
-	\brief Concrete Infantry military unit of Central
-	\details Prototype pattern: ConcretePrototype
+    \file AlliedInfantry.h
+    \class AlliedInfantry
+    \brief Concrete Product in the Abstract factory pattern. Concrete Infantry military unit of Allies
+    \details implements the abstract operations that produce product objects that are created
+    by the corresponding ConcreteFactories
+    Prototype pattern: ConcretePrototype
     Implements clone method of Prototype pattern
-	\author Wian K
+    \ingroup MilitaryUnit
+    \author Kaitlyn Sookdhew, Wian Koekemoer
 */
 
 #ifndef AXISINFANTRY_H

@@ -1,9 +1,4 @@
-/**
-    \file AlliedTank.h
-    \brief Implements AlliedTank class methods
-    \authors Wian Koekemoer
-    \date 30/10/22
-*/
+
 #include "AlliedTank.h"
 
 AlliedTank::AlliedTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption) 
