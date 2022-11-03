@@ -30,9 +30,9 @@ protected:
 public:
     Participants();
     void armyMove();
-    virtual void retreat() = 0;
+    virtual void retreat(std::vector<Cell*> cells) = 0;
     virtual std::vector<Cell*> atBack() = 0;
-    void templateMethod();
+    void retreatParticipants();
     std::vector<MilitaryUnit*> getArmy();
     int getTotalHealthPoints();
     void setTotalHealthPoints();
