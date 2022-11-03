@@ -35,6 +35,7 @@ class Cell {
             \details Iterates through the occupyingForce and checks to see where the passed in MilitaryUnit is and when found, the unit is removed
             \param[in] m  A MilitaryUnit pointer that points to the squad being removed from the occupyingForce
         */
+        void removeOccupyingForce(std::vector<MilitaryUnit*> m);
         void removeOccupyingForce(MilitaryUnit* m);
         /**
             \fn Cell::setOccupyingForce
@@ -43,6 +44,7 @@ class Cell {
             \param[in] m  A MilitaryUnit pointer that points to the squad being added to the occupyingForce
         */
         virtual void setOccupyingForce(MilitaryUnit* m);
+        virtual void setOccupyingForce(std::vector<MilitaryUnit*> m);
         /**
             \fn Cell::getOccupyingForce
             \brief Gets the occupyingForce of a cell

@@ -12,8 +12,6 @@ void Participants::retreatParticipants(){
 }
 
 
-
-
 int Participants::getTotalHealthPoints(){
     return totalHealthPoints;
 }
