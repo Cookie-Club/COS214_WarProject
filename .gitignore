@@ -7,3 +7,5 @@
 **/latex/*
 **/.idea/*
 **/.vscode/*
+**/build/*
+**/dependency_graph/*
