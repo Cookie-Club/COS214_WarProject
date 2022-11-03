@@ -11,6 +11,7 @@
 #define AMMODEPOFACTORY_H
 
 #include "FeatureFactory.h"
+#include "AmmoDeposit.h"
 
 class AmmoDepoFactory : public FeatureFactory {
     public:

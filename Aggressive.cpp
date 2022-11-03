@@ -1,7 +1,7 @@
 #include "Aggressive.h"
 
 Aggressive::Aggressive() {
-    type=Agg;
+    type = Agg;
 }
 
 void Aggressive::handle(Squad* s) {

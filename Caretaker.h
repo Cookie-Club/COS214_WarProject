@@ -8,7 +8,7 @@ class Caretaker {
 
 private:
 	vector<SaveState*> mementos;
-	indexes=0;
+	int indexes=0;
 
 public:
 	

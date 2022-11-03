@@ -102,12 +102,15 @@ Action *Squad::getState() {
 }
 void Squad::setState() {
     //Squad::state = state;
-
 }
+
 attackStrategy* Squad::getStrategy()  {
     return strategy;
 }
 
+void Squad::setStrategy(attackStrategy * aStrat){
+    this->strategy = aStrat;
+}
 
 void Squad::attack() {
     state->handle(this);

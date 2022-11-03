@@ -29,5 +29,3 @@ void Cell::setCoordinates(int _x, int _y) {
     this->x = _x;
     this->y = _y;
 }
-
-void execute(MilitaryUnit * m){}

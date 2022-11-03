@@ -19,7 +19,7 @@ public:
 	WorldMap* getWorld();
 	std::vector<Participants *> getParticipants();
 	void setParticipants();
-
+	void setWar(SaveState * ss);
 };
 
 #endif

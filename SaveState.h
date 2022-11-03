@@ -15,6 +15,7 @@ class SaveState {
 		WorldMap* getWorld();
 		vector<Participants*> getParticipants();
 		int getID();
+		// void setState(SaveState *);
 };
 
 #endif

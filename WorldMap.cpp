@@ -1,6 +1,7 @@
 #include "WorldMap.h"
 
 WorldMap::WorldMap(int worldSize) {
+    std::cout << "WorldMap - 1";
 
     this->mapSize = worldSize;
     this->grid = new Cell **[worldSize];
