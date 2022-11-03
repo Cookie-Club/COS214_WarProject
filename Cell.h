@@ -10,13 +10,14 @@ protected:
 	std::vector<MilitaryUnit*> occupyingForce;
 
 public:
+    Cell();
 	void removeOccupyingForce(MilitaryUnit* m);
 	virtual void setOccupyingForce(MilitaryUnit* m);
 	std::vector<MilitaryUnit*> getOccupyingForce();
     void setCoordinates(int _x, int _y);
     int getX();
     int getY();
-    virtual void add(Cell * addition) = 0;
+    virtual void add(Cell * addition){};
     virtual void execute(MilitaryUnit * m){};
 };
 

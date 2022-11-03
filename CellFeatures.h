@@ -11,6 +11,7 @@
 #define CELLFEATURES_H
 
 #include "Cell.h"
+#include "Enumerations.h"
 
 class CellFeatures : public Cell {
     public:
@@ -19,8 +20,11 @@ class CellFeatures : public Cell {
         ~CellFeatures();
         virtual void setOccupyingForce(MilitaryUnit * m) = 0;
         void execute(){};
+        CellAttribute getAttribute(){return attribute;};
     protected:
         Cell * feature;
+        CellAttribute attribute;
+
 };
 
 #endif //CELLFEATURES_H

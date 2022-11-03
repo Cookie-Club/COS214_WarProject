@@ -1,6 +1,8 @@
 #include "AmmoDeposit.h"
 
-AmmoDeposit::AmmoDeposit(){}
+AmmoDeposit::AmmoDeposit(){
+    attribute = AmmoDepo;
+}
 
 void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){
     occupyingForce.push_back(m);

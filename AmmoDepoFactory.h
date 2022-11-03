@@ -16,7 +16,7 @@
 class AmmoDepoFactory : public FeatureFactory {
     public:
         AmmoDepoFactory();  
-        CellFeatures* createFeature();          
+        AmmoDeposit* createFeature();          
 };
 
 
