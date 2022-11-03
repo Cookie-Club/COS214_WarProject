@@ -31,6 +31,7 @@ class Participants;
 		std::vector<MilitaryUnit*> getArmy();
         Action * getState();
 }*/
+class WorldMap; //forward declaration of WorldMap class
 /**
    \enum UnitType
    \brief Used to identify the type of the MilitaryUnit object. 
