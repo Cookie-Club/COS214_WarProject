@@ -7,6 +7,7 @@ class Cell {
 private:
     int x;
     int y;
+    int mapSize;
 	std::vector<MilitaryUnit*> occupyingForce;
 
 public:
@@ -16,6 +17,8 @@ public:
     void setCoordinates(int _x, int _y);
     int getX();
     int getY();
+    void setMapSize(int _size);
+    int getMapSize();
 };
 
 #endif

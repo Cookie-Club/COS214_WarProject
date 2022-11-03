@@ -13,8 +13,8 @@
 
 class CentralPowers : public Participants {
     public:
-        void retreat();
-    std::vector<Cell> atBack();
+        void retreat(Cell* cell);
+        std::vector<Cell> atBack();
         CentralPowers();
 };
 

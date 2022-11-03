@@ -27,7 +27,7 @@ protected:
 
 public:
 	void armyMove();
-	virtual void retreat() = 0;
+	virtual void retreat(Cell* cell) = 0;
     virtual std::vector<Cell*> atBack() = 0;
     void setState(Action* state);
 	void templateMethod();
