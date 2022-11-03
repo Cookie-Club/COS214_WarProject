@@ -1,8 +1,8 @@
 #include "War.h"
 
 War::War(WorldMap* world, std::vector<Participants*> participants) {
-    // TODO - implement War::War
-    //throw "Not yet implemented";
+	/// @todo - implement War::War
+	//throw "Not yet implemented";
 }
 
 SaveState* War::createSave(int id) { // create m
@@ -22,9 +22,9 @@ std::vector<Participants*> War::getParticipants() {
 }
 
 void War::createWorld(int worldSize) {
-    // TODO - implement War::createWorld
-    //throw "Not yet implemented";
-    return ;
+	/// @todo - implement War::createWorld
+	//throw "Not yet implemented";
+	return ;
 }
 
 void War::setWar(SaveState * state) { // reinstate mem
@@ -33,9 +33,9 @@ void War::setWar(SaveState * state) { // reinstate mem
 }
 
 void War::startMenu() {
-    // TODO - implement War::startMenu
-    // throw "Not yet implemented";
-    return;
+	/// @todo - implement War::startMenu
+	// throw "Not yet implemented";
+	return;
 }
 
 void War::sendMap() {
