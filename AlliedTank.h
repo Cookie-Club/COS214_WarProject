@@ -32,7 +32,8 @@ class AlliedTank : public Tank
         virtual ~AlliedTank(){};
 		/**
 			\fn AlliedTank::clone
-			\brief Return copy of the object
+			\brief clone() method of Prototype pattern
+			\return A copy of the current AlliedTank
 		*/
 		MilitaryUnit* clone();
 };
