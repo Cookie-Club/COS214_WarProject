@@ -66,8 +66,7 @@ class Squad : public MilitaryUnit {
             \fn Squad::addMember
             \brief Expands members variable
             \details Adds parameter to members vector
-            \param[in] m    
-#include "Bombardment.h"Pointer to MilitaryUnit object which should be added to members vector
+            \param[in] m Pointer to MilitaryUnit object which should be added to members vector
         */
         void addMember(MilitaryUnit* m);
         /**

@@ -1,3 +1,4 @@
 **/*.o
-**/graph.png
+**/dependency_graph
 **/*.out
+**/Composite_Testing
