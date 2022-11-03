@@ -18,7 +18,7 @@ public:
     SaveState* createSave(int id);
     WorldMap* getWorld();
     std::vector<Participants *> getParticipants();
-    void setParticipants();
+    //void setParticipants();
     void setWar(SaveState * ss);
     void sendMap();
 };
