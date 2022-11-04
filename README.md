@@ -7,7 +7,7 @@
 * [Installation](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#installation)
 * [Code](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#code)
 * [Support](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#support)
-* [Authors and Acknowledgement](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#authors-and-acknowledgment)
+* [Authors and Acknowledgement](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#authors-and-acknowledgement)
 * [Project Status](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#project-status)
 
 # Description
@@ -50,7 +50,7 @@ No installation required.
 # Support
 Please fill in this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSe8KpQORQ7IMn0JSGOGiOhxqVqspK6_7Gf1upok5Hfz20iFaQ/viewform?usp=sf_link) for support. 
 
-# Authors and Acknoledgement
+# Authors and Acknowledgement
 * Oliver Welsh
 * Kaitlyn Sookdhew
 * Robert Officer
