@@ -1,3 +1,9 @@
+/**
+    \file War.h
+    \class War
+    \brief **  Documentation Pending **
+    \todo Documentation
+*/
 #ifndef WAR_H
 #define WAR_H
 

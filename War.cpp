@@ -1,5 +1,11 @@
 #include "War.h"
+/**
+    \file War.cpp
+    \todo implement War::War
+    \todo implement War::createWorld
+	\todo implement War::startMenu
 
+*/
 War::War(WorldMap* world, std::vector<Participants*> participants) {
 	this->world = world;
     this->participants = participants;

@@ -3,6 +3,7 @@
     \brief Defines Squad class
     \authors Wian Koekemoer, Robert Officer
     \date 30/10/22
+    \todo Function Documentation on lines 122-150
 */
 /**
 	\class Squad
@@ -11,7 +12,6 @@
     Composite pattern: Composite participant
 	\authors Wian Koekemoer, Robert Officer, Kaitlyn Sookdhew
 */
-
 #ifndef SQUAD_H
 #define SQUAD_H
 
@@ -120,7 +120,6 @@ public:
 
 
     Action *getState();
-
 
     void setState(Action *state);
 

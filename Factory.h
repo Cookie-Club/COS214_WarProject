@@ -15,16 +15,16 @@ class Factory {
 public:
 
     /**
- * \fn Factory::createInfantry
- * \return Infantry*
- * \brief pure virtual method that will produce concrete infantry products
- */
+     * \fn Factory::createInfantry
+     * \return Infantry*
+     * \brief pure virtual method that will produce concrete infantry products
+     */
     virtual Infantry* createInfantry() = 0;
     /**
-* \fn Factory::createTank
-* \return Tank*
-* \brief pure virtual method that will produce concrete Tank products
-*/
+    * \fn Factory::createTank
+    * \return Tank*
+    * \brief pure virtual method that will produce concrete Tank products
+    */
     virtual Tank* createTank() = 0;
 
 };

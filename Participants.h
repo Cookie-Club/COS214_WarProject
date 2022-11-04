@@ -1,8 +1,10 @@
 /**
     \file Participants.h
+    \class Participants
     \brief Defines Participants class and ActionType enum
     \authors Wian Koekemoer, Robert Officer, Megan Hugo,Kaitlyn Sookdhew
     \date 30/10/22
+    \todo Function Documentation
 */
 #ifndef PARTICIPANTS_H
 #define PARTICIPANTS_H

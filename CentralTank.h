@@ -10,8 +10,8 @@
     \ingroup MilitaryUnit
     \author Kaitlyn Sookdhew, Wian Koekemoer
 */
-#ifndef AXISTANK_H
-#define AXISTANK_H
+#ifndef CENTRALTANK_H
+#define CENTRALTANK_H
 
 #include "Tank.h"
 
@@ -36,4 +36,4 @@ class CentralTank : public Tank
 };
 
 
-#endif //AXISTANK_H
+#endif //CENTRALTANK_H
