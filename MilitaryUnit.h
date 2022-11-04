@@ -92,7 +92,6 @@ class MilitaryUnit {
     public:
         WorldMap *getMap();
         void setMap(WorldMap *map);
-        Participant getParticipant();
 };
 
 #endif

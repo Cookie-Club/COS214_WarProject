@@ -17,7 +17,7 @@ int Participants::getTotalHealthPoints(){
     return totalHealthPoints;
 }
 
-void Participants::setTotalHealthPoints() {
+void Participants::setTotalHealthPoints(int hp) {
 }
 
 int Participants::getTotalDamage(){

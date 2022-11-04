@@ -35,7 +35,7 @@ public:
     void retreatParticipants();
     std::vector<MilitaryUnit*> getArmy();
     int getTotalHealthPoints();
-    void setTotalHealthPoints();
+    void setTotalHealthPoints(int hp);
     int getTotalDamage();
     void setTotalDamage();
     std::string getName();
