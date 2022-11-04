@@ -12,7 +12,7 @@
 	\defgroup MilitaryUnit
 	\authors Robert Officer, Wian Koekemoer
 */
-
+/// \todo Documentation for MilitaryUnit::getMap and MilitaryUnit::setMap on lines 87-88
 #ifndef MILITARYUNIT_H
 #define MILITARYUNIT_H
 
@@ -25,12 +25,6 @@ class Action;//Required for the return type of the forward  declared Participant
 class MilitaryUnit;//Required for the return type of the forward  declared Participant::getArmy()
 //Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
 class Participants;
-// std::vector<MilitaryUnit*> Participants::getArmy();
-/*{
-	public:
-		std::vector<MilitaryUnit*> getArmy();
-        Action * getState();
-}*/
 class WorldMap; //forward declaration of WorldMap class
 /**
    \enum UnitType

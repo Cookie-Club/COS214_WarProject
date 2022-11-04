@@ -11,7 +11,7 @@
     Composite pattern: Composite participant
 	\authors Wian Koekemoer, Robert Officer, Kaitlyn Sookdhew
 */
-
+///\todo Function Documentation on lines 122-150
 #ifndef SQUAD_H
 #define SQUAD_H
 
@@ -120,7 +120,6 @@ public:
 
 
     Action *getState();
-
 
     void setState(Action *state);
 

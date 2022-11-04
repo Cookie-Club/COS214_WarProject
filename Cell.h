@@ -5,12 +5,13 @@
     \date 03/11/22
 */
 /**
-	\class Flatlands
-	\brief Class definition of a flatlands cell type
-    Decorator: ConcreteComponent
+	\class Cell
+	\brief Class definition of the Cell interface
+    Decorator: Component
     \defgroup Cell
 	\authors Robert Officer, Kaitlyn Sookdhew
 */
+///\todo Documentation of Cell::removeOccupyingForce on line 37
 #ifndef CELL_H
 #define CELL_H
 
@@ -32,13 +33,14 @@ class Cell {
             \brief Constructor
         */
         Cell();
+
+        void removeOccupyingForce(std::vector<MilitaryUnit*> m);
         /**
             \fn Cell::removeOccupyingForce
             \brief Removes the passed in MilitaryUnit from the occupyingForce vector
             \details Iterates through the occupyingForce and checks to see where the passed in MilitaryUnit is and when found, the unit is removed
             \param[in] m  A MilitaryUnit pointer that points to the squad being removed from the occupyingForce
         */
-        void removeOccupyingForce(std::vector<MilitaryUnit*> m);
         void removeOccupyingForce(MilitaryUnit* m);
         /**
             \fn Cell::setOccupyingForce

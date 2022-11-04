@@ -1,5 +1,6 @@
 /**
     \file AlliedPowers.h
+    \class AlliedPowers
     \brief Creates the specific AlliedPowers Participant
     \details Implements atBack() and Retreat() defined by Participants
     Template: ConcreteClass

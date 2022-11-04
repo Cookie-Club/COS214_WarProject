@@ -1,6 +1,6 @@
 /**
-    \file AlliedInfantry.h
-    \class AlliedInfantry
+    \file CentralInfantry.h
+    \class CentralInfantry
     \brief Concrete Product in the Abstract factory pattern. Concrete Infantry military unit of Allies
     \details implements the abstract operations that produce product objects that are created
     by the corresponding ConcreteFactories
@@ -10,8 +10,8 @@
     \author Kaitlyn Sookdhew, Wian Koekemoer
 */
 
-#ifndef AXISINFANTRY_H
-#define AXISINFANTRY_H
+#ifndef CENTRALINFANTRY_H
+#define CENTRALINFANTRY_H
 
 #include "Infantry.h"
 
@@ -36,4 +36,4 @@ class CentralInfantry : public Infantry
 };
 
 
-#endif //AXISINFANTRY_H
+#endif //CENTRALINFANTRY_H

@@ -1,5 +1,6 @@
 /**
     \file AmmoDepoFactory.h
+    \class AmmoDepoFactory
     \brief Creates the specific AmmoDeposit product
     \details Is in charge of creating the AmmoDeposit specific object. It overrides the factory method in FeatureFactory
     and returns an instance of the product
