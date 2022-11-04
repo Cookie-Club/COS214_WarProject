@@ -26,11 +26,11 @@ Squad::~Squad()
         delete temp;
     }
     if (belongsTo) belongsTo->removeMilitaryUnit(this);
-    if (occupyingCell) occupyingCell->removeOccupyingForce(this->members);
+    if (occupyingCell) occupyingCell->removeOccupyingForce(this->getMembers());
 }
 void Squad::setOccupyingCell(Cell* c)
 {
-    this->occupyingCell->removeOccupyingForce(this->members);
+    this->occupyingCell->removeOccupyingForce(this->getMembers());
     this->occupyingCell = c;
     c->setOccupyingForce(this->members);
 }
@@ -168,12 +168,26 @@ Cell* Squad::getOccupyingCell()
 }
 
 bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
+    bool ret;
     std::vector<MilitaryUnit *>::iterator it;
+    Participants *en= (enemyMembers.at(0)->getOwner());
+    int enHp= en->getTotalHealthPoints();
+    int enDam=en->getTotalDamage();
     for (it = enemyMembers.begin(); it < enemyMembers.end(); ++it) {
         while (isAlive() && !enemyMembers.empty()) {
-
+            receiveDamage(enDam);
+            int sDam=this->getOwner()->getTotalDamage();
+            en->setTotalHealthPoints((enHp-sDam));
+            ret=true;
         }
     }
-    return true;
+    if(!isAlive()){
+        ret=false;
+    }
+    return ret;
+}
+
+Participant Squad::getParticipant() {
+    return getOwner()->getParticipant();
 }
 
