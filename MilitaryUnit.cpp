@@ -23,3 +23,4 @@ WorldMap* MilitaryUnit::getMap()
 void MilitaryUnit::setMap(WorldMap *map) {
     this->map = map;
 }
+

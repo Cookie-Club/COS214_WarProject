@@ -83,14 +83,15 @@ class MilitaryUnit {
 			\details called to determine which Participant the object belongs to
         */
         Participants* getOwner();
+        
 	protected:
         UnitType type;
 		Participants* belongsTo;
         WorldMap* map;
-public:
-    WorldMap *getMap();
-
-    void setMap(WorldMap *map);
+        
+    public:
+        WorldMap *getMap();
+        void setMap(WorldMap *map);
 };
 
 #endif

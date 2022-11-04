@@ -1,5 +1,6 @@
 #include "Participants.h"
 
+Participants::Participants(){}
 void Participants::armyMove() {
 	/// @todo - implement Participants::armyMove
 	// throw "Not yet implemented";
@@ -12,13 +13,11 @@ void Participants::retreatParticipants(){
 }
 
 
-
-
 int Participants::getTotalHealthPoints(){
     return totalHealthPoints;
 }
 
-void Participants::setTotalHealthPoints() {
+void Participants::setTotalHealthPoints(int hp) {
 }
 
 int Participants::getTotalDamage(){

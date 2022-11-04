@@ -71,9 +71,9 @@ public:
     /**
         \fn Squad::clone
         \brief Clone operation of Prototype pattern
-        \details Creates and returns a copy of the Squad composite structure and its TeamMembers
+        \details Creates and returns a copy of the Squad's TeamMembers
     */
-    MilitaryUnit *clone();
+    Squad *clone();
 
     /**
         \fn Squad::isLeaf
@@ -119,15 +119,14 @@ public:
     void callInBombardment(Cell *targetedCell);
 
 
-    Action * getState();
+    Action *getState();
 
-    Participant getParticipant();
 
-    void setState(Action* state);
+    void setState(Action *state);
 
-    attackStrategy* getStrategy();
+    attackStrategy *getStrategy();
 
-    void setStrategy(attackStrategy* strategy);
+    void setStrategy(attackStrategy *strategy);
 
     void attack();
 
@@ -146,6 +145,10 @@ public:
     void setRations(int rations);
 
     Cell *getOccupyingCell();
+
+    bool battle(std::vector<MilitaryUnit *> enemyMembers);
+
+    Participant getParticipant();
 };
 
 

@@ -35,6 +35,16 @@ bool TeamMembers::isLeaf()
     return true;
 }
 
+int TeamMembers::getHealthpoints()
+{
+    return healthpoints;
+}
+
+int TeamMembers::getDamage()
+{
+    return damage;
+}
+
 void TeamMembers::setDamage(int damage)
 {
     this->damage = damage;

@@ -1,16 +1,16 @@
+
 /**
     \file AlliedTank.h
-    \brief Defines AlliedTank class
-    \authors Wian Koekemoer
-    \date 30/10/22
-*/
-/**
-	\class AlliedTank
-	\brief Concrete Tank military unit of Allies
-	\details Prototype pattern: ConcretePrototype 
+    \class AlliedTank
+    \brief Concrete Product in the Abstract factory pattern. Concrete Tank military unit of Allies
+    \details implements the abstract operations that produce product objects that are created
+    by the corresponding ConcreteFactories
+    Prototype pattern: ConcretePrototype
     Implements clone method of Prototype pattern
-	\author Wian K
+    \ingroup MilitaryUnit
+    \author Kaitlyn Sookdhew, Wian Koekemoer
 */
+
 
 #ifndef ALLIEDTANK_H
 #define ALLIEDTANK_H

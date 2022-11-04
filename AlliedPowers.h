@@ -14,9 +14,25 @@
 
 class AlliedPowers : public Participants {
     public:
-    void retreat(std::vector<Cell*> cell);
+    /**
+     * \fn AlliedPowers::retreat
+     * \param cells Vector for cells that need to be retreated
+     * \brief moves squads currently on cells one cell back
+     */
+        void retreat(std::vector<std::vector<Cell*>> cells);
+
+        /**
+         * \fn AlliedPowers::AlliedPowers
+         * \brief Default constructor
+         */
         AlliedPowers();
-        std::vector<Cell *> atBack();
+
+        /**
+         * \fn AlliedPowers::atBack
+         * \return std::vector<Cell*>
+         * \brief returns a vector of Cells with all cells not on the edge of the world map
+         */
+        std::vector<Cell*> atBack();
 };
 
 

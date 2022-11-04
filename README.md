@@ -14,16 +14,35 @@
 This project is a war simulation. It is written in c++ using vscode. The simulation is done in terminal.
 
 # Documentation
-...................
+Our project has been documented in the pdf that can be accessed here (add link).\
+Diagrams can be found in the visual paradigm project linked here (add link) or the individual diagrams can be found in the google drive folder here (add link).
 
 # Class Diagram
-....................
+A pdf version of the final class diagram can be accessed here (add link).\
+A colour coded diagram is linked here (add link) and the original diagram is linked here (add link).
 
 # Video Demonstration
-....................
+A brief introduction video for our war simulation can be accessed here (add link).
 
 # Installation
-No installation required. This project can be run using the linux terminal or windows powershell or any other form of terminal opened in the folder location of the makefile. User should then type make and press enter, and then make run and the program should run.
+Windows Users:
+1. Install a c++ complier, Windows Subsystem for Linux (WSL) or a virtual machine running linux.
+2. Run using the terminal using the supplied makefile.
+3. Type $ make
+4. Type $ make run
+
+Mac-OS Users:
+1. Install a c++ complier or a virtual machine running linux.
+2. Run using the terminal using the supplied makefile.
+3. Type $ make
+4. Type $ make run
+
+Linux Users:
+
+No installation required.
+1. Run using the linux terminal using the supplied makefile.
+2. Type $ make
+3. Type $ make run
 
 # Code
 ....................

@@ -1,6 +1,6 @@
 /**
     \file CellFeatures.h
-    \brief Defines a Bog cell type
+    \brief Holds the definition of the abstract class CellFeatures
     \author Robert Officer
     \date 03/11/22
 */
@@ -12,6 +12,7 @@
     \defgroup CellFeatures
 	\authors Megan Hugo, Robert Officer
 */
+
 #ifndef CELLFEATURES_H
 #define CELLFEATURES_H
 
@@ -38,7 +39,12 @@ class CellFeatures : public Cell {
             \brief Destructor
         */
         ~CellFeatures();
-        void execute(){};
+        //void execute(){};
+        /**
+            \fn CellFeatures::getAttribute
+            \brief Returns the attribute of the ConcreteDecorator
+            \returns Returns an enumeration that defines what the ConcreteDecorator is
+        */     
         CellAttribute getAttribute();
     protected:
         Cell * feature;

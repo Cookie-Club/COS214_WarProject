@@ -1,6 +1,6 @@
 /**
     \file Bog.h
-    \brief Defines a Bog cell type
+    \brief Contains the definition of the class Bog
     \author Robert Officer
     \date 03/11/22
 */
@@ -8,7 +8,7 @@
 	\class Bog
 	\brief Class definition of a Bog cell type
     Decorator: ConcreteComponent
-	\authors Robert Officer
+	\author Robert Officer
 */
 
 #ifndef BOG_H

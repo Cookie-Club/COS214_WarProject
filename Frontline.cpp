@@ -12,26 +12,25 @@ void Frontline::execute(Squad* s)
         newX=s->getOccupyingCell()->getX()-1;
     }
     int y=s->getOccupyingCell()->getY();
-    WorldMap* m=s->getMap();
-    Cell*** grid=m->getGrid();
-    Cell* newCell=grid[newX][y];
-    if(newCell->getOccupyingForce().empty()){
-        s->setOccupyingCell(newCell);
-    }else {
-        vector<MilitaryUnit*> enemy = newCell->getOccupyingForce();
-        std::vector<MilitaryUnit*>::iterator it;
-        for(it = enemy.begin(); it < enemy.end(); ++it){
-            while(s->isAlive() && !enemy.empty())
-            {
 
+    WorldMap* m=s->getMap();
+    if(newX<m->getSize()&&y<m->getSize()) {
+        Cell ***grid = m->getGrid();
+        Cell *newCell = grid[newX][y];
+        Cell* currentCell=s->getOccupyingCell();
+        if (newCell->getOccupyingForce().empty()) {
+            s->setOccupyingCell(newCell);
+            newCell->setOccupyingForce(s->getMembers());
+            std::vector<MilitaryUnit*> m=s->clone()->getMembers(); //clones squad and gets members
+            currentCell->setOccupyingForce(m); //leaves behind to defend but they are unable to move forward and attack
+        } else {
+            vector<MilitaryUnit *> enemyVec = newCell->getOccupyingForce();
+            if (s->battle(enemyVec)) {
+                s->setOccupyingCell(newCell);
+                newCell->setOccupyingForce(s->getMembers());
+                std::vector<MilitaryUnit*> m=s->clone()->getMembers();
+                currentCell->setOccupyingForce(m);
             }
         }
-        // while (s->isAlive() && !enemy.empty()) {
-        //     if (!enemy->receiveDamage(s->getAmmo())) {
-        //         s->setOccupyingCell(newCell);
-        //     } else if (s->receiveDamage(enemy->getAmmo())) {
-        //         enemy->setOccupyingCell(newCell);
-        //     }
-        // }
     }
 }
