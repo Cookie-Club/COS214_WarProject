@@ -1,5 +1,6 @@
 /**
    \file FeatureFactory.h
+   \class FeatureFactory
    \brief In charge of creating different features for the Cell class.
    \details Provides an abstract interface for creating resource objects in a superclass. Allows subclasses to alter the type of resoucre that will be created
    Factory: Creator
