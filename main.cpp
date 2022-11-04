@@ -23,19 +23,6 @@ Participants* findLoser(vector<Participants *> sides){
 }
 
 int main(){
-    std::cout << "1\n";
-    //Creating the participants for the War
-  vector<Participants *> sides;
-    Participants * allied = new AlliedPowers();
-    Participants * central = new CentralPowers();
-    std::cout << "2\n";
-
-    sides.push_back(allied);
-    std::cout << "Allied added\n";
-    sides.push_back(central);
-    std::cout << "Central added\n";
-    std::cout << "3\n";
-
     //Creating the world map
     std::cout << "4\n";
     int size = 10;
@@ -43,11 +30,11 @@ int main(){
     WorldMap * map = new WorldMap(size);
     std::cout << "6\n";
     //Creating War
-    War * war = new War(map, sides);
+    War * war = new War(map, {new AlliedPowers(), new CentralPowers()});
 
     int turn = 0;
     Participants * loser;
-    while(!(loser == findLoser(sides))){
+    while(!(loser == findLoser(war->getParticipants()))){
         sides.at(turn % sides.size())->armyMove();
         for(int i = 0; i < size; i++){
             std::cout << "[  ";
