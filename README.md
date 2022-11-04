@@ -1,7 +1,7 @@
 # COS214_War Simulation Project
 ## Table of Contents
 * [Description](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#description)
-* [Documentation](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#documentaion)
+* [Documentation](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#documentation)
 * [Class Diagram](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#class-diagram)
 * [Video Demonstration](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#video-demonstration)
 * [Installation](https://github.com/Cookie-Club/COS214_WarProject/blob/main/README.md#installation)
