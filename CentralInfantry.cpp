@@ -8,7 +8,7 @@
 
 CentralInfantry::CentralInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption) 
 : Infantry(damage, healthpoints, belongsTo, rationConsumption){
-    std::cout << "CentralInfantry created";
+    //std::cout << "CentralInfantry created";
 }
 
 MilitaryUnit* CentralInfantry::clone()

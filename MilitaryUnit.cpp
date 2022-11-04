@@ -1,8 +1,7 @@
 #include "MilitaryUnit.h"
-MilitaryUnit::MilitaryUnit(Participants* belongsTo, UnitType type)
+MilitaryUnit::MilitaryUnit(Participants* belongsTo, UnitType type): belongsTo(belongsTo), type(type), map(belongsTo->getMap())
 {
-    this->belongsTo = belongsTo;
-    this->type = type;
+
 }
 
 Participants* MilitaryUnit::getOwner()

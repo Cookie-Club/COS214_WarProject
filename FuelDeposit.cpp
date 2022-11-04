@@ -23,3 +23,8 @@ void FuelDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
         }
     }
 }
+
+void FuelDeposit::printSymbol(std::string s){
+    s.replace(1,1,"F");
+    feature->printSymbol(s);
+}

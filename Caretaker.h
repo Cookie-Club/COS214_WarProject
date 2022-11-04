@@ -11,17 +11,14 @@
 #include <vector>
 
 class Caretaker {
+	private:
+		std::vector<SaveState*> mementos;
 
-private:
-	vector<SaveState*> mementos;
-	int indexes=0;
-
-public:
-	
-	Caretaker();
-	SaveState* getMemento(int index);
-	void addMemento(SaveState* newState);
-	
+	public:	
+		Caretaker();
+		Caretaker(SaveState * newState);
+		SaveState* getMemento(int index);
+		void addMemento(SaveState* newState);
 };
 
 #endif

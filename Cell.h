@@ -16,18 +16,20 @@
 #define CELL_H
 
 #include <vector>
-
+#include <string>
 //Forward declaration of MilitaryUnit
 class MilitaryUnit;
+class Participants;
 class Cell {
 
     protected:
         int x;
         int y;
         std::vector<MilitaryUnit*> occupyingForce;
-
+        Participants* owner;
 
     public:
+        std::string type;
         /**
             \fn Cell::Cell
             \brief Constructor
@@ -75,9 +77,10 @@ class Cell {
         int getY();
         virtual void add(Cell * addition){};
         virtual void execute(MilitaryUnit * m){};
-
+        virtual void printSymbol(std::string = "  ");
 };
 
 #endif
 
 #include "MilitaryUnit.h"
+#include "Participants.h"

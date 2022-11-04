@@ -15,13 +15,13 @@ class War {
 
 private:
     WorldMap* world;
-    vector<Participants*> participants;
+    std::vector<Participants*> participants;
     void createWorld(int worldSize);
-    void startMenu();
+    SaveState * lastSave;
 
 public:
     War(WorldMap* world, std::vector<Participants *> participants);
-    SaveState* createSave(int id);
+    SaveState* createSave();
     WorldMap* getWorld();
     std::vector<Participants *> getParticipants();
     //void setParticipants();

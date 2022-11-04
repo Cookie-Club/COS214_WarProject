@@ -13,6 +13,7 @@
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
     belongsTo->getArmy().push_back(this);
+    //state->setType(Agg);
 }
 
 Squad::~Squad()
@@ -26,13 +27,13 @@ Squad::~Squad()
         delete temp;
     }
     if (belongsTo) belongsTo->removeMilitaryUnit(this);
-    if (occupyingCell) occupyingCell->removeOccupyingForce(this->getMembers());
+    if (occupyingCell) occupyingCell->removeOccupyingForce(this);
 }
 void Squad::setOccupyingCell(Cell* c)
 {
-    this->occupyingCell->removeOccupyingForce(this->getMembers());
+    this->occupyingCell->removeOccupyingForce(this);
     this->occupyingCell = c;
-    c->setOccupyingForce(this->members);
+    occupyingCell->setOccupyingForce(this);
 }
 
 Squad* Squad::clone()
@@ -60,17 +61,22 @@ std::vector<MilitaryUnit*> Squad::getMembers(){
 
 bool Squad::receiveDamage(int damage) // @kaitlyn fix this
 {
-    std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it)
+    int i = std::rand() % members.size();
+    MilitaryUnit* unluckyWinner = members[i];
+    //if unit dies
+    
+    if(!unluckyWinner->receiveDamage(damage))
     {
-        if ((*it)->receiveDamage(damage))
-            members.erase(it);
-
+        std::vector<MilitaryUnit*>::iterator it = members.begin();
+        for (; it != members.end(); ++it)
+        {
+            if (*it == unluckyWinner)
+                members.erase(it);
+        }
+        delete unluckyWinner;
+        return false;
     }
-    if (members.size() <= 0) {
-        return true;
-    }
-    return false;
+    return true;
 }
 
 void Squad::removeSquadMember(MilitaryUnit* member){
@@ -78,19 +84,9 @@ void Squad::removeSquadMember(MilitaryUnit* member){
     for (; it != members.end(); ++it)
     {
         if (member == *it){
+            delete *it;
             members.erase(it);
             return;
-        }
-    }
-
-    if(members.size() == 0){
-        std::vector<MilitaryUnit*>::iterator it = members.begin();
-        for (; it != this->getOwner()->getArmy().end(); ++it)
-        {
-            if (this == *it){
-                belongsTo->getArmy().erase(it);
-                return;
-            }
         }
     }
 }
@@ -119,12 +115,22 @@ void Squad::setStrategy(attackStrategy * aStrat){
     this->strategy = aStrat;
 }
 
-void Squad::attack() {
-    state->handle(this);
-    strategy->execute(this);
-    if(Ammo > 50){
-        //callInBombardment();
+void Squad::attack(int x, int y) {
+    if(belongsTo->getTotalHealthPoints() > 40 && rations > 50 && fuel > 50){
+        delete state;
+        state = new Aggressive();
     }
+    else{
+        delete state;
+        state = new Defensive();
+    }
+    state->handle(this);
+    
+    if(Ammo > 50){
+        callInBombardment(belongsTo->getMap()->getCell(x, y));
+    }
+
+    strategy->execute(this);
 }
 
 bool Squad::isAlive()  
@@ -166,8 +172,9 @@ Cell* Squad::getOccupyingCell()
 {
     return occupyingCell;
 }
-
+//returns true if it wins battle
 bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
+    ///\todo Rework Squad::battle()
     bool ret;
     std::vector<MilitaryUnit *>::iterator it;
     Participants *en= (enemyMembers.at(0)->getOwner());
@@ -189,5 +196,22 @@ bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
 
 Participant Squad::getParticipant() {
     return getOwner()->getParticipant();
+}
+
+int Squad::getSquadHealth(){
+    int totalHealth;
+    std::vector<MilitaryUnit *>::iterator it;
+    for(it = members.begin(); it < members.end(); it++){
+        totalHealth += ((TeamMembers*)*it)->getHealthpoints();
+    }
+
+    return totalHealth;
+}
+
+int Squad::getSquadDamage()
+{
+    int ret = 0;
+    std::vector<MilitaryUnit*>::iterator it = members.begin();
+    return 0;
 }
 

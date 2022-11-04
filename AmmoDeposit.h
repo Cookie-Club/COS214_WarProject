@@ -48,6 +48,7 @@ class AmmoDeposit : public CellFeatures {
             \brief Destructor
         */ 
         ~AmmoDeposit();
+        void printSymbol(std::string s = "  ");
 };
 
 

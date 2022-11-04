@@ -25,6 +25,7 @@ class Flatlands : public Cell {
             \param[in] m  A MilitaryUnit pointer that points to the squad being added into the cells occupying force
         */
         void execute(MilitaryUnit * m);
+        void printSymbol(std::string s = "  ");
 
   //  void add(Cell *addition);
 };

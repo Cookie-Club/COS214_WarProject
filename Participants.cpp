@@ -1,17 +1,10 @@
 #include "Participants.h"
 
 Participants::Participants(){}
-void Participants::armyMove() {
-	/// @todo - implement Participants::armyMove
-	// throw "Not yet implemented";
-    std::cout << "Army has moved\n";
-}
-
 
 void Participants::retreatParticipants(){
-     retreat(atBack());
+    retreat(atBack());
 }
-
 
 int Participants::getTotalHealthPoints(){
     return totalHealthPoints;
@@ -41,10 +34,6 @@ WorldMap *Participants::getMap() {
 
 void Participants::setMap(WorldMap *map) {
     Participants::map = map;
-}
-
-void Participants::sendMap() {
-    army.at(0)->setMap(map);
 }
 
 Participant Participants::getParticipant()  {

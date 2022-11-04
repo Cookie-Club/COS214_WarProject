@@ -20,14 +20,14 @@ public:
  * \return Infantry*
  * \brief produces concrete infantry product
  */
-    Infantry* createInfantry();
+    Infantry* createInfantry(Participants * belongsTo);
 
     /**
 * \fn CentralFactory::createTank
 * \return Tank*
 * \brief produces concrete tank product
 */
-    Tank* createTank();
+    Tank* createTank(Participants * belongsTo);
 };
 
 

@@ -19,13 +19,13 @@ public:
      * \return Infantry*
      * \brief pure virtual method that will produce concrete infantry products
      */
-    virtual Infantry* createInfantry() = 0;
+    virtual Infantry* createInfantry(Participants * belongsTo){return nullptr;};
     /**
     * \fn Factory::createTank
     * \return Tank*
     * \brief pure virtual method that will produce concrete Tank products
     */
-    virtual Tank* createTank() = 0;
+    virtual Tank* createTank(Participants * belongsTo){return nullptr;};
 
 };
 
