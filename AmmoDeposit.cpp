@@ -26,3 +26,8 @@ void AmmoDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
         }
     }
 }
+
+void AmmoDeposit::printSymbol(std::string s){
+    s = s.replace(0,1,"A");
+    feature->printSymbol(s);
+}

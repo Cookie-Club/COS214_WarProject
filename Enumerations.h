@@ -3,7 +3,7 @@
 
 enum ActionType {Agg, Def};
 enum UnitType { infantry, tank, squad };
-enum Participant{Allied,Central};
+enum Participant{Allied = 32,Central = 41};
 enum CellAttribute{AmmoDepo, FuelDepo};
 
 #endif

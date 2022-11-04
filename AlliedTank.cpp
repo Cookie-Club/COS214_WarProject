@@ -3,7 +3,7 @@
 
 AlliedTank::AlliedTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption) 
 :Tank(damage, healthpoints, belongsTo, fuelConsumption){
-    std::cout << "AlliedTank created";
+    //std::cout << "AlliedTank created";
 }
 
 MilitaryUnit* AlliedTank::clone()

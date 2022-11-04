@@ -16,6 +16,7 @@ class Caretaker {
 
 	public:	
 		Caretaker();
+		Caretaker(SaveState * newState);
 		SaveState* getMemento(int index);
 		void addMemento(SaveState* newState);
 };

@@ -44,6 +44,7 @@ class FuelDeposit : public CellFeatures {
             \param[in] m A vector of MilitaryUnit pointers that point to the unit needing to be added to the cells occupyingForce
         */   
         void setOccupyingForce(std::vector<MilitaryUnit*> m);
+        void printSymbol(std::string s = "  ");
          /**
             \fn AmmoDeposit::~AmmoDeposit
             \brief Destructor

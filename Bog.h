@@ -31,8 +31,10 @@ class Bog : public Cell {
             \param[in] m  A MilitaryUnit pointer that points to the squad being added into the cells occupying force
         */
         void execute(MilitaryUnit * m);
+        virtual void printSymbol(std::string s = "  ");
     private:
         double resourceUseMultiplier;
+        
 };
 
 

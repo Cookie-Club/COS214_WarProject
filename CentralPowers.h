@@ -34,6 +34,8 @@ class CentralPowers : public Participants {
          * \brief returns a vector of Cells with all cells not on the edge of the world map
          */
         std::vector<Cell*> atBack();
+
+        void armyMove();
 };
 
 

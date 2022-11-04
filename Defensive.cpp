@@ -6,5 +6,4 @@ Defensive::Defensive() {
 
 void Defensive::handle(Squad* s) {
     s->setStrategy(new Frontline());
-
 }

@@ -41,6 +41,7 @@ public:
      * \brief Getter method for type variable
      */
     ActionType getType();
+    void setType(ActionType aT){this->type = aT;};
 };
 
 #endif

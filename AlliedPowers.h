@@ -15,11 +15,11 @@
 
 class AlliedPowers : public Participants {
     public:
-    /**
-     * \fn AlliedPowers::retreat
-     * \param cells Vector for cells that need to be retreated
-     * \brief moves squads currently on cells one cell back
-     */
+        /**
+        * \fn AlliedPowers::retreat
+        * \param cells Vector for cells that need to be retreated
+        * \brief moves squads currently on cells one cell back
+        */
         void retreat(std::vector<Cell*> cells);
 
         /**
@@ -34,6 +34,8 @@ class AlliedPowers : public Participants {
          * \brief returns a vector of Cells with all cells not on the edge of the world map
          */
         std::vector<Cell*> atBack();
+
+        void armyMove();
 };
 
 

@@ -8,7 +8,7 @@
 
 CentralTank::CentralTank(int damage, int healthpoints, Participants* belongsTo, float fuelConsumption) 
 :Tank(damage, healthpoints, belongsTo, fuelConsumption){
-    std::cout << "CentralTank created";
+    //std::cout << "CentralTank created";
 }
 
 MilitaryUnit* CentralTank::clone()

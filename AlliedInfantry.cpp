@@ -3,7 +3,7 @@
 
 AlliedInfantry::AlliedInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption) 
 : Infantry(damage, healthpoints, belongsTo, rationConsumption){
-    std::cout << "AlliedInfantry created";
+    //std::cout << "Allied Infantry created";
 }
 
 MilitaryUnit* AlliedInfantry::clone()

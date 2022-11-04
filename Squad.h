@@ -19,7 +19,8 @@
 #include "MilitaryUnit.h"
 #include "Bombardment.h"
 #include "attackStrategy.h"
-#include "Action.h"
+#include "Aggressive.h"
+#include "Defensive.h"
 
 
 //Forward declaration for callInBombardment usage of the constructor and execute methods
@@ -105,9 +106,9 @@ public:
     /**
         \fn Squad::receiveDamage
         \brief Receives damage
-        \details Receives damage input, and distributes it among members,
-        \details returning bool value that represents whether squad died
+        \details Receives damage input, and selects a "volunteer" that will take it
         \param[in] damage   Total damage which should be dealt to the Squad object
+        \return Boolean value: True if squad is still alive, false otherwise
     */
     virtual bool receiveDamage(int damage);
 
@@ -127,7 +128,7 @@ public:
 
     void setStrategy(attackStrategy *strategy);
 
-    void attack();
+    void attack(int x, int y);
 
     bool isAlive();
 
@@ -148,6 +149,14 @@ public:
     bool battle(std::vector<MilitaryUnit *> enemyMembers);
 
     Participant getParticipant();
+
+    int getSquadHealth();
+    /**
+        \fn Squad::getSquadDamage
+        \brief gets how much damage squad members do in total
+        \return Returns sum damage of all squad members
+    */
+    int getSquadDamage();
 };
 
 

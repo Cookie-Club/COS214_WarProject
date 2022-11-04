@@ -33,3 +33,19 @@ std::vector<Cell*> CentralPowers::atBack() {
     }
     return notAtBack;
 }
+
+void CentralPowers::armyMove() {
+	std::vector<MilitaryUnit*>::iterator it;
+
+    for(it = army.begin(); it < army.end(); it++){
+        int SquadXCoord = ((Squad*)*it)->getOccupyingCell()->getX();
+        int SquadYCoord = ((Squad*)*it)->getOccupyingCell()->getY();
+        if(SquadXCoord < map->getSize() - 1){
+            if(!map->getCell(SquadXCoord + 1, SquadYCoord)->getOccupyingForce().empty()){
+                ((Squad*)*it)->attack(SquadXCoord + 1, SquadYCoord);
+            }
+        }
+    }
+
+    //remove empty squads
+}

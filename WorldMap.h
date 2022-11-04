@@ -9,6 +9,8 @@
 #ifndef WORLDMAP_H
 #define WORLDMAP_H
 
+#include <cstdlib>
+
 class FeatureFactory;
 
 class Cell;
@@ -22,6 +24,7 @@ public:
 	WorldMap(int worldSize);
 	Cell *** getGrid();
     int getSize();
+    Cell * getCell(int x, int y);
 };
 
 #endif

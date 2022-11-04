@@ -34,3 +34,19 @@ std::vector<Cell*> AlliedPowers::atBack() {
     return notAtBack;
 }
 
+void AlliedPowers::armyMove() {
+	std::vector<MilitaryUnit*>::iterator it;
+
+    for(it = army.begin(); it < army.end(); it++){
+        int SquadXCoord = ((Squad*)*it)->getOccupyingCell()->getX();
+        int SquadYCoord = ((Squad*)*it)->getOccupyingCell()->getY();
+        if(SquadXCoord > 0){
+            if(!map->getCell(SquadXCoord + 1, SquadYCoord)->getOccupyingForce().empty()){
+                ((Squad*)*it)->attack(SquadXCoord - 1, SquadYCoord);
+            }
+        }
+    }
+
+    //remove empty squads
+}
+
