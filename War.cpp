@@ -1,43 +1,28 @@
 #include "War.h"
 
 War::War(WorldMap* world, std::vector<Participants*> participants) {
-	/// @todo - implement War::War
-	//throw "Not yet implemented";
+	this->world = world;
+    this->participants = participants;
 }
 
-SaveState* War::createSave(int id) { // create m
-    SaveState* save = new SaveState(world, participants, id);
-    // save->setState(state);
+SaveState* War::createSave() {
+    SaveState* save = new SaveState(world, participants);
     return save;
 }
 
-WorldMap* War::getWorld() { // get img
+WorldMap* War::getWorld(){
     return world;
 }
 
 std::vector<Participants*> War::getParticipants() {
-    //needs to change
-    vector<Participants*> p;
-    return p;
+    return participants;
 }
 
-void War::createWorld(int worldSize) {
-	/// @todo - implement War::createWorld
-	//throw "Not yet implemented";
-	return ;
-}
-
-void War::setWar(SaveState * state) { // reinstate mem
+void War::setWar(SaveState * state) {
     world = state->getWorld();
     participants = state->getParticipants();
 }
 
-void War::startMenu() {
-	/// @todo implement War::startMenu
-	// throw "Not yet implemented";
-	return;
-}
-
-void War::sendMap() {
+void War::sendMap(){
     participants.at(0)->setMap(getWorld());
 }

@@ -19,7 +19,7 @@ class AlliedPowers : public Participants {
      * \param cells Vector for cells that need to be retreated
      * \brief moves squads currently on cells one cell back
      */
-        void retreat(std::vector<std::vector<Cell*>> cells);
+        void retreat(std::vector<Cell*> cells);
 
         /**
          * \fn AlliedPowers::AlliedPowers

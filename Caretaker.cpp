@@ -1,9 +1,6 @@
 #include "Caretaker.h"
 
-Caretaker::Caretaker() {
-	// TODO - implement Caretaker::Caretaker
-	//throw "Not yet implemented";
-}
+Caretaker::Caretaker() {}
 
 SaveState* Caretaker::getMemento(int index) {
 	return mementos.at(index);
