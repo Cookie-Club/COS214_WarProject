@@ -1,4 +1,5 @@
 /**
+    \file main.cpp
     \todo figure out a way to decide how big the map should be
     \todo figure out creative mode
 */

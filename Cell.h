@@ -3,6 +3,7 @@
     \brief Contains the definition of the Cell class
     \authors Robert Officer, Kaitlyn Sookdhew
     \date 03/11/22
+    \todo Documentation of Cell::removeOccupyingForce on line 37
 */
 /**
 	\class Cell
@@ -11,7 +12,6 @@
     \defgroup Cell
 	\authors Robert Officer, Kaitlyn Sookdhew
 */
-///\todo Documentation of Cell::removeOccupyingForce on line 37
 #ifndef CELL_H
 #define CELL_H
 

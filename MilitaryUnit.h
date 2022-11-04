@@ -3,6 +3,7 @@
     \brief Defines MilitaryUnit class and UnitType enum
     \authors Wian Koekemoer, Robert Officer
     \date 30/10/22
+    \todo Documentation for MilitaryUnit::getMap and MilitaryUnit::setMap on lines 87-88
 */
 /**
 	\class MilitaryUnit
@@ -12,7 +13,6 @@
 	\defgroup MilitaryUnit
 	\authors Robert Officer, Wian Koekemoer
 */
-/// \todo Documentation for MilitaryUnit::getMap and MilitaryUnit::setMap on lines 87-88
 #ifndef MILITARYUNIT_H
 #define MILITARYUNIT_H
 
@@ -33,6 +33,7 @@ class WorldMap; //forward declaration of WorldMap class
 */
 
 class MilitaryUnit {
+
 	public:
 		/**
             \fn MilitaryUnit:MilitaryUnit

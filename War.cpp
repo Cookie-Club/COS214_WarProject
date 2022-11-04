@@ -1,7 +1,13 @@
 #include "War.h"
+/**
+    \file War.cpp
+    \todo implement War::War
+    \todo implement War::createWorld
+	\todo implement War::startMenu
 
+*/
 War::War(WorldMap* world, std::vector<Participants*> participants) {
-	/// @todo - implement War::War
+
 	//throw "Not yet implemented";
 }
 
@@ -22,7 +28,6 @@ std::vector<Participants*> War::getParticipants() {
 }
 
 void War::createWorld(int worldSize) {
-	/// @todo - implement War::createWorld
 	//throw "Not yet implemented";
 	return ;
 }
@@ -33,7 +38,6 @@ void War::setWar(SaveState * state) { // reinstate mem
 }
 
 void War::startMenu() {
-	/// @todo implement War::startMenu
 	// throw "Not yet implemented";
 	return;
 }

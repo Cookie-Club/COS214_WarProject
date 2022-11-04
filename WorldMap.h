@@ -4,8 +4,8 @@
     \brief Creates the Map for the simulation
     \details Creates a 2D array of Cells. Each Cell is decorated with the type of cell it is and features that it has
     \author Megan Hugo
+    \todo Function Documentation
 */
-///\todo Function Documentation
 #ifndef WORLDMAP_H
 #define WORLDMAP_H
 
