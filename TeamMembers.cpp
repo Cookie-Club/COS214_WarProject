@@ -54,13 +54,4 @@ std::vector<MilitaryUnit*> getMembers()
 {
     return std::vector<MilitaryUnit*>();
 }
-
-void TeamMembers::setSquad(Squad* squad)
-{
-    this->squad = squad;
-}
-
-Squad* TeamMembers::getSquad()
-{
-    return squad;
-}
+    

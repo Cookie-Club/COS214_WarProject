@@ -187,7 +187,3 @@ bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
     return ret;
 }
 
-Participant Squad::getParticipant() {
-    return getOwner()->getParticipant();
-}
-

@@ -21,17 +21,12 @@
 #include <vector>
 #include <cstdlib>
 #include "Enumerations.h"
-class Action;//Required for the return type of the forward  declared Participant::getState()
-class MilitaryUnit;//Required for the return type of the forward  declared Participant::getArmy()
+// class Action;//Required for the return type of the forward  declared Participant::getState()
+// class MilitaryUnit;//Required for the return type of the forward  declared Participant::getArmy()
 //Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
 class Participants;
 class WorldMap; //forward declaration of WorldMap class
-/**
-   \enum UnitType
-   \brief Used to identify the type of the MilitaryUnit object. 
-   \details It is used in Chain of Responsibility to check if a ConcreteHandler is meant to deal with that specific object. 
-*/
-
+class Squad;
 class MilitaryUnit {
 
 	public:
@@ -78,8 +73,31 @@ class MilitaryUnit {
 			\details called to determine which Participant the object belongs to
         */
         Participants* getOwner();
+        /**
+           \fn MilitaryUnit::getParticipant
+           \brief Getter for what kind of participant the MilitaryUnit belongs to
+           \return Participant enum value
+        */
+        Participant getParticipant();
+        /**
+            \fn MilitaryUnit::getSquad
+            \brief Getter for squad
+        */
+        Squad* getSquad();
+        /**
+            \fn MilitaryUnit::getSquad
+            \brief Getter for squad
+            \param[in] squad    The Squad object to which the TeamMembers object belongs
+        */
+        void setSquad(Squad* squad);
+        /**
+            \fn MilitaryUnit::removeSquad
+            \brief Sets squad member variable to null
+        */
+        void removeSquad();
         
 	protected:
+        Squad* squad;
         UnitType type;
 		Participants* belongsTo;
         WorldMap* map;
@@ -93,3 +111,4 @@ class MilitaryUnit {
 
 #include "Participants.h"
 #include "WorldMap.h"
+#include "Squad.h"

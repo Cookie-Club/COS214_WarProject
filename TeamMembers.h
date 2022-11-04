@@ -78,21 +78,9 @@ class TeamMembers : public MilitaryUnit {
             \param[in] damage   Total damage which should be dealt to the TeamMembers object
         */
         bool receiveDamage(int damage);
-        /**
-            \fn TeamMembers::getSquad
-            \brief Getter for squad
-        */
-        Squad* getSquad();
-        /**
-            \fn TeamMembers::getSquad
-            \brief Getter for squad
-            \param[in] squad    The Squad object to which the TeamMembers object belongs
-        */
-        void setSquad(Squad* squad);
 
 
     protected:
-        Squad* squad;
         int damage;
         int healthpoints;
 };
