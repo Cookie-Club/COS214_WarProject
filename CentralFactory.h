@@ -6,8 +6,8 @@
     \ingroup Factory
     \author Kaitlyn Sookdhew
 */
-#ifndef AXISFACTORY_H
-#define AXISFACTORY_H
+#ifndef CENTRALFACTORY_H
+#define CENTRALFACTORY_H
 
 #include "Factory.h"
 #include "CentralInfantry.h"
@@ -32,4 +32,4 @@ public:
 
 
 
-#endif //AXISFACTORY_H
+#endif //CENTRALFACTORY_H
