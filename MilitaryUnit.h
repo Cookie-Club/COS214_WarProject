@@ -95,6 +95,8 @@ class MilitaryUnit {
             \return An int value equal to the total amount of health the unit has
         */
         virtual int getHealthpoints() = 0;
+        Participant getParticipant();
+
 	protected:
         UnitType type;
 		Participants* belongsTo;

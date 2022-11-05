@@ -23,3 +23,7 @@ void MilitaryUnit::setMap(WorldMap *map) {
     this->map = map;
 }
 
+Participant MilitaryUnit::getParticipant()
+{
+    return belongsTo->getParticipant();
+}

@@ -64,3 +64,22 @@ clean:
 
 run: $(TARGET)
 	./$(TARGET) # executing the program
+
+# Cleans up terminal before compiling and running
+stuff:
+	clear && make && make run
+
+# Stuff for testing
+# Creates Test Directory with passed in name
+create_test:
+	mkdir ${DIR_NAME} && \
+	cp -i ./Example_Test/CMakeLists.txt ./${DIR_NAME}/ && \
+	cp -i ./Example_Test/Test_Config.h.in ./${DIR_NAME}/ && \
+	cp -i ./Example_Test/Test_Template.cpp ./${DIR_NAME}/${DIR_NAME}_main.cpp && \
+	cp -i ./Example_Test/Fixtures_Template.h ./${DIR_NAME}/${DIR_NAME}_Fixtures.h && \
+	cd ./${DIR_NAME} && \
+	mkdir ${DIR_NAME}_Build
+
+# Builds and runs tests in passed directory
+test:
+	cd ${DIR_NAME}/${DIR_NAME}_Build && cmake .. && cmake --build . && ctest

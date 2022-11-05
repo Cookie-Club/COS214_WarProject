@@ -63,25 +63,16 @@ std::vector<MilitaryUnit*> Squad::getMembers(){
     return members;
 }
 
-bool Squad::receiveDamage(int damage) // @kaitlyn fix this
+bool Squad::receiveDamage(int damage)
 {
-    int i = std::rand() % members.size();
-    MilitaryUnit* unluckyWinner = members[i];
-    //if unit dies
-    
-    if(!unluckyWinner->receiveDamage(damage))
+    int dividedDamage = damage/members.size();
+    std::vector<MilitaryUnit*>::iterator it = members.begin();
+    for (; it != members.end(); ++it)
     {
-        std::vector<MilitaryUnit*>::iterator it = members.begin();
-        for (; it != members.end(); ++it)
-        {
-            if (*it == unluckyWinner)
-            {
-                members.erase(it);
-                break;
-            }
-        }
-        delete unluckyWinner;
+        if(!(*it)->receiveDamage(dividedDamage));
+            members.erase(it);
     }
+
     return this->isAlive();
 }
 
@@ -203,10 +194,6 @@ bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
         return false;
 
     return true;
-}
-
-Participant Squad::getParticipant() {
-    return getOwner()->getParticipant();
 }
 
 int Squad::getSquadHealth(){
