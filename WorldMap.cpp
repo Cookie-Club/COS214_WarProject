@@ -22,35 +22,34 @@ WorldMap::WorldMap(int worldSize) {
         {
             std::cout<< "Cell [" << i << "][" << j << "]: ";
             int rand = std::rand() % (totalSize + 1);
+
             if(rand >= totalSize*0.7 && rand < totalSize * 0.9){
                 factories = new AmmoDepoFactory();
                 grid[i][j] = factories->createFeature();
-                cout << "AmmoDepo, [";
+                cout << "AmmoDepo, ";
             }
             else if(rand >= totalSize*0.9 && rand < totalSize * 1.0){
                 factories = new FuelDepoFactory();
                 grid[i][j] = factories->createFeature();
-                cout << "FuelDepo, [ ";
+                cout << "FuelDepo, ";
             }
             else{
                 grid[i][j] = new Cell();
-                cout << "Nothing, [ ";
+                cout << "Nothing, ";
             }
 
             grid[i][j]->setCoordinates(i, j);
 
-            
+            //Replaced cout commands in the if statements below with
+            // the creation messages in the cell constructors that are called
             rand = std::rand() % (totalSize + 1);
             if(rand <= (totalSize * 0.25)){
-                cout << " ] Bog";
                 this->grid[i][j]->add(new Bog());
             }
             else if(rand > (totalSize * 0.25) && rand <= (totalSize * 0.5)){
-                cout << " ] Flatland";
                 this->grid[i][j]->add(new Flatlands());
             }
             else{
-                cout << " ] Plains";
                 this->grid[i][j]->add(new Cell());
             }
         }

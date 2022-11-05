@@ -1,5 +1,5 @@
 #include "Participants.h"
-
+#include "Squad.h"
 Participants::Participants(){}
 
 void Participants::retreatParticipants(){
@@ -7,20 +7,38 @@ void Participants::retreatParticipants(){
 }
 
 int Participants::getTotalHealthPoints(){
-    return totalHealthPoints;
-}
-
-void Participants::setTotalHealthPoints(int hp) {
+    int total = 0;
+    std::vector<MilitaryUnit*>::iterator it = army.begin();
+    for (; it != army.end(); ++it)
+    {
+        total += (*it)->getHealthpoints();
+    }
+    return total;
 }
 
 int Participants::getTotalDamage(){
-    return totalDamage;
+    int total = 0;
+    std::vector<MilitaryUnit*>::iterator it = army.begin();
+    for (; it != army.end(); ++it)
+    {
+        total += (*it)->getDamage();
+    }
+    return total;
 }
-
-void Participants::setTotalDamage() {}
 
 string Participants::getName(){
     return name;
+}
+
+void Participants::addUnit(MilitaryUnit* m)
+{
+    if (m->isLeaf())
+    {
+        Squad* temp = new Squad(this);
+        temp->addMember(m);
+        m = temp;
+    }
+    army.push_back(m);
 }
 
 std::vector<MilitaryUnit*> Participants::getArmy()

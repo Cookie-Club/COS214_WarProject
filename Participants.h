@@ -23,8 +23,6 @@ protected:
     //Action* state;
     double resources;
     //vector<attackStrategy*> moveStrategies;
-    int totalHealthPoints;
-    int totalDamage;
     std::string name;
     WorldMap* map;
     Participant participant;
@@ -36,11 +34,19 @@ public:
     virtual void retreat(std::vector<Cell*> cells)=0;
     virtual std::vector<Cell*> atBack() = 0;
     void retreatParticipants();
+    /**
+        \fn Participants::addUnit
+        \brief Adds a military unnit to the Participants army vector
+        \details Receives a MilitaryUnit pointer, checks if it is a Composite participants of the Composite pattern. 
+        \details If the passed parameter is a Leaf participant, a new composite (squad) is created which contains 
+        \details the passed parameter, and the squad is added to the army instead. 
+        \details Otherwise, if the passed parameter is already a composite, it is added to the army directly
+        \param m    A MilitaryUnit pointer that points to either a Leaf or a Composite participant
+    */
+    void addUnit(MilitaryUnit* m);
     std::vector<MilitaryUnit*> getArmy();
     int getTotalHealthPoints();
-    void setTotalHealthPoints(int hp);
     int getTotalDamage();
-    void setTotalDamage();
     std::string getName();
     Participant getParticipant() ;
     WorldMap *getMap();

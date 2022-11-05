@@ -35,6 +35,11 @@ bool TeamMembers::isLeaf()
     return true;
 }
 
+bool TeamMembers::isAlive()
+{
+    return (healthpoints > 0);
+}
+
 int TeamMembers::getHealthpoints()
 {
     return healthpoints;
