@@ -113,7 +113,7 @@ public:
     /**
         \fn Squad::receiveDamage
         \brief Receives damage
-        \details Receives damage input, and selects a "volunteer" that will take it
+        \details Receives damage input and divides it equally among members
         \param[in] damage   Total damage which should be dealt to the Squad object
         \return Boolean value: True if squad is still alive, false otherwise
     */
