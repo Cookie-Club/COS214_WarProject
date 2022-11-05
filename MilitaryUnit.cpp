@@ -9,6 +9,11 @@ Participants* MilitaryUnit::getOwner()
     return belongsTo;
 }
 
+void MilitaryUnit::setOwner(Participants* p)
+{
+    belongsTo = p;
+}
+
 UnitType MilitaryUnit::getType()
 {
     return this->type;

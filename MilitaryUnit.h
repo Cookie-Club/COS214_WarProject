@@ -83,6 +83,11 @@ class MilitaryUnit {
 			\details called to determine which Participant the object belongs to
         */
         Participants* getOwner();
+		/**
+            \fn MilitaryUnit::setOwner
+            \brief Setter for belongsTo variable
+        */
+        void setOwner(Participants* p);
         /**
             \fn MilitaryUnit::getDamage
             \brief Gets total damage of the MilitaryUnit
@@ -104,7 +109,7 @@ class MilitaryUnit {
         
     public:
         WorldMap *getMap();
-        void setMap(WorldMap *map);
+        virtual void setMap(WorldMap *map);
 };
 
 #endif

@@ -29,7 +29,7 @@ protected:
 
 public:
     Participants();
-    virtual ~Participants(){};
+    virtual ~Participants();
     virtual void armyMove() = 0;
     virtual void retreat(std::vector<Cell*> cells)=0;
     virtual std::vector<Cell*> atBack() = 0;

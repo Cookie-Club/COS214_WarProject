@@ -13,6 +13,7 @@
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
     //state->setType(Agg);
+    occupyingCell = nullptr;
 }
 
 Squad::~Squad()
@@ -25,14 +26,20 @@ Squad::~Squad()
         this->members.erase(it);
         delete temp;
     }
-    if (belongsTo) belongsTo->removeMilitaryUnit(this);
-    if (occupyingCell) occupyingCell->removeOccupyingForce(this);
+    if (belongsTo != nullptr) belongsTo->removeMilitaryUnit(this);
+    if (occupyingCell != nullptr) occupyingCell->removeOccupyingForce(this);
 }
+
 void Squad::setOccupyingCell(Cell* c)
 {
-    this->occupyingCell->removeOccupyingForce(this);
+    if (occupyingCell != nullptr) occupyingCell->removeOccupyingForce(this);
     this->occupyingCell = c;
-    occupyingCell->setOccupyingForce(this);
+    if (c != nullptr) occupyingCell->setOccupyingForce(this);
+}
+
+Cell* Squad::getOccupyingCell()
+{
+    return occupyingCell;
 }
 
 Squad* Squad::clone()
@@ -160,10 +167,6 @@ void Squad::setRations(int rations)
     this->rations = rations;
 }
 
-Cell* Squad::getOccupyingCell()  
-{
-    return occupyingCell;
-}
 //returns true if it wins battle
 bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
     ///\todo Rework Squad::battle()
@@ -233,4 +236,10 @@ int Squad::getHealthpoints()
         total += (*it)->getHealthpoints();
     }
     return total;
+}
+
+void Squad::setMap(WorldMap* map)
+{
+    std::vector<MilitaryUnit*>::iterator it = members.begin();
+    for (;it != members.end(); ++it) (*it)->setMap(map);
 }

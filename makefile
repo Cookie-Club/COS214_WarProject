@@ -82,4 +82,4 @@ create_test:
 
 # Builds and runs tests in passed directory
 test:
-	cd ${DIR_NAME}/${DIR_NAME}_Build && cmake .. && cmake --build . && ctest
+	cd ${DIR_NAME}/${DIR_NAME}_Build && cmake .. && cmake --build . && ctest --output-on-failure
