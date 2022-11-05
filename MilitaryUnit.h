@@ -61,6 +61,11 @@ class MilitaryUnit {
         */
         virtual bool isLeaf() = 0;
 		/**
+            \fn MilitaryUnit::isAlive
+            \brief Checks if unit is alive
+        */
+        virtual bool isAlive() = 0;
+		/**
             \fn MilitaryUnit::receiveDamage
             \brief Definition of abstract operation; to be implemented in children
             \param[in] damage   Integer number that represents the total damage the unit can dealz
@@ -78,7 +83,18 @@ class MilitaryUnit {
 			\details called to determine which Participant the object belongs to
         */
         Participants* getOwner();
-        
+        /**
+            \fn MilitaryUnit::getDamage
+            \brief Gets total damage of the MilitaryUnit
+            \return An int value equal to the total amount of damage the unit deals
+        */
+        virtual int getDamage() = 0;
+        /**
+            \fn MilitaryUnit::getHealth
+            \brief Gets total health of the MilitaryUnit
+            \return An int value equal to the total amount of health the unit has
+        */
+        virtual int getHealthpoints() = 0;
 	protected:
         UnitType type;
 		Participants* belongsTo;

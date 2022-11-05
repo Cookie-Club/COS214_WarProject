@@ -34,7 +34,7 @@ class Cell {
             \fn Cell::Cell
             \brief Constructor
         */
-        Cell();
+        Cell(std::string type = "cell");
 
         void removeOccupyingForce(std::vector<MilitaryUnit*> m);
         /**

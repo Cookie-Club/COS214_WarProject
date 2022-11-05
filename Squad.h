@@ -81,6 +81,13 @@ public:
         \brief Returns false to communicate object is not a leaf in Composite structure
     */
     bool isLeaf();
+   /**
+        \fn Squad::isAlive
+        \brief Checks if any Squad members are alive
+        \details Inherited from MilitaryUnit
+        \return True if number of units is greater than 0, False otherwise
+    */
+    bool isAlive();
 
     /**
         \fn Squad::addMember
@@ -118,6 +125,22 @@ public:
         \details Creates a new bombardment order and executes the new order on the passed in cell.
     */
     void callInBombardment(Cell *targetedCell);
+    /**
+        \fn Squad::getDamage
+        \brief Gets total damage of the Squad's members
+        \details Inherited from MilitaryUnit. 
+        \details Iterates through members vector and adds up damage of units inside
+        \return An int value equal to the sum total damage of the squad's members
+    */
+    virtual int getDamage();
+    /**
+        \fn Squad::getHealth
+        \brief Gets total health of the Squad's members
+        \details Inherited from MilitaryUnit. 
+        \details Iterates through members vector and adds up health of units inside
+        \return An int value equal to the sum total health of the suad's members
+    */
+    virtual int getHealthpoints();
 
 
     Action *getState();
@@ -129,8 +152,6 @@ public:
     void setStrategy(attackStrategy *strategy);
 
     void attack(int x, int y);
-
-    bool isAlive();
 
     int getAmmo();
 

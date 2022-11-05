@@ -1,7 +1,9 @@
 #include "Cell.h"
-Cell::Cell(){
-    // std::cout << "Cell created\n";
-    type = "cell";
+Cell::Cell(std::string type): type(type){
+    
+    //If Cell constructor is not called by children
+    if (type == "cell")
+        std::cout << "Cell\n";
 }
 
 
