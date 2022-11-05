@@ -1,4 +1,4 @@
-#include "Composite_Test_Fixtures.h"
+#include "Test_Config.h"
 
 //Test that constructors function correctly. using ASSERT_EQ as carrying on with the test
 // after failure would be pointless
@@ -39,6 +39,76 @@ TEST_F(CompositeFixture, Squad_Initial_State)
     std::vector<MilitaryUnit*> squad2 = cSquad->getMembers();
     ASSERT_EQ(squad1.size(), 1) << "Allied squad has incorrect size";
     ASSERT_EQ(squad2.size(), 1) << "Central squad has incorrect size";
-    ASSERT_EQ(squad1.at(0), units.at(0)) << "Allied squad has incorrect unit";
-    ASSERT_EQ(squad2.at(0), units.at(1)) << "Central squad has incorrect unit";
+    ASSERT_EQ(squad1[0], units[0]) << "Allied squad has incorrect unit";
+    ASSERT_EQ(squad2[0], units[1]) << "Central squad has incorrect unit";
+}
+
+TEST_F(CompositeFixture, setMap_Functions)
+{
+    EXPECT_EQ(units[0]->getMap(),nullptr);
+    EXPECT_EQ(units[1]->getMap(),nullptr);
+    EXPECT_EQ(units[2]->getMap(),nullptr);
+    EXPECT_EQ(units[3]->getMap(),nullptr);
+    units[0]->setMap(map);
+    EXPECT_EQ(units[0]->getMap(),map);
+    EXPECT_EQ(units[1]->getMap(),nullptr);
+    EXPECT_EQ(units[2]->getMap(),nullptr);
+    EXPECT_EQ(units[3]->getMap(),nullptr);
+    aSquad->addMember(units[2]);
+    aSquad->setMap(map);
+    EXPECT_EQ(units[0]->getMap(),map);
+    EXPECT_EQ(units[1]->getMap(),nullptr);
+    EXPECT_EQ(units[2]->getMap(),map);
+    EXPECT_EQ(units[3]->getMap(),nullptr);
+    cSquad->addMember(units[3]);
+    central->setMap(map);
+    EXPECT_EQ(units[0]->getMap(),map);
+    EXPECT_EQ(units[1]->getMap(),map);
+    EXPECT_EQ(units[2]->getMap(),map);
+    EXPECT_EQ(units[3]->getMap(),map);
+    aSquad->removeSquadMember(units[2]);
+    cSquad->removeSquadMember(units[3]);
+}
+
+TEST_F(CompositeFixture, Squad_Add_And_Remove_Members)
+{
+    aSquad->addMember(units[2]);
+    std::vector<MilitaryUnit*> squad1 = aSquad->getMembers();
+    std::vector<MilitaryUnit*> squad2 = cSquad->getMembers();
+    EXPECT_EQ(squad1.size(), 2) << "Allied squad has incorrect size";
+    EXPECT_EQ(squad2.size(), 1) << "Central squad has incorrect size";
+    cSquad->addMember(units[3]);
+    squad2 = cSquad->getMembers();//Need to get it again because getMembers returns a copy of the vector
+    EXPECT_EQ(squad1.size(), 2) << "Allied squad has incorrect size";
+    EXPECT_EQ(squad2.size(), 2) << "Central squad has incorrect size";
+
+    aSquad->removeSquadMember(units[2]);
+    squad1 = aSquad->getMembers();
+    EXPECT_EQ(squad1.size(), 1) << "Allied squad has incorrect size";
+    EXPECT_EQ(squad2.size(), 2) << "Central squad has incorrect size";
+    cSquad->removeSquadMember(units[3]);
+    squad2 = cSquad->getMembers();//Need to get it again because getMembers returns a copy of the vector
+    EXPECT_EQ(squad1.size(), 1) << "Allied squad has incorrect size";
+    EXPECT_EQ(squad2.size(), 1) << "Central squad has incorrect size";
+}
+
+TEST_F(CompositeFixture, setOccupyingCell_setOppcupyingForce_getOccupyingForce)
+{
+    Cell* tempCell = map->getGrid()[1][1];
+    aSquad->setOccupyingCell(tempCell);
+    EXPECT_EQ(aSquad->getOccupyingCell(), tempCell) << "Allied squad should be occupying tempCell";
+    EXPECT_EQ(cSquad->getOccupyingCell(), nullptr) << "Central squad should not be occupying cell";
+    std::vector<MilitaryUnit*> tempVect = tempCell->getOccupyingForce();
+    EXPECT_EQ(aSquad, tempVect[0]) << "Allied squad should be in vector of tempCell";
+
+    Cell* tempCell2 = map->getGrid()[1][2];
+    aSquad->setOccupyingCell(tempCell2);
+    cSquad->setOccupyingCell(tempCell);
+    EXPECT_EQ(aSquad->getOccupyingCell(), tempCell2) << "Allied squad should be occupying tempCell2";
+    EXPECT_EQ(cSquad->getOccupyingCell(), tempCell) << "Central squad should be occupying tempCell";
+    
+    tempVect = tempCell->getOccupyingForce();
+    std::vector<MilitaryUnit*> tempVect2 = tempCell2->getOccupyingForce();
+    EXPECT_EQ(aSquad, tempVect2[0]) << "Allied squad should be in vector of tempCell2";
+    EXPECT_EQ(cSquad, tempVect[0]) << "Allied squad should be in vector of tempCell";
 }

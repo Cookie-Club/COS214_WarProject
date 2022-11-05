@@ -12,6 +12,7 @@ class CompositeFixture: public ::testing::Test
     protected:
         void SetUp()
         {
+            map = new WorldMap(10);
             ally = new AlliedPowers();
             central = new CentralPowers();
             units.push_back(new AlliedInfantry(A_I_DAMAGE, A_I_HP, ally, A_I_RATIONS));
@@ -20,21 +21,23 @@ class CompositeFixture: public ::testing::Test
             units.push_back(new CentralTank(C_T_DAMAGE, C_T_HP, central, C_T_FUEL));
             aSquad = new Squad(ally);
             cSquad = new Squad(central);
+            ally->addUnit(aSquad);
+            central->addUnit(cSquad);
+            // std::cout << "before adding members to squads\n";
             aSquad->addMember(units.at(0)); //Add anonymous AlliedInfantry object
             cSquad->addMember(units.at(1)); //Add anonymous CentralInfantry object
+            // std::cout << "after adding members to squads\n";
         };
 
         void TearDown()
         {
-            //Delegate object deletion do Squad destructor
+            //Delegate TeamMember class deletion do Squad destructor
             aSquad->addMember(units.at(2));
             cSquad->addMember(units.at(3));
-            delete aSquad;
-            delete cSquad;
-            aSquad = nullptr;
-            cSquad = nullptr;
+            //Participants desctructor handles deletion of squad objects
             delete ally;
             delete central;
+            delete map;
         };
 
         std::vector<MilitaryUnit*> units;
@@ -42,6 +45,7 @@ class CompositeFixture: public ::testing::Test
         Squad* cSquad; //Central squad
         Participants* ally;
         Participants* central;
+        WorldMap* map;
         const int A_I_DAMAGE = 100;
         const int C_I_DAMAGE = 101;
         const int A_T_DAMAGE = 102;

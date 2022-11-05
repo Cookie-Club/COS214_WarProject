@@ -37,7 +37,7 @@ set(curr_path "${CMAKE_CURRENT_SOURCE_DIR}")
 cmake_path(GET curr_path PARENT_PATH p_path)
 include_directories(${p_path})
 
-configure_file(${ProjectId}_Config.h.in ${ProjectId}_Config.h)
+configure_file(Test_Config.h.in Test_Config.h)
 
 #Add to list of source files to form dependenices in constructed makefile printf "s%\n" *
 #Please remember to add newly created files

@@ -2,6 +2,15 @@
 #include "Squad.h"
 Participants::Participants(){}
 
+Participants::~Participants()
+{
+    for (int x = 0; x < army.size(); ++x)
+    {
+        army[x]->setOwner(nullptr);
+        delete army[x];
+    }
+}
+
 void Participants::retreatParticipants(){
     retreat(atBack());
 }
@@ -52,12 +61,27 @@ WorldMap *Participants::getMap() {
 
 void Participants::setMap(WorldMap *map) {
     Participants::map = map;
+    std::vector<MilitaryUnit*>::iterator it = army.begin();
+    for (;it != army.end(); ++it)
+    {
+        (*it)->setMap(map);
+    }
 }
 
 Participant Participants::getParticipant()  {
     return participant;
 }
+
 void Participants::removeMilitaryUnit(MilitaryUnit* m)
 {
-
+    std::vector<MilitaryUnit*>::iterator it = army.begin();
+    for (;it != army.end(); ++it)
+    {
+        if(*it == m) 
+        {
+            (*it)->setOwner(nullptr);
+            army.erase(it);
+            return;
+        }
+    }
 }

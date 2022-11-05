@@ -50,11 +50,12 @@ public:
         \brief Destructor
         \details Deletes members
     */
-    ~Squad();
+    virtual ~Squad();
 
     /**
         \fn Squad::moveSquad
         \brief Select cell to move to
+        \todo Decide if this is necessary
     */
     void moveSquad();
 
@@ -68,6 +69,13 @@ public:
         \param[in] c    Pointer to Cell object on which the Squad object is located
     */
     void setOccupyingCell(Cell *c);
+
+    /**
+        \fn Squad::getOccupyingCell
+        \brief Getter for occupyingCell
+        \return a Cell pointer to the cell that the squad is occupying
+    */
+    Cell* getOccupyingCell();
 
     /**
         \fn Squad::clone
@@ -165,8 +173,6 @@ public:
 
     void setRations(int rations);
 
-    Cell *getOccupyingCell();
-
     bool battle(std::vector<MilitaryUnit *> enemyMembers);
 
     int getSquadHealth();
@@ -176,6 +182,8 @@ public:
         \return Returns sum damage of all squad members
     */
     int getSquadDamage();
+
+    virtual void setMap(WorldMap* map);
 };
 
 
