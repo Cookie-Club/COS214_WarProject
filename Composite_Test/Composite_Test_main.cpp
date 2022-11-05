@@ -1,4 +1,4 @@
-#include "Composite_Fixtures.h"
+#include "Composite_Test_Fixtures.h"
 
 //Test that constructors function correctly. using ASSERT_EQ as carrying on with the test
 // after failure would be pointless

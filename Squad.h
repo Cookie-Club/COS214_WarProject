@@ -169,8 +169,6 @@ public:
 
     bool battle(std::vector<MilitaryUnit *> enemyMembers);
 
-    Participant getParticipant();
-
     int getSquadHealth();
     /**
         \fn Squad::getSquadDamage

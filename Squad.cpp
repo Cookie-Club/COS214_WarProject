@@ -196,10 +196,6 @@ bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
     return true;
 }
 
-Participant Squad::getParticipant() {
-    return getOwner()->getParticipant();
-}
-
 int Squad::getSquadHealth(){
     int totalHealth;
     std::vector<MilitaryUnit *>::iterator it;

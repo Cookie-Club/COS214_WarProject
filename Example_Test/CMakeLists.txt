@@ -3,26 +3,21 @@ How to create unit testing project:
 
 1. Check that you have cmake version 3.20 or higher installed
 
-2. In the project root directory; create a directory named <Test_Name> and second <Test_Name>_Build directory inside your <Test_Name> one
-  **The name of the second directory must end in "_Build" in order for the .gitignore file to ignore the files inside,
-    they are rather large and can always be reconstructed, so commiting them is pointless
+2. In the project root directory; run make create_test DIR_NAME=<Test_Name>_Test
 
-3. Copy this CMakefile into your new <Test_Name> directory and create your own <Test_Name>_Fixtures.h and <Test_Name>_main.cpp files
-4. Replace all instances of "test_Example" in your new CMakeLists.txt file with your project name of choice
-5. Replace all instances of "test_main_Example.cpp" in your new CMakeLists.txt file with the name of your <Test_Name>_main.cpp
-6. Open your terminal, cd into your new <Test_Name>_Build directory and run the following commands:
+3. Write your tests/fixtures .Ignore the CMakeLists.txt and Confog files.
 
-    cmake ..      <! Note the two full stops
-    cmake --build .     <! Note the full stop
-    ctest
+To run the tests, run the following command in the rot directory:
+  make test DIR_NAME=<Test_Name>_Test
 ]]
 
 cmake_minimum_required(VERSION 3.20)
-#Project name, change when you copy the file
-project(test_Example)
+#Project name
+get_filename_component(ProjectId ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" ProjectId ${ProjectId})
+project(${ProjectId})
 #Minimum release version for googletest
 set(CMAKE_CXX_STANDARD 14)
-
 
 #---Yoinked from http://google.github.io/googletest/quickstart-cmake.html
 include(FetchContent)
@@ -36,10 +31,13 @@ FetchContent_MakeAvailable(googletest)
 #------------------------------------------------------------------------
 
 
-#Get path to parent directory where source files are located
+# Get path to current directory
 set(curr_path "${CMAKE_CURRENT_SOURCE_DIR}")
+# Decompose curr_path to get path to parent directory
 cmake_path(GET curr_path PARENT_PATH p_path)
 include_directories(${p_path})
+
+configure_file(${ProjectId}_Config.h.in ${ProjectId}_Config.h)
 
 #Add to list of source files to form dependenices in constructed makefile printf "s%\n" *
 #Please remember to add newly created files
@@ -87,14 +85,14 @@ set(SOURCES ${p_path}/Action.cpp ${p_path}/Action.h
 enable_testing()
 
 #Declare source files with which to construct the executable
-add_executable(test_Example test_main_Example.cpp ${SOURCES})
+add_executable(${ProjectId} ${ProjectId}_main.cpp ${SOURCES})
 
 #specify directories where the compiler should look for files specified in #include statements
-target_include_directories(test_Example PUBLIC 
+target_include_directories(${ProjectId} PUBLIC 
                             "${PROJECT_BINARY_DIR}" 
                             p_path)
 
-target_link_libraries(test_Example GTest::gtest_main)
+target_link_libraries(${ProjectId} GTest::gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(test_Example)
+gtest_discover_tests(${ProjectId})
