@@ -1,7 +1,7 @@
 /**
     \file Cell.h
     \brief Contains the definition of the Cell class
-    \authors Robert Officer, Kaitlyn Sookdhew
+    \authors Robert Officer, Kaitlyn Sookdhew, Megan Hugo
     \date 03/11/22
     \todo Documentation of Cell::removeOccupyingForce on line 37
 */
@@ -10,7 +10,7 @@
 	\brief Class definition of the Cell interface
     Decorator: Component
     \defgroup Cell
-	\authors Robert Officer, Kaitlyn Sookdhew
+	\authors Robert Officer, Kaitlyn Sookdhew, Megan Hugo
 */
 #ifndef CELL_H
 #define CELL_H
