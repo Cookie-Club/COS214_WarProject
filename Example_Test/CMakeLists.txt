@@ -3,9 +3,10 @@ How to create unit testing project:
 
 1. Check that you have cmake version 3.20 or higher installed
 
-2. In the project root directory; run make create_test DIR_NAME=<Test_Name>_Test
+2. In the project root directory run the following xommand to create a directory with template files:
+  make create_test DIR_NAME=<Test_Name>_Test
 
-3. Write your tests/fixtures .Ignore the CMakeLists.txt and Confog files.
+3. Write your tests/fixtures. Ignore the CMakeLists.txt and Config files.
 
 To run the tests, run the following command in the rot directory:
   make test DIR_NAME=<Test_Name>_Test
@@ -31,13 +32,13 @@ FetchContent_MakeAvailable(googletest)
 #------------------------------------------------------------------------
 
 
+configure_file(Test_Config.h.in Test_Config.h)
 # Get path to current directory
 set(curr_path "${CMAKE_CURRENT_SOURCE_DIR}")
 # Decompose curr_path to get path to parent directory
 cmake_path(GET curr_path PARENT_PATH p_path)
 include_directories(${p_path})
 
-configure_file(${ProjectId}_Config.h.in ${ProjectId}_Config.h)
 
 #Add to list of source files to form dependenices in constructed makefile printf "s%\n" *
 #Please remember to add newly created files

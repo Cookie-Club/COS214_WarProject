@@ -74,8 +74,10 @@ stuff:
 create_test:
 	mkdir ${DIR_NAME} && \
 	cp -i ./Example_Test/CMakeLists.txt ./${DIR_NAME}/ && \
+	cp -i ./Example_Test/Test_Config.h.in ./${DIR_NAME}/ && \
+	cp -i ./Example_Test/Test_Template.cpp ./${DIR_NAME}/${DIR_NAME}_main.cpp && \
+	cp -i ./Example_Test/Fixtures_Template.h ./${DIR_NAME}/${DIR_NAME}_Fixtures.h && \
 	cd ./${DIR_NAME} && \
-	touch ${DIR_NAME}_main.cpp && \
 	mkdir ${DIR_NAME}_Build
 
 # Builds and runs tests in passed directory
