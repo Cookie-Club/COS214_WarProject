@@ -10,12 +10,13 @@
 
 #ifndef FEATUREFACTORY_H
 #define FEATUREFACTORY_H
+
 class CellFeatures;
 
 class FeatureFactory {
 
-   public:
-      virtual CellFeatures* createFeature() = 0;
+public:
+    virtual CellFeatures *createFeature() = 0;
 };
 
 #endif

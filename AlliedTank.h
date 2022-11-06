@@ -7,7 +7,7 @@
     Prototype pattern: ConcretePrototype
     Implements clone method of Prototype pattern
     \ingroup MilitaryUnit
-    \author Kaitlyn Sookdhew, Wian Koekemoer
+    \authors Kaitlyn Sookdhew, Wian Koekemoer
 */
 
 
