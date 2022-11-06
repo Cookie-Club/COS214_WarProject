@@ -135,11 +135,11 @@ void Squad::setStrategy(attackStrategy * aStrat){
 
 void Squad::attack(int x, int y) {
     if(belongsTo->getTotalHealthPoints() > 40 && rations > 50 && fuel > 50){
-        delete state;
+        if (state != nullptr) delete state;
         state = new Aggressive();
     }
     else{
-        delete state;
+        if (state != nullptr) delete state;
         state = new Defensive();
     }
     state->handle(this);
@@ -193,15 +193,17 @@ bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
     //Health of enemy unit
     int enDam;
     //Damage of current Squad
-    int sDam = this->getDamage();
-    //for-loop iterates through enemy units
-    for (it = enemyMembers.begin(); it < enemyMembers.end(); ++it) 
+    int sDam;
+    //for-loop iterates through enemy units while Squad lives
+    for (it = enemyMembers.begin(); it < enemyMembers.end() && this->isAlive(); ++it) 
     {
         enDam = (*it)->getDamage();//Get damage of enemy unit
         while (this->isAlive() && (*it)->isAlive()) 
         {
             //deals enemy damage to this squad
             this->receiveDamage(enDam);
+            //Get total damage of Squad's members
+            sDam = this->getDamage();
             //Deals this squads damage to enemy unit
             (*it)->receiveDamage(sDam);
         }

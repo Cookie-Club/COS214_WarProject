@@ -1,3 +1,9 @@
+/**
+    \file Composite_Test_main.cpp
+    \brief Contains testing for functions of Composite Participants
+    \author Wian Koekemoer
+*/
+
 #include "Test_Config.h"
 // Test 1
 //Test that constructors function correctly. using ASSERT_EQ as carrying on with the test
@@ -130,10 +136,62 @@ TEST_F(CompositeFixture, setOccupyingCell_setOppcupyingForce_getOccupyingForce)
 }
 
 // Test 6
-TEST_F(CompositeFixture, isAlive)
+TEST_F(CompositeFixture, receiveDamage)
 {
-    EXPECT_EQ(aSquad->isAlive(), true) << "shouldn't be dead yet"; 
-    aSquad->receiveDamage(104); 
-    EXPECT_EQ(aSquad->isAlive(), false) << "Bro is literally Lazarus"; 
+    EXPECT_EQ(aSquad->isAlive(), true) << "Shouldn't be dead yet"; 
+    aSquad->receiveDamage(A_I_HP); 
+    EXPECT_EQ(aSquad->isAlive(), false) << "Should be dead"; 
     if (!aSquad->isAlive()) units.erase(units.begin());
+}
+
+// Test 7
+TEST_F(CompositeFixture, Prototype)
+{
+    Squad* clone = aSquad->clone();
+    std::vector<MilitaryUnit*> memS = aSquad->getMembers(), memC = clone->getMembers();
+    ASSERT_NE(aSquad, clone) << "Squad should not be shallow copy";
+    ASSERT_NE(memS[0], memC[0]) << "Squad members should not be shallow copy";
+    EXPECT_EQ(memS.size(), memC.size()) << "Squad sizes should be equal";
+
+    EXPECT_EQ(aSquad->getDamage(), clone->getDamage()) << "Squad total damage should be equal";
+    EXPECT_EQ(aSquad->getHealthpoints(), clone->getHealthpoints()) << "Squad total healthpoints should be equal";
+
+    EXPECT_EQ(memS[0]->getDamage(), memC[0]->getDamage()) << "Unit damage should be equal";
+    EXPECT_EQ(memS[0]->getHealthpoints(), memC[0]->getHealthpoints()) << "Unit damage should be equal";
+
+    aSquad->addMember(units[2]);
+    memS = aSquad->getMembers();
+    memC = clone->getMembers();
+    EXPECT_NE(memS.size(), memC.size()) << "Squad sizes should not be equal";
+    EXPECT_NE(aSquad->getDamage(), clone->getDamage()) << "Squad total damage should not be equal";
+    EXPECT_NE(aSquad->getHealthpoints(), clone->getHealthpoints()) << "Squad total healthpoints should not be equal";
+    
+    delete clone;
+}
+
+TEST_F(CompositeFixture, Squad_battle)
+{
+    //Set initial state
+    aSquad->removeSquadMember(units[0]);
+    cSquad->removeSquadMember(units[1]);
+    //Clean up units vector
+    units.erase(units.begin());
+    units.erase(units.begin());
+
+    aSquad->addMember(new AlliedInfantry(50, 100, ally, 1));
+    aSquad->addMember(new AlliedInfantry(50, 100, ally, 1));
+    aSquad->addMember(new AlliedInfantry(50, 100, ally, 1));
+    aSquad->addMember(new AlliedInfantry(50, 100, ally, 1));
+
+    cSquad->addMember(new AlliedInfantry(50, 100, central, 1));
+    cSquad->addMember(new AlliedInfantry(50, 100, central, 1));
+    cSquad->addMember(new AlliedInfantry(50, 100, central, 1));
+    cSquad->addMember(new AlliedInfantry(50, 100, central, 1));
+
+    std::vector<MilitaryUnit*> victim;
+    victim.push_back(cSquad);
+    EXPECT_EQ(!aSquad->battle(victim), true) << "aSquad should lose";
+    EXPECT_EQ(aSquad->getMembers().size(), 0) << "aSquad lost and should have 0 remaining members";
+    EXPECT_EQ(cSquad->getMembers().size(), 4) << "cSquad should not have lost members";
+
 }
