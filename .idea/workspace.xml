@@ -12,24 +12,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57bc87a4-8d83-46a7-b7df-e3378c2aafce" name="Changes" comment="Implemented the attack for the frontline Strategy">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Action.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Action.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Action.h" beforeDir="false" afterPath="$PROJECT_DIR$/Action.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aggressive.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Aggressive.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aggressive.h" beforeDir="false" afterPath="$PROJECT_DIR$/Aggressive.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedInfantry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedInfantry.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedInfantry.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedInfantry.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedPowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedPowers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedPowers.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedPowers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedTank.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedTank.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlliedTank.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedTank.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmmoDepoFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AmmoDepoFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmmoDepoFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/AmmoDepoFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AmmoDeposit.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AmmoDeposit.cpp" afterDir="false" />
+    <list default="true" id="57bc87a4-8d83-46a7-b7df-e3378c2aafce" name="Changes" comment="Added Doxygen comments and formatted code">
       <change beforePath="$PROJECT_DIR$/AmmoDeposit.h" beforeDir="false" afterPath="$PROJECT_DIR$/AmmoDeposit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bog.h" beforeDir="false" afterPath="$PROJECT_DIR$/Bog.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bombardment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Bombardment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bombardment.h" beforeDir="false" afterPath="$PROJECT_DIR$/Bombardment.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Caretaker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Caretaker.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Caretaker.h" beforeDir="false" afterPath="$PROJECT_DIR$/Caretaker.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cell.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellFeatures.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CellFeatures.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellFeatures.h" beforeDir="false" afterPath="$PROJECT_DIR$/CellFeatures.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CentralFactory.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/CentralFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralInfantry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CentralInfantry.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralInfantry.h" beforeDir="false" afterPath="$PROJECT_DIR$/CentralInfantry.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralPowers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CentralPowers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralPowers.h" beforeDir="false" afterPath="$PROJECT_DIR$/CentralPowers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralTank.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CentralTank.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralTank.h" beforeDir="false" afterPath="$PROJECT_DIR$/CentralTank.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/attackStrategy.h" beforeDir="false" afterPath="$PROJECT_DIR$/attackStrategy.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +108,7 @@
       <workItem from="1667475710627" duration="592000" />
       <workItem from="1667477692299" duration="483000" />
       <workItem from="1667505477362" duration="5174000" />
-      <workItem from="1667772419433" duration="1045000" />
+      <workItem from="1667772419433" duration="1827000" />
     </task>
     <task id="LOCAL-00001" summary="Added SetState method to Participants">
       <created>1666525285564</created>
@@ -227,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667476225494</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added Doxygen comments and formatted code">
+      <created>1667773499059</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667773499059</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +271,7 @@
     <MESSAGE value="Implemented ConcreteStates of state pattern" />
     <MESSAGE value="Fixes to state pattern components" />
     <MESSAGE value="Implemented the attack for the frontline Strategy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented the attack for the frontline Strategy" />
+    <MESSAGE value="Added Doxygen comments and formatted code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Doxygen comments and formatted code" />
   </component>
 </project>

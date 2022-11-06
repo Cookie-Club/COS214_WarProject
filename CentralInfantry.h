@@ -27,6 +27,11 @@ class CentralInfantry : public Infantry
             \param[in] rationConsumption    An integer value denoting the total rations consumed when traveling
 		*/
 		CentralInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption);
+
+        /**
+         * \fn CentralInfantry::~CentralInfantry
+         * \brief virtual destructor
+         */
         virtual ~CentralInfantry(){};
 		/**
 			\fn CentralInfantry::clone

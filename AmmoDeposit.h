@@ -1,19 +1,16 @@
 /**
     \file AmmoDeposit.h
-    \brief Contains the definition of the class AmmoDeposit
-    \author Robert Officer
-    \date 03/11/22
-*/
-/**
-	\class AmmoDeposit
-	\brief AmmoDeposit type of cell
-    \details Child of cellFeatures this class inherits two functions, getAttribute() and add() as well as the attributes feature and attribute
+    \class AmmoDeposit
+    \brief Contains the definition of the AmmoDeposit type of cell
+     \details Child of cellFeatures this class inherits two functions, getAttribute() and add() as well as the attributes feature and attribute
     Decorator: ConcreteDecorator
     Factory: Product
     \ingroup CellFeatures
     \ingroup Cell
-	\author Robert Officer
+    \author Robert Officer
+    \date 03/11/22
 */
+
 #ifndef AMMODEPOSIT_H
 #define AMMODEPOSIT_H
 

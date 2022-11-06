@@ -1,9 +1,9 @@
 #include "CellFeatures.h"
 
-CellFeatures::CellFeatures(){}
+CellFeatures::CellFeatures() {}
 
-void CellFeatures::add(Cell* feature){
-    if(this->feature == nullptr){
+void CellFeatures::add(Cell *feature) {
+    if (this->feature == nullptr) {
         this->feature = feature;
         // std::cout << ((Cell*)feature)->type << " added to: ";
         // switch (attribute)
@@ -21,13 +21,11 @@ void CellFeatures::add(Cell* feature){
         //     default:
         //     {break;}
         // };
-    }
-    else{
+    } else {
         this->feature->add(feature);
     }
 }
 
-CellAttribute CellFeatures::getAttribute()
-{
+CellAttribute CellFeatures::getAttribute() {
     return attribute;
 }
