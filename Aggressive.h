@@ -27,7 +27,7 @@ public:
      * \brief Concrete state handle method of state pattern that will set the strategy attribute of
      * the given squad to mining
      */
-    void handle(Squad* s);
+    void handle(Squad *s);
 };
 
 

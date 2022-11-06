@@ -10,8 +10,10 @@
 */
 #ifndef ACTION_H
 #define ACTION_H
+
 #include "Enumerations.h"
 #include <iostream>
+
 using namespace std;
 
 //Forward declaration of Squad class
@@ -30,18 +32,24 @@ public:
 
     /**
      * \fn Action::handle
-     * \param s The squad to which state belongs
+     * \param[in] s     The squad to which state belongs
      * \brief Pure virtual method in the State pattern that will set strategy of given squad
       */
-    virtual void handle(Squad* s) = 0;
+    virtual void handle(Squad *s) = 0;
 
     /**
      * \fn Action::getType
-     * @return ActionType
+     * \return ActionType
      * \brief Getter method for type variable
      */
     ActionType getType();
-    void setType(ActionType aT){this->type = aT;};
+
+    /**
+     * \fn Action::setType
+     * \param[in] aT
+     * \brief Setter method for type variable
+     */
+    void setType(ActionType aT) { this->type = aT; };
 };
 
 #endif

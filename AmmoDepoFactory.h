@@ -14,19 +14,19 @@
 #include "FeatureFactory.h"
 
 class AmmoDepoFactory : public FeatureFactory {
-    public:
+public:
     /**
      * \fn AmmoDepoFactory::AmmoDepoFactory
      * \brief default constructor
      */
-        AmmoDepoFactory();
+    AmmoDepoFactory();
 
-        /**
-         * \fnAmmoDepoFactory::createFeature
-         * \return CellFeatures*
-         * \brief produces AmmoDeposit product
-         */
-        CellFeatures* createFeature();          
+    /**
+     * \fnAmmoDepoFactory::createFeature
+     * \return CellFeatures*
+     * \brief produces AmmoDeposit product
+     */
+    CellFeatures *createFeature();
 };
 
 

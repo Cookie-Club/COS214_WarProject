@@ -1,9 +1,9 @@
 #include "AmmoDepoFactory.h"
 
-AmmoDepoFactory::AmmoDepoFactory(){};
+AmmoDepoFactory::AmmoDepoFactory() {};
 
-CellFeatures* AmmoDepoFactory::createFeature(){
-    AmmoDeposit* ad;
+CellFeatures *AmmoDepoFactory::createFeature() {
+    AmmoDeposit *ad;
     ad = new AmmoDeposit();
     return ad;
 }

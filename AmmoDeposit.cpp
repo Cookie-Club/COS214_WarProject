@@ -1,33 +1,33 @@
 #include "AmmoDeposit.h"
 
-AmmoDeposit::AmmoDeposit(){
+AmmoDeposit::AmmoDeposit() {
     attribute = AmmoDepo;
 }
 
-void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){
+void AmmoDeposit::setOccupyingForce(MilitaryUnit *m) {
     occupyingForce.push_back(m);
-    ((Squad*)m)->setAmmo(100);
-    ((Squad*)m)->setRations(100);
+    ((Squad *) m)->setAmmo(100);
+    ((Squad *) m)->setRations(100);
 
 
-    if(feature != 0){
+    if (feature != 0) {
         feature->execute(m);
     }
 }
 
-void AmmoDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
-    std::vector<MilitaryUnit*>::iterator it;
-    for(it = m.begin(); it < m.end(); it++){
+void AmmoDeposit::setOccupyingForce(std::vector<MilitaryUnit *> m) {
+    std::vector<MilitaryUnit *>::iterator it;
+    for (it = m.begin(); it < m.end(); it++) {
         occupyingForce.push_back(*it);
-        ((Squad*)*it)->setAmmo(100);
-        ((Squad*)*it)->setRations(100);
-        if(feature != 0){
+        ((Squad *) *it)->setAmmo(100);
+        ((Squad *) *it)->setRations(100);
+        if (feature != 0) {
             feature->execute(*it);
         }
     }
 }
 
-void AmmoDeposit::printSymbol(std::string s){
-    s = s.replace(0,1,"A");
+void AmmoDeposit::printSymbol(std::string s) {
+    s = s.replace(0, 1, "A");
     feature->printSymbol(s);
 }
