@@ -56,6 +56,22 @@ WorldMap::WorldMap(int worldSize) {
     }
 }
 
+WorldMap::~WorldMap()
+{
+    cout << "Deleting WorldMap\n";
+    for (int x = 0; x < mapSize; ++x)
+    {
+        for (int y = 0; y < mapSize; ++y)
+        {
+            delete grid[x][y];
+        }
+        
+        delete [] grid[x];
+    }
+    delete [] grid;
+    cout << "WorldMap::grid Deleted\n";
+}
+
 Cell *** WorldMap::getGrid()
 {
     return grid;

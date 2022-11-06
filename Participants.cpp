@@ -9,6 +9,7 @@ Participants::~Participants()
         army[x]->setOwner(nullptr);
         delete army[x];
     }
+    std::cout << "Participant deleted\n";
 }
 
 void Participants::retreatParticipants(){

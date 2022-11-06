@@ -20,7 +20,7 @@ Squad::~Squad()
 {
     MilitaryUnit* temp = nullptr;
     std::vector<MilitaryUnit*>:: iterator it;
-    for (it = this->members.begin(); it != this->members.end(); ++it)
+    for (it = this->members.begin(); it != this->members.end();)
     {
         temp = *it;
         this->members.erase(it);
@@ -28,6 +28,7 @@ Squad::~Squad()
     }
     if (belongsTo != nullptr) belongsTo->removeMilitaryUnit(this);
     if (occupyingCell != nullptr) occupyingCell->removeOccupyingForce(this);
+    std::cout << "Squad Deleted\n";
 }
 
 void Squad::setOccupyingCell(Cell* c)
@@ -62,6 +63,15 @@ bool Squad::isAlive()
 
 void Squad::addMember(MilitaryUnit* m)
 {
+    std::vector<MilitaryUnit*>::iterator it = members.begin();
+    //Ensure unit not already in squad
+    while (it != members.end())
+    {
+        if ((*it) == m) 
+            return;
+
+        ++it;
+    }
     members.push_back(m);
     ((TeamMembers*)m)->setSquad(this);
 }
@@ -73,23 +83,27 @@ std::vector<MilitaryUnit*> Squad::getMembers(){
 bool Squad::receiveDamage(int damage)
 {
     int dividedDamage = damage/members.size();
-    std::vector<MilitaryUnit*>::iterator it = members.begin();
-    for (; it != members.end(); ++it)
+    for (int x = 0; x < members.size(); ++x)
     {
-        if(!(*it)->receiveDamage(dividedDamage));
-            members.erase(it);
+        if(!members[x]->receiveDamage(dividedDamage))
+        {
+            this->removeSquadMember(members[x]);
+            --x;//Would skip next unit object otherwise
+        }
     }
-
     return this->isAlive();
 }
 
 void Squad::removeSquadMember(MilitaryUnit* member){
+    std::cout << "in removeSquadMember\n";
+    MilitaryUnit* temp;
     std::vector<MilitaryUnit*>::iterator it = members.begin();
     for (; it != members.end(); ++it)
     {
         if (member == *it){
-            delete *it;
+            temp = *it;
             members.erase(it);
+            delete temp;
             return;
         }
     }
@@ -193,10 +207,7 @@ bool Squad::battle(std::vector<MilitaryUnit*> enemyMembers){
         }
     }
 
-    if(!this->isAlive())
-        return false;
-
-    return true;
+    return this->isAlive();
 }
 
 int Squad::getSquadHealth(){

@@ -1,5 +1,5 @@
 #include "Test_Config.h"
-
+// Test 1
 //Test that constructors function correctly. using ASSERT_EQ as carrying on with the test
 // after failure would be pointless
 TEST_F(CompositeFixture, TeamMembers_Initial_State)
@@ -33,6 +33,7 @@ TEST_F(CompositeFixture, TeamMembers_Initial_State)
     ASSERT_EQ(((CentralTank*)units.at(3))->getFuelConsumption(), C_T_FUEL) << "Value of rationConsumption variable is incorrect in the CentralTank object";
 }
 
+// Test 2
 TEST_F(CompositeFixture, Squad_Initial_State)
 {
     std::vector<MilitaryUnit*> squad1 = aSquad->getMembers();
@@ -43,6 +44,7 @@ TEST_F(CompositeFixture, Squad_Initial_State)
     ASSERT_EQ(squad2[0], units[1]) << "Central squad has incorrect unit";
 }
 
+// Test 3
 TEST_F(CompositeFixture, setMap_Functions)
 {
     EXPECT_EQ(units[0]->getMap(),nullptr);
@@ -66,32 +68,46 @@ TEST_F(CompositeFixture, setMap_Functions)
     EXPECT_EQ(units[1]->getMap(),map);
     EXPECT_EQ(units[2]->getMap(),map);
     EXPECT_EQ(units[3]->getMap(),map);
-    aSquad->removeSquadMember(units[2]);
-    cSquad->removeSquadMember(units[3]);
 }
 
+// Test 4
 TEST_F(CompositeFixture, Squad_Add_And_Remove_Members)
 {
-    aSquad->addMember(units[2]);
+    MilitaryUnit* temp1 = units[2];
+    MilitaryUnit* temp2 = units[3];
+    
+    //units[2] and units[3] get deleted, so they must be removed 
+    // from the vector to avoid segfaults
+    std::vector<MilitaryUnit*>::iterator it = units.begin();
+    while (*it != temp1)++it;
+    units.erase(it);
+    it = units.begin();
+    while (*it != temp2)++it;
+    units.erase(it);
+
+    aSquad->addMember(temp1);
     std::vector<MilitaryUnit*> squad1 = aSquad->getMembers();
     std::vector<MilitaryUnit*> squad2 = cSquad->getMembers();
     EXPECT_EQ(squad1.size(), 2) << "Allied squad has incorrect size";
     EXPECT_EQ(squad2.size(), 1) << "Central squad has incorrect size";
-    cSquad->addMember(units[3]);
+
+    cSquad->addMember(temp2);
     squad2 = cSquad->getMembers();//Need to get it again because getMembers returns a copy of the vector
     EXPECT_EQ(squad1.size(), 2) << "Allied squad has incorrect size";
     EXPECT_EQ(squad2.size(), 2) << "Central squad has incorrect size";
 
-    aSquad->removeSquadMember(units[2]);
+    aSquad->removeSquadMember(temp1);
     squad1 = aSquad->getMembers();
     EXPECT_EQ(squad1.size(), 1) << "Allied squad has incorrect size";
     EXPECT_EQ(squad2.size(), 2) << "Central squad has incorrect size";
-    cSquad->removeSquadMember(units[3]);
+
+    cSquad->removeSquadMember(temp2);
     squad2 = cSquad->getMembers();//Need to get it again because getMembers returns a copy of the vector
     EXPECT_EQ(squad1.size(), 1) << "Allied squad has incorrect size";
     EXPECT_EQ(squad2.size(), 1) << "Central squad has incorrect size";
 }
 
+// Test 5
 TEST_F(CompositeFixture, setOccupyingCell_setOppcupyingForce_getOccupyingForce)
 {
     Cell* tempCell = map->getGrid()[1][1];
@@ -111,4 +127,13 @@ TEST_F(CompositeFixture, setOccupyingCell_setOppcupyingForce_getOccupyingForce)
     std::vector<MilitaryUnit*> tempVect2 = tempCell2->getOccupyingForce();
     EXPECT_EQ(aSquad, tempVect2[0]) << "Allied squad should be in vector of tempCell2";
     EXPECT_EQ(cSquad, tempVect[0]) << "Allied squad should be in vector of tempCell";
+}
+
+// Test 6
+TEST_F(CompositeFixture, isAlive)
+{
+    EXPECT_EQ(aSquad->isAlive(), true) << "shouldn't be dead yet"; 
+    aSquad->receiveDamage(104); 
+    EXPECT_EQ(aSquad->isAlive(), false) << "Bro is literally Lazarus"; 
+    if (!aSquad->isAlive()) units.erase(units.begin());
 }
