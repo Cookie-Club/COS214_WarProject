@@ -35,17 +35,26 @@ std::vector<Cell*> CentralPowers::atBack() {
 }
 
 void CentralPowers::armyMove() {
-	std::vector<MilitaryUnit*>::iterator it;
-
-    for(it = army.begin(); it < army.end(); it++){
+	std::vector<MilitaryUnit*>::iterator it = army.begin();
+    for(; it != army.end(); it++){
         int SquadXCoord = ((Squad*)*it)->getOccupyingCell()->getX();
         int SquadYCoord = ((Squad*)*it)->getOccupyingCell()->getY();
-        if(SquadXCoord < map->getSize() - 1){
-            if(!map->getCell(SquadXCoord + 1, SquadYCoord)->getOccupyingForce().empty()){
-                ((Squad*)*it)->attack(SquadXCoord + 1, SquadYCoord);
+
+        if(SquadYCoord > 0){
+            if(!map->getCell(SquadXCoord, SquadYCoord - 1)->getOccupyingForce().empty()){
+                if(map->getCell(SquadXCoord, SquadYCoord - 1)->getOccupyingForce().at(0)->getOwner() == ((Squad*)*it)->getOwner()){
+                    ((Squad*)*it)->getOccupyingCell()->removeOccupyingForce(*it);
+                    map->getCell(SquadXCoord, SquadYCoord - 1)->setOccupyingForce(*it);
+                }
+                else{
+                    ((Squad*)*it)->attack(SquadXCoord, SquadYCoord - 1);
+                }
+            }
+            else{
+                ((Squad*)*it)->getOccupyingCell()->removeOccupyingForce(*it);
+                map->getCell(SquadXCoord, SquadYCoord - 1)->setOccupyingForce(*it);
             }
         }
-    }
-
     //remove empty squads
+    }
 }

@@ -1,8 +1,20 @@
 #include "Flatlands.h"
 
 void Flatlands::execute(MilitaryUnit * m){
+    occupyingForce.push_back(m);
     ((Squad*)m)->setFuel(((Squad*)m)->getFuel() - 5);
     ((Squad*)m)->setRations(((Squad*)m)->getRations() - (5 * ((Squad*)m)->getMembers().size()));
+    type = "flatlands";
+}
+
+void Flatlands::execute(std::vector<MilitaryUnit*>  m){
+    std::vector<MilitaryUnit*>::iterator it;
+    for(it = m.begin(); it < m.end(); it++){
+        occupyingForce.push_back(*it);
+        ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - 5);
+        ((Squad*)*it)->setRations(((Squad*)*it)->getRations() - (5 * ((Squad*)*it)->getMembers().size()));
+    }
+
     type = "flatlands";
 }
 

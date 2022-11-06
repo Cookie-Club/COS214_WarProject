@@ -12,9 +12,9 @@
 
 Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
-    belongsTo->getArmy().push_back(this);
-    //state->setType(Agg);
-}
+    belongsTo->getArmy()->push_back(this);
+    state = new Aggressive();
+} 
 
 Squad::~Squad()
 {
@@ -29,11 +29,18 @@ Squad::~Squad()
     if (belongsTo) belongsTo->removeMilitaryUnit(this);
     if (occupyingCell) occupyingCell->removeOccupyingForce(this);
 }
+
 void Squad::setOccupyingCell(Cell* c)
 {
-    this->occupyingCell->removeOccupyingForce(this);
-    this->occupyingCell = c;
-    occupyingCell->setOccupyingForce(this);
+    if(occupyingCell){
+        this->occupyingCell->removeOccupyingForce(this);
+        this->occupyingCell = c;
+        occupyingCell->setOccupyingForce(this);
+    }
+    else{
+        this->occupyingCell = c;
+    }
+    
 }
 
 Squad* Squad::clone()

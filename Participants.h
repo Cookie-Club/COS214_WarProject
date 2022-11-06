@@ -18,8 +18,8 @@ class MilitaryUnit;
 class Participants {
 
 protected:
-    vector<MilitaryUnit*> army;
-    vector<Cell*> ownedTerritories;
+    std::vector<MilitaryUnit*> army;
+    std::vector<Cell*> ownedTerritories;
     //Action* state;
     double resources;
     //vector<attackStrategy*> moveStrategies;
@@ -34,9 +34,10 @@ public:
     virtual ~Participants(){};
     virtual void armyMove() = 0;
     virtual void retreat(std::vector<Cell*> cells)=0;
+    std::vector<Cell*> * getOwnedTerritories();
     virtual std::vector<Cell*> atBack() = 0;
     void retreatParticipants();
-    std::vector<MilitaryUnit*> getArmy();
+    std::vector<MilitaryUnit*>* getArmy();
     int getTotalHealthPoints();
     void setTotalHealthPoints(int hp);
     int getTotalDamage();

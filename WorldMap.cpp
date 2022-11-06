@@ -36,21 +36,19 @@ WorldMap::WorldMap(int worldSize) {
                 grid[i][j] = new Cell();
                 cout << "Nothing, [ ";
             }
-
             grid[i][j]->setCoordinates(i, j);
 
-            
             rand = std::rand() % (totalSize + 1);
             if(rand <= (totalSize * 0.25)){
-                cout << " ] Bog";
+                cout << " ] Bog" << endl;
                 this->grid[i][j]->add(new Bog());
             }
             else if(rand > (totalSize * 0.25) && rand <= (totalSize * 0.5)){
-                cout << " ] Flatland";
+                cout << " ] Flatland" << endl;
                 this->grid[i][j]->add(new Flatlands());
             }
             else{
-                cout << " ] Plains";
+                cout << " ] Plains" << endl;
                 this->grid[i][j]->add(new Cell());
             }
         }

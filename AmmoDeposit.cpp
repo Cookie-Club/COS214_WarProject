@@ -5,7 +5,6 @@ AmmoDeposit::AmmoDeposit(){
 }
 
 void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){
-    occupyingForce.push_back(m);
     ((Squad*)m)->setAmmo(100);
     ((Squad*)m)->setRations(100);
 
@@ -18,7 +17,6 @@ void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){
 void AmmoDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
     std::vector<MilitaryUnit*>::iterator it;
     for(it = m.begin(); it < m.end(); it++){
-        occupyingForce.push_back(*it);
         ((Squad*)*it)->setAmmo(100);
         ((Squad*)*it)->setRations(100);
         if(feature != 0){

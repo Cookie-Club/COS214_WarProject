@@ -31,13 +31,27 @@ void Cell::removeOccupyingForce(MilitaryUnit* m) {
 
 void Cell::setOccupyingForce(MilitaryUnit* m) {
     occupyingForce.push_back(m);
-
 }
 
 void Cell::setOccupyingForce(std::vector<MilitaryUnit*> m) {
     std::vector<MilitaryUnit*>::iterator it;
     for(it = m.begin(); it < m.end(); it++){
         occupyingForce.push_back(*it);
+    }
+}
+
+void Cell::execute(MilitaryUnit * m){
+    occupyingForce.push_back(m);
+    ((Squad*)m)->setFuel(((Squad*)m)->getFuel() - 6);
+    ((Squad*)m)->setRations(((Squad*)m)->getRations() - (6 * ((Squad*)m)->getMembers().size()));
+}
+
+void Cell::execute(std::vector<MilitaryUnit*> m){
+    std::vector<MilitaryUnit*>::iterator it;
+    for(it = m.begin(); it < m.end(); it++){
+        occupyingForce.push_back(*it);
+        ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - 6);
+        ((Squad*)*it)->setRations(((Squad*)*it)->getRations() - (6 * ((Squad*)*it)->getMembers().size()));
     }
 }
 

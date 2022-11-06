@@ -32,6 +32,7 @@ class Bog : public Cell {
         */
         void execute(MilitaryUnit * m);
         virtual void printSymbol(std::string s = "  ");
+        void execute(std::vector<MilitaryUnit*> m);
     private:
         double resourceUseMultiplier;
         

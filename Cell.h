@@ -23,10 +23,10 @@ class Participants;
 class Cell {
 
     protected:
-        int x;
-        int y;
         std::vector<MilitaryUnit*> occupyingForce;
         Participants* owner;
+        int x;
+        int y;
 
     public:
         std::string type;
@@ -76,7 +76,8 @@ class Cell {
         */
         int getY();
         virtual void add(Cell * addition){};
-        virtual void execute(MilitaryUnit * m){};
+        virtual void execute(MilitaryUnit * m);
+        virtual void execute(std::vector<MilitaryUnit*> m);
         virtual void printSymbol(std::string = "  ");
 };
 

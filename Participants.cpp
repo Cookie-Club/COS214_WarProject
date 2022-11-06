@@ -23,9 +23,10 @@ string Participants::getName(){
     return name;
 }
 
-std::vector<MilitaryUnit*> Participants::getArmy()
+std::vector<MilitaryUnit*> * Participants::getArmy()
 {
-    return army;
+    std::vector<MilitaryUnit*> * temp = &army;
+    return temp;
 }
 
 WorldMap *Participants::getMap() {
@@ -42,4 +43,9 @@ Participant Participants::getParticipant()  {
 void Participants::removeMilitaryUnit(MilitaryUnit* m)
 {
 
+}
+
+std::vector<Cell*> * Participants::getOwnedTerritories(){
+    std::vector<Cell*> * temp = &ownedTerritories;
+    return temp;
 }
