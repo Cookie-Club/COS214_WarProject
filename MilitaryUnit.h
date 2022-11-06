@@ -22,17 +22,9 @@
 #include <cstdlib>
 #include "Enumerations.h"
 #include <iostream>
-class Action;//Required for the return type of the forward  declared Participant::getState()
-class MilitaryUnit;//Required for the return type of the forward  declared Participant::getArmy()
-//Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
-class Participants;
-class WorldMap; //forward declaration of WorldMap class
-/**
-   \enum UnitType
-   \brief Used to identify the type of the MilitaryUnit object. 
-   \details It is used in Chain of Responsibility to check if a ConcreteHandler is meant to deal with that specific object. 
-*/
-
+class Squad;//Forward declaration for squad member
+class Participants;//Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
+class WorldMap; //forward declaration for type of map member
 class MilitaryUnit {
 
 	public:
@@ -55,7 +47,7 @@ class MilitaryUnit {
         */
         virtual ~MilitaryUnit()
         {
-            if(type != squad)
+            if(type != UnitType::squad)
                 std::cout << "Deleting unit of type: " << ((type == infantry) ? "Infantry\n" : "tank\n");
         };
 		/**
@@ -94,6 +86,23 @@ class MilitaryUnit {
         */
         void setOwner(Participants* p);
         /**
+            \fn MilitaryUnit::getParticipant
+            \brief Checks what kind of participant owns the unit
+            \return Participant value (Allied|Central)
+        */
+        Participant getParticipant();
+        /**
+            \fn MilitaryUnit::getSquad
+            \brief Getter for squad
+        */
+        Squad* getSquad();
+        /**
+            \fn MilitaryUnit::getSquad
+            \brief Getter for squad
+            \param[in] squad    A pointer to the Squad object to which the unit belongs
+        */
+        void setSquad(Squad* squad);
+        /**
             \fn MilitaryUnit::getDamage
             \brief Gets total damage of the MilitaryUnit
             \return An int value equal to the total amount of damage the unit deals
@@ -105,16 +114,14 @@ class MilitaryUnit {
             \return An int value equal to the total amount of health the unit has
         */
         virtual int getHealthpoints() = 0;
-        Participant getParticipant();
+        WorldMap *getMap();
+        virtual void setMap(WorldMap *map);
 
 	protected:
+        Squad* squad;
         UnitType type;
 		Participants* belongsTo;
         WorldMap* map;
-        
-    public:
-        WorldMap *getMap();
-        virtual void setMap(WorldMap *map);
 };
 
 #endif

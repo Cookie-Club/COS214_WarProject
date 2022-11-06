@@ -32,3 +32,13 @@ Participant MilitaryUnit::getParticipant()
 {
     return belongsTo->getParticipant();
 }
+
+Squad* MilitaryUnit::getSquad()
+{
+    return squad;
+}
+
+void MilitaryUnit::setSquad(Squad* squad)
+{
+    this->squad = squad;
+}

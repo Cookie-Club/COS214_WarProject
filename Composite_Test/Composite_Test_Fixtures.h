@@ -1,3 +1,9 @@
+/**
+    \file Composite_Test_Fixtures.h
+    \brief Defines and Implements test fixture used in Composite_Test_main.cpp
+    \author Wian Koekemoer
+*/
+
 #include "gtest/gtest.h"
 #include "AlliedInfantry.h"
 #include "CentralInfantry.h"
