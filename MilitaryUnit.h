@@ -21,6 +21,7 @@
 #include <vector>
 #include <cstdlib>
 #include "Enumerations.h"
+#include <iostream>
 class Action;//Required for the return type of the forward  declared Participant::getState()
 class MilitaryUnit;//Required for the return type of the forward  declared Participant::getArmy()
 //Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
@@ -52,7 +53,11 @@ class MilitaryUnit {
             \fn MilitaryUnit::~MilitaryUnit
             \brief Virtual Destructor
         */
-        virtual ~MilitaryUnit(){};
+        virtual ~MilitaryUnit()
+        {
+            if(type != squad)
+                std::cout << "Deleting unit of type: " << ((type == infantry) ? "Infantry\n" : "tank\n");
+        };
 		/**
             \fn MilitaryUnit::isLeaf
             \brief Definition for children's implementation

@@ -22,6 +22,7 @@ protected:
 
 public:
 	WorldMap(int worldSize);
+    ~WorldMap();
 	Cell *** getGrid();
     int getSize();
     Cell * getCell(int x, int y);

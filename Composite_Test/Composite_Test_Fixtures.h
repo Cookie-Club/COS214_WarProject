@@ -23,21 +23,41 @@ class CompositeFixture: public ::testing::Test
             cSquad = new Squad(central);
             ally->addUnit(aSquad);
             central->addUnit(cSquad);
-            // std::cout << "before adding members to squads\n";
+            std::cout << "before adding members to squads\n";
             aSquad->addMember(units.at(0)); //Add anonymous AlliedInfantry object
             cSquad->addMember(units.at(1)); //Add anonymous CentralInfantry object
-            // std::cout << "after adding members to squads\n";
+            std::cout << "Finished StartUp\n";
         };
 
         void TearDown()
         {
-            //Delegate TeamMember class deletion do Squad destructor
-            aSquad->addMember(units.at(2));
-            cSquad->addMember(units.at(3));
+            std::cout << "Starting TearDown\n";
+            //Delegate TeamMember deletion do Squad destructor
+            while (units.size() > 0) 
+            {
+                switch (units[units.size()-1]->getParticipant())
+                {
+                    case Allied: 
+                    {
+                        aSquad->addMember(units[units.size()-1]);
+                        break;
+                    };
+                    default: 
+                    {
+                        cSquad->addMember(units[units.size()-1]);
+                    };
+                };
+                //Resets units vector back to initial state
+                units.pop_back();
+            }
             //Participants desctructor handles deletion of squad objects
+            std::cout << "before ally deletion\n";
             delete ally;
+            std::cout << "before central deletion\n";
             delete central;
+            std::cout << "before map deletion\n";
             delete map;
+            std::cout << "TearDown Completed\n";
         };
 
         std::vector<MilitaryUnit*> units;

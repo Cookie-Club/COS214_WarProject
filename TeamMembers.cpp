@@ -15,14 +15,8 @@ TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participan
 
 bool TeamMembers::receiveDamage(int damage)
 {
-    int newHealth = healthpoints - damage;
-
-    if(newHealth < 0) 
-        return false;
-
-    setHealthpoints(newHealth);
-
-    return true;
+    healthpoints-= damage;
+    return (healthpoints > 0);
 }
 
 void TeamMembers::setHealthpoints(int healthpoints)
