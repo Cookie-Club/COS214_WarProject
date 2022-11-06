@@ -35,7 +35,12 @@ class Cell {
             \brief Constructor
         */
         Cell(std::string type = "cell");
-
+        /**
+            \fn Cell::~Cell
+            \brief Destructor
+            \details deletes non-Squad MilitaryUnits
+        */
+        ~Cell();
         void removeOccupyingForce(std::vector<MilitaryUnit*> m);
         /**
             \fn Cell::removeOccupyingForce
