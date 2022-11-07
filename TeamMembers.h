@@ -60,7 +60,7 @@ public:
 
     /**
         \fn TeamMembers::getHealthpoints
-        \brief Getter for healthpoints variable
+        \brief Getter for health-points variable
         \details Inherited from MilitaryUnit
         \return Returns the current value of the unit's healthpoints
     */

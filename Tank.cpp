@@ -1,9 +1,3 @@
-/**
-    \file Tank.cpp
-    \brief Implements Tank class methods
-    \authors Wian Koekemoer
-    \date 30/10/22
-*/
 #include "Tank.h"
 
 Tank::Tank(int damage, int healthpoints, Participants *belongsTo, float fuelConsumption) : TeamMembers(damage,

@@ -25,6 +25,10 @@ void Bombardment::add(Bombardment *a) {
 void Bombardment::damageMember(MilitaryUnit *currentUnit) {}
 
 void Bombardment::execute() {
+<<<<<<< Updated upstream
+=======
+    std::cout << "Bombardment incoming" << endl;
+>>>>>>> Stashed changes
     if (!(targetedCell->getOccupyingForce()).empty()) {
         for (int i = 0; i < (targetedCell->getOccupyingForce()).capacity(); i++) {
             next->damageMember((targetedCell->getOccupyingForce()).at(i));

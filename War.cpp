@@ -1,4 +1,5 @@
 #include "War.h"
+
 War::War(WorldMap *world, std::vector<Participants *> participants) {
     this->world = world;
     this->participants = participants;

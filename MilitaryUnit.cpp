@@ -25,8 +25,13 @@ void MilitaryUnit::setMap(WorldMap *map) {
     this->map = map;
 }
 
+<<<<<<< Updated upstream
 Participant MilitaryUnit::getParticipant() {
     return belongsTo->getParticipant();
+=======
+ParticipantType MilitaryUnit::getParticipantType() {
+    return belongsTo->getParticipantType();
+>>>>>>> Stashed changes
 }
 
 Squad *MilitaryUnit::getSquad() {

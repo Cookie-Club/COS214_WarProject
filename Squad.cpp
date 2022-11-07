@@ -1,18 +1,20 @@
-/**
-    \file Squad.cpp
-    \brief Implements Squad class methods
-    \authors Wian Koekemoer
-    \date 30/10/22
-    \todo figure out which cell to call bombardment on in attack() method
-*/
 #include "Squad.h"
 #include "Infantry.h"
 #include "Tank.h"
 #include "Enumerations.h"
 
 Squad::Squad(Participants *belongsTo) : MilitaryUnit(belongsTo, UnitType::squad) {
+<<<<<<< Updated upstream
     //state->setType(Agg);
     occupyingCell = nullptr;
+=======
+    belongsTo->getArmy()->push_back(this);
+    state = new Aggressive();
+    std::cout << belongsTo->getParticipantType();
+    fuel = 100;
+    rations = 100;
+    Ammo = 100;
+>>>>>>> Stashed changes
 }
 
 Squad::~Squad() {
@@ -28,16 +30,25 @@ Squad::~Squad() {
     std::cout << "Squad Deleted\n";
 }
 
+<<<<<<< Updated upstream
 void Squad::setOccupyingCell(Cell *c) {
+=======
+
+void Squad::setOccupyingCell(Cell *c) {
+    std::cout << "Setting occupying cell to " << c->getX() << " " << c->getY() << endl;
+>>>>>>> Stashed changes
     if (occupyingCell != nullptr) occupyingCell->removeOccupyingForce(this);
     this->occupyingCell = c;
     if (c != nullptr) occupyingCell->setOccupyingForce(this);
 }
 
+<<<<<<< Updated upstream
 Cell *Squad::getOccupyingCell() {
     return occupyingCell;
 }
 
+=======
+>>>>>>> Stashed changes
 Squad *Squad::clone() {
     Squad *newSquad = new Squad(this->getOwner());
     std::vector<MilitaryUnit *>::iterator it = members.begin();
@@ -87,6 +98,10 @@ void Squad::removeSquadMember(MilitaryUnit *member) {
     std::vector<MilitaryUnit *>::iterator it = members.begin();
     for (; it != members.end(); ++it) {
         if (member == *it) {
+<<<<<<< Updated upstream
+=======
+            std::cout << "Member found, being removed" << endl;
+>>>>>>> Stashed changes
             temp = *it;
             members.erase(it);
             delete temp;
@@ -118,6 +133,10 @@ void Squad::setStrategy(attackStrategy *aStrat) {
 }
 
 void Squad::attack(int x, int y) {
+<<<<<<< Updated upstream
+=======
+    std::cout << "Attack commencing" << endl;
+>>>>>>> Stashed changes
     if (belongsTo->getTotalHealthPoints() > 40 && rations > 50 && fuel > 50) {
         if (state != nullptr) delete state;
         state = new Aggressive();
@@ -128,6 +147,10 @@ void Squad::attack(int x, int y) {
     state->handle(this);
 
     if (Ammo > 50) {
+<<<<<<< Updated upstream
+=======
+        std::cout << "Bombardment called in! Soften em' up lads" << endl;
+>>>>>>> Stashed changes
         callInBombardment(belongsTo->getMap()->getCell(x, y));
     }
 

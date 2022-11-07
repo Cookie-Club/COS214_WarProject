@@ -23,10 +23,17 @@ class Participants;
 class Cell {
 
 protected:
+<<<<<<< Updated upstream
     int x;
     int y;
     std::vector<MilitaryUnit *> occupyingForce;
     Participants *owner;
+=======
+    std::vector<MilitaryUnit *> occupyingForce;
+    Participants *owner;
+    int x;
+    int y;
+>>>>>>> Stashed changes
 
 public:
     std::string type;
@@ -44,7 +51,16 @@ public:
     */
     ~Cell();
 
+<<<<<<< Updated upstream
     void removeOccupyingForce(std::vector<MilitaryUnit *> m);
+=======
+    /**
+     * \fn Cell::removeOccupyingForce
+     * \param[in] m     Vector of military unit pointers
+     * \brief virtual method that will remove the given vector from the cell
+     */
+    virtual void removeOccupyingForce(std::vector<MilitaryUnit *> m);
+>>>>>>> Stashed changes
 
     /**
         \fn Cell::removeOccupyingForce
@@ -52,7 +68,11 @@ public:
         \details Iterates through the occupyingForce and checks to see where the passed in MilitaryUnit is and when found, the unit is removed
         \param[in] m  A MilitaryUnit pointer that points to the squad being removed from the occupyingForce
     */
+<<<<<<< Updated upstream
     void removeOccupyingForce(MilitaryUnit *m);
+=======
+    virtual void removeOccupyingForce(MilitaryUnit *m);
+>>>>>>> Stashed changes
 
     /**
         \fn Cell::setOccupyingForce
@@ -93,7 +113,13 @@ public:
 
     virtual void add(Cell *addition) {};
 
+<<<<<<< Updated upstream
     virtual void execute(MilitaryUnit *m) {};
+=======
+    virtual void execute(MilitaryUnit *m);
+
+    virtual void execute(std::vector<MilitaryUnit *> m);
+>>>>>>> Stashed changes
 
     virtual void printSymbol(std::string = "  ");
 };

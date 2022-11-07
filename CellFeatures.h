@@ -1,6 +1,10 @@
 /**
     \file CellFeatures.h
+<<<<<<< Updated upstream
    \brief Abstract Class used to share shared functions between the different ConcreteDecorators
+=======
+    \brief Abstract Class used to share shared functions between the different ConcreteDecorators
+>>>>>>> Stashed changes
     Decorator: Decorator
     Factory: AbstractProduct
     \defgroup CellFeatures

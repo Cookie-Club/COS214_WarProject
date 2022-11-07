@@ -4,6 +4,7 @@
 #include "Mining.h"
 
 void Mining::execute(Squad *s) {
+<<<<<<< Updated upstream
     int newX;
     if (s->getParticipant() == Allied) {
         //If allied, move 3 right
@@ -11,8 +12,21 @@ void Mining::execute(Squad *s) {
     } else {
         //If central, move 3 left
         newX = s->getOccupyingCell()->getX() - 3;
+=======
+    std::cout << "Mining attack commencing" << endl;
+    int newY;
+    if (s->getParticipantType() == Allied) {
+        std::cout << "Allied troop attacking right" << endl;
+        //If allied, move 3 right
+        newY = s->getOccupyingCell()->getY() + 3;
+    } else {
+        std::cout << "Central troop attacking left" << endl;
+        //If central, move 3 left
+        newY = s->getOccupyingCell()->getY() - 3;
+>>>>>>> Stashed changes
     }
     //Y-coordinate does not change
+<<<<<<< Updated upstream
     int y = s->getOccupyingCell()->getY();
     //get WorldMap to find newCell
     WorldMap *m = s->getMap();
@@ -21,6 +35,17 @@ void Mining::execute(Squad *s) {
         //Get new cell
         Cell ***grid = m->getGrid();
         Cell *newCell = grid[newX][y];
+=======
+    int x = s->getOccupyingCell()->getX();
+    //get WorldMap to find newCell
+    WorldMap *m = s->getMap();
+    //If new coordinates are within bounds
+    if (newY < m->getSize() && newY >= 0 && x < m->getSize() && x >= 0) {
+        std::cout << "Selected cell is valid" << endl;
+        //Get new cell
+        Cell ***grid = m->getGrid();
+        Cell *newCell = grid[x][newY];
+>>>>>>> Stashed changes
         //Get current cell
         Cell *currentCell = s->getOccupyingCell();
 
@@ -43,7 +68,7 @@ void Mining::execute(Squad *s) {
             // that the cell deletes the unit after its owner was deleted
             m->setOwner(nullptr);
             //leaves clone behind to defend, but its owner does not have visibility 
-            // to it and it can thus not be moved via aParticipants::moveArmy()
+            // to it, and it can thus not be moved via aParticipants::moveArmy()
             currentCell->setOccupyingForce(m);
         }
     }

@@ -23,7 +23,7 @@ protected:
 public:
     /**
      * \fn WorldMap::WorldMap
-     * \param worldSize  int value to initialise the size of the map
+     * \param[in] worldSize  int value to initialise the size of the map
      * \brief constructor method
      */
     WorldMap(int worldSize);
@@ -50,8 +50,8 @@ public:
 
     /**
      * \fn WorldMap::getCell
-     * \param x     int value for x co-ordinate of cell
-     * \param y     int vale for y co-ordinate of cell
+     * \param[in] x     int value for x co-ordinate of cell
+     * \param[in] y     int vale for y co-ordinate of cell
      * \return cell pointer
      * \brief Method to return a specific cell with given co-ordinate
      */

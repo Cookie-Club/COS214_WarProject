@@ -10,8 +10,16 @@ void InfantryDamage::damageMember(MilitaryUnit *currentUnit) {
         // specific infantry unit. Returns a bool of the infantry's state of living and if 
         // false removes the infantry unit from the squad and deletes it
         if (!currentUnit->receiveDamage(receivedDamage)) {
+<<<<<<< Updated upstream
             ((TeamMembers *) currentUnit)->getSquad()->removeSquadMember(currentUnit);
             delete currentUnit;
+=======
+            std::cout << "Infantry has died" << endl;
+            ((TeamMembers *) currentUnit)->getSquad()->removeSquadMember(currentUnit);
+            // delete currentUnit;
+        } else {
+            std::cout << "Infantry health: " << currentUnit->getHealthpoints() << endl;
+>>>>>>> Stashed changes
         }
     } else if (next) {
         next->damageMember(currentUnit);

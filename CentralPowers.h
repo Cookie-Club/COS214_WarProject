@@ -17,7 +17,7 @@ class CentralPowers : public Participants {
 public:
     /**
      * \fn CentralPowers::retreat
-     * \param cells Vector for cells that need to be retreated
+     * \param[in] cells Vector for cells that need to be retreated
      * \brief moves squads currently on cells one cell back
      */
     void retreat(std::vector<Cell *> cells);
@@ -26,7 +26,11 @@ public:
     * \fn CentralPowers::CentralPowers
     * \brief Default constructor
     */
+<<<<<<< Updated upstream
     CentralPowers();
+=======
+    CentralPowers(ParticipantType pT);
+>>>>>>> Stashed changes
 
     /**
      * \fn CentralPowers::atBack

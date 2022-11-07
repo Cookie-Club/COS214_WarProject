@@ -16,6 +16,10 @@ class CellFeatures;
 class FeatureFactory {
 
 public:
+    /**
+     *
+     * @return
+     */
     virtual CellFeatures *createFeature() = 0;
 };
 

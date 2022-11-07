@@ -1,8 +1,16 @@
 /**
+<<<<<<< Updated upstream
  * \file Caretake.h
  * \class Caretaker
  * \brief **  Documentation Pending **
  * \todo Documentation
+=======
+   \file Caretaker.h
+   \class Caretaker
+   \brief Caretaker class of the Memento Pattern
+   \details The Caretaker class is responsible for the safekeeping of the states of the war at a certain times
+   \author Latasha Friend
+>>>>>>> Stashed changes
 */
 #ifndef CARETAKER_H
 #define CARETAKER_H

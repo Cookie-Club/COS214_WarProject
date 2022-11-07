@@ -7,6 +7,10 @@ TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participan
 }
 
 bool TeamMembers::receiveDamage(int damage) {
+<<<<<<< Updated upstream
+=======
+    std::cout << "Damage recieved by team member: " << damage << endl;
+>>>>>>> Stashed changes
     healthpoints -= damage;
     return (healthpoints > 0);
 }

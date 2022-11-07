@@ -1,4 +1,3 @@
-
 /**
 	\file Order.h
 	\class Order
@@ -16,12 +15,12 @@
 
 class Order {
 public:
-	/**
-		\fn Order::execute
-		\brief Pure virtual function
-		\details Defined in the children of the Order class
-	*/
-	virtual void execute() = 0;
+    /**
+        \fn Order::execute
+        \brief Pure virtual function
+        \details Defined in the children of the Order class
+    */
+    virtual void execute() = 0;
 };
 
 #endif

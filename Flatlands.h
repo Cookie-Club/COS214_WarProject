@@ -31,11 +31,16 @@ public:
     */
     void execute(MilitaryUnit *m);
 
+<<<<<<< Updated upstream
     /**
         \fn Bog::printSymbol
         \param[in] s     String input to print
         \brief
     */
+=======
+    void execute(std::vector<MilitaryUnit *> m);
+
+>>>>>>> Stashed changes
     void printSymbol(std::string s = "  ");
 
 //  void add(Cell *addition);

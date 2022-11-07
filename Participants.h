@@ -38,7 +38,7 @@ public:
 
     /**
      * \fn Participants::retreat
-     * \param cells     Vector for cells that need to be retreated
+     * \param[in] cells     Vector for cells that need to be retreated
      * \brief virtual method that will move squads currently on cells one cell back
      */
     virtual void retreat(std::vector<Cell*> cells)=0;
@@ -60,7 +60,11 @@ public:
         \details If the passed parameter is a Leaf participant, a new composite (squad) is created which contains 
         \details the passed parameter, and the squad is added to the army instead. 
         \details Otherwise, if the passed parameter is already a composite, it is added to the army directly
+<<<<<<< Updated upstream
         \param m    A MilitaryUnit pointer that points to either a Leaf or a Composite participant
+=======
+        \param[in] m A MilitaryUnit pointer that points to either a Leaf or a Composite participant
+>>>>>>> Stashed changes
     */
     void addUnit(MilitaryUnit* m);
 
@@ -104,14 +108,14 @@ public:
 
     /**
      * \fn Participants::setMap
-     * \param map   WorldMap pointer
+     * \param[in] map   WorldMap pointer
      * \brief setter for the map variable
      */
     void setMap(WorldMap *map);
 
     /**
      * \fn Participants::removeMilitaryUnit
-     * \param m     MilitaryUnit pointer
+     * \param[in] m     MilitaryUnit pointer
      * \brief removes given MilitaryUnit from army vector
      */
     void removeMilitaryUnit(MilitaryUnit* m);

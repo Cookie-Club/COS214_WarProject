@@ -1,7 +1,13 @@
 #include "Participants.h"
 #include "Squad.h"
 
+<<<<<<< Updated upstream
 Participants::Participants() {}
+=======
+Participants::Participants(ParticipantType pT) : participantType(pT) {
+    std::cout << participantType << endl;
+}
+>>>>>>> Stashed changes
 
 Participants::~Participants() {
     for (int x = 0; x < army.size(); ++x) {
@@ -46,8 +52,14 @@ void Participants::addUnit(MilitaryUnit *m) {
     army.push_back(m);
 }
 
+<<<<<<< Updated upstream
 std::vector<MilitaryUnit *> Participants::getArmy() {
     return army;
+=======
+std::vector<MilitaryUnit *> *Participants::getArmy() {
+    std::vector < MilitaryUnit * > *temp = &army;
+    return temp;
+>>>>>>> Stashed changes
 }
 
 WorldMap *Participants::getMap() {
@@ -62,8 +74,13 @@ void Participants::setMap(WorldMap *map) {
     }
 }
 
+<<<<<<< Updated upstream
 Participant Participants::getParticipant() {
     return participant;
+=======
+ParticipantType Participants::getParticipantType() {
+    return participantType;
+>>>>>>> Stashed changes
 }
 
 void Participants::removeMilitaryUnit(MilitaryUnit *m) {
@@ -76,3 +93,11 @@ void Participants::removeMilitaryUnit(MilitaryUnit *m) {
         }
     }
 }
+<<<<<<< Updated upstream
+=======
+
+std::vector<Cell *> *Participants::getOwnedTerritories() {
+    std::vector < Cell * > *temp = &ownedTerritories;
+    return temp;
+}
+>>>>>>> Stashed changes
