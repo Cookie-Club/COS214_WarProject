@@ -2,14 +2,14 @@
 
 Caretaker::Caretaker() {}
 
-Caretaker::Caretaker(SaveState * newState){
-	mementos.push_back(newState);
+Caretaker::Caretaker(SaveState *newState) {
+    mementos.push_back(newState);
 }
 
-SaveState* Caretaker::getMemento(int index) {
-	return mementos.at(index);
+SaveState *Caretaker::getMemento(int index) {
+    return mementos.at(index);
 }
 
-void Caretaker::addMemento(SaveState* newState) {
-	mementos.push_back(newState);
+void Caretaker::addMemento(SaveState *newState) {
+    mementos.push_back(newState);
 }

@@ -1,9 +1,6 @@
-/**
-    \todo Finish coding else if statement 
-*/
 #include "TankDamage.h"
 
-TankDamage::TankDamage(){};
+TankDamage::TankDamage() {};
 
 void TankDamage::damageMember(MilitaryUnit * currentUnit){
     if(currentUnit->getType() == tank){

@@ -1,6 +1,6 @@
 #include "Bog.h"
 
-Bog::Bog(): Cell("bog") {
+Bog::Bog() : Cell("bog") {
     resourceUseMultiplier = 1.5;
     type = "bog";
     std::cout << "Bog\n";

@@ -1,13 +1,13 @@
 #include "AmmoDeposit.h"
 
-AmmoDeposit::AmmoDeposit(){
+AmmoDeposit::AmmoDeposit() {
     attribute = AmmoDepo;
 }
 
 void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){    
     std::cout << "Occupying force of cell " << x << " " << y << " is now " << occupyingForce.size() << endl; 
 
-    if(feature != 0){
+    if (feature != 0) {
         feature->execute(m);
         feature->setOccupyingForce(m);
     }
@@ -26,7 +26,7 @@ void AmmoDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
     feature->setOccupyingForce(*it);
 }
 
-void AmmoDeposit::printSymbol(std::string s){
-    s = s.replace(0,1,"A");
+void AmmoDeposit::printSymbol(std::string s) {
+    s = s.replace(0, 1, "A");
     feature->printSymbol(s);
 }

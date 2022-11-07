@@ -11,6 +11,7 @@
     Factory: AbstractProduct
     \defgroup CellFeatures
 	\authors Megan Hugo, Robert Officer
+    \date 03/11/22
 */
 
 #ifndef CELLFEATURES_H

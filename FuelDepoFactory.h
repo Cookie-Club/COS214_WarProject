@@ -15,9 +15,19 @@
 #include "FeatureFactory.h"
 
 class FuelDepoFactory : public FeatureFactory {
-    public:
-        FuelDepoFactory();
-        CellFeatures* createFeature(); 
+public:
+    /**
+        * \fn FuelDepoFactory::FuelDepoFactory
+        * \brief default constructor
+    */
+    FuelDepoFactory();
+
+    /**
+     \FuelDepoFactory::createFeature
+     \return CellFeatures*
+     \brief produces FuelDeposit product
+   */
+    CellFeatures *createFeature();
 };
 
 #endif //FUELDEPOFACTORY_H

@@ -16,11 +16,11 @@ class Frontline : public attackStrategy {
 
 public:
     /**
-     * \fn execute
-     * @param s The squad object to execute the attack strategy
-     * \brief method that will execute the frontline attack strategy for the given squad
+        \fn execute
+        \param s The squad object to execute the attack strategy
+        \brief method that will execute the frontline attack strategy for the given squad
      */
-    void execute(Squad* s);
+    void execute(Squad *s);
 };
 
 #endif //FRONTLINE_H

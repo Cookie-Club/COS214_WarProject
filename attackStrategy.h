@@ -12,14 +12,14 @@
 
 class Squad;//forward declaration of Squad class
 
-class attackStrategy{
-	public:
+class attackStrategy {
+public:
     /**
      * \fn execute
-     * @param s The squad object to execute the attack strategy
+     * \param s The squad object to execute the attack strategy
      * \brief pure virtual method the strategy that will be executed
      */
-		virtual void execute(Squad* s) = 0;
+    virtual void execute(Squad *s) = 0;
 };
 
 #endif

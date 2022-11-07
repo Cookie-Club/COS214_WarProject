@@ -14,24 +14,25 @@
 
 using namespace std;
 
-class InfantryDamage : public Bombardment{
+class InfantryDamage : public Bombardment {
 
-    public:
-        /**
-            \fn InfantryDamage::InfantryDamage
-            \brief Constructor for making InfantryDamage objects
-        */
-        InfantryDamage();
-        /**
-            \fn InfantryDamage::damageMember
-            \brief Deals damage to infantry type team members
-            \details First a check to see if the current military unit passed in is of type Infantry. If not,
-            the military unit is passed onto the next link in the chain. If it is of type Infantry then damage is dealt randomly, 
-            between 5 and 100, to the individual unit by calling its receiveDamage method. If the unit has died during the receiveDamage method call, 
-            it is removed from its squad and deleted from the program.
-            \param[in] currentUnit The unit the is to have damage dealt to them
-        */
-        void damageMember(MilitaryUnit * currentUnit);
+public:
+    /**
+        \fn InfantryDamage::InfantryDamage
+        \brief Constructor for making InfantryDamage objects
+    */
+    InfantryDamage();
+
+    /**
+        \fn InfantryDamage::damageMember
+        \param[in] currentUnit      The unit the is to have damage dealt to them
+        \brief Deals damage to infantry type team members
+        \details First a check to see if the current military unit passed in is of type Infantry. If not,
+        the military unit is passed onto the next link in the chain. If it is of type Infantry then damage is dealt randomly,
+        between 5 and 100, to the individual unit by calling its receiveDamage method. If the unit has died during the receiveDamage method call,
+        it is removed from its squad and deleted from the program.
+    */
+    void damageMember(MilitaryUnit *currentUnit);
 };
 
 

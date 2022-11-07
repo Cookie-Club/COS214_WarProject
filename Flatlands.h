@@ -1,15 +1,13 @@
 /**
     \file Flatlands.h
-    \brief Defines a flatlands cell type
-    \author Robert Officer
+    \class Flatlands
+    \brief Class definition of a flatlands cell type
+    Decorator: ConcreteComponent
+    \ingroup Cell
+	\authors Robert Officer
     \date 03/11/22
 */
-/**
-	\class Flatlands
-	\brief Class definition of a flatlands cell type
-    Decorator: ConcreteComponent
-	\authors Robert Officer
-*/
+
 #ifndef FLATLANDS_H
 #define FLATLANDS_H
 
@@ -34,7 +32,7 @@ class Flatlands : public Cell {
         void execute(std::vector<MilitaryUnit*>  m);
         void printSymbol(std::string s = "  ");
 
-  //  void add(Cell *addition);
+//  void add(Cell *addition);
 };
 
 

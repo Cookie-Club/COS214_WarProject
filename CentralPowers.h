@@ -14,13 +14,13 @@
 #include <vector>
 
 class CentralPowers : public Participants {
-    public:
-        /**
-         * \fn CentralPowers::retreat
-         * \param cells Vector for cells that need to be retreated
-         * \brief moves squads currently on cells one cell back
-         */
-        void retreat(std::vector<Cell*> cells);
+public:
+    /**
+     * \fn CentralPowers::retreat
+     * \param cells Vector for cells that need to be retreated
+     * \brief moves squads currently on cells one cell back
+     */
+    void retreat(std::vector<Cell *> cells);
 
         /**
         * \fn CentralPowers::CentralPowers
@@ -28,14 +28,18 @@ class CentralPowers : public Participants {
         */
         CentralPowers(ParticipantType pT);
 
-        /**
-         * \fn CentralPowers::atBack
-         * \return std::vector<Cell*>
-         * \brief returns a vector of Cells with all cells not on the edge of the world map
-         */
-        std::vector<Cell*> atBack();
+    /**
+     * \fn CentralPowers::atBack
+     * \return std::vector<Cell*>
+     * \brief returns a vector of Cells with all cells not on the edge of the world map
+     */
+    std::vector<Cell *> atBack();
 
-        void armyMove();
+    /**
+   * \fn CentralPowers::armyMove
+   * \brief move entire army (Military units vector) to new cell
+   */
+    void armyMove();
 };
 
 

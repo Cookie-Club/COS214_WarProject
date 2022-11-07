@@ -1,7 +1,8 @@
 #include "Bombardment.h"
-Bombardment::Bombardment(){}
 
-Bombardment::Bombardment(Cell * targetedCell){
+Bombardment::Bombardment() {}
+
+Bombardment::Bombardment(Cell *targetedCell) {
     SquadAttack = new SquadDamage();
     IDAttack = new InfantryDamage();
     TDAttack = new TankDamage();
@@ -10,19 +11,18 @@ Bombardment::Bombardment(Cell * targetedCell){
     add(SquadAttack);
     add(IDAttack);
     add(TDAttack);
-    
+
 }
 
-void Bombardment::add(Bombardment * a){
-    if(next){
+void Bombardment::add(Bombardment *a) {
+    if (next) {
         next->add(a);
-    }
-    else{
+    } else {
         next = a;
     }
 }
 
-void Bombardment::damageMember(MilitaryUnit * currentUnit){}
+void Bombardment::damageMember(MilitaryUnit *currentUnit) {}
 
 void Bombardment::execute(){
     std::cout << "Bombardment incoming" << endl;
@@ -33,7 +33,7 @@ void Bombardment::execute(){
     }
 }
 
-Bombardment::~Bombardment(){
+Bombardment::~Bombardment() {
     delete SquadAttack;
     delete IDAttack;
     delete TDAttack;

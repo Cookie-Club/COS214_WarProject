@@ -1,10 +1,10 @@
 #include "InfantryDamage.h"
 
-InfantryDamage::InfantryDamage(){}
+InfantryDamage::InfantryDamage() {}
 
 //figure out how to deal with dead soldiers, should they be removed from the Squad here or in the next level
-void InfantryDamage::damageMember(MilitaryUnit * currentUnit){
-    if(currentUnit->getType() == infantry){
+void InfantryDamage::damageMember(MilitaryUnit *currentUnit) {
+    if (currentUnit->getType() == infantry) {
         int receivedDamage = std::rand() % 96 + 5;
         std::cout << "Infantry Damage" << endl;
         //Random number generated for the amount of damage done and then passed to the 
@@ -19,8 +19,7 @@ void InfantryDamage::damageMember(MilitaryUnit * currentUnit){
         else{
             std::cout << "Infantry health: " << currentUnit->getHealthpoints() << endl;
         }
-    }
-    else if(next){
+    } else if (next) {
         next->damageMember(currentUnit);
-    }   
+    }
 }

@@ -5,10 +5,12 @@
     \date 03/11/22
 */
 /**
-	\class Bog
+    \class Bog
 	\brief Class definition of a Bog cell type
     Decorator: ConcreteComponent
-	\author Robert Officer
+    \ingroup Cell
+    \author Robert Officer
+    \date 03/11/22
 */
 
 #ifndef BOG_H

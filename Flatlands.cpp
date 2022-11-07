@@ -1,6 +1,6 @@
 #include "Flatlands.h"
 
-Flatlands::Flatlands(): Cell("flatlands") {
+Flatlands::Flatlands() : Cell("flatlands") {
     std::cout << "Flatlands\n";
 }
 

@@ -9,8 +9,10 @@
 */
 #ifndef FACTORY_H
 #define FACTORY_H
+
 #include "Infantry.h"
 #include "Tank.h"
+
 class Factory {
 public:
 
