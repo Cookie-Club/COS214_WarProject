@@ -111,7 +111,7 @@ public:
 
     /**
      * \fn Participants::removeMilitaryUnit
-     * @param m     MilitaryUnit pointer
+     * \param m     MilitaryUnit pointer
      * \brief removes given MilitaryUnit from army vector
      */
     void removeMilitaryUnit(MilitaryUnit* m);

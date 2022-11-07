@@ -1,17 +1,13 @@
 /**
     \file Squad.h
-    \brief Defines Squad class
-    \authors Wian Koekemoer, Robert Officer
-    \date 30/10/22
-    \todo Function Documentation on lines 122-150
-*/
-/**
-	\class Squad
+    \class Squad
 	\brief Composite satructure of military units
 	\details Stores TeamMember objects, stores occupying cell, implements movement
     Composite pattern: Composite participant
+    \ingroup MilitaryUnit
 	\authors Wian Koekemoer, Robert Officer, Kaitlyn Sookdhew
 */
+
 #ifndef SQUAD_H
 #define SQUAD_H
 
@@ -75,7 +71,7 @@ public:
         \brief Getter for occupyingCell
         \return a Cell pointer to the cell that the squad is occupying
     */
-    Cell* getOccupyingCell();
+    Cell *getOccupyingCell();
 
     /**
         \fn Squad::clone
@@ -89,12 +85,13 @@ public:
         \brief Returns false to communicate object is not a leaf in Composite structure
     */
     bool isLeaf();
-   /**
-        \fn Squad::isAlive
-        \brief Checks if any Squad members are alive
-        \details Inherited from MilitaryUnit
-        \return True if number of units is greater than 0, False otherwise
-    */
+
+    /**
+         \fn Squad::isAlive
+         \brief Checks if any Squad members are alive
+         \details Inherited from MilitaryUnit
+         \return True if number of units is greater than 0, False otherwise
+     */
     bool isAlive();
 
     /**
@@ -133,6 +130,7 @@ public:
         \details Creates a new bombardment order and executes the new order on the passed in cell.
     */
     void callInBombardment(Cell *targetedCell);
+
     /**
         \fn Squad::getDamage
         \brief Gets total damage of the Squad's members
@@ -141,6 +139,7 @@ public:
         \return An int value equal to the sum total damage of the squad's members
     */
     virtual int getDamage();
+
     /**
         \fn Squad::getHealth
         \brief Gets total health of the Squad's members
@@ -150,32 +149,99 @@ public:
     */
     virtual int getHealthpoints();
 
-
+    /**
+    * \fn Squad::getState
+    * \return  Action pointer
+    * \brief getter for state variable
+    */
     Action *getState();
 
+    /**
+     * \fn Squad::setState
+     * \param state     Action Pointer
+     * \brief setter method for state variable
+     */
     void setState(Action *state);
 
+    /**
+    * \fn Squad::getStrategy
+    * \return  Strategy pointer
+    * \brief getter for strategy variable
+    */
     attackStrategy *getStrategy();
 
+    /**
+    * \fn Squad::setStrategy
+    * \param strategy     attackStrategy Pointer
+    * \brief setter method for strategy variable
+    */
     void setStrategy(attackStrategy *strategy);
 
+    /**
+     * \fn Squad::attack
+     * \param x     int value representing x co-ordinate of cell
+     * \param y     int value representing y co-ordinate of cell
+     * \brief Method to execute the strategy pattern
+     */
     void attack(int x, int y);
 
+    /**
+    * \fn Squad::getAmmo
+    * \return  int value
+    * \brief getter for ammo variable
+    */
     int getAmmo();
 
+    /**
+    * \fn Squad::setAmmo
+    * \param ammo     int value
+    * \brief setter method for ammo variable
+    */
     void setAmmo(int ammo);
 
+    /**
+    * \fn Squad::getFuel
+    * \return  int value
+    * \brief getter for fuel variable
+    */
     int getFuel();
 
+    /**
+    * \fn Squad::setFuel
+    * \param fuel     int value
+    * \brief setter method for fuel variable
+    */
     void setFuel(int fuel);
 
+    /**
+    * \fn Squad::getRations
+    * \return  int value
+    * \brief getter for rations variable
+    */
     int getRations();
 
+    /**
+    * \fn Squad::setRations
+    * \param rations     int value
+    * \brief setter method for rations variable
+    */
     void setRations(int rations);
 
+    /**
+     * \fn Squad::battle
+     * \param enemyMembers      MilitaryUnit vector of enemy army
+     * \return boolean value whether squad has won the battle
+     * \brief
+     */
     bool battle(std::vector<MilitaryUnit *> enemyMembers);
 
+    /**
+     * \fn Squad::getSquadHealth
+     * @return int value
+     * \brief method to calculate and return the total squad health points
+     */
     int getSquadHealth();
+
     /**
         \fn Squad::getSquadDamage
         \brief gets how much damage squad members do in total
@@ -183,7 +249,12 @@ public:
     */
     int getSquadDamage();
 
-    virtual void setMap(WorldMap* map);
+    /**
+     * \fn Squad::setMap
+     * \param map   WorldMap*
+     * \brief Virtual method to set Map
+     */
+    virtual void setMap(WorldMap *map);
 };
 
 

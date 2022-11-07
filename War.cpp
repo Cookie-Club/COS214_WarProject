@@ -1,34 +1,27 @@
 #include "War.h"
-/**
-    \file War.cpp
-    \todo implement War::War
-    \todo implement War::createWorld
-	\todo implement War::startMenu
-
-*/
-War::War(WorldMap* world, std::vector<Participants*> participants) {
-	this->world = world;
+War::War(WorldMap *world, std::vector<Participants *> participants) {
+    this->world = world;
     this->participants = participants;
 }
 
-SaveState* War::createSave() {
-    SaveState* save = new SaveState(world, participants);
+SaveState *War::createSave() {
+    SaveState *save = new SaveState(world, participants);
     return save;
 }
 
-WorldMap* War::getWorld(){
+WorldMap *War::getWorld() {
     return world;
 }
 
-std::vector<Participants*> War::getParticipants() {
+std::vector<Participants *> War::getParticipants() {
     return participants;
 }
 
-void War::setWar(SaveState * state) {
+void War::setWar(SaveState *state) {
     world = state->getWorld();
     participants = state->getParticipants();
 }
 
-void War::sendMap(){
+void War::sendMap() {
     participants.at(0)->setMap(getWorld());
 }
