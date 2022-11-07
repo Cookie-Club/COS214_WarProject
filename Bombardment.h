@@ -6,7 +6,7 @@
     If the targeted cell has multiple squads on it, the Bombardment class is used to handle this responsibility.
     Chain of Responsibility: Handler
     Command: ConcreteCommand
-    \defgroup Bombardment
+    \ingroup Order
     \author Robert Officer
 */
 

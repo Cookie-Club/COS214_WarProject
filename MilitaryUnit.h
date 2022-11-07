@@ -1,18 +1,13 @@
 /**
     \file MilitaryUnit.h
-    \brief Defines MilitaryUnit class and UnitType enum
-    \authors Wian Koekemoer, Robert Officer
-    \date 30/10/22
-    \todo Documentation for MilitaryUnit::getMap and MilitaryUnit::setMap on lines 87-88
-*/
-/**
-	\class MilitaryUnit
-	\brief Abstract interface for all military unit objects
+    \brief Abstract interface for all military unit objects
 	\details An abstract interface
 	Composite pattern: Component
 	\defgroup MilitaryUnit
-	\authors Robert Officer, Wian Koekemoer
+    \authors Wian Koekemoer, Robert Officer
+    \date 30/10/22
 */
+
 #ifndef MILITARYUNIT_H
 #define MILITARYUNIT_H
 
@@ -114,7 +109,18 @@ class MilitaryUnit {
             \return An int value equal to the total amount of health the unit has
         */
         virtual int getHealthpoints() = 0;
+
+        /**
+            \fn MilitaryUnit::getMap
+            \brief Getter method for map variable
+            \return WorldMap pointer representing the current world map in the simulation
+        */
         WorldMap *getMap();
+
+        /**
+            \fn MilitaryUnit::getMap
+            \brief setter method for map variable
+        */
         virtual void setMap(WorldMap *map);
 
 	protected:

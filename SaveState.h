@@ -1,4 +1,3 @@
-
 /**
 	\file SaveState.h
 	\class SaveState
@@ -12,17 +11,20 @@
 #include "Participants.h"
 
 class SaveState {
-	private:
-		WorldMap* World;
-		vector<Participants*> participants;
-		static int counter;
-		const int id;
-	public:
-		SaveState(WorldMap * world, vector<Participants*> participants);
-		WorldMap* getWorld();
-		vector<Participants*> getParticipants();
-		int getID();
-		// void setState(SaveState *);
+private:
+    WorldMap *World;
+    vector<Participants *> participants;
+    static int counter;
+    const int id;
+public:
+    SaveState(WorldMap *world, vector<Participants *> participants);
+
+    WorldMap *getWorld();
+
+    vector<Participants *> getParticipants();
+
+    int getID();
+    // void setState(SaveState *);
 };
 
 #endif

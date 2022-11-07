@@ -16,10 +16,10 @@ class Mining : public attackStrategy {
 public:
     /**
     * \fn execute
-    * @param s The squad object to execute the attack strategy
+    * \param s      The squad object to execute the attack strategy
     * \brief method that will execute the Mining attack strategy for the given squad
     */
-    void execute(Squad* s);
+    void execute(Squad *s);
 };
 
 #endif //MINING_H
