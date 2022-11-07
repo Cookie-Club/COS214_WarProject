@@ -1,10 +1,13 @@
 #include "Flatlands.h"
 
+Flatlands::Flatlands(): Cell("flatlands") {
+    std::cout << "Flatlands\n";
+}
+
 void Flatlands::execute(MilitaryUnit * m){
     occupyingForce.push_back(m);
     ((Squad*)m)->setFuel(((Squad*)m)->getFuel() - 5);
     ((Squad*)m)->setRations(((Squad*)m)->getRations() - (5 * ((Squad*)m)->getMembers().size()));
-    type = "flatlands";
 }
 
 void Flatlands::execute(std::vector<MilitaryUnit*>  m){

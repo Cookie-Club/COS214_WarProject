@@ -54,22 +54,29 @@ class TeamMembers : public MilitaryUnit {
         /**
             \fn TeamMembers:getHealthpoints
             \brief Getter for healthpoints variable
-            \details Mainly for use in testing
+            \details Inherited from MilitaryUnit
             \return Returns the current value of the unit's healthpoints
         */
-        int getHealthpoints();
+        virtual int getHealthpoints();
         /**
             \fn TeamMembers::getDamage
             \brief Getter for damage
-            \details Mainly for use in testing
+            \details Inherited from MilitaryUnit
             \return Returns the current value of the unit's damage
         */
-        int getDamage();
+        virtual int getDamage();
         /**
             \fn TeamMembers::isLeaf
             \brief Returns true to communicate object is leaf in Composite structure
         */
         virtual bool isLeaf();
+		/**
+            \fn TeamMembers::isAlive
+            \brief Checks if unit is alive
+            \details Inherited from MilitaryUnit
+            \return True if health is greater than 0, False otherwise
+        */
+        virtual bool isAlive();
         /**
             \fn Squad::receiveDamage
             \brief Reduces unit healthpoints
@@ -78,21 +85,8 @@ class TeamMembers : public MilitaryUnit {
             \param[in] damage   Total damage which should be dealt to the TeamMembers object
         */
         bool receiveDamage(int damage);
-        /**
-            \fn TeamMembers::getSquad
-            \brief Getter for squad
-        */
-        Squad* getSquad();
-        /**
-            \fn TeamMembers::getSquad
-            \brief Getter for squad
-            \param[in] squad    The Squad object to which the TeamMembers object belongs
-        */
-        void setSquad(Squad* squad);
-
 
     protected:
-        Squad* squad;
         int damage;
         int healthpoints;
 };

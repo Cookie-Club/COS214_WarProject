@@ -18,6 +18,12 @@
 class Flatlands : public Cell {
     public:
         /**
+            \fn Flatlands::Flatlands
+            \brief Constructor
+            \details Prints creation message and sets type variable to "flatlands"
+        */
+        Flatlands();
+        /**
             \fn Flatlands::execute
             \brief Tells the Flatland cell to perform specific actions
             \details For the Flatlands class, the specific actions include reducing the incoming squads rations and fuel reserves based

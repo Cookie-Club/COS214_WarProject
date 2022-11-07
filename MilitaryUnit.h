@@ -21,17 +21,10 @@
 #include <vector>
 #include <cstdlib>
 #include "Enumerations.h"
-class Action;//Required for the return type of the forward  declared Participant::getState()
-class MilitaryUnit;//Required for the return type of the forward  declared Participant::getArmy()
-//Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
-class Participants;
-class WorldMap; //forward declaration of WorldMap class
-/**
-   \enum UnitType
-   \brief Used to identify the type of the MilitaryUnit object. 
-   \details It is used in Chain of Responsibility to check if a ConcreteHandler is meant to deal with that specific object. 
-*/
-
+#include <iostream>
+class Squad;//Forward declaration for squad member
+class Participants;//Forward declaration for type of belongsTo and getArmy() usage by SquadDamage
+class WorldMap; //forward declaration for type of map member
 class MilitaryUnit {
 
 	public:
@@ -52,7 +45,11 @@ class MilitaryUnit {
             \fn MilitaryUnit::~MilitaryUnit
             \brief Virtual Destructor
         */
-        virtual ~MilitaryUnit(){};
+        virtual ~MilitaryUnit()
+        {
+            if(type != UnitType::squad)
+                std::cout << "Deleting unit of type: " << ((type == infantry) ? "Infantry\n" : "tank\n");
+        };
 		/**
             \fn MilitaryUnit::isLeaf
             \brief Definition for children's implementation
@@ -60,6 +57,11 @@ class MilitaryUnit {
 			\details leaf participant of Composite pattern
         */
         virtual bool isLeaf() = 0;
+		/**
+            \fn MilitaryUnit::isAlive
+            \brief Checks if unit is alive
+        */
+        virtual bool isAlive() = 0;
 		/**
             \fn MilitaryUnit::receiveDamage
             \brief Definition of abstract operation; to be implemented in children
@@ -78,15 +80,48 @@ class MilitaryUnit {
 			\details called to determine which Participant the object belongs to
         */
         Participants* getOwner();
-        
+		/**
+            \fn MilitaryUnit::setOwner
+            \brief Setter for belongsTo variable
+        */
+        void setOwner(Participants* p);
+        /**
+            \fn MilitaryUnit::getParticipant
+            \brief Checks what kind of participant owns the unit
+            \return Participant value (Allied|Central)
+        */
+        Participant getParticipant();
+        /**
+            \fn MilitaryUnit::getSquad
+            \brief Getter for squad
+        */
+        Squad* getSquad();
+        /**
+            \fn MilitaryUnit::getSquad
+            \brief Getter for squad
+            \param[in] squad    A pointer to the Squad object to which the unit belongs
+        */
+        void setSquad(Squad* squad);
+        /**
+            \fn MilitaryUnit::getDamage
+            \brief Gets total damage of the MilitaryUnit
+            \return An int value equal to the total amount of damage the unit deals
+        */
+        virtual int getDamage() = 0;
+        /**
+            \fn MilitaryUnit::getHealth
+            \brief Gets total health of the MilitaryUnit
+            \return An int value equal to the total amount of health the unit has
+        */
+        virtual int getHealthpoints() = 0;
+        WorldMap *getMap();
+        virtual void setMap(WorldMap *map);
+
 	protected:
+        Squad* squad;
         UnitType type;
 		Participants* belongsTo;
         WorldMap* map;
-        
-    public:
-        WorldMap *getMap();
-        void setMap(WorldMap *map);
 };
 
 #endif

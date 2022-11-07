@@ -15,14 +15,8 @@ TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participan
 
 bool TeamMembers::receiveDamage(int damage)
 {
-    int newHealth = healthpoints - damage;
-
-    if(newHealth < 0) 
-        return false;
-
-    setHealthpoints(newHealth);
-
-    return true;
+    healthpoints-= damage;
+    return (healthpoints > 0);
 }
 
 void TeamMembers::setHealthpoints(int healthpoints)
@@ -33,6 +27,11 @@ void TeamMembers::setHealthpoints(int healthpoints)
 bool TeamMembers::isLeaf()
 {
     return true;
+}
+
+bool TeamMembers::isAlive()
+{
+    return (healthpoints > 0);
 }
 
 int TeamMembers::getHealthpoints()
@@ -53,14 +52,4 @@ void TeamMembers::setDamage(int damage)
 std::vector<MilitaryUnit*> getMembers()
 {
     return std::vector<MilitaryUnit*>();
-}
-
-void TeamMembers::setSquad(Squad* squad)
-{
-    this->squad = squad;
-}
-
-Squad* TeamMembers::getSquad()
-{
-    return squad;
 }

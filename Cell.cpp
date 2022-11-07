@@ -1,9 +1,23 @@
 #include "Cell.h"
-Cell::Cell(){
-    // std::cout << "Cell created\n";
-    type = "cell";
+Cell::Cell(std::string type): type(type){
+    
+    //If Cell constructor is not called by children
+    if (type == "cell")
+        std::cout << "Cell\n";
 }
 
+Cell::~Cell(){
+    std::vector<MilitaryUnit*>::iterator it = occupyingForce.begin();
+    while (it != occupyingForce.end())
+    {
+        //Ignore if unit is a squad
+        if ((*it)->getType() == UnitType::squad)
+            ++it;
+        //Delete if not a squad
+        else 
+            it = occupyingForce.erase(it);
+    }
+}
 
 void Cell::removeOccupyingForce(std::vector<MilitaryUnit*> m) {
     std::vector<MilitaryUnit*>::iterator it = m.begin();
@@ -30,13 +44,37 @@ void Cell::removeOccupyingForce(MilitaryUnit* m) {
 }
 
 void Cell::setOccupyingForce(MilitaryUnit* m) {
+    //Ensure unit not already in cell
+    std::vector<MilitaryUnit*>::iterator it = occupyingForce.begin();
+    while (it != occupyingForce.end())
+    {
+        if ((*it) == m) 
+            return;
+
+        ++it;
+    }
     occupyingForce.push_back(m);
 }
 
 void Cell::setOccupyingForce(std::vector<MilitaryUnit*> m) {
+    //Iterates through m
     std::vector<MilitaryUnit*>::iterator it;
+    //Iterates through OccupyingForce
+    std::vector<MilitaryUnit*>::iterator occIt;
+    bool found = false;
     for(it = m.begin(); it < m.end(); it++){
-        occupyingForce.push_back(*it);
+        found = false;
+        while (occIt != occupyingForce.end())
+        {
+            if ((*it) == (*occIt)) 
+            {
+                found = true;
+                break;
+            }
+
+            ++occIt;
+        }
+        if (!found)occupyingForce.push_back(*it);
     }
 }
 

@@ -6,7 +6,7 @@
     \date 3/11/22
 */
 #include "gtest/gtest.h"
-#include "Fixtures_Example.h"
+#include "Test_Config.h"
 /*
     All test methods work by using Assertions. Assertions basically declare that you expect a certain 
     condition to be fulfilled by two objects, and it notifies you when that declaration is false.

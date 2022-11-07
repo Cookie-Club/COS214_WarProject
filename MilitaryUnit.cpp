@@ -9,6 +9,11 @@ Participants* MilitaryUnit::getOwner()
     return belongsTo;
 }
 
+void MilitaryUnit::setOwner(Participants* p)
+{
+    belongsTo = p;
+}
+
 UnitType MilitaryUnit::getType()
 {
     return this->type;
@@ -23,3 +28,17 @@ void MilitaryUnit::setMap(WorldMap *map) {
     this->map = map;
 }
 
+Participant MilitaryUnit::getParticipant()
+{
+    return belongsTo->getParticipant();
+}
+
+Squad* MilitaryUnit::getSquad()
+{
+    return squad;
+}
+
+void MilitaryUnit::setSquad(Squad* squad)
+{
+    this->squad = squad;
+}

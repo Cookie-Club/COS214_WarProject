@@ -1,3 +1,9 @@
+/**
+    \file Composite_Test_Fixtures.h
+    \brief Defines and Implements test fixture used in Composite_Test_main.cpp
+    \author Wian Koekemoer
+*/
+
 #include "gtest/gtest.h"
 #include "AlliedInfantry.h"
 #include "CentralInfantry.h"
@@ -12,6 +18,7 @@ class CompositeFixture: public ::testing::Test
     protected:
         void SetUp()
         {
+            map = new WorldMap(10);
             ally = new AlliedPowers();
             central = new CentralPowers();
             units.push_back(new AlliedInfantry(A_I_DAMAGE, A_I_HP, ally, A_I_RATIONS));
@@ -20,21 +27,43 @@ class CompositeFixture: public ::testing::Test
             units.push_back(new CentralTank(C_T_DAMAGE, C_T_HP, central, C_T_FUEL));
             aSquad = new Squad(ally);
             cSquad = new Squad(central);
+            ally->addUnit(aSquad);
+            central->addUnit(cSquad);
+            std::cout << "before adding members to squads\n";
             aSquad->addMember(units.at(0)); //Add anonymous AlliedInfantry object
             cSquad->addMember(units.at(1)); //Add anonymous CentralInfantry object
+            std::cout << "Finished StartUp\n";
         };
 
         void TearDown()
         {
-            //Delegate object deletion do Squad destructor
-            aSquad->addMember(units.at(2));
-            cSquad->addMember(units.at(3));
-            delete aSquad;
-            delete cSquad;
-            aSquad = nullptr;
-            cSquad = nullptr;
+            std::cout << "Starting TearDown\n";
+            //Delegate TeamMember deletion do Squad destructor
+            while (units.size() > 0) 
+            {
+                switch (units[units.size()-1]->getParticipant())
+                {
+                    case Allied: 
+                    {
+                        aSquad->addMember(units[units.size()-1]);
+                        break;
+                    };
+                    default: 
+                    {
+                        cSquad->addMember(units[units.size()-1]);
+                    };
+                };
+                //Resets units vector back to initial state
+                units.pop_back();
+            }
+            //Participants desctructor handles deletion of squad objects
+            std::cout << "before ally deletion\n";
             delete ally;
+            std::cout << "before central deletion\n";
             delete central;
+            std::cout << "before map deletion\n";
+            delete map;
+            std::cout << "TearDown Completed\n";
         };
 
         std::vector<MilitaryUnit*> units;
@@ -42,6 +71,7 @@ class CompositeFixture: public ::testing::Test
         Squad* cSquad; //Central squad
         Participants* ally;
         Participants* central;
+        WorldMap* map;
         const int A_I_DAMAGE = 100;
         const int C_I_DAMAGE = 101;
         const int A_T_DAMAGE = 102;

@@ -50,11 +50,12 @@ public:
         \brief Destructor
         \details Deletes members
     */
-    ~Squad();
+    virtual ~Squad();
 
     /**
         \fn Squad::moveSquad
         \brief Select cell to move to
+        \todo Decide if this is necessary
     */
     void moveSquad();
 
@@ -70,6 +71,13 @@ public:
     void setOccupyingCell(Cell *c);
 
     /**
+        \fn Squad::getOccupyingCell
+        \brief Getter for occupyingCell
+        \return a Cell pointer to the cell that the squad is occupying
+    */
+    Cell* getOccupyingCell();
+
+    /**
         \fn Squad::clone
         \brief Clone operation of Prototype pattern
         \details Creates and returns a copy of the Squad's TeamMembers
@@ -81,6 +89,13 @@ public:
         \brief Returns false to communicate object is not a leaf in Composite structure
     */
     bool isLeaf();
+   /**
+        \fn Squad::isAlive
+        \brief Checks if any Squad members are alive
+        \details Inherited from MilitaryUnit
+        \return True if number of units is greater than 0, False otherwise
+    */
+    bool isAlive();
 
     /**
         \fn Squad::addMember
@@ -106,7 +121,7 @@ public:
     /**
         \fn Squad::receiveDamage
         \brief Receives damage
-        \details Receives damage input, and selects a "volunteer" that will take it
+        \details Receives damage input and divides it equally among members
         \param[in] damage   Total damage which should be dealt to the Squad object
         \return Boolean value: True if squad is still alive, false otherwise
     */
@@ -118,6 +133,22 @@ public:
         \details Creates a new bombardment order and executes the new order on the passed in cell.
     */
     void callInBombardment(Cell *targetedCell);
+    /**
+        \fn Squad::getDamage
+        \brief Gets total damage of the Squad's members
+        \details Inherited from MilitaryUnit. 
+        \details Iterates through members vector and adds up damage of units inside
+        \return An int value equal to the sum total damage of the squad's members
+    */
+    virtual int getDamage();
+    /**
+        \fn Squad::getHealth
+        \brief Gets total health of the Squad's members
+        \details Inherited from MilitaryUnit. 
+        \details Iterates through members vector and adds up health of units inside
+        \return An int value equal to the sum total health of the suad's members
+    */
+    virtual int getHealthpoints();
 
 
     Action *getState();
@@ -129,8 +160,6 @@ public:
     void setStrategy(attackStrategy *strategy);
 
     void attack(int x, int y);
-
-    bool isAlive();
 
     int getAmmo();
 
@@ -144,11 +173,7 @@ public:
 
     void setRations(int rations);
 
-    Cell *getOccupyingCell();
-
     bool battle(std::vector<MilitaryUnit *> enemyMembers);
-
-    Participant getParticipant();
 
     int getSquadHealth();
     /**
@@ -157,6 +182,8 @@ public:
         \return Returns sum damage of all squad members
     */
     int getSquadDamage();
+
+    virtual void setMap(WorldMap* map);
 };
 
 
