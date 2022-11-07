@@ -64,13 +64,7 @@ int main(){
     int counter = 0;
     for(int i = 0; i < size; i++){
         for(int j = 0; j < 2; j++){
-            war->getWorld()->getCell(i, j)->setOccupyingForce(war->getParticipants().at(0)->getArmy()->at(counter));
-            if(counter < 20){
-                ((Squad*)war->getParticipants().at(0)->getArmy()->at(counter))->setOccupyingCell(war->getWorld()->getCell(i, j));
-                if(((Squad*)war->getParticipants().at(0)->getArmy()->at(counter))->getOccupyingCell()){
-                    std::cout << "Cell[" << i << "][" << j << "]: " << "X:" << ((Squad*)war->getParticipants().at(0)->getArmy()->at(counter))->getOccupyingCell()->getX() << " Y: " <<  ((Squad*)war->getParticipants().at(0)->getArmy()->at(counter))->getOccupyingCell()->getY() << endl;   
-                }
-            }
+            ((Squad*)war->getParticipants().at(0)->getArmy()->at(counter))->setOccupyingCell(war->getWorld()->getCell(i, j));
             war->getParticipants().at(0)->getOwnedTerritories()->push_back(war->getWorld()->getCell(i, j));
             counter++;
         }
@@ -80,17 +74,22 @@ int main(){
     counter = 0;
     for(int i = 0; i < size; i++){
         for(int j = size - 2; j < size; j++){
-            war->getWorld()->getCell(i, j)->setOccupyingForce(war->getParticipants().at(1)->getArmy()->at(counter));
-            if(counter < 20){
-                ((Squad*)war->getParticipants().at(1)->getArmy()->at(counter))->setOccupyingCell(war->getWorld()->getCell(i, j));
-                if(((Squad*)war->getParticipants().at(1)->getArmy()->at(counter))->getOccupyingCell()){
-                    std::cout << "Cell[" << i << "][" << j << "]: " << "X:" << ((Squad*)war->getParticipants().at(1)->getArmy()->at(counter))->getOccupyingCell()->getX() << " Y: " <<  ((Squad*)war->getParticipants().at(1)->getArmy()->at(counter))->getOccupyingCell()->getY() << endl;   
-                }
-            }
+            ((Squad*)war->getParticipants().at(1)->getArmy()->at(counter))->setOccupyingCell(war->getWorld()->getCell(i, j));
             war->getParticipants().at(1)->getOwnedTerritories()->push_back(war->getWorld()->getCell(i, j));
             counter++;
         }
     }
+
+    // std::cout << "Allied territories" << endl;
+    // std::vector<Cell*>::iterator it;
+    // for(it = war->getParticipants().at(0)->getOwnedTerritories()->begin(); it < war->getParticipants().at(0)->getOwnedTerritories()->end(); it++){
+    //     std::cout << "Cell " << ((Cell*)*it)->getX() << " " << ((Cell*)*it)->getY() << " has " << ((Cell*)*it)->getOccupyingForce().size() << endl;
+    // }
+
+    // std::cout << "Central territories" << endl;
+    // for(it = war->getParticipants().at(1)->getOwnedTerritories()->begin(); it < war->getParticipants().at(1)->getOwnedTerritories()->end(); it++){
+    //     std::cout << "Cell " << ((Cell*)*it)->getX() << " " << ((Cell*)*it)->getY() << " has " << ((Cell*)*it)->getOccupyingForce().size() << endl;
+    // }
 
     for(int i = 0; i < size; i++){
             std::cout << "[   ";
@@ -105,8 +104,8 @@ int main(){
     Participants * loser;
 
     char starter;
-    std::cout << "Press any key to begin war..." << endl;
-    cin >> starter;
+    // std::cout << "Press any key to begin war..." << endl;
+    // std::cin.get();
 
     std::cout << "Pink = Bog\nYellow = Flatlands\nPlain = Normal Cell\n";
     while(!(loser == findLoser(war->getParticipants()))){
@@ -121,24 +120,24 @@ int main(){
             std::cout << "]\n";
         }
         char ans;
-        std::cout << "Would you like to continue in real mode? (Y/N)";
-        std::cin >> ans;
-        while(true){
-            if(ans == 'Y'){
+        // std::cout << "Would you like to continue in real mode? (Y/N)";
+        // std::cin >> ans;
+        // while(true){
+        //     if(ans == 'Y'){
             turn++;
-            system("clear");
-            break;
-            }
-            else if(ans == 'N'){
-                system("clear");
-                break;
-            }
-            {
-                std::cout << "Please enter a valid answer\n";
-                std::cout << "Would you like to continue in real mode? (Y/N)";
-                std::cin >> ans;
-            }
-        }
+        //     system("clear");
+        //     break;
+        //     }
+        //     else if(ans == 'N'){
+        //         system("clear");
+        //         break;
+        //     }
+        //     {
+        //         std::cout << "Please enter a valid answer\n";
+        //         std::cout << "Would you like to continue in real mode? (Y/N)";
+        //         std::cin >> ans;
+        //     }
+        // }
         
     }
     std::cout << loser->getName() << " has lost the war\n";

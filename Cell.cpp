@@ -41,6 +41,8 @@ void Cell::removeOccupyingForce(MilitaryUnit* m) {
             occupyingForce.erase(it);
             return;
         }
+
+    std::cout << "Remaining squads fo cell " << x << " " << y << ": " << occupyingForce.size() << endl;
 }
 
 void Cell::setOccupyingForce(MilitaryUnit* m) {
@@ -54,6 +56,7 @@ void Cell::setOccupyingForce(MilitaryUnit* m) {
         ++it;
     }
     occupyingForce.push_back(m);
+    std::cout << "Occupying force of cell " << x << " " << y << " is now " << occupyingForce.size() << endl; 
 }
 
 void Cell::setOccupyingForce(std::vector<MilitaryUnit*> m) {

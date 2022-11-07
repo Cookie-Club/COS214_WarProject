@@ -5,6 +5,7 @@
 
 void Mining::execute(Squad* s)
 {
+    std::cout << "Mining attack commencing" << endl;
     int newX;
     if(s->getParticipant()==Allied){
         //If allied, move 3 right

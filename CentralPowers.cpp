@@ -42,19 +42,24 @@ void CentralPowers::armyMove() {
 
         if(SquadYCoord > 0){
             if(!map->getCell(SquadXCoord, SquadYCoord - 1)->getOccupyingForce().empty()){
+                //std::cout << "Outside if ----- Occupying force on cell "<< SquadXCoord << " " << SquadYCoord + 1 << ": " << map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().size() << endl;
                 if(map->getCell(SquadXCoord, SquadYCoord - 1)->getOccupyingForce().at(0)->getOwner() == ((Squad*)*it)->getOwner()){
-                    ((Squad*)*it)->getOccupyingCell()->removeOccupyingForce(*it);
-                    map->getCell(SquadXCoord, SquadYCoord - 1)->setOccupyingForce(*it);
+                    std::cout << map->getCell(SquadXCoord, SquadYCoord)->getOccupyingForce().size() << "  Joining " << map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().size() << " squads at [" << SquadXCoord << "][" << SquadYCoord + 1 << "]";
+                    ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord - 1));
+                    //std::cout << ((Squad*)*it)->getOccupyingCell()->getOccupyingForce().size() << endl;
                 }
                 else{
+                    std::cout << "ENEMY ENCOUNERED AT X: " << SquadXCoord << " Y: " << SquadYCoord + 1 << endl; 
                     ((Squad*)*it)->attack(SquadXCoord, SquadYCoord - 1);
                 }
             }
             else{
-                ((Squad*)*it)->getOccupyingCell()->removeOccupyingForce(*it);
-                map->getCell(SquadXCoord, SquadYCoord - 1)->setOccupyingForce(*it);
+                //std::cout << SquadXCoord << " " << SquadYCoord << " No one in front, moving along"<< endl;
+                ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord - 1));
             }
         }
+        
+        std::cout << "---------" << endl;
     //remove empty squads
     }
 }

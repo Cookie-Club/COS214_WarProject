@@ -45,7 +45,7 @@ public:
         \param m A MilitaryUnit pointer that points to either a Leaf or a Composite participant
     */
     void addUnit(MilitaryUnit* m);
-    std::vector<MilitaryUnit*> getArmy();
+    std::vector<MilitaryUnit*> * getArmy();
     int getTotalHealthPoints();
     int getTotalDamage();
     std::string getName();

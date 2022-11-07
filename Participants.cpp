@@ -51,7 +51,7 @@ void Participants::addUnit(MilitaryUnit* m)
     army.push_back(m);
 }
 
-std::vector<MilitaryUnit*> Participants::getArmy()
+std::vector<MilitaryUnit*> * Participants::getArmy()
 {
     std::vector<MilitaryUnit*> * temp = &army;
     return temp;
@@ -86,11 +86,6 @@ void Participants::removeMilitaryUnit(MilitaryUnit* m)
             return;
         }
     }
-}
-
-std::vector<Cell*> * Participants::getOwnedTerritories(){
-    std::vector<Cell*> * temp = &ownedTerritories;
-    return temp;
 }
 
 std::vector<Cell*> * Participants::getOwnedTerritories(){

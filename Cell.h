@@ -48,7 +48,7 @@ class Cell {
             \details Iterates through the occupyingForce and checks to see where the passed in MilitaryUnit is and when found, the unit is removed
             \param[in] m  A MilitaryUnit pointer that points to the squad being removed from the occupyingForce
         */
-        void removeOccupyingForce(MilitaryUnit* m);
+        virtual void removeOccupyingForce(MilitaryUnit* m);
         /**
             \fn Cell::setOccupyingForce
             \brief Adds MilitaryUnits to the occupyingForce attribute

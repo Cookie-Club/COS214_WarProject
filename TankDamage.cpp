@@ -13,9 +13,11 @@ void TankDamage::damageMember(MilitaryUnit * currentUnit){
         // false removes the tank unit from the squad and deletes it.
         if(!currentUnit->receiveDamage(receivedDamage))
         {
+            std::cout << "Tank has been destroyed" << endl;
             ((TeamMembers*)currentUnit)->getSquad()->removeSquadMember(currentUnit);
             delete currentUnit;
         }
+        std::cout << "Tank health: " << currentUnit->getHealthpoints() << endl;
     }
     else if (next)
     {

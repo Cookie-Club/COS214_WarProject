@@ -11,9 +11,11 @@ void InfantryDamage::damageMember(MilitaryUnit * currentUnit){
         // false removes the infantry unit from the squad and deletes it
         if(!currentUnit->receiveDamage(receivedDamage))
         {
+            std::cout << "Infantry has died" << endl;
             ((TeamMembers*)currentUnit)->getSquad()->removeSquadMember(currentUnit);
             delete currentUnit;
         }
+        std::cout << "Infantry health: " << currentUnit->getHealthpoints() << endl;
     }
     else if(next){
         next->damageMember(currentUnit);

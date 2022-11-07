@@ -5,6 +5,7 @@
 
 void Frontline::execute(Squad* s)
 {
+    std::cout << "Frontline attack commencing" << endl;
     int newX;
     if(s->getParticipant()==Allied){
         //If Allied go right
