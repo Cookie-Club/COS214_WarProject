@@ -26,35 +26,53 @@ Participants* findLoser(vector<Participants *> sides){
 }
 
 int main(){
-    //Creating War
+    
+    //Size of map
     int size = 10;
+
+    //Creating map
     WorldMap * map = new WorldMap(size);
     std::vector<Participants*> parties;
+
+    //Creating Allied and Central powers
     parties.push_back(new AlliedPowers(Allied));
     parties.push_back(new CentralPowers(Central));
+
+    //Giving participants visibility of map
     parties.at(0)->setMap(map);
     parties.at(1)->setMap(map);
+
+    //Creating War
     War * war = new War(map, parties);
     Caretaker * STORAGE = new Caretaker(war->createSave());
 
-    //Creating armies
+    //Creating abstract factories that will create military units
     Factory * aFactory = new AlliedFactory();
     Factory * cFactory = new CentralFactory();
+
+    //Creating 20 ally squads
     for(int i = 0; i < 20; i++){
+        //Adding squad to ally
         Squad * temp = new Squad(war->getParticipants().at(0));
+        //Adding 10 infantry to squad
         for(int j = 0; j < 10; j++){
             temp->addMember(aFactory->createInfantry(war->getParticipants().at(0)));
         }
+        //Adding 5 tanks to squad
         for(int q = 0; q < 5; q++){
             temp->addMember(aFactory->createTank(war->getParticipants().at(0)));
         }
     }
 
+    //Creating 20 central squads
     for(int i = 0; i < 20; i++){
+        //Adding squad to central
         Squad * temp = new Squad(war->getParticipants().at(1));
+        //Adding 10 infantry to squad
         for(int j = 0; j < 10; j++){
             temp->addMember(cFactory->createInfantry(war->getParticipants().at(1)));
         }
+        //Adding 5 tanks to squad
         for(int q = 0; q < 5; q++){
             temp->addMember(cFactory->createTank(war->getParticipants().at(1)));
         }
