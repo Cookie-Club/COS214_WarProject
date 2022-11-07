@@ -1,14 +1,15 @@
 /**
-    \file Infantry.h
+
     \brief Defines Infantry class
     \authors Wian Koekemoer
     \date 30/10/22
 */
 /**
+    \file Infantry.h
 	\class Infantry
 	\brief Abstract interface for infantry objects
     \details Prototype pattern: AbstractProduct
-	\author Wian Koekemoer
+	\author Wian Koekemoer, Kaitlyn Sookdhew
 */
 
 #ifndef INFANTRY_H
@@ -29,6 +30,10 @@ public:
     */
     Infantry(int damage, int healthpoints, Participants *belongsTo, int rationConsumption);
 
+    /**
+        \fn Infantry::~Infantry
+        \brief Virtual destructor
+     */
     virtual ~Infantry() {};
 
     /**

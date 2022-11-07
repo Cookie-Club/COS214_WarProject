@@ -50,9 +50,9 @@ public:
     ~AmmoDeposit();
 
     /**
-     * \fn AmmoDeposit::printSymbol
-     * \param[in] s     String input to print
-     * \brief
+        \fn AmmoDeposit::printSymbol
+        \param[in] s     String input to print
+        \brief
      */
     void printSymbol(std::string s = "  ");
 };

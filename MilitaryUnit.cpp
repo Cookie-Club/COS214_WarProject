@@ -1,26 +1,23 @@
 #include "MilitaryUnit.h"
-MilitaryUnit::MilitaryUnit(Participants* belongsTo, UnitType type): belongsTo(belongsTo), type(type), map(belongsTo->getMap())
-{
+
+MilitaryUnit::MilitaryUnit(Participants *belongsTo, UnitType type) : belongsTo(belongsTo), type(type),
+                                                                     map(belongsTo->getMap()) {
 
 }
 
-Participants* MilitaryUnit::getOwner()
-{
+Participants *MilitaryUnit::getOwner() {
     return belongsTo;
 }
 
-void MilitaryUnit::setOwner(Participants* p)
-{
+void MilitaryUnit::setOwner(Participants *p) {
     belongsTo = p;
 }
 
-UnitType MilitaryUnit::getType()
-{
+UnitType MilitaryUnit::getType() {
     return this->type;
 }
 
-WorldMap* MilitaryUnit::getMap()
-{
+WorldMap *MilitaryUnit::getMap() {
     return map;
 }
 
@@ -28,17 +25,14 @@ void MilitaryUnit::setMap(WorldMap *map) {
     this->map = map;
 }
 
-Participant MilitaryUnit::getParticipant()
-{
+Participant MilitaryUnit::getParticipant() {
     return belongsTo->getParticipant();
 }
 
-Squad* MilitaryUnit::getSquad()
-{
+Squad *MilitaryUnit::getSquad() {
     return squad;
 }
 
-void MilitaryUnit::setSquad(Squad* squad)
-{
+void MilitaryUnit::setSquad(Squad *squad) {
     this->squad = squad;
 }

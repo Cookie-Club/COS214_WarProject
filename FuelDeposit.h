@@ -1,10 +1,5 @@
 /**
     \file FuelDeposit.h
-    \brief Contains the definition of the class FuelDeposit
-    \author Robert Officer
-    \date 03/11/22
-*/
-/**
 	\class FuelDeposit
 	\brief FuelDeposit type of cell
     \details Child of cellFeatures this class inherits two functions, getAttribute() and add() as well as the attributes feature and attribute
@@ -47,6 +42,11 @@ public:
     */
     void setOccupyingForce(std::vector<MilitaryUnit *> m);
 
+    /**
+        \fn FuelDeposit::printSymbol
+        \param[in] s     String input to print
+        \brief
+    */
     void printSymbol(std::string s = "  ");
 
     /**

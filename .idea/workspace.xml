@@ -12,16 +12,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57bc87a4-8d83-46a7-b7df-e3378c2aafce" name="Changes" comment="Added Doxygen comments and formatted code">
-      <change beforePath="$PROJECT_DIR$/AlliedTank.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedTank.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ColorCodes.h" beforeDir="false" afterPath="$PROJECT_DIR$/ColorCodes.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Defensive.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Defensive.cpp" afterDir="false" />
+    <list default="true" id="57bc87a4-8d83-46a7-b7df-e3378c2aafce" name="Changes" comment="Formatted code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AmmoDeposit.h" beforeDir="false" afterPath="$PROJECT_DIR$/AmmoDeposit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bog.h" beforeDir="false" afterPath="$PROJECT_DIR$/Bog.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Enumerations.h" beforeDir="false" afterPath="$PROJECT_DIR$/Enumerations.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Factory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Factory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FeatureFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureFactory.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flatlands.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Flatlands.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flatlands.h" beforeDir="false" afterPath="$PROJECT_DIR$/Flatlands.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontline.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Frontline.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontline.h" beforeDir="false" afterPath="$PROJECT_DIR$/Frontline.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuelDepoFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FuelDepoFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuelDeposit.h" beforeDir="false" afterPath="$PROJECT_DIR$/FuelDeposit.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infantry.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Infantry.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infantry.h" beforeDir="false" afterPath="$PROJECT_DIR$/Infantry.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +99,7 @@
       <workItem from="1667475710627" duration="592000" />
       <workItem from="1667477692299" duration="483000" />
       <workItem from="1667505477362" duration="5174000" />
-      <workItem from="1667772419433" duration="2323000" />
+      <workItem from="1667772419433" duration="4610000" />
     </task>
     <task id="LOCAL-00001" summary="Added SetState method to Participants">
       <created>1666525285564</created>
@@ -232,7 +234,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667774266985</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added Doxygen comments and formatted code">
+      <created>1667774764121</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1667774764121</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Formatted code">
+      <created>1667774855558</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1667774855558</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +284,7 @@
     <MESSAGE value="Fixes to state pattern components" />
     <MESSAGE value="Implemented the attack for the frontline Strategy" />
     <MESSAGE value="Added Doxygen comments and formatted code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Doxygen comments and formatted code" />
+    <MESSAGE value="Formatted code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatted code" />
   </component>
 </project>

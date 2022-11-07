@@ -16,8 +16,17 @@
 
 class FuelDepoFactory : public FeatureFactory {
 public:
+    /**
+        * \fn FuelDepoFactory::FuelDepoFactory
+        * \brief default constructor
+    */
     FuelDepoFactory();
 
+    /**
+     \FuelDepoFactory::createFeature
+     \return CellFeatures*
+     \brief produces FuelDeposit product
+   */
     CellFeatures *createFeature();
 };
 

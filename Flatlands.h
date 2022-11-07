@@ -1,7 +1,9 @@
 /**
     \file Flatlands.h
+    \class Flatlands
     \brief Class definition of a flatlands cell type
     Decorator: ConcreteComponent
+    \ingroup Cell
 	\authors Robert Officer
     \date 03/11/22
 */
@@ -29,9 +31,14 @@ public:
     */
     void execute(MilitaryUnit *m);
 
+    /**
+        \fn Bog::printSymbol
+        \param[in] s     String input to print
+        \brief
+    */
     void printSymbol(std::string s = "  ");
 
-    //  void add(Cell *addition);
+//  void add(Cell *addition);
 };
 
 

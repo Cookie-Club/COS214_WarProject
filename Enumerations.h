@@ -26,7 +26,7 @@ enum UnitType {
 /**
    \enum Participant
    \brief Used to identify the type of Participant.
-   \details It is used in template method to check.
+   \details It is used in template method to check the type of participant
 */
 enum Participant {
     Allied = 32, Central = 41
@@ -34,6 +34,8 @@ enum Participant {
 
 /**
    \enum CellAttribute
+   \brief Used to identify the type of feature for a cell
+   \details
 */
 enum CellAttribute {
     AmmoDepo, FuelDepo

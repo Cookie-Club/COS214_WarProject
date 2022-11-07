@@ -1,6 +1,3 @@
-/**
-    \todo Finish the last else statement
-*/
 #include "Frontline.h"
 
 void Frontline::execute(Squad *s) {
