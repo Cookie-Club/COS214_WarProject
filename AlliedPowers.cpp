@@ -1,8 +1,7 @@
 #include "AlliedPowers.h"
 
-AlliedPowers::AlliedPowers() {
+AlliedPowers::AlliedPowers(ParticipantType pT):Participants(pT){
     this->name = "Allied";
-    participant = Allied;
 }
 
 void AlliedPowers::retreat(std::vector<Cell *> cells) {
@@ -35,16 +34,36 @@ std::vector<Cell *> AlliedPowers::atBack() {
 }
 
 void AlliedPowers::armyMove() {
-    std::vector<MilitaryUnit *>::iterator it;
-
-    for (it = army.begin(); it < army.end(); it++) {
-        int SquadXCoord = ((Squad *) *it)->getOccupyingCell()->getX();
-        int SquadYCoord = ((Squad *) *it)->getOccupyingCell()->getY();
-        if (SquadXCoord > 0) {
-            if (!map->getCell(SquadXCoord + 1, SquadYCoord)->getOccupyingForce().empty()) {
-                ((Squad *) *it)->attack(SquadXCoord - 1, SquadYCoord);
+    std::cout << "Allied is moving troops" << endl;
+	std::vector<MilitaryUnit*>::iterator it = army.begin();
+    for(;it != army.end(); it++){
+        std::cout << army.size();
+        std::cout << "Inside Allied for loop" << endl;
+        int SquadXCoord = ((Squad*)*it)->getOccupyingCell()->getX();
+        int SquadYCoord = ((Squad*)*it)->getOccupyingCell()->getY();
+        std::cout << "Got coords" << endl;
+        if(SquadYCoord < (map->getSize() - 1)){
+            //std::cout << "Outside if ----- Occupying force on cell "<< SquadXCoord << " " << SquadYCoord + 1 << ": " << map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().size() << endl;
+            if(!map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().empty()){
+                if(map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().at(0)->getOwner() == ((Squad*)*it)->getOwner()){
+                    //std::cout << map->getCell(SquadXCoord, SquadYCoord)->getOccupyingForce().size() << "  Joining " << map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().size() << " squads at [" << SquadXCoord << "][" << SquadYCoord + 1 << "]";
+                    ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord + 1));
+                }
+                else{
+                    std::cout << "ENEMY ENCOUNERED AT X: " << SquadXCoord << " Y: " << SquadYCoord + 1 << endl; 
+                    ((Squad*)*it)->attack(SquadXCoord, SquadYCoord + 1);
+                }
+            }
+            else{
+                //std::cout << SquadXCoord << " " << SquadYCoord << " No one in front, moving along" << endl;
+                ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord + 1));
             }
         }
+        if(!((Squad*)*it)->isAlive()){
+            delete *it;
+            it = army.erase(it);
+        }
+        std::cout << "---------" << endl;
     }
 
     //remove empty squads

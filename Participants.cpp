@@ -1,7 +1,8 @@
 #include "Participants.h"
 #include "Squad.h"
-
-Participants::Participants() {}
+Participants::Participants(ParticipantType pT): participantType(pT){
+    std::cout << participantType << endl;
+}
 
 Participants::~Participants() {
     for (int x = 0; x < army.size(); ++x) {
@@ -46,8 +47,10 @@ void Participants::addUnit(MilitaryUnit *m) {
     army.push_back(m);
 }
 
-std::vector<MilitaryUnit *> Participants::getArmy() {
-    return army;
+std::vector<MilitaryUnit*> * Participants::getArmy()
+{
+    std::vector<MilitaryUnit*> * temp = &army;
+    return temp;
 }
 
 WorldMap *Participants::getMap() {
@@ -62,8 +65,8 @@ void Participants::setMap(WorldMap *map) {
     }
 }
 
-Participant Participants::getParticipant() {
-    return participant;
+ParticipantType Participants::getParticipantType(){
+    return participantType;
 }
 
 void Participants::removeMilitaryUnit(MilitaryUnit *m) {
@@ -75,4 +78,9 @@ void Participants::removeMilitaryUnit(MilitaryUnit *m) {
             return;
         }
     }
+}
+
+std::vector<Cell*> * Participants::getOwnedTerritories(){
+    std::vector<Cell*> * temp = &ownedTerritories;
+    return temp;
 }

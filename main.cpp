@@ -15,7 +15,6 @@
 using namespace std;
 
 Participants* findLoser(vector<Participants *> sides){
-    cout << "here";
     std::vector<Participants *>:: iterator it;
     for (it = sides.begin(); it != sides.end(); ++it)
     {
@@ -23,68 +22,118 @@ Participants* findLoser(vector<Participants *> sides){
             return *it;
         }
     }
-
     return nullptr;
 }
 
 int main(){
-    //Creating War
+    
+    //Size of map
     int size = 10;
+
+    //Creating map
+    WorldMap * map = new WorldMap(size);
     std::vector<Participants*> parties;
-    parties.push_back(new AlliedPowers());
-    parties.push_back(new CentralPowers());
-    War * war = new War(new WorldMap(size), parties);
+
+    //Creating Allied and Central powers
+    parties.push_back(new AlliedPowers(Allied));
+    parties.push_back(new CentralPowers(Central));
+
+    //Giving participants visibility of map
+    parties.at(0)->setMap(map);
+    parties.at(1)->setMap(map);
+
+    //Creating War
+    War * war = new War(map, parties);
     Caretaker * STORAGE = new Caretaker(war->createSave());
 
-    //Creating armies
+    //Creating abstract factories that will create military units
     Factory * aFactory = new AlliedFactory();
     Factory * cFactory = new CentralFactory();
+
+    //Creating 20 ally squads
     for(int i = 0; i < 20; i++){
+        //Adding squad to ally
         Squad * temp = new Squad(war->getParticipants().at(0));
+        //Adding 10 infantry to squad
         for(int j = 0; j < 10; j++){
             temp->addMember(aFactory->createInfantry(war->getParticipants().at(0)));
         }
+        //Adding 5 tanks to squad
         for(int q = 0; q < 5; q++){
             temp->addMember(aFactory->createTank(war->getParticipants().at(0)));
         }
     }
 
+    //Creating 20 central squads
     for(int i = 0; i < 20; i++){
+        //Adding squad to central
         Squad * temp = new Squad(war->getParticipants().at(1));
+        //Adding 10 infantry to squad
         for(int j = 0; j < 10; j++){
             temp->addMember(cFactory->createInfantry(war->getParticipants().at(1)));
         }
+        //Adding 5 tanks to squad
         for(int q = 0; q < 5; q++){
             temp->addMember(cFactory->createTank(war->getParticipants().at(1)));
         }
     }
 
-    // int counter = 0;
-    // for(int i = 0; i < 10; i++){
-    //     for(int j = 0; j < 2; j++){
-    //         //std::cout << counter++;
-    //         //war->getWorld()->getCell(i, j)->setOccupyingForce(war->getParticipants().at(0)->getArmy().at(counter++));
-    //     }
+    std::cout << "Placing allied troops" << endl; 
+    int counter = 0;
+    for(int i = 0; i < size; i++){
+        for(int j = 0; j < 2; j++){
+            ((Squad*)war->getParticipants().at(0)->getArmy()->at(counter))->setOccupyingCell(war->getWorld()->getCell(i, j));
+            war->getParticipants().at(0)->getOwnedTerritories()->push_back(war->getWorld()->getCell(i, j));
+            counter++;
+        }
+    }
+
+    std::cout << "Placing central troops" << endl;
+    counter = 0;
+    for(int i = 0; i < size; i++){
+        for(int j = size - 2; j < size; j++){
+            ((Squad*)war->getParticipants().at(1)->getArmy()->at(counter))->setOccupyingCell(war->getWorld()->getCell(i, j));
+            war->getParticipants().at(1)->getOwnedTerritories()->push_back(war->getWorld()->getCell(i, j));
+            counter++;
+        }
+    }
+
+    // std::cout << "Allied territories" << endl;
+    // std::vector<Cell*>::iterator it;
+    // for(it = war->getParticipants().at(0)->getOwnedTerritories()->begin(); it < war->getParticipants().at(0)->getOwnedTerritories()->end(); it++){
+    //     std::cout << "Cell " << ((Cell*)*it)->getX() << " " << ((Cell*)*it)->getY() << " has " << ((Cell*)*it)->getOccupyingForce().size() << endl;
     // }
 
-    // for(int i = 0; i < size; i++){
-    //     for(int j = size - 2; j < size; j++){
-    //         war->getWorld()->getCell(i, j)->setOccupyingForce(war->getParticipants().at(1)->getArmy().at(i));
-    //     }
+    // std::cout << "Central territories" << endl;
+    // for(it = war->getParticipants().at(1)->getOwnedTerritories()->begin(); it < war->getParticipants().at(1)->getOwnedTerritories()->end(); it++){
+    //     std::cout << "Cell " << ((Cell*)*it)->getX() << " " << ((Cell*)*it)->getY() << " has " << ((Cell*)*it)->getOccupyingForce().size() << endl;
     // }
+
+    for(int i = 0; i < size; i++){
+            std::cout << "[   ";
+            for(int j = 0; j < size; j++){
+                war->getWorld()->getCell(i, j)->printSymbol();
+                std::cout << "   ";
+            }
+            std::cout << "]\n";
+    }
 
     int turn = 0;
     Participants * loser;
 
-    cout << "Pink = Bog\nYellow = Flatlands\nPlain = Normal Cell\n";
+    char starter;
+    // std::cout << "Press any key to begin war..." << endl;
+    // std::cin.get();
+
+    std::cout << "Pink = Bog\nYellow = Flatlands\nPlain = Normal Cell\n";
     while(!(loser == findLoser(war->getParticipants()))){
-        std::cout << "Participants " << turn % war->getParticipants().size() << " turn" << endl;
+        std::cout << "Participant " << turn % war->getParticipants().size() << "'s turn" << endl;
         war->getParticipants().at(turn % war->getParticipants().size())->armyMove();
         for(int i = 0; i < size; i++){
             std::cout << "[   ";
             for(int j = 0; j < size; j++){
                 war->getWorld()->getCell(i, j)->printSymbol();
-                cout << "   ";
+                std::cout << "   ";
             }
             std::cout << "]\n";
         }

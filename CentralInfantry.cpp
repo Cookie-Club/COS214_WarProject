@@ -1,8 +1,8 @@
 #include "CentralInfantry.h"
 
-CentralInfantry::CentralInfantry(int damage, int healthpoints, Participants *belongsTo, int rationConsumption)
-        : Infantry(damage, healthpoints, belongsTo, rationConsumption) {
-    //std::cout << "CentralInfantry created";
+CentralInfantry::CentralInfantry(int damage, int healthpoints, Participants* belongsTo, int rationConsumption) 
+: Infantry(damage, healthpoints, belongsTo, rationConsumption){
+
 }
 
 MilitaryUnit *CentralInfantry::clone() {

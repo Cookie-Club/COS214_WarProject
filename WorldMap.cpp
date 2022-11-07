@@ -33,7 +33,6 @@ WorldMap::WorldMap(int worldSize) {
                 grid[i][j] = new Cell();
                 cout << "Nothing, ";
             }
-
             grid[i][j]->setCoordinates(i, j);
 
             //Replaced cout commands in the if statements below with

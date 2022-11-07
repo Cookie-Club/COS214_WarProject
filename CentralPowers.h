@@ -22,11 +22,11 @@ public:
      */
     void retreat(std::vector<Cell *> cells);
 
-    /**
-    * \fn CentralPowers::CentralPowers
-    * \brief Default constructor
-    */
-    CentralPowers();
+        /**
+        * \fn CentralPowers::CentralPowers
+        * \brief Default constructor
+        */
+        CentralPowers(ParticipantType pT);
 
     /**
      * \fn CentralPowers::atBack

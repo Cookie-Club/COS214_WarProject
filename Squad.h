@@ -71,7 +71,7 @@ public:
         \brief Getter for occupyingCell
         \return a Cell pointer to the cell that the squad is occupying
     */
-    Cell *getOccupyingCell();
+    Cell* getOccupyingCell(){return occupyingCell;};
 
     /**
         \fn Squad::clone

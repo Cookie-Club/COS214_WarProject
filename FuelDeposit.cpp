@@ -4,24 +4,23 @@ FuelDeposit::FuelDeposit() {
     attribute = FuelDepo;
 }
 
-void FuelDeposit::setOccupyingForce(MilitaryUnit *m) {
-    occupyingForce.push_back(m);
-    ((Squad *) m)->setFuel(100);
+void FuelDeposit::setOccupyingForce(MilitaryUnit * m){    
+    std::cout << "Occupying force of cell " << x << " " << y << " is now " << occupyingForce.size() << endl; 
 
     if (feature != 0) {
         feature->execute(m);
     }
+    ((Squad*)m)->setFuel(100);
+    feature->setOccupyingForce(m);
 }
 
-void FuelDeposit::setOccupyingForce(std::vector<MilitaryUnit *> m) {
-    std::vector<MilitaryUnit *>::iterator it;
-    for (it = m.begin(); it < m.end(); it++) {
-        occupyingForce.push_back(*it);
-        ((Squad *) *it)->setFuel(100);
-        if (feature != 0) {
-            feature->execute(*it);
-        }
+void FuelDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
+    std::vector<MilitaryUnit*>::iterator it;
+    for(it = m.begin(); it < m.end(); it++){  
+        feature->execute(*it);
+        ((Squad*)*it)->setFuel(100);
     }
+    feature->setOccupyingForce(m);
 }
 
 void FuelDeposit::printSymbol(std::string s) {

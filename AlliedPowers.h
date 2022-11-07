@@ -22,11 +22,11 @@ public:
     */
     void retreat(std::vector<Cell *> cells);
 
-    /**
-     * \fn AlliedPowers::AlliedPowers
-     * \brief Default constructor
-     */
-    AlliedPowers();
+        /**
+         * \fn AlliedPowers::AlliedPowers
+         * \brief Default constructor
+         */
+        AlliedPowers(ParticipantType pT);
 
     /**
      * \fn AlliedPowers::atBack

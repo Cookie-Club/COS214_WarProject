@@ -28,7 +28,7 @@ enum UnitType {
    \brief Used to identify the type of Participant.
    \details It is used in template method to check the type of participant
 */
-enum Participant {
+enum ParticipantType {
     Allied = 32, Central = 41
 };
 

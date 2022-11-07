@@ -1,3 +1,9 @@
+/**
+    \file TeamMembers.cpp
+    \brief Implements TeamMembers class methods
+    \authors Wian Koekemoer
+    \date 30/10/22
+*/
 #include "TeamMembers.h"
 
 TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participants *belongsTo) : MilitaryUnit(belongsTo,
@@ -6,8 +12,10 @@ TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participan
     this->healthpoints = healthpoints;
 }
 
-bool TeamMembers::receiveDamage(int damage) {
-    healthpoints -= damage;
+bool TeamMembers::receiveDamage(int damage)
+{
+    std::cout << "Damage recieved by team member: " << damage << endl;
+    healthpoints-= damage;
     return (healthpoints > 0);
 }
 

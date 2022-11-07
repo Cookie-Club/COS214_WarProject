@@ -14,29 +14,23 @@
 #include "Cell.h"
 
 class Flatlands : public Cell {
-public:
-    /**
-        \fn Flatlands::Flatlands
-        \brief Constructor
-        \details Prints creation message and sets type variable to "flatlands"
-    */
-    Flatlands();
-
-    /**
-        \fn Flatlands::execute
-        \brief Tells the Flatland cell to perform specific actions
-        \details For the Flatlands class, the specific actions include reducing the incoming squads rations and fuel reserves based
-        on how many team members are in the squad
-        \param[in] m  A MilitaryUnit pointer that points to the squad being added into the cells occupying force
-    */
-    void execute(MilitaryUnit *m);
-
-    /**
-        \fn Bog::printSymbol
-        \param[in] s     String input to print
-        \brief
-    */
-    void printSymbol(std::string s = "  ");
+    public:
+        /**
+            \fn Flatlands::Flatlands
+            \brief Constructor
+            \details Prints creation message and sets type variable to "flatlands"
+        */
+        Flatlands();
+        /**
+            \fn Flatlands::execute
+            \brief Tells the Flatland cell to perform specific actions
+            \details For the Flatlands class, the specific actions include reducing the incoming squads rations and fuel reserves based
+            on how many team members are in the squad
+            \param[in] m  A MilitaryUnit pointer that points to the squad being added into the cells occupying force
+        */
+        void execute(MilitaryUnit * m);
+        void execute(std::vector<MilitaryUnit*>  m);
+        void printSymbol(std::string s = "  ");
 
 //  void add(Cell *addition);
 };

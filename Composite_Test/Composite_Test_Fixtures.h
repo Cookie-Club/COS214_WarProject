@@ -41,7 +41,7 @@ class CompositeFixture: public ::testing::Test
             //Delegate TeamMember deletion do Squad destructor
             while (units.size() > 0) 
             {
-                switch (units[units.size()-1]->getParticipant())
+                switch (units[units.size()-1]->getParticipantType())
                 {
                     case Allied: 
                     {

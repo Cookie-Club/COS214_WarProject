@@ -17,17 +17,18 @@
 class MilitaryUnit;
 class Participants {
 
-public:
-    /**
-     * \fn Participants::Participants
-     * \brief default constructor for Participants
-     */
-    Participants();
+protected:
+    std::vector<MilitaryUnit*> army;
+    std::vector<Cell*> ownedTerritories;
+    //Action* state;
+    double resources;
+    //vector<attackStrategy*> moveStrategies;
+    std::string name;
+    WorldMap* map;
+    ParticipantType participantType;
 
-    /**
-     * Participants::~Participants
-     * \brief virtual destructor for Participants
-     */
+public:
+    Participants(ParticipantType pT);
     virtual ~Participants();
 
     /**
@@ -42,12 +43,7 @@ public:
      * \brief virtual method that will move squads currently on cells one cell back
      */
     virtual void retreat(std::vector<Cell*> cells)=0;
-
-    /**
-     * \fn Participants::atBack
-     * \return std::vector<Cell*>
-     * \brief returns a vector of Cells with all cells not on the edge of the world map
-     */
+    std::vector<Cell*> * getOwnedTerritories();
     virtual std::vector<Cell*> atBack() = 0;
 
 
@@ -55,27 +51,15 @@ public:
 
     /**
         \fn Participants::addUnit
-        \brief Adds a military unnit to the Participants army vector
+        \brief Adds a military unit to the Participants army vector
         \details Receives a MilitaryUnit pointer, checks if it is a Composite participants of the Composite pattern. 
         \details If the passed parameter is a Leaf participant, a new composite (squad) is created which contains 
         \details the passed parameter, and the squad is added to the army instead. 
         \details Otherwise, if the passed parameter is already a composite, it is added to the army directly
-        \param m    A MilitaryUnit pointer that points to either a Leaf or a Composite participant
+        \param m A MilitaryUnit pointer that points to either a Leaf or a Composite participant
     */
     void addUnit(MilitaryUnit* m);
-
-    /**
-     * \fn Participants:: getArmy
-     * \return a vector of military units
-     * \brief returns a vector that represent the participants army
-     */
-    std::vector<MilitaryUnit*> getArmy();
-
-    /**
-     * \fn Participants::getTotalHealthPoints
-     * \return int value
-     * \brief method to calculate and return total health points for the Participant
-     */
+    std::vector<MilitaryUnit*> * getArmy();
     int getTotalHealthPoints();
 
     /**
@@ -91,15 +75,7 @@ public:
      * \brief getter method for the name attribute
      */
     std::string getName();
-
-
-    Participant getParticipant() ;
-
-    /**
-     * \fn Participants::getMap
-     * \return WorldMap pointer
-     * \brief getter method for the map variable
-     */
+    ParticipantType getParticipantType() ;
     WorldMap *getMap();
 
     /**
