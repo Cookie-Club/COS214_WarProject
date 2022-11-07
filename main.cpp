@@ -5,7 +5,7 @@
 */
 #include <iostream>
 #include "War.h"
-#include  "Caretaker.h"
+#include "Caretaker.h"
 #include "AlliedPowers.h"
 #include "CentralPowers.h"
 #include "CentralFactory.h"
