@@ -15,6 +15,7 @@ TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participan
 
 bool TeamMembers::receiveDamage(int damage)
 {
+    std::cout << "Damage recieved by team member: " << damage << endl;
     healthpoints-= damage;
     return (healthpoints > 0);
 }

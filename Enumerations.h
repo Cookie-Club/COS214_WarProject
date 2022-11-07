@@ -8,7 +8,7 @@ enum ActionType {Agg, Def};
    \details It is used in Chain of Responsibility to check if a ConcreteHandler is meant to deal with that specific object. 
 */
 enum UnitType { infantry, tank, squad };
-enum Participant{Allied = 32,Central = 41};
+enum ParticipantType{Allied = 32,Central = 41};
 enum CellAttribute{AmmoDepo, FuelDepo};
 
 #endif

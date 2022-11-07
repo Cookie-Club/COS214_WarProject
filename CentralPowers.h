@@ -26,7 +26,7 @@ class CentralPowers : public Participants {
         * \fn CentralPowers::CentralPowers
         * \brief Default constructor
         */
-        CentralPowers();
+        CentralPowers(ParticipantType pT);
 
         /**
          * \fn CentralPowers::atBack

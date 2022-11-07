@@ -63,7 +63,7 @@ void Cell::setOccupyingForce(std::vector<MilitaryUnit*> m) {
     //Iterates through m
     std::vector<MilitaryUnit*>::iterator it;
     //Iterates through OccupyingForce
-    std::vector<MilitaryUnit*>::iterator occIt;
+    std::vector<MilitaryUnit*>::iterator occIt = occupyingForce.begin();
     bool found = false;
     for(it = m.begin(); it < m.end(); it++){
         found = false;
@@ -82,7 +82,6 @@ void Cell::setOccupyingForce(std::vector<MilitaryUnit*> m) {
 }
 
 void Cell::execute(MilitaryUnit * m){
-    occupyingForce.push_back(m);
     ((Squad*)m)->setFuel(((Squad*)m)->getFuel() - 6);
     ((Squad*)m)->setRations(((Squad*)m)->getRations() - (6 * ((Squad*)m)->getMembers().size()));
 }
@@ -90,7 +89,6 @@ void Cell::execute(MilitaryUnit * m){
 void Cell::execute(std::vector<MilitaryUnit*> m){
     std::vector<MilitaryUnit*>::iterator it;
     for(it = m.begin(); it < m.end(); it++){
-        occupyingForce.push_back(*it);
         ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - 6);
         ((Squad*)*it)->setRations(((Squad*)*it)->getRations() - (6 * ((Squad*)*it)->getMembers().size()));
     }
@@ -116,6 +114,6 @@ void Cell::setCoordinates(int _x, int _y) {
 void Cell::printSymbol(std::string s)
 {
     int code = 39;
-    if (owner) code = (int)owner->getParticipant();
+    if (owner) code = (int)owner->getParticipantType();
     std::cout << "\033[" << code << "m|\033[0mCel" << s << occupyingForce.size() << "\033[" << code << "m|\033[0m";
 }

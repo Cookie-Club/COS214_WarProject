@@ -30,8 +30,8 @@ int main(){
     int size = 10;
     WorldMap * map = new WorldMap(size);
     std::vector<Participants*> parties;
-    parties.push_back(new AlliedPowers());
-    parties.push_back(new CentralPowers());
+    parties.push_back(new AlliedPowers(Allied));
+    parties.push_back(new CentralPowers(Central));
     parties.at(0)->setMap(map);
     parties.at(1)->setMap(map);
     War * war = new War(map, parties);
@@ -53,10 +53,10 @@ int main(){
     for(int i = 0; i < 20; i++){
         Squad * temp = new Squad(war->getParticipants().at(1));
         for(int j = 0; j < 10; j++){
-            temp->addMember(aFactory->createInfantry(war->getParticipants().at(1)));
+            temp->addMember(cFactory->createInfantry(war->getParticipants().at(1)));
         }
         for(int q = 0; q < 5; q++){
-            temp->addMember(aFactory->createTank(war->getParticipants().at(1)));
+            temp->addMember(cFactory->createTank(war->getParticipants().at(1)));
         }
     }
 
@@ -120,24 +120,24 @@ int main(){
             std::cout << "]\n";
         }
         char ans;
-        // std::cout << "Would you like to continue in real mode? (Y/N)";
-        // std::cin >> ans;
-        // while(true){
-        //     if(ans == 'Y'){
+        std::cout << "Would you like to continue in real mode? (Y/N)";
+        std::cin >> ans;
+        while(true){
+            if(ans == 'Y'){
             turn++;
-        //     system("clear");
-        //     break;
-        //     }
-        //     else if(ans == 'N'){
-        //         system("clear");
-        //         break;
-        //     }
-        //     {
-        //         std::cout << "Please enter a valid answer\n";
-        //         std::cout << "Would you like to continue in real mode? (Y/N)";
-        //         std::cin >> ans;
-        //     }
-        // }
+            system("clear");
+            break;
+            }
+            else if(ans == 'N'){
+                system("clear");
+                break;
+            }
+            {
+                std::cout << "Please enter a valid answer\n";
+                std::cout << "Would you like to continue in real mode? (Y/N)";
+                std::cin >> ans;
+            }
+        }
         
     }
     std::cout << loser->getName() << " has lost the war\n";

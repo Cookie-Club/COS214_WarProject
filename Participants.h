@@ -25,10 +25,10 @@ protected:
     //vector<attackStrategy*> moveStrategies;
     std::string name;
     WorldMap* map;
-    Participant participant;
+    ParticipantType participantType;
 
 public:
-    Participants();
+    Participants(ParticipantType pT);
     virtual ~Participants();
     virtual void armyMove() = 0;
     virtual void retreat(std::vector<Cell*> cells)=0;
@@ -49,7 +49,7 @@ public:
     int getTotalHealthPoints();
     int getTotalDamage();
     std::string getName();
-    Participant getParticipant() ;
+    ParticipantType getParticipantType() ;
     WorldMap *getMap();
     void setMap(WorldMap *map);
     void removeMilitaryUnit(MilitaryUnit* m);

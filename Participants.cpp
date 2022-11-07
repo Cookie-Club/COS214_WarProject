@@ -1,6 +1,8 @@
 #include "Participants.h"
 #include "Squad.h"
-Participants::Participants(){}
+Participants::Participants(ParticipantType pT): participantType(pT){
+    std::cout << participantType << endl;
+}
 
 Participants::~Participants()
 {
@@ -70,8 +72,8 @@ void Participants::setMap(WorldMap *map) {
     }
 }
 
-Participant Participants::getParticipant()  {
-    return participant;
+ParticipantType Participants::getParticipantType(){
+    return participantType;
 }
 
 void Participants::removeMilitaryUnit(MilitaryUnit* m)

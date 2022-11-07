@@ -90,7 +90,7 @@ class MilitaryUnit {
             \brief Checks what kind of participant owns the unit
             \return Participant value (Allied|Central)
         */
-        Participant getParticipant();
+        ParticipantType getParticipantType();
         /**
             \fn MilitaryUnit::getSquad
             \brief Getter for squad

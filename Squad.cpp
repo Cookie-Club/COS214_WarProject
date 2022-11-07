@@ -14,6 +14,10 @@ Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 {
     belongsTo->getArmy()->push_back(this);
     state = new Aggressive();
+    std::cout << belongsTo->getParticipantType();
+    fuel = 100;
+    rations = 100;
+    Ammo = 100;
 } 
 
 Squad::~Squad()
@@ -92,17 +96,17 @@ bool Squad::receiveDamage(int damage)
 }
 
 void Squad::removeSquadMember(MilitaryUnit* member){
-    // std::cout << "in removeSquadMember\n";
+    std::cout << "in removeSquadMember\n";
     MilitaryUnit* temp;
     std::vector<MilitaryUnit*>::iterator it = members.begin();
     for (; it != members.end(); ++it)
     {
         if (member == *it){
-            // std::cout << "Member found, being removed" << endl;
+            std::cout << "Member found, being removed" << endl;
             temp = *it;
             members.erase(it);
             delete temp;
-            // std::cout << "Member has been removed" << endl;
+            std::cout << "Member has been removed" << endl;
             return;
         }
     }

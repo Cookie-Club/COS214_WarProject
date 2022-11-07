@@ -50,8 +50,6 @@ class FuelDeposit : public CellFeatures {
             \brief Destructor
         */ 
         ~FuelDeposit();
-        void removeOccupyingForce(std::vector<MilitaryUnit*> m);
-        void removeOccupyingForce(MilitaryUnit* m);
 };
 
 #endif //FUELDEPOSIT_H

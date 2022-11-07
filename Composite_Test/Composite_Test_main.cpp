@@ -12,28 +12,28 @@ TEST_F(CompositeFixture, TeamMembers_Initial_State)
 {
     // Test AlliedInfantry object at units[0]
     ASSERT_EQ(units.at(0)->getType(), infantry) << "First unit is not of type Infantry";
-    ASSERT_EQ(units.at(0)->getParticipant(), Allied) << "First unit does not belong to Allies";
+    ASSERT_EQ(units.at(0)->getParticipantType(), Allied) << "First unit does not belong to Allies";
     ASSERT_EQ(((AlliedInfantry*)units.at(0))->getDamage(), A_I_DAMAGE) << "Value of damage variable is incorrect in the AlliedInfantry object";
     ASSERT_EQ(((AlliedInfantry*)units.at(0))->getHealthpoints(), A_I_HP) << "Value of healthpoints variable is incorrect in the AlliedInfantry object";
     ASSERT_EQ(((AlliedInfantry*)units.at(0))->getRationConsumption(), A_I_RATIONS) << "Value of rationConsumption variable is incorrect in the AlliedInfantry object";
     
     // Test CentralInfantry object at units[1]
     ASSERT_EQ(units.at(1)->getType(), infantry) << "First unit is not of type infantry";
-    ASSERT_EQ(units.at(1)->getParticipant(), Central) << "First unit does not belong to Central";
+    ASSERT_EQ(units.at(1)->getParticipantType(), Central) << "First unit does not belong to Central";
     ASSERT_EQ(((CentralInfantry*)units.at(1))->getDamage(), C_I_DAMAGE) << "Value of damage variable is incorrect in the CentralInfantry object";
     ASSERT_EQ(((CentralInfantry*)units.at(1))->getHealthpoints(), C_I_HP) << "Value of healthpoints variable is incorrect in the CentralInfantry object";
     ASSERT_EQ(((CentralInfantry*)units.at(1))->getRationConsumption(), C_I_RATIONS) << "Value of rationConsumption variable is incorrect in the CentralInfantry object";
 
     // Test AlliedTank object at units[2]
     ASSERT_EQ(units.at(2)->getType(), tank) << "First unit is not of type tank";
-    ASSERT_EQ(units.at(2)->getParticipant(), Allied) << "First unit does not belong to Allies";
+    ASSERT_EQ(units.at(2)->getParticipantType(), Allied) << "First unit does not belong to Allies";
     ASSERT_EQ(((AlliedTank*)units.at(2))->getDamage(), A_T_DAMAGE) << "Value of damage variable is incorrect in the AlliedTank object";
     ASSERT_EQ(((AlliedTank*)units.at(2))->getHealthpoints(), A_T_HP) << "Value of healthpoints variable is incorrect in the AlliedTank object";
     ASSERT_EQ(((AlliedTank*)units.at(2))->getFuelConsumption(), A_T_FUEL) << "Value of rationConsumption variable is incorrect in the AlliedTank object";
 
     // Test CentralTank object at units[3]
     ASSERT_EQ(units.at(3)->getType(), tank) << "First unit is not of type tank";
-    ASSERT_EQ(units.at(3)->getParticipant(), Central) << "First unit does not belong to Central";
+    ASSERT_EQ(units.at(3)->getParticipantType(), Central) << "First unit does not belong to Central";
     ASSERT_EQ(((CentralTank*)units.at(3))->getDamage(), C_T_DAMAGE) << "Value of damage variable is incorrect in the CentralTank object";
     ASSERT_EQ(((CentralTank*)units.at(3))->getHealthpoints(), C_T_HP) << "Value of healthpoints variable is incorrect in the CentralTank object";
     ASSERT_EQ(((CentralTank*)units.at(3))->getFuelConsumption(), C_T_FUEL) << "Value of rationConsumption variable is incorrect in the CentralTank object";

@@ -46,6 +46,23 @@ class CellFeatures : public Cell {
             \returns Returns an enumeration that defines what the ConcreteDecorator is
         */     
         CellAttribute getAttribute();
+        virtual void removeOccupyingForce(std::vector<MilitaryUnit*> m);
+        /**
+            \fn CellFeatures::removeOccupyingForce
+            \brief Removes the passed in MilitaryUnit from the occupyingForce vector
+            \details Iterates through the occupyingForce and checks to see where the passed in MilitaryUnit is and when found, the unit is removed
+            \param[in] m  A MilitaryUnit pointer that points to the squad being removed from the occupyingForce
+        */
+        virtual void removeOccupyingForce(MilitaryUnit* m);
+        /**
+            \fn CellFeatures::setOccupyingForce
+            \brief Adds MilitaryUnits to the occupyingForce attribute
+            \details Uses the vector class's pre-derived function push_back() to add the MilitaryUnit passed in to the end of the occupyingForce vector
+            \param[in] m  A MilitaryUnit pointer that points to the squad being added to the occupyingForce
+        */
+        virtual void setOccupyingForce(MilitaryUnit* m);
+        virtual void setOccupyingForce(std::vector<MilitaryUnit*> m);
+        std::vector<MilitaryUnit*>  getOccupyingForce();
     protected:
         Cell * feature;
         CellAttribute attribute;

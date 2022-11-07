@@ -26,7 +26,7 @@ class AlliedPowers : public Participants {
          * \fn AlliedPowers::AlliedPowers
          * \brief Default constructor
          */
-        AlliedPowers();
+        AlliedPowers(ParticipantType pT);
 
         /**
          * \fn AlliedPowers::atBack

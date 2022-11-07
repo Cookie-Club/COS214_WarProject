@@ -41,7 +41,7 @@ class Cell {
             \details deletes non-Squad MilitaryUnits
         */
         ~Cell();
-        void removeOccupyingForce(std::vector<MilitaryUnit*> m);
+        virtual void removeOccupyingForce(std::vector<MilitaryUnit*> m);
         /**
             \fn Cell::removeOccupyingForce
             \brief Removes the passed in MilitaryUnit from the occupyingForce vector

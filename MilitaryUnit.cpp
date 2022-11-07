@@ -28,9 +28,9 @@ void MilitaryUnit::setMap(WorldMap *map) {
     this->map = map;
 }
 
-Participant MilitaryUnit::getParticipant()
+ParticipantType MilitaryUnit::getParticipantType()
 {
-    return belongsTo->getParticipant();
+    return belongsTo->getParticipantType();
 }
 
 Squad* MilitaryUnit::getSquad()

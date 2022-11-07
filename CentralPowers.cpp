@@ -1,8 +1,7 @@
 #include "CentralPowers.h"
 
-CentralPowers::CentralPowers(){
+CentralPowers::CentralPowers(ParticipantType pT):Participants(pT){
     this->name = "Central";
-    participant = Central;
 }
 
 void CentralPowers::retreat(std::vector<Cell*> cells) {
@@ -35,8 +34,10 @@ std::vector<Cell*> CentralPowers::atBack() {
 }
 
 void CentralPowers::armyMove() {
+    std::cout << "Central is moving troops" << endl;
 	std::vector<MilitaryUnit*>::iterator it = army.begin();
     for(; it != army.end(); it++){
+        std::cout << "inside Central for loop" << endl;
         int SquadXCoord = ((Squad*)*it)->getOccupyingCell()->getX();
         int SquadYCoord = ((Squad*)*it)->getOccupyingCell()->getY();
 
@@ -49,7 +50,7 @@ void CentralPowers::armyMove() {
                     //std::cout << ((Squad*)*it)->getOccupyingCell()->getOccupyingForce().size() << endl;
                 }
                 else{
-                    std::cout << "ENEMY ENCOUNERED AT X: " << SquadXCoord << " Y: " << SquadYCoord + 1 << endl; 
+                    std::cout << "ENEMY ENCOUNERED AT X: " << SquadXCoord << " Y: " << SquadYCoord - 1 << endl; 
                     ((Squad*)*it)->attack(SquadXCoord, SquadYCoord - 1);
                 }
             }
@@ -58,8 +59,12 @@ void CentralPowers::armyMove() {
                 ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord - 1));
             }
         }
-        
+
+        if(!((Squad*)*it)->isAlive()){
+            delete *it;
+            it = army.erase(it);
+        }
+
         std::cout << "---------" << endl;
-    //remove empty squads
     }
 }

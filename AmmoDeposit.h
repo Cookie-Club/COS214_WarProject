@@ -49,8 +49,6 @@ class AmmoDeposit : public CellFeatures {
         */ 
         ~AmmoDeposit();
         void printSymbol(std::string s = "  ");
-        void removeOccupyingForce(std::vector<MilitaryUnit*> m);
-        void removeOccupyingForce(MilitaryUnit* m);
 };
 
 

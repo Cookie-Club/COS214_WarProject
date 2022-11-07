@@ -6,23 +6,27 @@
 void Mining::execute(Squad* s)
 {
     std::cout << "Mining attack commencing" << endl;
-    int newX;
-    if(s->getParticipant()==Allied){
+    int newY;
+    if(s->getParticipantType()==Allied){
+        std::cout << "Allied troop attacking right" << endl;
         //If allied, move 3 right
-        newX=s->getOccupyingCell()->getX()+3;
+        newY=s->getOccupyingCell()->getY()+3;
     }else{
+        std::cout << "Central troop attacking left" << endl;
         //If central, move 3 left
-        newX=s->getOccupyingCell()->getX()-3;
+        newY=s->getOccupyingCell()->getY()-3;
     }
+    std::cout << "Commencing attack" << endl;
     //Y-coordinate does not change
-    int y=s->getOccupyingCell()->getY();
+    int x=s->getOccupyingCell()->getX();
     //get WorldMap to find newCell
     WorldMap* m=s->getMap();
     //If new coordinates are within bounds
-    if(newX < m->getSize() && newX >= 0 && y < m->getSize() && y >=0) {
+    if(newY < m->getSize() && newY >= 0 && x < m->getSize() && x >=0) {
+        std::cout << "Selected cell is valid" << endl;
         //Get new cell
         Cell*** grid = m->getGrid();
-        Cell* newCell = grid[newX][y];
+        Cell* newCell = grid[x][newY];
         //Get current cell
         Cell* currentCell=s->getOccupyingCell();
 
@@ -45,7 +49,7 @@ void Mining::execute(Squad* s)
             Squad* m=s->clone(); 
             //Setting belongsTo to nullptr avoids potential segfaults in the event
             // that the cell deletes the unit after its owner was deleted
-            m->setOwner(nullptr);
+            //m->setOwner(nullptr);
             //leaves clone behind to defend, but its owner does not have visibility 
             // to it and it can thus not be moved via aParticipants::moveArmy()
             currentCell->setOccupyingForce(m); 
