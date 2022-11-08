@@ -23,7 +23,7 @@ A pdf version of the final class diagram can be accessed here (add link).\
 A colour coded diagram is linked here (add link) and the original diagram is linked here (add link).
 
 # Video Demonstration
-A brief introduction video for our war simulation can be accessed here (add link).
+A brief introduction video for our war simulation can be accessed [here](https://drive.google.com/file/d/14MoWcGG3PlXh0BfdtrlHMH2OG4B5IHYy/view?usp=share_link).
 
 # Installation
 Windows Users:
