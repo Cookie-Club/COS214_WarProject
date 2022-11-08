@@ -63,7 +63,7 @@ class CellFeatures : public Cell {
         */
         virtual void setOccupyingForce(MilitaryUnit* m);
         virtual void setOccupyingForce(std::vector<MilitaryUnit*> m);
-        std::vector<MilitaryUnit*>  getOccupyingForce();
+        std::vector<MilitaryUnit*> * getOccupyingForce();
     protected:
         Cell * feature;
         CellAttribute attribute;

@@ -62,7 +62,7 @@ class Cell {
             \brief Gets the occupyingForce of a cell
             \return A vector of MilitaryUnit pointers
         */
-        std::vector<MilitaryUnit*> getOccupyingForce();
+        std::vector<MilitaryUnit*> * getOccupyingForce();
         /**
             \fn Cell::setCoordinates
             \brief Sets the x and y coordinate attributes of the cell
@@ -84,6 +84,7 @@ class Cell {
         virtual void execute(MilitaryUnit * m);
         virtual void execute(std::vector<MilitaryUnit*> m);
         virtual void printSymbol(std::string = "  ");
+        Participants* getOwner(){return owner;};
 };
 
 #endif

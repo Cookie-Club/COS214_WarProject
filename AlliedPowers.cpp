@@ -14,12 +14,12 @@ void AlliedPowers::retreat(std::vector<Cell *> cells) {
 
         Cell ***grid = getMap()->getGrid();
 
-        grid[x - 1][y]->setOccupyingForce(cells.at(i)->getOccupyingForce());
+        grid[x - 1][y]->setOccupyingForce(*(cells.at(i)->getOccupyingForce()));
         std::vector<MilitaryUnit *>::iterator it;
-        for (it = cells.at(i)->getOccupyingForce().begin(); it < cells.at(i)->getOccupyingForce().end(); it++) {
+        for (it = cells.at(i)->getOccupyingForce()->begin(); it < cells.at(i)->getOccupyingForce()->end(); it++) {
             ((Squad *) *it)->setOccupyingCell(grid[x - 1][y]);
         }
-        cells.at(i)->removeOccupyingForce(cells.at(i)->getOccupyingForce());
+        cells.at(i)->removeOccupyingForce(*(cells.at(i)->getOccupyingForce()));
     }
 }
 
@@ -36,17 +36,30 @@ std::vector<Cell *> AlliedPowers::atBack() {
 void AlliedPowers::armyMove() {
     std::cout << "Allied is moving troops" << endl;
 	std::vector<MilitaryUnit*>::iterator it = army.begin();
-    for(;it != army.end(); it++){
+    for(;it < army.end(); it++){
         std::cout << army.size();
         std::cout << "Inside Allied for loop" << endl;
+        while(!*it && it != army.end()){
+            MilitaryUnit * temp = *it;
+            it = army.erase(it);
+            std::cout << "Calling delete from AlliedPowers:46\n";
+            delete temp;
+        }
+
+        if(it == army.end()){
+            std::cout << "Ain't no army Allied" << endl;
+            return;
+        }
+
+        std::cout << "Unit ";
+        std::cout << ((Squad*)*it)->getName() << " has been selected to move" << endl;
+
+        
         int SquadXCoord = ((Squad*)*it)->getOccupyingCell()->getX();
         int SquadYCoord = ((Squad*)*it)->getOccupyingCell()->getY();
-        std::cout << "Got coords" << endl;
         if(SquadYCoord < (map->getSize() - 1)){
-            //std::cout << "Outside if ----- Occupying force on cell "<< SquadXCoord << " " << SquadYCoord + 1 << ": " << map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().size() << endl;
-            if(!map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().empty()){
-                if(map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().at(0)->getOwner() == ((Squad*)*it)->getOwner()){
-                    //std::cout << map->getCell(SquadXCoord, SquadYCoord)->getOccupyingForce().size() << "  Joining " << map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce().size() << " squads at [" << SquadXCoord << "][" << SquadYCoord + 1 << "]";
+            if(!map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce()->empty()){
+                if(map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce()->at(0)->getOwner() == ((Squad*)*it)->getOwner()){
                     ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord + 1));
                 }
                 else{
@@ -55,17 +68,27 @@ void AlliedPowers::armyMove() {
                 }
             }
             else{
-                //std::cout << SquadXCoord << " " << SquadYCoord << " No one in front, moving along" << endl;
                 ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord + 1));
             }
         }
         if(!((Squad*)*it)->isAlive()){
-            delete *it;
+            std::cout << "Deleting squad " << ((Squad*)*it)->getName() << " in Allied Powers" << endl;
+            MilitaryUnit * temp = *it;
             it = army.erase(it);
+            std::cout << "Calling delete from AlliedPowers:78\n";
+            delete temp;
+
+            std::vector<MilitaryUnit*>::iterator it2;
+            for(it2 = army.begin(); it2 != army.end(); it2++){
+                if(*it == *it2){
+                    std::cout << "Squad" << ((Squad*)*it2)->getName() << " was not deleted";
+                    break;
+                }
+            }
         }
         std::cout << "---------" << endl;
     }
-
+    std::cout << "Allied has finished its turn" << endl;
     //remove empty squads
 }
 

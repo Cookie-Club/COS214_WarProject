@@ -46,6 +46,6 @@ void CellFeatures::setOccupyingForce(std::vector<MilitaryUnit*> m)
     feature->setOccupyingForce(m);
 }
 
-std::vector<MilitaryUnit*> CellFeatures::getOccupyingForce(){
+std::vector<MilitaryUnit*> * CellFeatures::getOccupyingForce(){
     return feature->getOccupyingForce();
 }

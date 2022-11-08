@@ -11,5 +11,6 @@ SaveState *Caretaker::getMemento(int index) {
 }
 
 void Caretaker::addMemento(SaveState *newState) {
-    mementos.push_back(newState);
+    std::cout << "New save being added" << endl;
+    mementos.insert(mementos.begin(), newState);
 }
