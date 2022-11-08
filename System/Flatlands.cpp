@@ -10,6 +10,7 @@ void Flatlands::execute(MilitaryUnit * m){
 }
 
 void Flatlands::execute(std::vector<MilitaryUnit*>  m){
+    //iterates through the vector passed in, updating the values of it's Fuel and Ration attributes to the corerct values
     std::vector<MilitaryUnit*>::iterator it;
     for(it = m.begin(); it != m.end(); it++){
         ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - 5);

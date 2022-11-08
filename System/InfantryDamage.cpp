@@ -11,14 +11,16 @@ void InfantryDamage::damageMember(MilitaryUnit *currentUnit) {
         // false removes the infantry unit from the squad and deletes it
         if(!currentUnit->receiveDamage(receivedDamage))
         {
+            //if the infantry unit has died, unit is removed from its corresponding squad
             std::cout << "Infantry has died" << endl;
             ((TeamMembers*)currentUnit)->getSquad()->removeSquadMember(currentUnit);
             // delete currentUnit;
         }
         else{
+            //if infantry unitis still alive display it's current health
             std::cout << "Infantry health: " << currentUnit->getHealthpoints() << endl;
         }
-    } else if (next) {
+    } else if (next) {//if not of type infantry, currentUnit is passed onto the infantrys next attribute
         next->damageMember(currentUnit);
     }
 }

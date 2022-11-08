@@ -2,12 +2,14 @@
 
 Infantry *CentralFactory::createInfantry(Participants *belongsTo) {
     /// @todo Decide on default values. Current parameters are temporary
+    //random damage assigned for Central infantry
     int damage = std::rand() % 10 + 10;
     return new CentralInfantry(damage,100,belongsTo,10);
 }
 
 Tank *CentralFactory::createTank(Participants *belongsTo) {
     /// @todo Decide on default values. Current parameters are temporary
+    //random damage assigned for Central tanks
     int damage = std::rand() % 30 + 10;
     return new CentralTank(damage,100,belongsTo,10);
 }

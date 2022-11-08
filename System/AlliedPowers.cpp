@@ -36,7 +36,9 @@ std::vector<Cell *> AlliedPowers::atBack() {
 void AlliedPowers::armyMove() {
     std::cout << "Allied is moving troops" << endl;
 	std::vector<MilitaryUnit*>::iterator it = army.begin();
+    //main for loop that runs through the Participants army, calling each squads move function on their iteration
     for(;it < army.end(); it++){
+        //check to see if iteration is at the end of the army and if the iterator still exists
         while(!*it && it != army.end()){
             MilitaryUnit * temp = *it;
             it = army.erase(it);
@@ -47,23 +49,30 @@ void AlliedPowers::armyMove() {
         std::cout << "Unit ";
         std::cout << ((Squad*)*it)->getName() << " has been selected to move" << endl;
 
-        
+        //current coordinates saved to be used later
         int SquadXCoord = ((Squad*)*it)->getOccupyingCell()->getX();
         int SquadYCoord = ((Squad*)*it)->getOccupyingCell()->getY();
+        //Make sure moving is still possible
         if(SquadYCoord < (map->getSize() - 1)){
+            //check if the cell is not empty
             if(!map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce()->empty()){
+                //check if friendlies are in the cell next to you
                 if(map->getCell(SquadXCoord, SquadYCoord + 1)->getOccupyingForce()->at(0)->getOwner() == ((Squad*)*it)->getOwner()){
+                    //join friendly on the cell
                     ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord + 1));
                 }
+                //if enemy detected, current unit will attack
                 else{
                     std::cout << "ENEMY ENCOUNERED AT X: " << SquadXCoord << " Y: " << SquadYCoord + 1 << endl; 
                     ((Squad*)*it)->attack(SquadXCoord, SquadYCoord + 1);
                 }
             }
             else{
+                //else just take over cell
                 ((Squad*)*it)->setOccupyingCell(map->getCell(SquadXCoord, SquadYCoord + 1));
             }
         }
+        //check to see if squad still has members and if not delete and remove the squad from the army
         if(!((Squad*)*it)->isAlive()){
             MilitaryUnit * temp = *it;
             it = army.erase(it);

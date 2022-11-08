@@ -20,11 +20,13 @@ Cell::~Cell() {
 }
 
 void Cell::removeOccupyingForce(std::vector<MilitaryUnit *> m) {
+    //iterates through the vector passed in
     std::vector<MilitaryUnit *>::iterator it = m.begin();
     for (; it != m.begin(); ++it) {
         std::vector<MilitaryUnit *>::iterator it2 = occupyingForce.begin();
         for (; it2 != occupyingForce.end(); ++it2)
             if (*it2 == *it) {
+                //remove the MilitaryUnit that it2 points to
                 occupyingForce.erase(it2);
                 return;
             }
@@ -32,9 +34,11 @@ void Cell::removeOccupyingForce(std::vector<MilitaryUnit *> m) {
 }
 
 void Cell::removeOccupyingForce(MilitaryUnit *m) {
+    //iterates through the occupyingForce
     std::vector<MilitaryUnit *>::iterator it = occupyingForce.begin();
     for (; it != occupyingForce.end(); ++it)
         if (*it == m) {
+            //if the corresponding MilitaryUnit is found, remove it from the cells occupyingForce
             occupyingForce.erase(it);
             return;
         }
@@ -82,6 +86,7 @@ void Cell::execute(MilitaryUnit * m){
 }
 
 void Cell::execute(std::vector<MilitaryUnit*> m){
+        //iterates through the vector passed in, updating the values of it's Fuel and Ration attributes to the corerct values
     std::vector<MilitaryUnit*>::iterator it;
     for(it = m.begin(); it != m.end(); it++){
         ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - 6);

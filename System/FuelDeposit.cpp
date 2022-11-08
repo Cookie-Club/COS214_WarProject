@@ -5,7 +5,8 @@ FuelDeposit::FuelDeposit() {
 }
 
 void FuelDeposit::setOccupyingForce(MilitaryUnit * m){    
-
+    //first calling it's features execute on each individual MilitaryUnits
+    //causing the fuel attribute to be updated and then setting the values to 100 for fuel
     if (feature != 0) {
         feature->execute(m);
     }
@@ -14,6 +15,8 @@ void FuelDeposit::setOccupyingForce(MilitaryUnit * m){
 }
 
 void FuelDeposit::setOccupyingForce(std::vector<MilitaryUnit*> m){
+    //iterates through the vector passed in, first calling it's features execute on each individual MilitaryUnits
+    //causing the fuel attribute to be updated and then setting the value to 100 for fuel
     std::vector<MilitaryUnit*>::iterator it;
     for(it = m.begin(); it != m.end(); it++){  
         feature->execute(*it);

@@ -3,6 +3,7 @@
 CellFeatures::CellFeatures() {}
 
 void CellFeatures::add(Cell *feature) {
+    //checks to see if there is currently a feature added to the classes attribute and then goes down the chain of features until an empty slot is open
     if (this->feature == nullptr) {
         this->feature = feature;
     } else {

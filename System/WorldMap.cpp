@@ -21,6 +21,8 @@ WorldMap::WorldMap(int worldSize) {
             std::cout << "Cell [" << i << "][" << j << "]: ";
             int rand = std::rand() % (totalSize + 1);
 
+            //Assigned probabilities for certain cells to be formed, 30% chance of an AmmoDepo, 10% chance for FuelDepo and 60% chance for 
+            //no special features to be placed on the cell
             if (rand >= totalSize * 0.6 && rand < totalSize * 0.9) {
                 factories = new AmmoDepoFactory();
                 grid[i][j] = factories->createFeature();

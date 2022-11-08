@@ -38,8 +38,10 @@ Squad::~Squad() {
 
 void Squad::setOccupyingCell(Cell* c)
 {
+    //Assign name to squad according to its starting position. Assign only if squad was not named already
     if(occupyingCell == nullptr && name == "") name = to_string(c->getX()) + ":" + to_string(c->getY());
     std::cout << "Setting squad " << name << " occupying cell to " << c->getX() << " " << c->getY() << endl;
+    //If squad had already been on a cell, it removes itsself from that cell
     if (occupyingCell != nullptr) occupyingCell->removeOccupyingForce(this);
     this->occupyingCell = c;
     if (c != nullptr) occupyingCell->setOccupyingForce(this);
@@ -47,8 +49,11 @@ void Squad::setOccupyingCell(Cell* c)
 
 Squad* Squad::clone()
 {
+    //create clone
     Squad* newSquad = new Squad(this->getOwner());
+    //set clone name to concatenation of its predecessor and the cell on which it was cloned
     newSquad->name = this->name + "--" + to_string(this->getOccupyingCell()->getX()) + ":" + to_string(this->getOccupyingCell()->getY());
+    //start iterataing through members to clone and add to cloned squad
     std::vector<MilitaryUnit*>::iterator it = members.begin();
     for (; it != members.end(); ++it) newSquad->addMember((*it)->clone());
     return newSquad;
@@ -80,6 +85,7 @@ std::vector<MilitaryUnit *> Squad::getMembers() {
 }
 
 bool Squad::receiveDamage(int damage) {
+    //Divided damage by number of members
     int dividedDamage = damage / members.size();
     for (int x = 0; x < members.size(); ++x) {
         if (!members[x]->receiveDamage(dividedDamage)) {
