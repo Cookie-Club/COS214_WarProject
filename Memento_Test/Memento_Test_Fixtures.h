@@ -7,7 +7,7 @@ class Memento_Fixture: public ::testing::Test
         void SetUp()
         {
             careTaker = new Caretaker();
-            map = new WorldMap();
+            map = new WorldMap(0);
             s1 = new SaveState(map, sides);
             s2 = new SaveState(map, sides);
         };
@@ -21,5 +21,5 @@ class Memento_Fixture: public ::testing::Test
         SaveState * s1;
         SaveState * s2;
         WorldMap * map;
-        std::vector<Participants*> * sides;
+        std::vector<Participants*> sides;
 }

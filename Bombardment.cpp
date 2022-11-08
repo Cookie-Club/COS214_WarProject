@@ -31,19 +31,11 @@ void Bombardment::execute(){
             next->damageMember((targetedCell->getOccupyingForce())->at(i));
         }
     }
-    else{
-        std::cout << "*Cricket Noises* No one is in that cell" << endl;
-    }
-
-    std::cout << "The last shells fall" << endl;
 }
 
 Bombardment::~Bombardment() {
-    std::cout << "Calling delete from Bombardment:43\n";
     delete SquadAttack;
-    std::cout << "Calling delete from Bombardment:45\n";
     delete IDAttack;
-    std::cout << "Calling delete from Bombardment:47\n";
     delete TDAttack;
     std::cout << "Bombardment has finished obliterating the enemy" << endl;
 }

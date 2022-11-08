@@ -37,19 +37,12 @@ void AlliedPowers::armyMove() {
     std::cout << "Allied is moving troops" << endl;
 	std::vector<MilitaryUnit*>::iterator it = army.begin();
     for(;it < army.end(); it++){
-        std::cout << army.size();
-        std::cout << "Inside Allied for loop" << endl;
         while(!*it && it != army.end()){
             MilitaryUnit * temp = *it;
             it = army.erase(it);
-            std::cout << "Calling delete from AlliedPowers:46\n";
             delete temp;
         }
 
-        if(it == army.end()){
-            std::cout << "Ain't no army Allied" << endl;
-            return;
-        }
 
         std::cout << "Unit ";
         std::cout << ((Squad*)*it)->getName() << " has been selected to move" << endl;
@@ -72,19 +65,9 @@ void AlliedPowers::armyMove() {
             }
         }
         if(!((Squad*)*it)->isAlive()){
-            std::cout << "Deleting squad " << ((Squad*)*it)->getName() << " in Allied Powers" << endl;
             MilitaryUnit * temp = *it;
             it = army.erase(it);
-            std::cout << "Calling delete from AlliedPowers:78\n";
             delete temp;
-
-            std::vector<MilitaryUnit*>::iterator it2;
-            for(it2 = army.begin(); it2 != army.end(); it2++){
-                if(*it == *it2){
-                    std::cout << "Squad" << ((Squad*)*it2)->getName() << " was not deleted";
-                    break;
-                }
-            }
         }
         std::cout << "---------" << endl;
     }

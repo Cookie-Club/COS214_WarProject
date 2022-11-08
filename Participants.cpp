@@ -7,10 +7,8 @@ Participants::Participants(ParticipantType pT): participantType(pT){
 Participants::~Participants() {
     for (int x = 0; x < army.size(); ++x) {
         army[x]->setOwner(nullptr);
-        std::cout << "Calling delete from Participants:11\n";
         delete army[x];
     }
-    std::cout << "Participant deleted\n";
 }
 
 void Participants::retreatParticipants() {

@@ -5,7 +5,6 @@ AmmoDeposit::AmmoDeposit() {
 }
 
 void AmmoDeposit::setOccupyingForce(MilitaryUnit * m){    
-    std::cout << "Occupying force of cell " << x << " " << y << " is now " << occupyingForce.size() << endl; 
 
     if (feature != 0) {
         feature->execute(m);

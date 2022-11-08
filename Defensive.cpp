@@ -6,5 +6,5 @@ Defensive::Defensive() {
 
 void Defensive::handle(Squad *s) {
     s->setStrategy(new Frontline());
-    std::cout << "Handle has chanegd Strategy to Frontline" << endl;
+    std::cout << "Handle has changed Strategy to Frontline" << endl;
 }

@@ -9,22 +9,18 @@ void Mining::execute(Squad* s)
     int newY;
     std::cout << s->getMembers().size() << endl;
     if(s->getParticipantType()==Allied){
-        std::cout << "Allied troop attacking right" << endl;
         //If allied, move 3 right
         newY=s->getOccupyingCell()->getY()+3;
     }else{
-        std::cout << "Central troop attacking left" << endl;
         //If central, move 3 left
         newY=s->getOccupyingCell()->getY()-3;
     }
-    std::cout << "Commencing attack" << endl;
     //Y-coordinate does not change
     int x=s->getOccupyingCell()->getX();
     //get WorldMap to find newCell
     WorldMap *m = s->getMap();
     //If new coordinates are within bounds
     if(newY < m->getSize() && newY >= 0 && x < m->getSize() && x >=0) {
-        std::cout << "Selected cell is valid" << endl;
         //Get new cell
         Cell*** grid = m->getGrid();
         Cell* newCell = grid[x][newY];
@@ -38,11 +34,11 @@ void Mining::execute(Squad* s)
             //Fight! Fight! Fight!
             s->battle(enemyVec);
             std::cout << "Battle is finished" << endl;
-            if(s->isAlive()) std::cout << s->getName() << " was victorious" << endl;
-            else std::cout << "Squad " << s->getName() << " met Death" << endl;
+            if(s->isAlive()) std::cout << s->getName() << " won the battle" << endl;
+            else std::cout << "Squad " << s->getName() << " lost the battle" << endl;
         }
         else{
-            std::cout << "No battle today" << endl;
+            std::cout << "No battle for " << s->getName() << " today" << endl;
         }
         //If squad still alive (Automatically true if newCell was empty)
         if (s->isAlive()) {
@@ -54,6 +50,7 @@ void Mining::execute(Squad* s)
             // m->setOccupyingCell(currentCell);
             //Set newCell as occupyingCell of squad
             s->setOccupyingCell(newCell);
+            s->setAmmo(s->getAmmo() - 10);
             //Add squad to occupyingForce vector of new cell
             //Setting belongsTo to nullptr avoids potential segfaults in the event
             // that the cell deletes the unit after its owner was deleted

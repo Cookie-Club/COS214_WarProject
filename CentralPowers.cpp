@@ -37,18 +37,10 @@ void CentralPowers::armyMove() {
     std::cout << "Central is moving troops" << endl;
 	std::vector<MilitaryUnit*>::iterator it = army.begin();
     for(; it < army.end(); it++){
-        std::cout << army.size();
-        std::cout << "inside Central for loop" << endl;
         while(!*it && it != army.end()){
             MilitaryUnit * temp = *it;
             it = army.erase(it);
-            std::cout << "Calling delete from CentralPowers:46\n";
             delete temp;
-        }
-
-        if(it == army.end()){
-            std::cout << "Ain't no army for Central" << endl;
-            return;
         }
 
         std::cout << "Unit ";
@@ -76,19 +68,9 @@ void CentralPowers::armyMove() {
         }
 
         if(!((Squad*)*it)->isAlive()){
-            std::cout << "Deleting squad " << ((Squad*)*it)->getName() << " in Central Powers" << endl;
             MilitaryUnit * temp = *it;
             it = army.erase(it);
-            std::cout << "Calling delete from CentralPowers:82\n";
             delete temp;
-
-            std::vector<MilitaryUnit*>::iterator it2;
-            for(it2 = army.begin(); it2 != army.end(); it2++){
-                if(*it == *it2){
-                    std::cout << "Squad" << ((Squad*)*it2)->getName() << " was not deleted";
-                    break;
-                }
-            }
         }
         std::cout << "---------" << endl;
     }

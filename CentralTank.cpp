@@ -1,10 +1,7 @@
 #include "CentralTank.h"
 
-CentralTank::CentralTank(int damage, int healthpoints, Participants *belongsTo, float fuelConsumption) : Tank(damage,
-                                                                                                              healthpoints,
-                                                                                                              belongsTo,
-                                                                                                              fuelConsumption) {
-    //std::cout << "CentralTank created";
+CentralTank::CentralTank(int damage, int healthpoints, Participants *belongsTo, float fuelConsumption) 
+: Tank(damage,healthpoints,belongsTo,fuelConsumption) {
 }
 
 MilitaryUnit *CentralTank::clone() {

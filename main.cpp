@@ -19,24 +19,14 @@ bool findLoser(vector<Participants *> sides){
     Cell*** map = sides[0]->getMap()->getGrid();
     for (it = sides.begin(); it != sides.end(); ++it)
     {
-        // int notIt;
-        // if (sides[0] == *it) notIt = 1;
-        // else notIt = 0;
         if((*it)->getTotalHealthPoints() <= 0){
             return *it;
         }
-        // int backRow = 0;
-        // if ((*it)->getParticipantType() == Allied) backRow = 9;
-
-        // std::vector<Cell*>::iterator cellIt = (*it)->getOwnedTerritories()->begin();
-        // for (; cellIt != (*it)->getOwnedTerritories()->end(); ++cellIt)
-        // {
-        //     if (((Cell*)*cellIt)->getY() == backRow) return sides[notIt];
-        // }
-        
     }
+
     bool alliedWon = false;
     bool centralWon = false;
+
     for (int x = 0; x < 9; ++x)
     {
         if (map[x][0]->getOwner() == sides[1]) centralWon = true;
@@ -72,6 +62,33 @@ bool findLoser(vector<Participants *> sides){
         return true;
     }
     
+}
+
+void printMap(War * war){
+    string key[9] = {"[                    \033[4mKEY:\033[0m                    ]",
+                    "[          \033[45mPink Highlighting\033[0m = Bog           ]", 
+                    "[      \033[43mYellow Highlighting\033[0m = Flatlands       ]",
+                    "[       No Highlighting = Normal Cell        ]",
+                    "[ Numbers on RHS = Number of friendly squads ]",
+                    "[    Green Borders(\033[32m|\033[0m) = Allied Owned Cell    ]",
+                    "[     Red Borders(\033[31m|\033[0m) = Allied Owned Cell     ]",
+                    "[    'A' char in position 5 = AmmoDeposit    ]",
+                    "[    'F' char in position 5 = FuelDeposit    ]"};
+    for(int i = 0; i < war->getWorld()->getSize(); i++){
+        std::cout << "[  ";
+        for(int j = 0; j < war->getWorld()->getSize(); j++){
+            war->getWorld()->getCell(i, j)->printSymbol();
+            std::cout << "   ";
+        }
+
+        std::cout << "]";
+        if(i < 9){
+            std::cout << "     " << key[i] << endl;
+        }
+        else{
+            std::cout << endl;
+        }
+    }
 }
 
 int main(){
@@ -147,14 +164,7 @@ int main(){
         }
     }
 
-    for(int i = 0; i < size; i++){
-            std::cout << "[   ";
-            for(int j = 0; j < size; j++){
-                war->getWorld()->getCell(i, j)->printSymbol();
-                std::cout << "   ";
-            }
-            std::cout << "]\n";
-    }
+    printMap(war);
 
     int turn = 0;
     bool loser = false;
@@ -163,25 +173,16 @@ int main(){
         std::cout << "Press any key to begin war..." << endl;
         std::cin.get();
 
-
-    std::cout << "Pink = Bog\nYellow = Flatlands\nPlain = Normal Cell\n";
     while(!loser){
-        std::cout << "Participant " << turn % war->getParticipants().size() << "'s turn" << endl;
+        system("clear");
         war->getParticipants().at(turn % war->getParticipants().size())->armyMove();
-        for(int i = 0; i < size; i++){
-            std::cout << "[   ";
-            for(int j = 0; j < size; j++){
-                war->getWorld()->getCell(i, j)->printSymbol();
-                std::cout << "   ";
-            }
-            std::cout << "]\n";
-        }
+        printMap(war);
             char ans;
             std::cout << "Would you like to continue in real mode? (Y/N) or create a new save point (S)";
             std::cin >> ans;
             while(true){
                 if(ans == 'Y'){
-                 turn++;
+                    turn++;
                 break;
                 }
                 else if(ans == 'N'){
@@ -199,7 +200,7 @@ int main(){
                     std::cin >> ans;
                 }
 
-                system("clear");
+                
             }
 
             if (turn %2 == 0)
@@ -208,14 +209,7 @@ int main(){
             }
     }
     std::cout << " lost the war\n";
-    for(int i = 0; i < size; i++){
-            std::cout << "[   ";
-            for(int j = 0; j < size; j++){
-                war->getWorld()->getCell(i, j)->printSymbol();
-                std::cout << "   ";
-            }
-            std::cout << "]\n";
-    }
+    printMap(war);
 
     return 0;
 }

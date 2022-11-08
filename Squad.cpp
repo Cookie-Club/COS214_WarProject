@@ -23,12 +23,10 @@ Squad::Squad(Participants* belongsTo):MilitaryUnit(belongsTo, UnitType::squad)
 
 Squad::~Squad() {
     MilitaryUnit *temp = nullptr;
-    std::cout << "Squad " << name << " still has " << members.size() << " memebers" << endl;
     std::vector<MilitaryUnit *>::iterator it;
     for (it = this->members.begin(); it != this->members.end();) {
         temp = *it;
         this->members.erase(it);
-        std::cout << "Calling delete from Squad:31\n";
         delete temp;
     }
     if (belongsTo != nullptr) belongsTo->removeMilitaryUnit(this);
@@ -41,7 +39,6 @@ Squad::~Squad() {
 void Squad::setOccupyingCell(Cell* c)
 {
     if(occupyingCell == nullptr && name == "") name = to_string(c->getX()) + ":" + to_string(c->getY());
-    else std:cout << "Squad already has the name " << name << endl; 
     std::cout << "Setting squad " << name << " occupying cell to " << c->getX() << " " << c->getY() << endl;
     if (occupyingCell != nullptr) occupyingCell->removeOccupyingForce(this);
     this->occupyingCell = c;
@@ -91,23 +88,20 @@ bool Squad::receiveDamage(int damage) {
         }
     }
     if(!this->isAlive()){
-        std::cout << this->getName() << "(" << getParticipantType() << ") Squad got its shit rocked" << endl;
+        std::cout << this->getName() << "(" << getParticipantType() << ") perished and got disbanded" << endl;
     }
     
     return this->isAlive();
 }
 
 void Squad::removeSquadMember(MilitaryUnit *member) {
-    std::cout << "in removeSquadMember\n";
     MilitaryUnit* temp;
     std::vector<MilitaryUnit*>::iterator it = members.begin();
     for (; it != members.end(); ++it)
     {
         if (member == *it){
-            std::cout << "Member found, being removed" << endl;
             temp = *it;
             members.erase(it);
-        std::cout << "Calling delete from Squad:111\n";
             delete temp;
             std::cout << "Member has been removed" << endl;
             return;
@@ -118,7 +112,6 @@ void Squad::removeSquadMember(MilitaryUnit *member) {
 void Squad::callInBombardment(Cell *targetedCell) {
     Order *bomb = new Bombardment(targetedCell);
     bomb->execute();
-    std::cout << "Calling delete from Squad:122\n";
     delete bomb;
 }
 
@@ -140,16 +133,17 @@ void Squad::setStrategy(attackStrategy *aStrat) {
 
 void Squad::attack(int x, int y) {
     std::cout << "Attack commencing" << endl;
+    bool stateBool = true;
     if(rations > 50 && fuel > 50){
-        std::cout << "Changing to Aggressive" << endl;
+        std::cout << "Squad " << name << " changing strategy to Aggressive" << endl;
         if (state != nullptr) delete state;
         state = new Aggressive();
     } else {
-        std::cout << "Changing to Defensive" << endl;
+        std::cout << "Squad " << name << " changing strategy to Aggressive" << endl;
         if (state != nullptr) delete state;
         state = new Defensive();
+        stateBool = false;
     }
-    std::cout << "Above handle" << endl;
     state->handle(this);
     
     // if(Ammo > 50){
@@ -157,9 +151,25 @@ void Squad::attack(int x, int y) {
     //     callInBombardment(belongsTo->getMap()->getCell(x, y));
     // }
 
-    if(this->isAlive()){
-        std::cout << "Above execute" << endl;
-        strategy->execute(this);
+    if(stateBool){
+        if(Ammo >= 15){
+            if(this->isAlive()){
+                strategy->execute(this);
+            }
+        }
+        else{
+            std::cout << "Squad " << name << " does not have the ammo to attack" << endl;
+        }
+    }
+    else{
+        if(Ammo >= 20){
+            if(this->isAlive()){
+                strategy->execute(this);
+            }
+        }
+        else{
+            std::cout << "Squad " << name << " does not have the ammo to attack" << endl;
+        }
     }
 }
 
