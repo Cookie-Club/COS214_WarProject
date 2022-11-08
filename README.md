@@ -14,16 +14,15 @@
 This project is a war simulation. It is written in c++ using vscode. The simulation is done in terminal.
 
 # Documentation
-Our project has been documented in the pdf that can be accessed here (add link).\
-Diagrams can be found in the visual paradigm project linked here (add link) or the individual diagrams can be found in the google drive folder [here](https://drive.google.com/drive/folders/1KasSm0zczvex1MyBnHWb_2umQiH-NBwo?usp=sharing).\
-Doxygen documentation can be found here (add link)
+Our project has been documented in the pdf that can be accessed [here](https://drive.google.com/file/d/1coh7swDVFtJKbHlxNfLGuoiUAHCVZRV3/view?usp=share_link).\
+Diagrams can be found in the visual paradigm project linked [here](https://drive.google.com/file/d/1pDr7rUqRGKnAf_vEGbXcFyPtpY_BXlqP/view?usp=share_link) or the individual diagrams can be found in the google drive folder [here](https://drive.google.com/drive/folders/1KasSm0zczvex1MyBnHWb_2umQiH-NBwo?usp=sharing).\
+Doxygen documentation can be found [here](https://drive.google.com/file/d/14MoWcGG3PlXh0BfdtrlHMH2OG4B5IHYy/view?usp=share_link).
 
 # Class Diagram
-A pdf version of the final class diagram can be accessed here (add link).\
-A colour coded diagram is linked here (add link) and the original diagram is linked here (add link).
+A pdf version of the final class diagram can be accessed [here](https://drive.google.com/file/d/1kXmSktsZdKExNSD5xN-7Uoqfv_lc3BJ5/view?usp=share_link).
 
 # Video Demonstration
-A brief introduction video for our war simulation can be accessed here (add link).
+A brief introduction video for our war simulation can be accessed [here](https://drive.google.com/file/d/14MoWcGG3PlXh0BfdtrlHMH2OG4B5IHYy/view?usp=share_link).
 
 # Installation
 Windows Users:
@@ -46,13 +45,7 @@ No installation required.
 3. Type $ make run
 
 # Code
-Code can be found in the github Repository linked [here](https://github.com/Cookie-Club/COS214_WarProject) or a zipped file can be downloaded [here]( https://github.com/Cookie-Club/COS214_WarProject/archive/refs/heads/main.zip)
-
-# Requirements
-* C++ version 14 or higher (for googletest, c++98 would suffice if testing is not required)
-* Cmake versino 20 or higher (googleTest)
-* Make 
-* Visual paradigm version 16.3
+Code can be found in the github Repository linked [here](https://github.com/Cookie-Club/COS214_WarProject/tree/main/System) or a zipped file can be downloaded [here]( https://github.com/Cookie-Club/COS214_WarProject/archive/refs/heads/main.zip)
 
 # Support
 Please fill in this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSe8KpQORQ7IMn0JSGOGiOhxqVqspK6_7Gf1upok5Hfz20iFaQ/viewform?usp=sf_link) for support. 
