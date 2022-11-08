@@ -8,7 +8,6 @@
     \ingroup FeatureFactory
     \author Megan Hugo
 */
-///\todo Function Documentation
 #ifndef FUELDEPOFACTORY_H
 #define FUELDEPOFACTORY_H
 

@@ -14,20 +14,25 @@
   <component name="ChangeListManager">
     <list default="true" id="57bc87a4-8d83-46a7-b7df-e3378c2aafce" name="Changes" comment="Added Doxygen and formatted code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MilitaryUnit.h" beforeDir="false" afterPath="$PROJECT_DIR$/MilitaryUnit.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Participants.h" beforeDir="false" afterPath="$PROJECT_DIR$/Participants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aggressive.h" beforeDir="false" afterPath="$PROJECT_DIR$/Aggressive.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlliedInfantry.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedInfantry.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlliedPowers.h" beforeDir="false" afterPath="$PROJECT_DIR$/AlliedPowers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AmmoDepoFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/AmmoDepoFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bog.h" beforeDir="false" afterPath="$PROJECT_DIR$/Bog.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bombardment.h" beforeDir="false" afterPath="$PROJECT_DIR$/Bombardment.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/Cell.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CellFeatures.h" beforeDir="false" afterPath="$PROJECT_DIR$/CellFeatures.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralPowers.h" beforeDir="false" afterPath="$PROJECT_DIR$/CentralPowers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CentralTank.h" beforeDir="false" afterPath="$PROJECT_DIR$/CentralTank.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Defensive.h" beforeDir="false" afterPath="$PROJECT_DIR$/Defensive.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FeatureFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FeatureFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontline.h" beforeDir="false" afterPath="$PROJECT_DIR$/Frontline.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FuelDepoFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/FuelDepoFactory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infantry.h" beforeDir="false" afterPath="$PROJECT_DIR$/Infantry.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mining.h" beforeDir="false" afterPath="$PROJECT_DIR$/Mining.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Squad.h" beforeDir="false" afterPath="$PROJECT_DIR$/Squad.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SquadDamage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SquadDamage.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SquadDamage.h" beforeDir="false" afterPath="$PROJECT_DIR$/SquadDamage.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tank.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tank.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tank.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tank.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TankDamage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TankDamage.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TankDamage.h" beforeDir="false" afterPath="$PROJECT_DIR$/TankDamage.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamMembers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TeamMembers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamMembers.h" beforeDir="false" afterPath="$PROJECT_DIR$/TeamMembers.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/War.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/War.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorldMap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WorldMap.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorldMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/WorldMap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attackStrategy.h" beforeDir="false" afterPath="$PROJECT_DIR$/attackStrategy.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +109,7 @@
       <workItem from="1667477692299" duration="483000" />
       <workItem from="1667505477362" duration="5174000" />
       <workItem from="1667772419433" duration="11426000" />
+      <workItem from="1667856502305" duration="4398000" />
     </task>
     <task id="LOCAL-00001" summary="Added SetState method to Participants">
       <created>1666525285564</created>

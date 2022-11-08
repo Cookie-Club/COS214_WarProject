@@ -16,7 +16,7 @@ class Mining : public attackStrategy {
 public:
     /**
     * \fn execute
-    * \param s      The squad object to execute the attack strategy
+    * \param[in] s      The squad object to execute the attack strategy
     * \brief method that will execute the Mining attack strategy for the given squad
     */
     void execute(Squad *s);

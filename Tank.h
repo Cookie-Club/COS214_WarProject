@@ -3,6 +3,7 @@
     \class Tank
 	\brief Abstract interface for tank objects
     \details Prototype pattern: AbstractProduct
+    \ingroup MilitaryUnit
     \authors Wian Koekemoer
     \date 30/10/22
 */
@@ -24,6 +25,10 @@ public:
     */
     Tank(int damage, int healthpoints, Participants *belongsTo, float fuelConsumption);
 
+    /**
+     * \fn Tank::~Tank
+     * \brief Virtual destructor
+     */
     virtual ~Tank() {};
 
     /**
@@ -40,6 +45,7 @@ public:
 
     /**
         \fn Tank::setFuelConsumption
+        \param[in] fuelConsumption
         \brief Setter for fuelConsumption
     */
     void setFuelConsumption(float);

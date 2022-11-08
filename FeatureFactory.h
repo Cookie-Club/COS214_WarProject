@@ -16,6 +16,11 @@ class CellFeatures;
 class FeatureFactory {
 
 public:
+    /**
+    * \fn FeatureFactory::createFeature
+    * \return CellFeatures*
+    * \brief virtual method to produce concrete product
+    */
     virtual CellFeatures *createFeature() = 0;
 };
 

@@ -159,7 +159,7 @@ public:
 
     /**
      * \fn Squad::setState
-     * \param state     Action Pointer
+     * \param[in] state     Action Pointer
      * \brief setter method for state variable
      */
     void setState(Action *state);
@@ -173,15 +173,15 @@ public:
 
     /**
     * \fn Squad::setStrategy
-    * \param strategy     attackStrategy Pointer
+    * \param[in] strategy     attackStrategy Pointer
     * \brief setter method for strategy variable
     */
     void setStrategy(attackStrategy *strategy);
 
     /**
      * \fn Squad::attack
-     * \param x     int value representing x co-ordinate of cell
-     * \param y     int value representing y co-ordinate of cell
+     * \param[in] x     int value representing x co-ordinate of cell
+     * \param[in] y     int value representing y co-ordinate of cell
      * \brief Method to execute the strategy pattern
      */
     void attack(int x, int y);
@@ -195,7 +195,7 @@ public:
 
     /**
     * \fn Squad::setAmmo
-    * \param ammo     int value
+    * \param[in] ammo     int value
     * \brief setter method for ammo variable
     */
     void setAmmo(int ammo);
@@ -223,14 +223,14 @@ public:
 
     /**
     * \fn Squad::setRations
-    * \param rations     int value
+    * \param[in] rations     int value
     * \brief setter method for rations variable
     */
     void setRations(int rations);
 
     /**
      * \fn Squad::battle
-     * \param enemyMembers      MilitaryUnit vector of enemy army
+     * \param[in] enemyMembers      MilitaryUnit vector of enemy army
      * \return boolean value whether squad has won the battle
      * \brief
      */
@@ -238,7 +238,7 @@ public:
 
     /**
      * \fn Squad::getSquadHealth
-     * @return int value
+     * \return int value
      * \brief method to calculate and return the total squad health points
      */
     int getSquadHealth();
@@ -252,10 +252,16 @@ public:
 
     /**
      * \fn Squad::setMap
-     * \param map   WorldMap*
+     * \param[in] map   WorldMap*
      * \brief Virtual method to set Map
      */
     virtual void setMap(WorldMap *map);
+
+    /**
+    * \fn Squad::getName
+    * \return  string value
+    * \brief getter for name variable
+    */
     string getName();
 };
 

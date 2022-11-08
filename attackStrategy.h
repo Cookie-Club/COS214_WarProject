@@ -16,7 +16,7 @@ class attackStrategy {
 public:
     /**
      * \fn execute
-     * \param s The squad object to execute the attack strategy
+     * \param[in] s The squad object to execute the attack strategy
      * \brief pure virtual method the strategy that will be executed
      */
     virtual void execute(Squad *s) = 0;

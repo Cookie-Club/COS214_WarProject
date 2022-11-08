@@ -23,7 +23,7 @@ public:
 
     /**
      * \fn Aggressive::hande
-     * \param s The squad to which the aggressive state belongs
+     * \param[in] s The squad to which the aggressive state belongs
      * \brief Concrete state handle method of state pattern that will set the strategy attribute of
      * the given squad to mining
      */

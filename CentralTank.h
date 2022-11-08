@@ -26,6 +26,10 @@ public:
     */
     CentralTank(int damage, int healthpoints, Participants *belongsTo, float fuelConsumption);
 
+    /**
+     * \fn CentralTank::~CentralTank
+     * \brief virtual destructor
+     */
     virtual ~CentralTank() {};
 
     /**

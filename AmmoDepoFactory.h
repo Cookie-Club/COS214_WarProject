@@ -22,7 +22,7 @@ public:
     AmmoDepoFactory();
 
     /**
-     * \fnAmmoDepoFactory::createFeature
+     * \fn AmmoDepoFactory::createFeature
      * \return CellFeatures*
      * \brief produces AmmoDeposit product
      */

@@ -1,14 +1,10 @@
-/**
 
-    \brief Defines Infantry class
-    \authors Wian Koekemoer
-    \date 30/10/22
-*/
 /**
     \file Infantry.h
 	\class Infantry
 	\brief Abstract interface for infantry objects
     \details Prototype pattern: AbstractProduct
+    \ingroup MilitaryUnit
 	\author Wian Koekemoer, Kaitlyn Sookdhew
 */
 
