@@ -29,7 +29,21 @@ class Flatlands : public Cell {
             \param[in] m  A MilitaryUnit pointer that points to the squad being added into the cells occupying force
         */
         void execute(MilitaryUnit * m);
+
+    /**
+        \fn Flatlands::execute
+        \brief Tells the Flatland cell to perform specific actions
+        \details For the Flatlands class, the specific actions include reducing the incoming squads rations and fuel reserves based
+        on how many team members are in the squad
+        \param[in] m  A MilitaryUnit vector that represents the squad being added into the cells occupying force
+    */
         void execute(std::vector<MilitaryUnit*>  m);
+
+    /**
+        \fn Flatlands::printSymbol
+        \param[in] s     String input to print
+        \brief Method to format output
+    */
         void printSymbol(std::string s = "  ");
 
 //  void add(Cell *addition);

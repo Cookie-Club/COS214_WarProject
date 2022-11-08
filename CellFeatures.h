@@ -44,6 +44,12 @@ public:
     */
     CellAttribute getAttribute();
 
+    /**
+        \fn CellFeatures::removeOccupyingForce
+        \brief Removes the passed in MilitaryUnit vector from the occupyingForce vector
+        \details Iterates through the occupyingForce and checks to see where the passed in MilitaryUnit is and when found, the unit is removed
+        \param[in] m  A MilitaryUnit vector that represents  that points to the squad being removed from the occupyingForce
+    */
     virtual void removeOccupyingForce(std::vector<MilitaryUnit *> m);
 
     /**
@@ -66,7 +72,7 @@ public:
         \fn CellFeatures::setOccupyingForce
         \brief Adds MilitaryUnits vector to the occupyingForce attribute
         \details Uses the vector class's pre-derived function push_back() to add the MilitaryUnit vector passed in to the end of the occupyingForce vector
-        \param[in] m  A MilitaryUnit vector that points to the squad being added to the occupyingForce
+        \param[in] m  A MilitaryUnit vector that represents the squad being added to the occupyingForce
     */
     virtual void setOccupyingForce(std::vector<MilitaryUnit *> m);
 

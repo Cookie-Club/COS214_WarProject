@@ -14,21 +14,33 @@
 #include "attackStrategy.h"
 #include <string>
 #include "MilitaryUnit.h"
+
 class MilitaryUnit;
+
 class Participants {
 
 protected:
-    std::vector<MilitaryUnit*> army;
-    std::vector<Cell*> ownedTerritories;
+    std::vector<MilitaryUnit *> army;
+    std::vector<Cell *> ownedTerritories;
     //Action* state;
     double resources;
     //vector<attackStrategy*> moveStrategies;
     std::string name;
-    WorldMap* map;
+    WorldMap *map;
     ParticipantType participantType;
 
 public:
+    /**
+     * \fn Participants::Participants
+     * \param pT
+     * \brief Constructor to that will initialise participantsType
+     */
     Participants(ParticipantType pT);
+
+    /**
+     * \fn Participants::~Participants
+     * \brief virtual destructor
+     */
     virtual ~Participants();
 
     /**
@@ -40,13 +52,28 @@ public:
     /**
      * \fn Participants::retreat
      * \param cells     Vector for cells that need to be retreated
-     * \brief virtual method that will move squads currently on cells one cell back
+     * \brief pure virtual method that will move squads currently on cells one cell back
      */
-    virtual void retreat(std::vector<Cell*> cells)=0;
-    std::vector<Cell*> * getOwnedTerritories();
-    virtual std::vector<Cell*> atBack() = 0;
+    virtual void retreat(std::vector<Cell *> cells) = 0;
 
+    /**
+     * \fn Participants::getOwnedTerritories
+     * \return std::vector<Cell*>
+     * \brief getter method for ownedTerritories variable
+     */
+    std::vector<Cell *> *getOwnedTerritories();
 
+    /**
+    * \fn Participants::atBack
+    * \return std::vector<Cell*>
+    * \brief returns a vector of Cells with all cells not on the edge of the world map
+    */
+    virtual std::vector<Cell *> atBack() = 0;
+
+    /**
+     * \fn Participants::retreatParticipants
+     * \brief Method will call the retreat method for vector of cells not at the back of map
+     */
     void retreatParticipants();
 
     /**
@@ -58,8 +85,15 @@ public:
         \details Otherwise, if the passed parameter is already a composite, it is added to the army directly
         \param m A MilitaryUnit pointer that points to either a Leaf or a Composite participant
     */
-    void addUnit(MilitaryUnit* m);
-    std::vector<MilitaryUnit*> * getArmy();
+    void addUnit(MilitaryUnit *m);
+
+    /**
+     * \fn Participants::getArmy
+     * \return  std::vector<MilitaryUnit *>
+     * \brief getter method for the army variable
+     */
+    std::vector<MilitaryUnit *> *getArmy();
+
     int getTotalHealthPoints();
 
     /**
@@ -75,7 +109,19 @@ public:
      * \brief getter method for the name attribute
      */
     std::string getName();
-    ParticipantType getParticipantType() ;
+
+    /**
+     * \fn Participants::getParticipantType
+     * \return string value
+     * \brief getter method for the participantType attribute
+     */
+    ParticipantType getParticipantType();
+
+    /**
+     * \fn Participants::getMap
+     * \return string value
+     * \brief getter method for the map attribute
+     */
     WorldMap *getMap();
 
     /**
@@ -90,7 +136,7 @@ public:
      * \param m     MilitaryUnit pointer
      * \brief removes given MilitaryUnit from army vector
      */
-    void removeMilitaryUnit(MilitaryUnit* m);
+    void removeMilitaryUnit(MilitaryUnit *m);
 };
 
 #endif

@@ -43,6 +43,12 @@ public:
     */
     ~Cell();
 
+    /**
+        \fn Cell::removeOccupyingForce
+        \brief Removes the passed in MilitaryUnit vector from the occupyingForce vector
+        \details Iterates through the occupyingForce and checks to see where the passed in MilitaryUnit is and when found, the unit is removed
+        \param[in] m  A MilitaryUnit vector that that represents the squad being removed from the occupyingForce
+    */
     virtual void removeOccupyingForce(std::vector<MilitaryUnit *> m);
 
     /**
@@ -96,14 +102,38 @@ public:
     */
     int getY();
 
+    /**
+        \fn Cell::add
+        \brief
+        virtual method Allows features to be added on to the concreteDecorators
+        \param[in] addition A Cell pointer that points to the cell needing to be added
+    */
     virtual void add(Cell *addition) {};
-
+    /**
+        \fn Cell::execute
+        \brief virtual method Tells the cell to perform specific action
+        \param[in] m  A MilitaryUnit pointer that points to the squad being added into the cells occupying force
+    */
     virtual void execute(MilitaryUnit *m);
-
+    /**
+        \fn Cell::execute
+        \brief virtual method Tells the cell to perform specific action
+        \param[in] m  A MilitaryUnit vector that represents the squad being added into the cells occupying force
+    */
     virtual void execute(std::vector<MilitaryUnit *> m);
 
+    /**
+    \fn Cell::printSymbol
+    \param[in] s     String input to print
+    \brief Method to format output
+    */
     virtual void printSymbol(std::string = "  ");
 
+    /**
+     * \fn Cell::getOwner
+     * \return Participants pointer
+     * \brief getter method for owner variable
+     */
     Participants *getOwner() { return owner; };
 };
 

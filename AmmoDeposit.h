@@ -30,13 +30,13 @@ public:
         \brief Adds a military unit to the occupyingForce
         \details Adds using the pre-defined vector function push_back() and resets the Ration and Ammo attributes of the militaryUnit. Passes the militaryUnit
         onto the feature attribute to have resources deducted for movement.
-        \param[in] m A MilitaryUnit pointer that points to the unitneeding to be added to the cells occupyingForce
+        \param[in] m A MilitaryUnit pointer that points to the unit needing to be added to the cells occupyingForce
     */
     void setOccupyingForce(MilitaryUnit *m);
 
     /**
         \fn AmmoDeposit::setOccupyingForce
-        \brief Ovverloaded setOccupyingForce
+        \brief Overloaded setOccupyingForce
         \details Takes in a vector and adds each index to the occupyingForce one by one using the pre-defined vector function push_back() and resets the Ration
         and Ammo attributes of the militaryUnit. Passes the militaryUnit onto the feature attribute to have resources deducted for movement.
         \param[in] m A a vector of MilitaryUnit pointers that point to the unit needing to be added to the cells occupyingForce
@@ -52,7 +52,7 @@ public:
     /**
         \fn AmmoDeposit::printSymbol
         \param[in] s     String input to print
-        \brief
+        \brief Method to format output
      */
     void printSymbol(std::string s = "  ");
 };
