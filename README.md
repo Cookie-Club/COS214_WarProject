@@ -46,7 +46,7 @@ No installation required.
 3. Type $ make run
 
 # Code
-[code.......](https://github.com/Cookie-Club/COS214_WarProject)
+Code can be found in the github Repository linked [here](https://github.com/Cookie-Club/COS214_WarProject) or a zipped file can be downloaded [here]( https://github.com/Cookie-Club/COS214_WarProject/archive/refs/heads/main.zip)
 
 # Support
 Please fill in this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSe8KpQORQ7IMn0JSGOGiOhxqVqspK6_7Gf1upok5Hfz20iFaQ/viewform?usp=sf_link) for support. 
