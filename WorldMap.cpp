@@ -21,7 +21,7 @@ WorldMap::WorldMap(int worldSize) {
             std::cout << "Cell [" << i << "][" << j << "]: ";
             int rand = std::rand() % (totalSize + 1);
 
-            if (rand >= totalSize * 0.7 && rand < totalSize * 0.9) {
+            if (rand >= totalSize * 0.6 && rand < totalSize * 0.9) {
                 factories = new AmmoDepoFactory();
                 grid[i][j] = factories->createFeature();
                 cout << "AmmoDepo, ";

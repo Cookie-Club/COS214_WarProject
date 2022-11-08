@@ -1,10 +1,7 @@
 #include "AlliedTank.h"
 
-AlliedTank::AlliedTank(int damage, int healthpoints, Participants *belongsTo, float fuelConsumption) : Tank(damage,
-                                                                                                            healthpoints,
-                                                                                                            belongsTo,
-                                                                                                            fuelConsumption) {
-    //std::cout << "AlliedTank created";
+AlliedTank::AlliedTank(int damage, int healthpoints, Participants *belongsTo, float fuelConsumption) 
+: Tank(damage,healthpoints,belongsTo,fuelConsumption) {
 }
 
 MilitaryUnit *AlliedTank::clone() {

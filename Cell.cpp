@@ -38,8 +38,6 @@ void Cell::removeOccupyingForce(MilitaryUnit *m) {
             occupyingForce.erase(it);
             return;
         }
-
-    std::cout << "Remaining squads fo cell " << x << " " << y << ": " << occupyingForce.size() << endl;
 }
 
 void Cell::setOccupyingForce(MilitaryUnit *m) {
@@ -53,7 +51,6 @@ void Cell::setOccupyingForce(MilitaryUnit *m) {
     }
     occupyingForce.push_back(m);
     owner = m->getOwner();
-    std::cout << "Occupying force of cell " << x << " " << y << " is now " << occupyingForce.size() << endl; 
 }
 
 void Cell::setOccupyingForce(std::vector<MilitaryUnit *> m) {
@@ -113,5 +110,5 @@ void Cell::setCoordinates(int _x, int _y) {
 void Cell::printSymbol(std::string s) {
     int code = 39;
     if (owner) code = (int)owner->getParticipantType();
-    std::cout << "\033[" << code << "m|\033[0mCel" << s << occupyingForce.size() << "\033[" << code << "m|\033[0m";
+    std::cout << "\033[" << code << "m|\033[0mCel:" << s << occupyingForce.size() << "\033[" << code << "m|\033[0m";
 }

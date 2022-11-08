@@ -3,9 +3,7 @@
 TankDamage::TankDamage() {};
 
 void TankDamage::damageMember(MilitaryUnit * currentUnit){
-    std::cout << "Inside tank damage" << endl;
     if(currentUnit->getType() == tank){
-        std::cout << "Tank damage" << endl;
         int receivedDamage = std::rand() % 51;
         //Random number generated for the amount of damage done and then passed to the 
         // specific tank unit. Returns a bool of the tank's state of living and if 

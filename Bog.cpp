@@ -24,5 +24,5 @@ void Bog::printSymbol(std::string s)
 {
     int code = 39;
     if (owner) code = (int)owner->getParticipantType();
-    std::cout << "\033[" << code<< "m|\033[0m\033[45mBog" << s << occupyingForce.size() << "\033[39m\033[" << code<< "m\033[0m|";
+    std::cout << "\033[" << code<< "m|\033[0m\033[45mBog:" << s << occupyingForce.size() << "\033[39m\033[" << code<< "m\033[0m|";
 }

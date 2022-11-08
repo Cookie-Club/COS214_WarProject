@@ -6,8 +6,8 @@
 */
 #include "TeamMembers.h"
 
-TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participants *belongsTo) : MilitaryUnit(belongsTo,
-                                                                                                              type) {
+TeamMembers::TeamMembers(int damage, int healthpoints, UnitType type, Participants *belongsTo) 
+: MilitaryUnit(belongsTo,type) {
     this->damage = damage;
     this->healthpoints = healthpoints;
 }
