@@ -13,7 +13,7 @@ void Bog::execute(MilitaryUnit * m){
 
 void Bog::execute(std::vector<MilitaryUnit*> m){
     std::vector<MilitaryUnit*>::iterator it;
-    for(it = m.begin(); it < m.end(); it++){
+    for(it = m.begin(); it != m.end(); it++){
         ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - (5 * resourceUseMultiplier));
         ((Squad*)*it)->setRations(((Squad*)*it)->getRations() - (5 * ((Squad*)*it)->getMembers().size() * resourceUseMultiplier));
     }

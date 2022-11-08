@@ -4,6 +4,7 @@ InfantryDamage::InfantryDamage() {}
 
 //figure out how to deal with dead soldiers, should they be removed from the Squad here or in the next level
 void InfantryDamage::damageMember(MilitaryUnit *currentUnit) {
+    std::cout << "Inside infantry damage" << endl;
     if (currentUnit->getType() == infantry) {
         int receivedDamage = std::rand() % 96 + 5;
         std::cout << "Infantry Damage" << endl;

@@ -33,6 +33,7 @@ protected:
     int fuel;
     Action *state;
     attackStrategy *strategy;
+    string name;
 public:
     /**
         \fn Squad::Squad
@@ -255,6 +256,7 @@ public:
      * \brief Virtual method to set Map
      */
     virtual void setMap(WorldMap *map);
+    string getName();
 };
 
 

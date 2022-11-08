@@ -52,6 +52,7 @@ void Cell::setOccupyingForce(MilitaryUnit *m) {
         ++it;
     }
     occupyingForce.push_back(m);
+    owner = m->getOwner();
     std::cout << "Occupying force of cell " << x << " " << y << " is now " << occupyingForce.size() << endl; 
 }
 
@@ -61,7 +62,7 @@ void Cell::setOccupyingForce(std::vector<MilitaryUnit *> m) {
     //Iterates through OccupyingForce
     std::vector<MilitaryUnit*>::iterator occIt = occupyingForce.begin();
     bool found = false;
-    for (it = m.begin(); it < m.end(); it++) {
+    for (it = m.begin(); it != m.end(); it++) {
         found = false;
         while (occIt != occupyingForce.end()) {
             if ((*it) == (*occIt)) {
@@ -71,7 +72,10 @@ void Cell::setOccupyingForce(std::vector<MilitaryUnit *> m) {
 
             ++occIt;
         }
-        if (!found)occupyingForce.push_back(*it);
+        if (!found){
+            occupyingForce.push_back(*it);
+            owner = m[0]->getOwner();
+        }
     }
 }
 
@@ -82,14 +86,15 @@ void Cell::execute(MilitaryUnit * m){
 
 void Cell::execute(std::vector<MilitaryUnit*> m){
     std::vector<MilitaryUnit*>::iterator it;
-    for(it = m.begin(); it < m.end(); it++){
+    for(it = m.begin(); it != m.end(); it++){
         ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - 6);
         ((Squad*)*it)->setRations(((Squad*)*it)->getRations() - (6 * ((Squad*)*it)->getMembers().size()));
     }
 }
 
-std::vector<MilitaryUnit*> Cell::getOccupyingForce(){
-    return occupyingForce;
+std::vector<MilitaryUnit*> * Cell::getOccupyingForce(){
+    std::vector<MilitaryUnit*> * temp = &occupyingForce;
+    return temp;
 }
 
 int Cell::getX() {

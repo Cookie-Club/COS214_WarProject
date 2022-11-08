@@ -14,15 +14,64 @@
 
 using namespace std;
 
-Participants* findLoser(vector<Participants *> sides){
+bool findLoser(vector<Participants *> sides){
     std::vector<Participants *>:: iterator it;
+    Cell*** map = sides[0]->getMap()->getGrid();
     for (it = sides.begin(); it != sides.end(); ++it)
     {
+        // int notIt;
+        // if (sides[0] == *it) notIt = 1;
+        // else notIt = 0;
         if((*it)->getTotalHealthPoints() <= 0){
             return *it;
         }
+        // int backRow = 0;
+        // if ((*it)->getParticipantType() == Allied) backRow = 9;
+
+        // std::vector<Cell*>::iterator cellIt = (*it)->getOwnedTerritories()->begin();
+        // for (; cellIt != (*it)->getOwnedTerritories()->end(); ++cellIt)
+        // {
+        //     if (((Cell*)*cellIt)->getY() == backRow) return sides[notIt];
+        // }
+        
     }
-    return nullptr;
+    bool alliedWon = false;
+    bool centralWon = false;
+    for (int x = 0; x < 9; ++x)
+    {
+        if (map[x][0]->getOwner() == sides[1]) centralWon = true;
+    }
+    for (int x = 0; x < 9; ++x)
+    {
+        if (map[x][9]->getOwner() == sides[0]) alliedWon = true;
+    }
+    if (alliedWon == centralWon && alliedWon == false) return false;
+
+    if (alliedWon == true && centralWon == true)
+    {
+        if (sides[0]->getTotalHealthPoints() < sides[1]->getTotalHealthPoints()){
+            std::cout << "Allied health: " << sides[0]->getTotalHealthPoints() << "\nCentral health: " << sides[1]->getTotalHealthPoints() << "\nAllied Powers";
+            return true;
+        }
+        else if(sides[0]->getTotalHealthPoints() > sides[1]->getTotalHealthPoints()){
+            std::cout << "Allied health: " << sides[0]->getTotalHealthPoints() << "\nCentral health: " << sides[1]->getTotalHealthPoints() << "\nCentral Powers";
+            return true;
+        }
+        else{
+            std::cout << "Allied health: " << sides[0]->getTotalHealthPoints() << "\nCentral health: " << sides[1]->getTotalHealthPoints() << "\nNo one";
+            return true;
+        }
+        
+    }
+    if (alliedWon){
+        std::cout << "Central Powers";
+        return true;
+    } 
+    else{
+        std::cout << "Allied Powers";
+        return true;
+    }
+    
 }
 
 int main(){
@@ -98,17 +147,6 @@ int main(){
         }
     }
 
-    // std::cout << "Allied territories" << endl;
-    // std::vector<Cell*>::iterator it;
-    // for(it = war->getParticipants().at(0)->getOwnedTerritories()->begin(); it < war->getParticipants().at(0)->getOwnedTerritories()->end(); it++){
-    //     std::cout << "Cell " << ((Cell*)*it)->getX() << " " << ((Cell*)*it)->getY() << " has " << ((Cell*)*it)->getOccupyingForce().size() << endl;
-    // }
-
-    // std::cout << "Central territories" << endl;
-    // for(it = war->getParticipants().at(1)->getOwnedTerritories()->begin(); it < war->getParticipants().at(1)->getOwnedTerritories()->end(); it++){
-    //     std::cout << "Cell " << ((Cell*)*it)->getX() << " " << ((Cell*)*it)->getY() << " has " << ((Cell*)*it)->getOccupyingForce().size() << endl;
-    // }
-
     for(int i = 0; i < size; i++){
             std::cout << "[   ";
             for(int j = 0; j < size; j++){
@@ -119,14 +157,15 @@ int main(){
     }
 
     int turn = 0;
-    Participants * loser;
+    bool loser = false;
+    
+        char starter;
+        std::cout << "Press any key to begin war..." << endl;
+        std::cin.get();
 
-    char starter;
-    // std::cout << "Press any key to begin war..." << endl;
-    // std::cin.get();
 
     std::cout << "Pink = Bog\nYellow = Flatlands\nPlain = Normal Cell\n";
-    while(!(loser == findLoser(war->getParticipants()))){
+    while(!loser){
         std::cout << "Participant " << turn % war->getParticipants().size() << "'s turn" << endl;
         war->getParticipants().at(turn % war->getParticipants().size())->armyMove();
         for(int i = 0; i < size; i++){
@@ -137,29 +176,46 @@ int main(){
             }
             std::cout << "]\n";
         }
-        char ans;
-        std::cout << "Would you like to continue in real mode? (Y/N)";
-        std::cin >> ans;
-        while(true){
-            if(ans == 'Y'){
-            turn++;
-            system("clear");
-            break;
-            }
-            else if(ans == 'N'){
-                system("clear");
+            char ans;
+            std::cout << "Would you like to continue in real mode? (Y/N) or create a new save point (S)";
+            std::cin >> ans;
+            while(true){
+                if(ans == 'Y'){
+                 turn++;
                 break;
-            }
-            {
-                std::cout << "Please enter a valid answer\n";
-                std::cout << "Would you like to continue in real mode? (Y/N)";
-                std::cin >> ans;
-            }
-        }
-        
-    }
-    std::cout << loser->getName() << " has lost the war\n";
+                }
+                else if(ans == 'N'){
+                    break;
+                }
+                else if(ans == 'S'){
+                    std::cout << "New save being created" << endl;
+                    STORAGE->addMemento(war->createSave());
+                    break;
+                }
+                else
+                {
+                    std::cout << "Please enter a valid answer\n";
+                    std::cout << "Would you like to continue in real mode? (Y/N)";
+                    std::cin >> ans;
+                }
 
+                system("clear");
+            }
+
+            if (turn %2 == 0)
+            {
+                loser = findLoser(war->getParticipants());
+            }
+    }
+    std::cout << " lost the war\n";
+    for(int i = 0; i < size; i++){
+            std::cout << "[   ";
+            for(int j = 0; j < size; j++){
+                war->getWorld()->getCell(i, j)->printSymbol();
+                std::cout << "   ";
+            }
+            std::cout << "]\n";
+    }
 
     return 0;
 }

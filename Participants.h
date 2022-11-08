@@ -91,17 +91,6 @@ public:
      * \brief removes given MilitaryUnit from army vector
      */
     void removeMilitaryUnit(MilitaryUnit* m);
-
-protected:
-    vector<MilitaryUnit*> army;
-    vector<Cell*> ownedTerritories;
-    //Action* state;
-    double resources;
-    //vector<attackStrategy*> moveStrategies;
-    std::string name;
-    WorldMap* map;
-    Participant participant;
-
 };
 
 #endif

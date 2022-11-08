@@ -29,7 +29,7 @@ enum UnitType {
    \details It is used in template method to check the type of participant
 */
 enum ParticipantType {
-    Allied = 32, Central = 41
+    Allied = 32, Central = 31
 };
 
 /**

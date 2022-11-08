@@ -11,7 +11,7 @@ void Flatlands::execute(MilitaryUnit * m){
 
 void Flatlands::execute(std::vector<MilitaryUnit*>  m){
     std::vector<MilitaryUnit*>::iterator it;
-    for(it = m.begin(); it < m.end(); it++){
+    for(it = m.begin(); it != m.end(); it++){
         ((Squad*)*it)->setFuel(((Squad*)*it)->getFuel() - 5);
         ((Squad*)*it)->setRations(((Squad*)*it)->getRations() - (5 * ((Squad*)*it)->getMembers().size()));
     }
