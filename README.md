@@ -15,7 +15,7 @@ This project is a war simulation. It is written in c++ using vscode. The simulat
 
 # Documentation
 Our project has been documented in the pdf that can be accessed here (add link).\
-Diagrams can be found in the visual paradigm project linked here (add link) or the individual diagrams can be found in the google drive folder here (add link).\
+Diagrams can be found in the visual paradigm project linked here (add link) or the individual diagrams can be found in the google drive folder [here](https://drive.google.com/drive/folders/1KasSm0zczvex1MyBnHWb_2umQiH-NBwo?usp=sharing).\
 Doxygen documentation can be found here (add link)
 
 # Class Diagram
